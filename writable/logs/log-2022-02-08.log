@@ -1,0 +1,350 @@
+ERROR - 2022-02-08 00:39:03 --> Unknown column 'status_pengemudi' in 'where clause'
+CRITICAL - 2022-02-08 00:39:03 --> Unknown column 'status_pengemudi' in 'where clause'
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Model.php(145): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\BaseModel.php(523): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\ci2\app\Controllers\OrderController.php(68): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->showOrder('1')
+#8 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2022-02-08 01:07:44 --> Table 'bcas_magang.user' doesn't exist
+CRITICAL - 2022-02-08 01:07:44 --> Table 'bcas_magang.user' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina1@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina1@gm...', Array, Array)
+#7 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\ci2\app\Controllers\RegisterController.php(27): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\RegisterController->authregister()
+#10 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-02-08 01:08:38 --> Table 'bcas_magang.user' doesn't exist
+CRITICAL - 2022-02-08 01:08:38 --> Table 'bcas_magang.user' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina1@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina1@gm...', Array, Array)
+#7 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\ci2\app\Controllers\RegisterController.php(27): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\RegisterController->authregister()
+#10 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2022-02-08 03:12:46 --> Undefined index: name
+#0 C:\xampp\htdocs\ci2\app\Controllers\OrderController.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 29, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->order('13')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-02-08 03:59:29 --> Table 'bcas_magang.user' doesn't exist
+CRITICAL - 2022-02-08 03:59:29 --> Table 'bcas_magang.user' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina1@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina1@gm...', Array, Array)
+#7 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\ci2\app\Controllers\RegisterController.php(27): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\RegisterController->authregister()
+#10 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-02-08 04:01:58 --> Table 'bcas_magang.user' doesn't exist
+CRITICAL - 2022-02-08 04:01:58 --> Table 'bcas_magang.user' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina1@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina1@gm...', Array, Array)
+#7 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\ci2\app\Controllers\RegisterController.php(29): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\RegisterController->authregister()
+#10 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-02-08 04:34:02 --> Table 'bcas_magang.user' doesn't exist
+CRITICAL - 2022-02-08 04:34:02 --> Table 'bcas_magang.user' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina7@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina7@gm...', Array, Array)
+#7 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\ci2\app\Controllers\RegisterController.php(29): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\RegisterController->authregister()
+#10 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-02-08 04:35:50 --> Table 'bcas_magang.user' doesn't exist
+CRITICAL - 2022-02-08 04:35:50 --> Table 'bcas_magang.user' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina1@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina1@gm...', Array, Array)
+#7 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\ci2\app\Controllers\RegisterController.php(29): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\RegisterController->authregister()
+#10 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-02-08 04:36:38 --> Table 'bcas_magang.user' doesn't exist
+CRITICAL - 2022-02-08 04:36:38 --> Table 'bcas_magang.user' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina1@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina1@gm...', Array, Array)
+#7 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\ci2\app\Controllers\RegisterController.php(29): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\RegisterController->authregister()
+#10 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-02-08 04:38:41 --> Table 'bcas_magang.user' doesn't exist
+CRITICAL - 2022-02-08 04:38:41 --> Table 'bcas_magang.user' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina1@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina1@gm...', Array, Array)
+#7 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\ci2\app\Controllers\RegisterController.php(33): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\RegisterController->authregister()
+#10 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2022-02-08 04:39:16 --> Class 'App\Models\User' not found
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(801): App\Controllers\RegisterController->__construct()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+ERROR - 2022-02-08 04:39:25 --> Table 'bcas_magang.aaaaa' doesn't exist
+CRITICAL - 2022-02-08 04:39:25 --> Table 'bcas_magang.aaaaa' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\ci2\app\Controllers\userController.php(26): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\userController->auth()
+#8 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\userController))
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2022-02-08 04:39:36 --> Class 'App\Models\User' not found
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(801): App\Controllers\RegisterController->__construct()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+ERROR - 2022-02-08 04:40:22 --> Table 'bcas_magang.user' doesn't exist
+CRITICAL - 2022-02-08 04:40:22 --> Table 'bcas_magang.user' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina7@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina7@gm...', Array, Array)
+#7 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\ci2\app\Controllers\RegisterController.php(33): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\RegisterController->authregister()
+#10 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-02-08 04:40:43 --> Table 'bcas_magang.user' doesn't exist
+CRITICAL - 2022-02-08 04:40:43 --> Table 'bcas_magang.user' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina7@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina7@gm...', Array, Array)
+#7 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\ci2\app\Controllers\RegisterController.php(32): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\RegisterController->authregister()
+#10 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-02-08 04:40:48 --> Table 'bcas_magang.user' doesn't exist
+CRITICAL - 2022-02-08 04:40:48 --> Table 'bcas_magang.user' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina7@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina7@gm...', Array, Array)
+#7 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\ci2\app\Controllers\RegisterController.php(32): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\RegisterController->authregister()
+#10 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-02-08 04:42:02 --> Table 'bcas_magang.user' doesn't exist
+CRITICAL - 2022-02-08 04:42:02 --> Table 'bcas_magang.user' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina7@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina7@gm...', Array, Array)
+#7 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\ci2\app\Controllers\RegisterController.php(32): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\RegisterController->authregister()
+#10 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2022-02-08 04:42:09 --> Call to undefined function set_value()
+#0 C:\xampp\htdocs\ci2\system\View\View.php(214): include()
+#1 C:\xampp\htdocs\ci2\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\ci2\system\Common.php(1097): CodeIgniter\View\View->render('register', Array, true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\RegisterController.php(47): view('register', Array)
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\RegisterController->authregister()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-02-08 04:42:24 --> Call to undefined function set_value()
+#0 C:\xampp\htdocs\ci2\system\View\View.php(214): include()
+#1 C:\xampp\htdocs\ci2\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\ci2\system\Common.php(1097): CodeIgniter\View\View->render('register', Array, true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\RegisterController.php(47): view('register', Array)
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\RegisterController->authregister()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2022-02-08 04:44:33 --> Table 'bcas_magang.user' doesn't exist
+CRITICAL - 2022-02-08 04:44:33 --> Table 'bcas_magang.user' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina7@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina7@gm...', Array, Array)
+#7 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\ci2\app\Controllers\RegisterController.php(32): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\RegisterController->authregister()
+#10 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-02-08 04:45:51 --> Table 'bcas_magang.user' doesn't exist
+CRITICAL - 2022-02-08 04:45:51 --> Table 'bcas_magang.user' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina7@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina7@gm...', Array, Array)
+#7 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\ci2\app\Controllers\RegisterController.php(32): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\RegisterController->authregister()
+#10 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-02-08 05:01:25 --> Unknown column 'oauth_user.id_user13' in 'on clause'
+CRITICAL - 2022-02-08 05:01:25 --> Unknown column 'oauth_user.id_user13' in 'on clause'
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT * FROM p...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM p...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM p...')
+#3 C:\xampp\htdocs\ci2\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT * FROM p...')
+#4 C:\xampp\htdocs\ci2\app\Controllers\OrderController.php(27): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->order('13')
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#7 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-08 05:06:48 --> Undefined index: id
+#0 C:\xampp\htdocs\ci2\app\Controllers\OrderController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->order('13')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-08 05:07:03 --> Undefined index: nama_pengemudi
+#0 C:\xampp\htdocs\ci2\app\Controllers\OrderController.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 35, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->order('13')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-08 05:11:39 --> Undefined index: status_mobil
+#0 C:\xampp\htdocs\ci2\app\Controllers\OrderController.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 35, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->order('13')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-08 06:08:09 --> Undefined index: order_id_user
+#0 C:\xampp\htdocs\ci2\app\Controllers\OrderController.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 35, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->order('13')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-08 06:08:30 --> Undefined index: order_id_user
+#0 C:\xampp\htdocs\ci2\app\Controllers\OrderController.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 35, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->order('13')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-08 06:28:42 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->order('13')
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-08 06:28:51 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->order('13')
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}

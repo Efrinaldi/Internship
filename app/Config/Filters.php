@@ -19,6 +19,9 @@ class Filters extends BaseConfig
         'csrf'     => CSRF::class,
         'toolbar'  => DebugToolbar::class,
         'honeypot' => Honeypot::class,
+        'cors'      => \App\Filters\Cors::class,
+        'auth'     => App\Filters\Auth::class,
+        'auth_jwt' => JWTAuthenticationFilter::class // add this line
     ];
 
     /**
@@ -29,6 +32,7 @@ class Filters extends BaseConfig
      */
     public $globals = [
         'before' => [
+            'cors'
             // 'honeypot',
             // 'csrf',
         ],
@@ -58,5 +62,12 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $filters = [];
+    public $filters = [
+        'auth' => [
+            'before' => [
+                'client/*',
+                'client'
+            ],
+        ]
+    ];
 }

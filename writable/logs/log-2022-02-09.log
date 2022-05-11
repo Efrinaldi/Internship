@@ -1,0 +1,99 @@
+CRITICAL - 2022-02-09 03:26:42 --> Class 'App\Libraries\CustomOauthStorage' not found
+#0 C:\xampp\htdocs\ci2\app\Libraries\Oauth.php(15): App\Libraries\Oauth->init()
+#1 C:\xampp\htdocs\ci2\app\Controllers\userController.php(27): App\Libraries\Oauth->__construct()
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\userController->login_api()
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\userController))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-02-09 23:14:35 --> Undefined variable: totalTime
+#0 C:\xampp\htdocs\ci2\system\Debug\Toolbar\Views\toolbar.tpl.php(40): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 40, Array)
+#1 C:\xampp\htdocs\ci2\system\Debug\Toolbar.php(497): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\ci2\system\Debug\Toolbar.php(460): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#3 C:\xampp\htdocs\ci2\app\Config\Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#4 C:\xampp\htdocs\ci2\system\Events\Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(300): CodeIgniter\Events\Events::trigger('pre_system')
+#6 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-02-09 23:19:06 --> Table 'bcas_magang.user' doesn't exist
+CRITICAL - 2022-02-09 23:19:06 --> Table 'bcas_magang.user' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina1@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina1@gm...', Array, Array)
+#7 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\ci2\app\Controllers\userController.php(38): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\userController->authregister()
+#10 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\userController))
+#11 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2022-02-09 23:20:04 --> Call to a member function setContentType() on null
+#0 C:\xampp\htdocs\ci2\system\API\ResponseTrait.php(99): App\Controllers\NotificationController->format(Array)
+#1 C:\xampp\htdocs\ci2\system\API\ResponseTrait.php(152): App\Controllers\NotificationController->respond(Array, 201, '201')
+#2 C:\xampp\htdocs\ci2\app\Controllers\NotificationController.php(54): App\Controllers\NotificationController->respondCreated(Array, '201')
+#3 C:\xampp\htdocs\ci2\app\Controllers\NotificationController.php(16): App\Controllers\NotificationController->sendNotification('', Array)
+#4 C:\xampp\htdocs\ci2\app\Controllers\OrderController.php(126): App\Controllers\NotificationController->sendNotificationDriver('')
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->insert_order('1')
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#7 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-09 23:20:15 --> Call to a member function setContentType() on null
+#0 C:\xampp\htdocs\ci2\system\API\ResponseTrait.php(99): App\Controllers\NotificationController->format(Array)
+#1 C:\xampp\htdocs\ci2\system\API\ResponseTrait.php(152): App\Controllers\NotificationController->respond(Array, 201, '201')
+#2 C:\xampp\htdocs\ci2\app\Controllers\NotificationController.php(54): App\Controllers\NotificationController->respondCreated(Array, '201')
+#3 C:\xampp\htdocs\ci2\app\Controllers\NotificationController.php(16): App\Controllers\NotificationController->sendNotification('', Array)
+#4 C:\xampp\htdocs\ci2\app\Controllers\OrderController.php(126): App\Controllers\NotificationController->sendNotificationDriver('')
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->insert_order('1')
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#7 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-09 23:20:22 --> Call to a member function setContentType() on null
+#0 C:\xampp\htdocs\ci2\system\API\ResponseTrait.php(99): App\Controllers\NotificationController->format(Array)
+#1 C:\xampp\htdocs\ci2\system\API\ResponseTrait.php(152): App\Controllers\NotificationController->respond(Array, 201, '201')
+#2 C:\xampp\htdocs\ci2\app\Controllers\NotificationController.php(54): App\Controllers\NotificationController->respondCreated(Array, '201')
+#3 C:\xampp\htdocs\ci2\app\Controllers\NotificationController.php(16): App\Controllers\NotificationController->sendNotification('', Array)
+#4 C:\xampp\htdocs\ci2\app\Controllers\OrderController.php(126): App\Controllers\NotificationController->sendNotificationDriver('')
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->insert_order('1')
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#7 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-02-09 23:31:16 --> Table 'bcas_magang.user' doesn't exist
+CRITICAL - 2022-02-09 23:31:16 --> Table 'bcas_magang.user' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('bcasyariah123@g...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'bcasyariah123@g...', Array, Array)
+#7 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\ci2\app\Controllers\userController.php(38): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\userController->authregister()
+#10 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\userController))
+#11 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-02-09 23:55:37 --> Table 'bcas_magang.user' doesn't exist
+CRITICAL - 2022-02-09 23:55:37 --> Table 'bcas_magang.user' doesn't exist
+#0 C:\xampp\htdocs\ci2\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\ci2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci2\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina1@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina1@gm...', Array, Array)
+#7 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\ci2\app\Controllers\userController.php(38): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\userController->authregister()
+#10 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\userController))
+#11 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-02-09 23:58:46 --> Table 'product' already exists

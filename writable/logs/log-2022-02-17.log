@@ -1,0 +1,527 @@
+CRITICAL - 2022-02-17 03:04:39 --> Undefined index: id
+#0 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->update_plat('5')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 03:04:59 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:04:59 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:05:00 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:05:00 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:05:01 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:05:01 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:05:01 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:05:01 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:05:02 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:05:02 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:05:02 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:05:02 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:05:02 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:05:03 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:05:03 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:05:03 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:05:03 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:07:59 --> Undefined index: id
+#0 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->update_plat('5')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 03:09:15 --> Undefined index: id
+#0 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->update_plat('2')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 03:10:02 --> Undefined index: id
+#0 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->update_plat('13')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 03:11:12 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:18:03 --> Undefined index: id
+#0 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->update_plat('5')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 03:21:48 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:48 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:48 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:48 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:49 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:49 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:49 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:50 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:50 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:50 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:50 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:50 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:50 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:50 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:51 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:51 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:51 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:51 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:51 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:51 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:52 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:52 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:52 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:52 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:52 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:52 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:21:53 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 03:22:01 --> Undefined index: id
+#0 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->update_plat('13')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 03:22:32 --> Undefined index: id_pengemudi
+#0 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->update_plat('13')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 03:23:18 --> Undefined index: id_pengemudi
+#0 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->update_plat('13')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 03:23:39 --> Undefined index: id_pengemudi
+#0 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->update_plat('9')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 03:24:12 --> Undefined index: id_pengemudi
+#0 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->update_plat('9')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 03:26:07 --> Undefined index: nama_pengemudi
+#0 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->update_plat('9')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 03:26:32 --> Undefined index: id_pengemudi
+#0 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->update_plat('9')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 03:28:10 --> Undefined index: id_pengemudi
+#0 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->update_plat('9')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 03:29:52 --> Undefined index: id_mobil
+#0 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(39): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 39, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->update_plat('9')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-02-17 09:09:26 --> Cannot use object of type stdClass as array
+#0 C:\xampp\htdocs\ci2\system\View\View.php(214): include()
+#1 C:\xampp\htdocs\ci2\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\ci2\system\Common.php(1097): CodeIgniter\View\View->render('order', Array, true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\Home.php(33): view('order', Array)
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\Home->order()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-02-17 09:14:41 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::findAll()
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\Home->order()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 09:25:11 --> Undefined variable: query
+#0 C:\xampp\htdocs\ci2\app\Views\order.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 27, Array)
+#1 C:\xampp\htdocs\ci2\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\ci2\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\ci2\system\Common.php(1097): CodeIgniter\View\View->render('order', Array, true)
+#4 C:\xampp\htdocs\ci2\app\Controllers\Home.php(37): view('order', Array)
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\Home->order()
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-02-17 09:27:03 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::row()
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->insert_order('1')
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:04:24 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:04:28 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:07:09 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:09:01 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:15:26 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:15:39 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:15:39 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:15:39 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:15:41 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:15:41 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:15:41 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:15:41 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:15:42 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:15:42 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:15:42 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:15:42 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:15:44 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:15:44 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:15:45 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:15:45 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-17 10:15:45 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}

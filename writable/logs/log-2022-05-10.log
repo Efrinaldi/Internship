@@ -1,0 +1,36 @@
+CRITICAL - 2022-05-10 02:27:45 --> Cannot use object of type stdClass as array
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->post_order()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-10 02:29:08 --> Cannot use object of type stdClass as array
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->post_order()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-10 02:36:56 --> Cannot use object of type stdClass as array
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->post_order()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-05-10 02:48:51 --> key must be a string when using hmac
+#0 C:\xampp\htdocs\ci2\vendor\firebase\php-jwt\src\JWT.php(203): Firebase\JWT\JWT::sign('eyJ0eXAiOiJKV1Q...', false, 'HS256')
+#1 C:\xampp\htdocs\ci2\app\Controllers\userController.php(170): Firebase\JWT\JWT::encode(Array, false, 'HS256')
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\userController->login()
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\userController))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-05-10 02:49:57 --> Cannot use object of type stdClass as array
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->post_order()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+ERROR - 2022-05-10 04:24:35 --> Cannot add or update a child row: a foreign key constraint fails (`bcas_magang`.`orders`, CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `oauth_user` (`id_user`))
+ERROR - 2022-05-10 04:24:43 --> Cannot add or update a child row: a foreign key constraint fails (`bcas_magang`.`orders`, CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `oauth_user` (`id_user`))
+ERROR - 2022-05-10 04:25:25 --> Cannot add or update a child row: a foreign key constraint fails (`bcas_magang`.`orders`, CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `oauth_user` (`id_user`))
+ERROR - 2022-05-10 05:05:05 --> Cannot add or update a child row: a foreign key constraint fails (`bcas_magang`.`orders`, CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `oauth_user` (`id_user`))

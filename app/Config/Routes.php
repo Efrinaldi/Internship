@@ -31,12 +31,41 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-$routes->get('/ShowProduct', 'ProductController::index');
-$routes->get('/TodoApp', 'TodoController::index');
-$routes->add('/createtodo', 'TodoController::createdata');
-$routes->add('/todoapp/update/(:segment)', 'TodoController::updateTodo/$1');
-$routes->add('/todoapp/delete/(:segment)', 'TodoController::deleteTodo/$1');
+$routes->get('/login', 'userController::index');
+$routes->post('/login_api', 'userController::login');
+
+$routes->post('/auth', 'userController::auth');
+$routes->get('/register', 'RegisterController::index');
+$routes->post('/reg', 'userController::authregister');
+$routes->get('/dashboard', 'Home::dashboard');
+$routes->get('/order', 'Home::order');
+$routes->get('/pick_driver/(:segment)', 'OrderController::show_order/$1');
+$routes->add('/insert_order/(:segment)', 'OrderController::insert_order/$1');
+$routes->get('/order/(:segment)', 'OrderController::order/$1');
+$routes->get('/order_driver/(:segment)', 'OrderController::order_driver/$1');
+
+$routes->get('/showOrder/(:segment)', 'OrderController::showOrder/$1');
+$routes->get('/driver', 'Home::driver');
+$routes->get('/getMobil', 'DriverController::getMobil');
+
+$routes->get('/history', 'Home::history');
+$routes->get('/process', 'Home::process');
+$routes->get('/login_api', 'userController::login');
+$routes->get('/dashboard', 'Home::dashboard');
+$routes->get('/getUser', 'userController::get_user');
+$routes->post('send-notification', 'NotificationController::send');
+$routes->get('/getOrder/(:segmen)', 'OrderController::order/$1');
+$routes->post('/insertOrder', 'OrderController::post_order');
+$routes->post('/insertMobil', 'CarController::post_order');
+$routes->post('/insertStatus', 'DriverController::insert_status');
+$routes->add('/updateToken/(:segment)', 'UserController::update_token/$1');
+$routes->add('/updatePlatNomor/(:segment)', 'DriverController::update_plat/$1');
+
+
+
+
+
+
 
 
 
