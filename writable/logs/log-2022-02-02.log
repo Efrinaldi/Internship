@@ -1,0 +1,20 @@
+CRITICAL - 2022-02-02 22:16:05 --> curl_setopt(): CURLOPT_SSL_VERIFYHOST no longer accepts the value 1, value 2 will be used instead
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'curl_setopt(): ...', 'C:\\xampp\\htdocs...', 48, Array)
+#1 C:\xampp\htdocs\ci2\app\Controllers\NotificationController.php(48): curl_setopt(Resource id #112, 81, 1)
+#2 C:\xampp\htdocs\ci2\app\Controllers\NotificationController.php(18): App\Controllers\NotificationController->sendNotification('dbJ9S2QZTWu4tKm...', Array)
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\NotificationController->send()
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NotificationController))
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-02-02 22:16:05 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\xampp\htdocs\ci2\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\xampp\htdocs\ci2\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\xampp\htdocs\ci2\system\API\ResponseTrait.php(341): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\ci2\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\xampp\htdocs\ci2\system\Debug\Exceptions.php(110): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}

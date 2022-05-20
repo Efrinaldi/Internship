@@ -1,0 +1,18 @@
+CRITICAL - 2022-02-24 02:29:10 --> Cannot use object of type stdClass as array
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->post_order()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-24 02:36:26 --> Cannot use object of type stdClass as array
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\OrderController->post_order()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-02-24 02:38:20 --> Too few arguments to function App\Controllers\DriverController::insert_status(), 0 passed in C:\xampp\htdocs\ci2\system\CodeIgniter.php on line 824 and exactly 1 expected
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}

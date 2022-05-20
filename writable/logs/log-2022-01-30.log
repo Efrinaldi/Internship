@@ -1,0 +1,477 @@
+CRITICAL - 2022-01-30 05:32:59 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:33:00 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:33:03 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:33:09 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:33:22 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:33:32 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:33:33 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:33:34 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:33:35 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:33:59 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:34:01 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:34:05 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:34:05 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:34:05 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:34:05 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:15 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:15 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:16 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:18 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:19 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:19 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:22 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:22 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:24 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:25 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:27 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:27 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:31 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:31 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:35 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:36 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:36 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:36 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:41 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:42 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:45 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:45 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:47 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:49 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:49 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:50 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:50 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:54 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:35:54 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:39:36 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:39:36 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 05:41:53 --> There is no data to insert.
+#0 C:\xampp\htdocs\ci2\system\BaseModel.php(1593): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\ci2\system\BaseModel.php(704): CodeIgniter\BaseModel->transformDataToArray(Array, 'insert')
+#2 C:\xampp\htdocs\ci2\system\Model.php(620): CodeIgniter\BaseModel->insert(Object(stdClass), true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\DriverController.php(30): CodeIgniter\Model->insert(Object(stdClass))
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\DriverController->insert_status()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DriverController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-01-30 08:08:04 --> Array to string conversion
+#0 C:\xampp\htdocs\ci2\app\Controllers\userController.php(78): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 78, Array)
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\userController->register_user()
+#2 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\userController))
+#3 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

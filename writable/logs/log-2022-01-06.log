@@ -1,0 +1,327 @@
+CRITICAL - 2022-01-06 02:46:31 --> Array to string conversion
+#0 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\Users\\githa_...', 19, Array)
+#1 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#2 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#3 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#6 {main}
+ERROR - 2022-01-06 06:19:36 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2022-01-06 06:19:36 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\Users\githa_refina\Documents\ci2\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\Users\githa_refina\Documents\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\Users\githa_refina\Documents\ci2\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\Users\githa_refina\Documents\ci2\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#4 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(19): CodeIgniter\BaseModel->findAll()
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#7 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#10 {main}
+CRITICAL - 2022-01-06 06:19:36 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\Users\githa_refina\Documents\ci2\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\Users\\githa_...', 96, Array)
+#1 C:\Users\githa_refina\Documents\ci2\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\ProductController), true)
+#2 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(229): include('C:\\Users\\githa_...')
+#3 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2022-01-06 06:23:26 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2022-01-06 06:23:26 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\Users\githa_refina\Documents\ci2\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\Users\githa_refina\Documents\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\Users\githa_refina\Documents\ci2\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\Users\githa_refina\Documents\ci2\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#4 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(19): CodeIgniter\BaseModel->findAll()
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#7 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#10 {main}
+CRITICAL - 2022-01-06 06:23:26 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\Users\githa_refina\Documents\ci2\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\Users\\githa_...', 96, Array)
+#1 C:\Users\githa_refina\Documents\ci2\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\ProductController), true)
+#2 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(229): include('C:\\Users\\githa_...')
+#3 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2022-01-06 06:28:03 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2022-01-06 06:28:03 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\Users\githa_refina\Documents\ci2\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\Users\githa_refina\Documents\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\Users\githa_refina\Documents\ci2\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\Users\githa_refina\Documents\ci2\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#4 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(19): CodeIgniter\BaseModel->findAll()
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#7 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#10 {main}
+CRITICAL - 2022-01-06 06:28:03 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\Users\githa_refina\Documents\ci2\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\Users\\githa_...', 96, Array)
+#1 C:\Users\githa_refina\Documents\ci2\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\ProductController), true)
+#2 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(229): include('C:\\Users\\githa_...')
+#3 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2022-01-06 06:29:29 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2022-01-06 06:29:29 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\Users\githa_refina\Documents\ci2\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\Users\githa_refina\Documents\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\Users\githa_refina\Documents\ci2\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\Users\githa_refina\Documents\ci2\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#4 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(19): CodeIgniter\BaseModel->findAll()
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#7 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#10 {main}
+CRITICAL - 2022-01-06 06:29:29 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\Users\githa_refina\Documents\ci2\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\Users\\githa_...', 96, Array)
+#1 C:\Users\githa_refina\Documents\ci2\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\ProductController), true)
+#2 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(229): include('C:\\Users\\githa_...')
+#3 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-01-06 06:29:42 --> Undefined variable: product
+#0 C:\Users\githa_refina\Documents\ci2\app\Views\Product.php(24): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\githa_...', 24, Array)
+#1 C:\Users\githa_refina\Documents\ci2\system\View\View.php(214): include('C:\\Users\\githa_...')
+#2 C:\Users\githa_refina\Documents\ci2\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\githa_refina\Documents\ci2\system\Common.php(1097): CodeIgniter\View\View->render('Product', Array, true)
+#4 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(20): view('Product')
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#7 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#10 {main}
+ERROR - 2022-01-06 06:30:54 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2022-01-06 06:30:54 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\Users\githa_refina\Documents\ci2\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\Users\githa_refina\Documents\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\Users\githa_refina\Documents\ci2\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\Users\githa_refina\Documents\ci2\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#4 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(19): CodeIgniter\BaseModel->findAll()
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#7 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#10 {main}
+CRITICAL - 2022-01-06 06:30:54 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\Users\githa_refina\Documents\ci2\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\Users\\githa_...', 96, Array)
+#1 C:\Users\githa_refina\Documents\ci2\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\ProductController), true)
+#2 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(229): include('C:\\Users\\githa_...')
+#3 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-01-06 06:31:07 --> Undefined variable: products
+#0 C:\Users\githa_refina\Documents\ci2\app\Views\Product.php(24): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\githa_...', 24, Array)
+#1 C:\Users\githa_refina\Documents\ci2\system\View\View.php(214): include('C:\\Users\\githa_...')
+#2 C:\Users\githa_refina\Documents\ci2\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\githa_refina\Documents\ci2\system\Common.php(1097): CodeIgniter\View\View->render('Product', Array, true)
+#4 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(20): view('Product')
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#7 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#10 {main}
+CRITICAL - 2022-01-06 06:31:19 --> Undefined variable: products
+#0 C:\Users\githa_refina\Documents\ci2\app\Views\Product.php(24): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\githa_...', 24, Array)
+#1 C:\Users\githa_refina\Documents\ci2\system\View\View.php(214): include('C:\\Users\\githa_...')
+#2 C:\Users\githa_refina\Documents\ci2\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\githa_refina\Documents\ci2\system\Common.php(1097): CodeIgniter\View\View->render('Product', Array, true)
+#4 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(20): view('Product')
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#7 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#10 {main}
+CRITICAL - 2022-01-06 06:32:31 --> Undefined variable: products
+#0 C:\Users\githa_refina\Documents\ci2\app\Views\Product.php(31): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\githa_...', 31, Array)
+#1 C:\Users\githa_refina\Documents\ci2\system\View\View.php(214): include('C:\\Users\\githa_...')
+#2 C:\Users\githa_refina\Documents\ci2\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\githa_refina\Documents\ci2\system\Common.php(1097): CodeIgniter\View\View->render('Product', Array, true)
+#4 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(20): view('Product')
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#7 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#10 {main}
+ERROR - 2022-01-06 06:33:09 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2022-01-06 06:33:09 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\Users\githa_refina\Documents\ci2\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\Users\githa_refina\Documents\ci2\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\Users\githa_refina\Documents\ci2\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\Users\githa_refina\Documents\ci2\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#4 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(19): CodeIgniter\BaseModel->findAll()
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#7 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#10 {main}
+CRITICAL - 2022-01-06 06:33:09 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\Users\githa_refina\Documents\ci2\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\Users\\githa_...', 96, Array)
+#1 C:\Users\githa_refina\Documents\ci2\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\ProductController), true)
+#2 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(229): include('C:\\Users\\githa_...')
+#3 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\Users\githa_refina\Documents\ci2\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-01-06 06:34:30 --> Undefined variable: products
+#0 C:\Users\githa_refina\Documents\ci2\app\Views\Product.php(31): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\githa_...', 31, Array)
+#1 C:\Users\githa_refina\Documents\ci2\system\View\View.php(214): include('C:\\Users\\githa_...')
+#2 C:\Users\githa_refina\Documents\ci2\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\githa_refina\Documents\ci2\system\Common.php(1097): CodeIgniter\View\View->render('Product', Array, true)
+#4 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(20): view('Product', Array)
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#7 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#10 {main}
+CRITICAL - 2022-01-06 06:37:11 --> Undefined index: nama_produk
+#0 C:\Users\githa_refina\Documents\ci2\app\Views\Product.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\githa_...', 34, Array)
+#1 C:\Users\githa_refina\Documents\ci2\system\View\View.php(214): include('C:\\Users\\githa_...')
+#2 C:\Users\githa_refina\Documents\ci2\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\githa_refina\Documents\ci2\system\Common.php(1097): CodeIgniter\View\View->render('Product', Array, true)
+#4 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(20): view('Product', Array)
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#7 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#10 {main}
+CRITICAL - 2022-01-06 06:38:17 --> Undefined index: kategori
+#0 C:\Users\githa_refina\Documents\ci2\app\Views\Product.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\githa_...', 34, Array)
+#1 C:\Users\githa_refina\Documents\ci2\system\View\View.php(214): include('C:\\Users\\githa_...')
+#2 C:\Users\githa_refina\Documents\ci2\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\githa_refina\Documents\ci2\system\Common.php(1097): CodeIgniter\View\View->render('Product', Array, true)
+#4 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(20): view('Product', Array)
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#7 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#10 {main}
+ERROR - 2022-01-06 09:59:11 --> Table 'product' already exists
+CRITICAL - 2022-01-06 12:08:53 --> Call to undefined method CodeIgniter\View\View::extends()
+#0 C:\Users\githa_refina\Documents\ci2\system\View\View.php(214): include()
+#1 C:\Users\githa_refina\Documents\ci2\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\githa_refina\Documents\ci2\system\Common.php(1097): CodeIgniter\View\View->render('Product', Array, true)
+#3 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(20): view('Product', Array)
+#4 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#9 {main}
+CRITICAL - 2022-01-06 12:10:13 --> Call to undefined method CodeIgniter\View\View::sections()
+#0 C:\Users\githa_refina\Documents\ci2\system\View\View.php(214): include()
+#1 C:\Users\githa_refina\Documents\ci2\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\Users\githa_refina\Documents\ci2\system\Common.php(1097): CodeIgniter\View\View->render('Product', Array, true)
+#3 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(20): view('Product', Array)
+#4 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#9 {main}
+CRITICAL - 2022-01-06 12:10:28 --> Invalid file: layouts/navbar.php
+#0 C:\Users\githa_refina\Documents\ci2\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/navbar....')
+#1 C:\Users\githa_refina\Documents\ci2\system\View\View.php(230): CodeIgniter\View\View->render('layouts/navbar', Array, true)
+#2 C:\Users\githa_refina\Documents\ci2\system\Common.php(1097): CodeIgniter\View\View->render('Product', Array, true)
+#3 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(20): view('Product', Array)
+#4 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#9 {main}
+CRITICAL - 2022-01-06 12:10:52 --> Invalid file: layouts/navbar.php
+#0 C:\Users\githa_refina\Documents\ci2\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/navbar....')
+#1 C:\Users\githa_refina\Documents\ci2\system\View\View.php(230): CodeIgniter\View\View->render('layouts/navbar', Array, true)
+#2 C:\Users\githa_refina\Documents\ci2\system\Common.php(1097): CodeIgniter\View\View->render('Product', Array, true)
+#3 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(20): view('Product', Array)
+#4 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#9 {main}
+CRITICAL - 2022-01-06 12:11:41 --> Invalid file: layouts/navbar.php
+#0 C:\Users\githa_refina\Documents\ci2\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/navbar....')
+#1 C:\Users\githa_refina\Documents\ci2\system\View\View.php(230): CodeIgniter\View\View->render('layouts/navbar', Array, true)
+#2 C:\Users\githa_refina\Documents\ci2\system\Common.php(1097): CodeIgniter\View\View->render('Product', Array, true)
+#3 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(20): view('Product', Array)
+#4 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#9 {main}
+CRITICAL - 2022-01-06 12:11:56 --> Invalid file: layouts/navbar.php
+#0 C:\Users\githa_refina\Documents\ci2\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/navbar....')
+#1 C:\Users\githa_refina\Documents\ci2\system\View\View.php(230): CodeIgniter\View\View->render('layouts/navbar', Array, true)
+#2 C:\Users\githa_refina\Documents\ci2\system\Common.php(1097): CodeIgniter\View\View->render('Product', Array, true)
+#3 C:\Users\githa_refina\Documents\ci2\app\Controllers\ProductController.php(20): view('Product', Array)
+#4 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(824): App\Controllers\ProductController->index()
+#5 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#6 C:\Users\githa_refina\Documents\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\githa_refina\Documents\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\githa_refina\Documents\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\githa_...')
+#9 {main}
