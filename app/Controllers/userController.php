@@ -279,4 +279,8 @@ class userController extends ResourceController
     public function getToken()
     {
     }
+    public function logout()
+    { session()->destroy();
+        return redirect()->to('/login');
+    }
 }

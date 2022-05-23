@@ -87,6 +87,19 @@ class OrderController extends BaseController
         return view('pick_driver', $data);
     }
 
+    public function request_order()
+    {
+        $order = new OrderModel();
+        $order->insert([
+            'tujuan' => $this->request->getVar('destination'),
+            'unit_kerja'=> $this->request->getVar ('unit'), 
+            'waktu'=> $this->request->getVar('time'), 
+            'nama'=> $this->request->getVar('name'), 
+            'tanggal' => $this->request->getVar('date')
+        ]);
+
+        return redirect('request');
+    }
     public function post_order()
     {
 

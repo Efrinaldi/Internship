@@ -32,7 +32,10 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/login', 'userController::index');
+$routes->get('/', 'userController::index');
 $routes->post('/login_api', 'userController::login');
+$routes->get('/logout', 'userController::logout');
+
 
 $routes->post('/auth', 'userController::auth');
 $routes->get('/register', 'RegisterController::index');
@@ -57,6 +60,7 @@ $routes->get('/getUser', 'userController::get_user');
 $routes->post('send-notification', 'NotificationController::send');
 $routes->get('/getOrder/(:segmen)', 'OrderController::order/$1');
 $routes->post('/insertOrder', 'OrderController::post_order');
+$routes->post('/requestOrder', 'OrderController::request_order');
 $routes->post('/insertMobil', 'CarController::post_order');
 $routes->post('/insertStatus', 'DriverController::insert_status');
 $routes->add('/updateToken/(:segment)', 'UserController::update_token/$1');
