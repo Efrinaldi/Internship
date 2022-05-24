@@ -45,45 +45,32 @@
                 <div class="form-group has-feedback">
                     <input type="text" id="InputForFirstName" name="first_name" class="form-control"
                         placeholder="First name">
-                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
-
                 <div class="form-group has-feedback">
                     <input type="text" id="InputForLastName" name="last_name" class="form-control"
                         placeholder="Last name">
-                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="text" id="InputForRole" name="role" class="form-control" placeholder="Role">
-                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
-
-
                 <div class="form-group has-feedback">
                     <input type="text" id="InputForName" name="username" class="form-control" placeholder="Username">
-                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="email" id="InputForEmail" name="email" class="form-control" placeholder="Email">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="text" id="InputForNIP" name="nip" class="form-control" placeholder="NIP">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="text" id="InputForUnitKerja" name="unit_kerja" class="form-control"
                         placeholder="Unit Kerja">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
-
                 <div class="form-group has-feedback">
                     <input type="password" name="password" class="form-control" placeholder="Password">
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="password" name="confpassword" class="form-control" placeholder="Retype password">
-                    <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
                 </div>
                 <div class="row">
                     <div class="col-xs-8">
@@ -94,23 +81,24 @@
                                         style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;"><ins
                                         class="iCheck-helper"
                                         style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;"></ins>
-                                </div> I agree to the <a href="#">terms</a>
+                                </div>
                             </label>
                         </div>
                     </div>
                     <!-- /.col -->
-                    <div class="col-xs-4">
+                    <div class="col">
                         <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
                     </div>
                     <!-- /.col -->
+                    <div class="social-auth-links text-center">
+                        <p>- OR -</p>
+                        <div class="col">
+                            <a href=" <?= base_url('login') ?>" class="btn btn-block btn-facebook btn-flat">
+                                Already have account</a>
+                        </div>
+                    </div>
                 </div>
             </form>
-
-            <div class="social-auth-links text-center">
-                <p>- OR -</p>
-                <a href="<?= base_url('login') ?>" class="btn btn-block btn-social btn-facebook btn-flat">
-                    Already have account</a>
-            </div>
 
         </div>
         <!-- /.form-box -->

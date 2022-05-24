@@ -24,16 +24,15 @@
                     $no = 1;
                     foreach ($driver as $d) :
                     ?>
-                        <tr>
-                            <td><?= $no++; ?></td>
-                            <td><?= $d['id_pengemudi'] ?></td>
-
-                            <td><?= $d['nama_pengemudi'] ?></td>
-                            <td><?= $d['status_pengemudi'] ?></td>
-                            <td>
-                                <a href="<?= base_url('insert_order/' . $d['id_pengemudi']) ?>" class="btn btn-warning">Pilih driver</a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td><?= $no++; ?></td>
+                        <td><?= $d['nama_pengemudi'] ?></td>
+                        <td><?= $d['status_pengemudi'] ?></td>
+                        <td>
+                            <a href="<?= base_url('insert_order/' . $d['id_pengemudi']) ?>"
+                                class="btn btn-warning">Pilih driver</a>
+                        </td>
+                    </tr>
                     <?php
                     endforeach;
                     ?>

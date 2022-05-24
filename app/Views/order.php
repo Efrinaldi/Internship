@@ -26,17 +26,17 @@
                     $no = 1;
                     foreach ($order as $o) :
                     ?>
-                        <tr>
-                            <td><?= $no++; ?></td>
-                            <td><?= $o['nama'] ?></td>
-                            <td><?= $o['unit_kerja'] ?></td>
-                            <td><?= $o['tanggal'] . $o['waktu'] ?></td>
-                            <td><?= $o['tujuan'] ?></td>
-                            <td>
-                                <a href="<?= base_url('') ?>" class="btn btn-warning">Tolak</a>
-                                <a href="<?= base_url('pick_driver/' . $o['ID']) ?>" class="btn btn-primary">Terima</a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td><?= $no++; ?></td>
+                        <td><?= $o['nama'] ?></td>
+                        <td><?= $o['unit_kerja'] ?></td>
+                        <td><?= $o['tanggal'] . $o['waktu'] ?></td>
+                        <td><?= $o['tujuan'] ?></td>
+                        <td>
+                            <a href="<?= base_url('') ?>" class="btn btn-warning">Tolak</a>
+                            <a href="<?= base_url('pick_driver/' . $o['ID']) ?>" class="btn btn-primary">Terima</a>
+                        </td>
+                    </tr>
                     <?php
                     endforeach;
                     ?>
