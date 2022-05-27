@@ -5,9 +5,11 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\DriverModel;
 use App\Models\OrderModel;
+use App\Models\UserModel;
 
 class Home extends BaseController
 {
+    protected $oauth_user;
     public function __construct()
     {
         $this->Driver_model = new DriverModel();
@@ -59,5 +61,15 @@ class Home extends BaseController
     public function request()
     {
         return view('request');
+    }
+    public function admin()
+    {
+        return view('admin');
+    }
+    public function user()
+    {
+        $usermodel = new UserModel();
+        $data['oauth_user'] = $usermodel->findAll();
+        return view('user', $data);
     }
 }

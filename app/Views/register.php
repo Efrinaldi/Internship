@@ -33,11 +33,11 @@
 <body class="hold-transition register-page">
     <div class="register-box">
         <div class="register-logo">
-            <a href="https://adminlte.io/themes/AdminLTE/index2.html"><b>Admin</b>LTE</a>
+            <a href=""><b>Admin BCA Syariah</b></a>
         </div>
 
         <div class="register-box-body">
-            <p class="login-box-msg">Register a new membership</p>
+            <p class="login-box-msg">Form Register</p>
             <?php if (isset($validation)) : ?>
             <div class="alert alert-danger"><?= $validation->listErrors() ?></div>
             <?php endif; ?>
@@ -94,7 +94,7 @@
                         <p>- OR -</p>
                         <div class="col">
                             <a href=" <?= base_url('login') ?>" class="btn btn-block btn-facebook btn-flat">
-                                Already have account</a>
+                                Sudah punya akun ?</a>
                         </div>
                     </div>
                 </div>

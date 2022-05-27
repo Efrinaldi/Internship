@@ -1,0 +1,40 @@
+CRITICAL - 2022-05-26 22:36:47 --> Invalid file: layouts/admin.php
+#0 C:\xampp\htdocs\ci2\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/admin.p...')
+#1 C:\xampp\htdocs\ci2\system\View\View.php(230): CodeIgniter\View\View->render('layouts/admin', Array, true)
+#2 C:\xampp\htdocs\ci2\system\Common.php(1097): CodeIgniter\View\View->render('request', Array, true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\Home.php(61): view('request')
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\Home->request()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-26 22:36:50 --> Invalid file: layouts/admin.php
+#0 C:\xampp\htdocs\ci2\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/admin.p...')
+#1 C:\xampp\htdocs\ci2\system\View\View.php(230): CodeIgniter\View\View->render('layouts/admin', Array, true)
+#2 C:\xampp\htdocs\ci2\system\Common.php(1097): CodeIgniter\View\View->render('admin', Array, true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\Home.php(65): view('admin')
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\Home->admin()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-26 22:36:52 --> Invalid file: layouts/admin.php
+#0 C:\xampp\htdocs\ci2\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/admin.p...')
+#1 C:\xampp\htdocs\ci2\system\View\View.php(230): CodeIgniter\View\View->render('layouts/admin', Array, true)
+#2 C:\xampp\htdocs\ci2\system\Common.php(1097): CodeIgniter\View\View->render('admin', Array, true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\Home.php(65): view('admin')
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\Home->admin()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-05-26 22:37:02 --> Invalid file: layouts/admin.php
+#0 C:\xampp\htdocs\ci2\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/admin.p...')
+#1 C:\xampp\htdocs\ci2\system\View\View.php(230): CodeIgniter\View\View->render('layouts/admin', Array, true)
+#2 C:\xampp\htdocs\ci2\system\Common.php(1097): CodeIgniter\View\View->render('dashboard', Array, true)
+#3 C:\xampp\htdocs\ci2\app\Controllers\Home.php(22): view('dashboard')
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\Home->dashboard()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

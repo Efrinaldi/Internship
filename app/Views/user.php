@@ -8,34 +8,30 @@
 
     <body>
         <div class="container">
-            <h2>Daftar Pesanan</h2>
-            <p>Anda dapat mengelola daftar pesanan</p>
+            <h2>Daftar User</h2>
+            <p>Anda dapat mengelola daftar user</p>
+            <a href="#" class="btn btn-info mb-3">Tambah User</a>
             <table class="table table-dark">
                 <thead>
                     <tr>
                         <th>Nomor</th>
+                        <th>NIP</th>
                         <th>Nama</th>
                         <th>Unit Kerja</th>
-                        <th>Waktu</th>
-                        <th>Tujuan</th>
-                        <th>Proses</th>
+                        <th>Role</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     $no = 1;
-                    foreach ($order as $o) :
+                    foreach ($oauth_user as $o) :
                     ?>
                     <tr>
                         <td><?= $no++; ?></td>
-                        <td><?= $o['nama'] ?></td>
+                        <td><?= $o['nip'] ?></td>
+                        <td><?= $o['first_name'], " ",$o['last_name'] ?></td>
                         <td><?= $o['unit_kerja'] ?></td>
-                        <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
-                        <td><?= $o['tujuan'] ?></td>
-                        <td>
-                            <a href="#" class="btn btn-warning">Tolak</a>
-                            <a href="<?= base_url('pick_driver/' . $o['ID']) ?>" class="btn btn-primary">Terima</a>
-                        </td>
+                        <td><?= $o['role'] ?></td>
                     </tr>
                     <?php
                     endforeach;

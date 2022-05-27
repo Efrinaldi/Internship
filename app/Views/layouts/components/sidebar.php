@@ -18,6 +18,30 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->
     <li class="nav-item">
+        <a class="nav-link" href="<?=base_url("/admin")?>">
+            <i class="fas fa-user-gear"></i>
+            <span>Daftar Admin</span></a>
+    </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?=base_url("/user")?>">
+            <i class="fas fa-user-friends"></i>
+            <span>Daftar User</span></a>
+    </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?=base_url("/driver")?>">
+            <i class="fas fa-car"></i>
+            <span>Daftar Pengemudi</span></a>
+    </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
         <a class="nav-link" href="<?=base_url("/request")?>">
             <i class="fas fa-address-card"></i>
             <span>Pesan Kendaraan</span></a>
@@ -34,17 +58,9 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="<?=base_url("/driver")?>">
-            <i class="fas fa-car"></i>
-            <span>Daftar Pengemudi</span></a>
-    </li>
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
         <a class="nav-link" href="<?=base_url("/history")?>">
             <i class="fas fa-history"></i>
-            <span>Riwayat Pemesanan</span></a>
+            <span>Riwayat Pesanan</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
