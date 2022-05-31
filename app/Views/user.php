@@ -10,7 +10,7 @@
         <div class="container">
             <h2>Daftar User</h2>
             <p>Anda dapat mengelola daftar user</p>
-            <a href="#" class="btn btn-info mb-3">Tambah User</a>
+            <a href="<?=base_url("/register")?>" class="btn btn-info mb-3">Tambah User</a>
             <table class="table table-dark">
                 <thead>
                     <tr>

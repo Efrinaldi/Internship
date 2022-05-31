@@ -10,7 +10,7 @@
         <div class="container">
             <h2>Daftar Admin</h2>
             <p>Anda dapat mengelola daftar admin</p>
-            <a href="#" class="btn btn-info mb-3">Tambah Admin</a>
+            <a href="<?=base_url("/register")?>" class="btn btn-info mb-3">Tambah Admin</a>
             <table class="table table-dark">
                 <thead>
                     <tr>

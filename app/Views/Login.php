@@ -35,7 +35,7 @@
         <!-- /.login-logo -->
         <div class="login-box-body">
             <p class="login-box-msg">
-                <img src="<?= base_url('assets') ?>/img/bcas.png" alt="" width="300" height="100"
+                <img src="<?= base_url('assets') ?>/img/bcas.png" alt="" width="290" height="100"
                     style="padding:15px 0 0 0">
             </p>
 
@@ -52,15 +52,9 @@
                         value="<?= set_value('password') ?>">
                 </div>
                 <div class="row">
-                    <div class="col-xs-6">
+                    <div class="col-xs-12">
                         <button type="submit" class="btn btn-primary btn-block btn-flat">Sign in</button>
                     </div>
-                    <!-- /.col -->
-                    <div class="col-xs-6">
-                        <a href="<?= base_url() ?>/register"
-                            class="btn btn-primary btn-block btn-google btn-flat">Register</a>
-                    </div>
-                    <!-- /.col -->
                 </div>
             </form>
         </div>
