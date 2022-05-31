@@ -6,6 +6,7 @@
         </div>
         <div class="sidebar-brand-text mx-3">ADMIN BCAS</div>
     </a>
+    <?php if (adminLogin()->role === 'Super Admin') : ?>
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
     <!-- Nav Item - Dashboard -->
@@ -15,6 +16,7 @@
             <span>Dashboard</span></a>
     </li>
     <!-- Divider -->
+
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->
     <li class="nav-item">
@@ -63,6 +65,21 @@
             <span>Riwayat Pesanan</span></a>
     </li>
     <!-- Divider -->
+    <?php endif; ?>
+
+    <?php if (adminLogin()->role === 'admin') : ?>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?=base_url("/request")?>">
+            <i class="fas fa-address-card"></i>
+            <span>Pesan Kendaraan</span></a>
+    </li>
+    <!-- Divider -->
+
+    <?php endif; ?>
+
     <hr class="sidebar-divider d-none d-md-block">
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
