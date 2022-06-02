@@ -38,48 +38,41 @@ $routes->add('/logout', 'userController::logout');
 
 
 $routes->post('/auth', 'userController::auth');
-$routes->get('/register', 'RegisterController::index');
 $routes->post('/reg', 'userController::authregister');
 
-$routes->get('/dashboard', 'Home::dashboard',['filter' => 'loginFilter']);
-$routes->get('/request', 'Home::request');
 $routes->group('', ['filter' => 'loginFilter'], function($routes) {
+    $routes->get('/register', 'RegisterController::index');
     $routes->get('/admin', 'Home::admin');
+    $routes->get('/dashboard', 'Home::dashboard');
+    $routes->get('/request', 'Home::request');
     $routes->get('/user', 'Home::user');
     $routes->get('/order', 'Home::order');
-    $routes->get('/admin', 'Home::admin');
-    $routes->get('/user', 'Home::user');
-    $routes->get('/order', 'Home::order');
+    $routes->get('/pick_driver/(:segment)', 'OrderController::show_order/$1');
+    $routes->add('/insert_order/(:segment)', 'OrderController::insert_order/$1');
+    $routes->get('/order/(:segment)', 'OrderController::order/$1');
+    $routes->get('/order_driver/(:segment)', 'OrderController::order_driver/$1');
+
+    $routes->get('/showOrder/(:segment)', 'OrderController::showOrder/$1');
     $routes->get('/driver', 'Home::driver');
+    $routes->get('/getMobil', 'DriverController::getMobil');
+
+    $routes->get('/history', 'Home::history');
+    $routes->get('/process', 'Home::process');
+    $routes->get('/login_api', 'userController::login');
+    $routes->get('/getUser', 'userController::get_user');
+    $routes->post('send-notification', 'NotificationController::send');
+    $routes->get('/getOrder/(:segmen)', 'OrderController::order/$1');
+    $routes->post('/insertOrder', 'OrderController::post_order');
+    $routes->post('/requestOrder', 'OrderController::request_order');
+    $routes->post('/insertMobil', 'CarController::post_order');
+    $routes->post('/insertStatus', 'DriverController::insert_status');
+    $routes->add('/updateToken/(:segment)', 'UserController::update_token/$1');
+    $routes->add('/updatePlatNomor/(:segment)', 'DriverController::update_plat/$1');
 });
 
 
 
-$routes->get('/admin', 'Home::admin');
-$routes->get('/user', 'Home::user');
-$routes->get('/order', 'Home::order');
-$routes->get('/pick_driver/(:segment)', 'OrderController::show_order/$1');
-$routes->add('/insert_order/(:segment)', 'OrderController::insert_order/$1');
-$routes->get('/order/(:segment)', 'OrderController::order/$1');
-$routes->get('/order_driver/(:segment)', 'OrderController::order_driver/$1');
 
-$routes->get('/showOrder/(:segment)', 'OrderController::showOrder/$1');
-$routes->get('/driver', 'Home::driver');
-$routes->get('/getMobil', 'DriverController::getMobil');
-
-$routes->get('/history', 'Home::history');
-$routes->get('/process', 'Home::process');
-$routes->get('/login_api', 'userController::login');
-$routes->get('/dashboard', 'Home::dashboard');
-$routes->get('/getUser', 'userController::get_user');
-$routes->post('send-notification', 'NotificationController::send');
-$routes->get('/getOrder/(:segmen)', 'OrderController::order/$1');
-$routes->post('/insertOrder', 'OrderController::post_order');
-$routes->post('/requestOrder', 'OrderController::request_order');
-$routes->post('/insertMobil', 'CarController::post_order');
-$routes->post('/insertStatus', 'DriverController::insert_status');
-$routes->add('/updateToken/(:segment)', 'UserController::update_token/$1');
-$routes->add('/updatePlatNomor/(:segment)', 'DriverController::update_plat/$1');
 
 
 

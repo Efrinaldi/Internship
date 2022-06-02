@@ -1456,3 +1456,63 @@ CRITICAL - 2022-06-02 04:22:19 --> Trying to get property 'role' of non-object
 #13 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #14 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #15 {main}
+CRITICAL - 2022-06-02 04:53:43 --> Class 'Config\Cors' not found
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(384): CodeIgniter\Filters\Filters->run('history', 'before')
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+CRITICAL - 2022-06-02 04:53:59 --> Class 'Config\Cors' not found
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(384): CodeIgniter\Filters\Filters->run('history', 'before')
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+CRITICAL - 2022-06-02 04:54:02 --> Class 'Config\Cors' not found
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(384): CodeIgniter\Filters\Filters->run('pick_driver/106', 'before')
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+CRITICAL - 2022-06-02 04:54:03 --> Class 'Config\Cors' not found
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(384): CodeIgniter\Filters\Filters->run('order', 'before')
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+CRITICAL - 2022-06-02 04:54:16 --> Class 'Config\Cors' not found
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(384): CodeIgniter\Filters\Filters->run('history', 'before')
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+CRITICAL - 2022-06-02 04:54:20 --> Class 'Config\Cors' not found
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(384): CodeIgniter\Filters\Filters->run('login', 'before')
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+CRITICAL - 2022-06-02 04:54:52 --> Class 'Config\Cors' not found
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(384): CodeIgniter\Filters\Filters->run('login', 'before')
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+CRITICAL - 2022-06-02 04:55:31 --> Class 'Config\Cors' not found
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(384): CodeIgniter\Filters\Filters->run('login', 'before')
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+CRITICAL - 2022-06-02 04:57:42 --> Class 'Config\Cors' not found
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(384): CodeIgniter\Filters\Filters->run('request', 'before')
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+CRITICAL - 2022-06-02 05:00:16 --> Class 'Config\Cors' not found
+#0 C:\xampp\htdocs\ci2\system\CodeIgniter.php(384): CodeIgniter\Filters\Filters->run('login', 'before')
+#1 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#3 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#4 {main}
