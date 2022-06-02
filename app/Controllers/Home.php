@@ -64,7 +64,9 @@ class Home extends BaseController
     }
     public function admin()
     {
-        return view('admin');
+        $usermodel = new UserModel();
+        $data['oauth_user'] = $usermodel->findAll();
+        return view('admin', $data);
     }
     public function user()
     {

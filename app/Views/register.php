@@ -51,7 +51,12 @@
                         placeholder="Last name">
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="text" id="InputForRole" name="role" class="form-control" placeholder="Role">
+                    <select name="role" class="form-control">
+                        <option value="">Role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="User">User</option>
+                        <option value="Driver">Driver</option>
+                    </select>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="text" id="InputForName" name="username" class="form-control" placeholder="Username">
@@ -73,30 +78,11 @@
                     <input type="password" name="confpassword" class="form-control" placeholder="Retype password">
                 </div>
                 <div class="row">
-                    <div class="col-xs-8">
-                        <div class="checkbox icheck">
-                            <label>
-                                <div class="icheckbox_square-blue" style="position: relative;" aria-checked="false"
-                                    aria-disabled="false"><input type="checkbox"
-                                        style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;"><ins
-                                        class="iCheck-helper"
-                                        style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;"></ins>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
                     <!-- /.col -->
-                    <div class="col">
+                    <div class="col-xs-12">
                         <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
                     </div>
                     <!-- /.col -->
-                    <div class="social-auth-links text-center">
-                        <p>- OR -</p>
-                        <div class="col">
-                            <a href=" <?= base_url('login') ?>" class="btn btn-block btn-facebook btn-flat">
-                                Sudah punya akun ?</a>
-                        </div>
-                    </div>
                 </div>
             </form>
 

@@ -25,13 +25,14 @@
                     <?php
                     $no = 1;
                     foreach ($oauth_user as $o) :
+                        if($o['role'] === 'User') {
                     ?>
                     <tr>
                         <td><?= $no++; ?></td>
                         <td><?= $o['nip'] ?></td>
                         <td><?= $o['first_name'], " ",$o['last_name'] ?></td>
                         <td><?= $o['unit_kerja'] ?></td>
-                        <td><?= $o['role'] ?></td>
+                        <td><?= $o['role']; }?></td>
                     </tr>
                     <?php
                     endforeach;

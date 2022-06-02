@@ -20,6 +20,7 @@ class userController extends ResourceController
     {
         $this->user = new UserModel();
         $this->User = new User();
+        $this->session 	= \Config\Services::session();
     }
     use ResponseTrait;
     public function index()
@@ -53,7 +54,7 @@ class userController extends ResourceController
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
             $this->User->insert($data);
-            return redirect()->to('/login');
+            return redirect()->to('/dashboard');
         } else {
             $data['validation'] = $this->validator;
             echo view('register', $data);
@@ -80,14 +81,15 @@ class userController extends ResourceController
             $pass = $data['password'];
             $verify_pass = password_verify($password, $pass);
             if ($verify_pass) {
-                $ses_data = [
+                $session->set([
                     'id_user'  => $data['id_user'],
                     'username' => $data['username'],
                     'email'    => $data['email'],
+                    'role'    => $data['role'],
                     'token_id' => null,
                     'logged_in'     => TRUE
-                ];
-                $session->set($ses_data);
+                ]);
+               //dd( session()->get('logged_in'));
                 return redirect()->to('/dashboard');
             } else {
                 $session->setFlashdata('msg', 'Wrong Password');
@@ -279,8 +281,16 @@ class userController extends ResourceController
     public function getToken()
     {
     }
+    
+    
     public function logout()
-    { session()->destroy();
+    { 
+        $session = session();
+        $session->set([
+           
+            'token_id'      => null,
+            'logged_in'     => false
+        ]);
         return redirect()->to('/login');
     }
 }

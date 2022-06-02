@@ -34,14 +34,27 @@ $routes->setAutoRoute(true);
 $routes->get('/login', 'userController::index');
 $routes->get('/', 'userController::index');
 $routes->post('/login_api', 'userController::login');
-$routes->get('/logout', 'userController::logout');
+$routes->add('/logout', 'userController::logout');
 
 
 $routes->post('/auth', 'userController::auth');
 $routes->get('/register', 'RegisterController::index');
 $routes->post('/reg', 'userController::authregister');
-$routes->get('/dashboard', 'Home::dashboard');
+
+$routes->get('/dashboard', 'Home::dashboard',['filter' => 'loginFilter']);
 $routes->get('/request', 'Home::request');
+$routes->group('', ['filter' => 'loginFilter'], function($routes) {
+    $routes->get('/admin', 'Home::admin');
+    $routes->get('/user', 'Home::user');
+    $routes->get('/order', 'Home::order');
+    $routes->get('/admin', 'Home::admin');
+    $routes->get('/user', 'Home::user');
+    $routes->get('/order', 'Home::order');
+    $routes->get('/driver', 'Home::driver');
+});
+
+
+
 $routes->get('/admin', 'Home::admin');
 $routes->get('/user', 'Home::user');
 $routes->get('/order', 'Home::order');

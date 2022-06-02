@@ -71,7 +71,7 @@
                 <div class="modal-body">Pilih "Logout" jika anda ingin mengakhiri sesi.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="<?= base_url() ?>" /logout>Logout</a>
+                    <a class="btn btn-primary" href="<?= base_url('logout') ?>">Logout</a>
                 </div>
             </div>
         </div>
