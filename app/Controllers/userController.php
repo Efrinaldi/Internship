@@ -84,6 +84,8 @@ class userController extends ResourceController
                 $session->set([
                     'id_user'  => $data['id_user'],
                     'username' => $data['username'],
+                    'first_name' =>$data['first_name'],
+                    'last_name' =>$data['last_name'],
                     'email'    => $data['email'],
                     'role'    => $data['role'],
                     'token_id' => null,

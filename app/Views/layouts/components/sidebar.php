@@ -67,7 +67,7 @@
     <!-- Divider -->
     <?php endif; ?>
 
-    <?php if (adminLogin()->role === 'admin') : ?>
+    <?php if (adminLogin()->role === 'Admin') : ?>
     <!-- Divider -->
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->

@@ -28,9 +28,9 @@
     <link rel="stylesheet" href="./AdminLTE 2 _ Log in_files/css">
 </head>
 
-<body class="hold-transition login-page">
+<body class="bg-primary">
     <div class="login-box">
-        <div class="login-logo">
+        <div class="">
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
