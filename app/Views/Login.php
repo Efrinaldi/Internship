@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Log in</title>
+    <title>BCA SYARIAH | Log in</title>
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="<?= base_url() ?>/AdminLTE 2 _ Log in_files/bootstrap.min.css">
@@ -28,10 +28,8 @@
     <link rel="stylesheet" href="./AdminLTE 2 _ Log in_files/css">
 </head>
 
-<body class="bg-primary">
+<body class="bg-gradient-primary">
     <div class="login-box">
-        <div class="">
-        </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
             <p class="login-box-msg">

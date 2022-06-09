@@ -98,7 +98,7 @@ class OrderController extends BaseController
             'tanggal' => $this->request->getVar('date')
         ]);
 
-        return redirect('request');
+        return redirect()->to('request')->with('success', 'Pesanan masuk. Segera proses pesanan!');
     }
     public function post_order()
     {
@@ -192,5 +192,15 @@ class OrderController extends BaseController
         $notif->sendNotificationDriver($device_token_driver);
         $notif->sendNotificationUser($device_token_user, $nama_pengemudi);
         return view('dashboard');
+    }
+
+    public function approve_order($id)
+    {
+        $builder = new OrderModel();
+        $builder->where('id',$id );
+        $builder->set('status', 1);
+        $builder->update();
+
+        return redirect()->back()->with('success', 'Data Berhasil Disetujui');
     }
 }

@@ -94,11 +94,11 @@ class userController extends ResourceController
                //dd( session()->get('logged_in'));
                 return redirect()->to('/dashboard');
             } else {
-                $session->setFlashdata('msg', 'Wrong Password');
+                $session->setFlashdata('msg', 'Kata sandi salah');
                 return redirect()->to('/login');
             }
         } else {
-            $session->setFlashdata('msg', 'Email not Found');
+            $session->setFlashdata('msg', 'Email tidak terdaftar');
             return redirect()->to('/login');
         }
     }

@@ -30,7 +30,7 @@ class Home extends BaseController
         //     'order' => $order,
         // ];
         $order = new OrderModel();
-        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.id_user,oauth_user.nama_user,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE pemesanan.id IS NULL");
+        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.id_user,oauth_user.nama_user,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE orders.status = 0");
         $rows = $query->getResultArray();
 
         $data = [
@@ -39,7 +39,7 @@ class Home extends BaseController
         return view('order', $data);
         // return view('order', $data);
     }
-
+    
     public function driver()
     {
         $driver = $this->Driver_model
@@ -56,7 +56,19 @@ class Home extends BaseController
     }
     public function process()
     {
-        return view('process');
+        // $order = $this->Order_model->findAll();
+        // $data = [
+        //     'order' => $order,
+        // ];
+        $order = new OrderModel();
+        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.id_user,oauth_user.nama_user,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE orders.status = 1");
+        $rows = $query->getResultArray();
+
+        $data = [
+            'order' => $rows,
+        ];
+        return view('process', $data);
+        // return view('order', $data);
     }
     public function request()
     {

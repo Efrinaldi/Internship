@@ -52,7 +52,7 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="<?=base_url("/order")?>">
+        <a class="nav-link" href="<?=base_url("/process")?>">
             <i class="fas fa-clipboard-list"></i>
             <span>Daftar Pesanan</span></a>
     </li>
@@ -84,6 +84,19 @@
         <a class="nav-link" href="<?=base_url("/order")?>">
             <i class="fas fa-clipboard-list"></i>
             <span>Daftar Pesanan</span></a>
+    </li>
+    <!-- Divider -->
+
+    <?php endif; ?>
+
+    <?php if (adminLogin()->role === 'User') : ?>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?=base_url("/request")?>">
+            <i class="fas fa-address-card"></i>
+            <span>Pesan Kendaraan</span></a>
     </li>
     <!-- Divider -->
 

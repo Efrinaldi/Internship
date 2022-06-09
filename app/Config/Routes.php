@@ -31,14 +31,14 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/login', 'userController::index');
-$routes->get('/', 'userController::index');
-$routes->post('/login_api', 'userController::login');
-$routes->add('/logout', 'userController::logout');
+$routes->get('/login', 'UserController::index');
+$routes->get('/', 'UserController::index');
+$routes->post('/login_api', 'UserController::login');
+$routes->add('/logout', 'UserController::logout');
 
 
-$routes->post('/auth', 'userController::auth');
-$routes->post('/reg', 'userController::authregister');
+$routes->post('/auth', 'UserController::auth');
+$routes->post('/reg', 'UserController::authregister');
 
 $routes->group('', ['filter' => 'loginFilter'], function($routes) {
     $routes->get('/register', 'RegisterController::index');
@@ -58,8 +58,8 @@ $routes->group('', ['filter' => 'loginFilter'], function($routes) {
 
     $routes->get('/history', 'Home::history');
     $routes->get('/process', 'Home::process');
-    $routes->get('/login_api', 'userController::login');
-    $routes->get('/getUser', 'userController::get_user');
+    $routes->get('/login_api', 'UserController::login');
+    $routes->get('/getUser', 'UserController::get_user');
     $routes->post('send-notification', 'NotificationController::send');
     $routes->get('/getOrder/(:segmen)', 'OrderController::order/$1');
     $routes->post('/insertOrder', 'OrderController::post_order');
@@ -68,6 +68,8 @@ $routes->group('', ['filter' => 'loginFilter'], function($routes) {
     $routes->post('/insertStatus', 'DriverController::insert_status');
     $routes->add('/updateToken/(:segment)', 'UserController::update_token/$1');
     $routes->add('/updatePlatNomor/(:segment)', 'DriverController::update_plat/$1');
+    
+    $routes->get('approve/(:num)', 'OrderController::approve_order/$1');
 });
 
 

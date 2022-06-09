@@ -4,6 +4,11 @@
         <i class="fa fa-bars"></i>
     </button>
     <!-- Topbar Navbar -->
+    <?php if (!empty(session()->getFlashdata('success'))) : ?>
+    <div class="alert alert-success alert-dismissible fade show mt-auto" role="alert">
+        <?php echo session()->getFlashdata('success'); ?>
+    </div>
+    <?php endif; ?>
     <ul class="navbar-nav ml-auto">
         <div class="topbar-divider d-none d-sm-block"></div>
         <!-- Nav Item - User Information -->
@@ -26,3 +31,11 @@
         </li>
     </ul>
 </nav>
+
+<script>
+window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function() {
+        $(this).remove();
+    });
+}, 3000);
+</script>
