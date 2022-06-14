@@ -88,6 +88,7 @@ class userController extends ResourceController
                     'last_name' =>$data['last_name'],
                     'email'    => $data['email'],
                     'role'    => $data['role'],
+                    'unit_kerja' => $data['unit_kerja'],
                     'token_id' => null,
                     'logged_in'     => TRUE
                 ]);

@@ -79,9 +79,12 @@ class OrderController extends BaseController
     {
         $driver = new DriverModel();
 
-        $driver = $driver->findAll();
+       // $driver = $driver->findAll();
+        $query   = $driver->query("select *  FROM pengemudi WHERE status_pengemudi = 'Tersedia'");
+        $rows = $query->getResultArray();
+      
         $data = [
-            'driver' => $driver,
+            'driver' => $rows,
         ];
         session()->set('id_order', $id_order);
         return view('pick_driver', $data);
@@ -95,8 +98,10 @@ class OrderController extends BaseController
             'unit_kerja'=> $this->request->getVar ('unit'), 
             'waktu'=> $this->request->getVar('time'), 
             'nama'=> $this->request->getVar('name'), 
-            'tanggal' => $this->request->getVar('date')
+            'tanggal' => $this->request->getVar('date'),
+            'keterangan' => $this->request->getVar('keterangan')
         ]);
+      
 
         return redirect()->to('request')->with('success', 'Pesanan masuk. Segera proses pesanan!');
     }
@@ -114,7 +119,6 @@ class OrderController extends BaseController
                 "unit_kerja" => $this->request->getPost('unit_kerja'),
                 "nama" => $this->request->getPost('nama'),
                 "tanggal" => $this->request->getPost('tanggal'),
-
                 "waktu" => $this->request->getPost('waktu'),
                 "tujuan" => $this->request->getPost('tujuan'),
                 "id_user" => $this->request->getPost('id_user'),
@@ -169,7 +173,10 @@ class OrderController extends BaseController
         $order = new OrdersModel();
         $notif = new NotificationController();
         $user = new UserModel();
+
         $orders = new OrderModel();
+            
+        
         $id_order = (int)session()->get('id_order');
         $data_order = $orders->where('ID', $id_order)->first();
         $id_user = $data_order['id_user'];
@@ -188,10 +195,13 @@ class OrderController extends BaseController
         $response = [
             "message" => "data berhasil disimpan"
         ];
+        
+        
+        $orders->update($data_order,['keterangan' => 'Approve']);
         $this->orders->insert($data_json);
         $notif->sendNotificationDriver($device_token_driver);
         $notif->sendNotificationUser($device_token_user, $nama_pengemudi);
-        return view('dashboard');
+        return redirect()->to('dashboard')->with('success', 'Pesanan diterima pengemudi!');
     }
 
     public function approve_order($id)

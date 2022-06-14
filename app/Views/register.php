@@ -68,8 +68,13 @@
                     <input type="text" id="InputForNIP" name="nip" class="form-control" placeholder="NIP">
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="text" id="InputForUnitKerja" name="unit_kerja" class="form-control"
-                        placeholder="Unit Kerja">
+                    <select name="unit_kerja" class="form-control">
+                        <option value="">Unit Kerja</option>
+                        <option value="SKTILOG">SKTILOG</option>
+                        <option value="SKHSDM">SKHSDM</option>
+                        <option value="SKAI">SKAI</option>
+                        <option value="BSIT">BSIT</option>
+                    </select>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="password" name="password" class="form-control" placeholder="Password">

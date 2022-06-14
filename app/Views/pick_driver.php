@@ -30,7 +30,7 @@
                         <td><?= $d['status_pengemudi'] ?></td>
                         <td>
                             <a href="<?= base_url('insert_order/' . $d['id_pengemudi']) ?>"
-                                class="btn btn-warning">Pilih driver</a>
+                                class="btn btn-success">Pilih</a>
                         </td>
                     </tr>
                     <?php
