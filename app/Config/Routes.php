@@ -40,7 +40,7 @@ $routes->add('/logout', 'UserController::logout');
 $routes->post('/auth', 'UserController::auth');
 $routes->post('/reg', 'UserController::authregister');
 
-$routes->group('', ['filter' => 'loginFilter'], function($routes) {
+$routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('/register', 'RegisterController::index');
     $routes->get('/admin', 'Home::admin');
     $routes->get('/dashboard', 'Home::dashboard');

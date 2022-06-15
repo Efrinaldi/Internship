@@ -6,9 +6,39 @@
         <h1 class="h3 mb-0 text-gray-800">Operational Vehicle Management System - BCA Syariah</h1>
     </div>
 
-    <div>
-        <h1>Disetujui</h1>
-    </div>
+    <body>
+        <div class="container">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>Nomor</th>
+                        <th>Nama</th>
+                        <th>Unit Kerja</th>
+                        <th>Waktu</th>
+                        <th>Tujuan</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $no = 1;
+                    foreach ($order as $o) :
+                    ?>
+                    <tr>
+                        <td><?= $no++; ?></td>
+                        <td><?= $o['nama'] ?></td>
+                        <td><?= $o['unit_kerja'] ?></td>
+                        <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
+                        <td><?= $o['tujuan'] ?></td>
+                        <td><?= $o['keterangan'] ?></td>
+                    </tr>
+                    <?php
+                    endforeach;
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </body>
 
 
 </div>
