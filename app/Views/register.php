@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="AdminLTE%202%20Registration%20Page_files/css.css">
 </head>
 
-<body class="hold-transition register-page">
+<body class="bg-primary">
     <div class="register-box">
         <div class="register-logo">
             <a href=""><b>Admin BCA Syariah</b></a>

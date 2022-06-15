@@ -28,37 +28,40 @@
     <link rel="stylesheet" href="./AdminLTE 2 _ Log in_files/css">
 </head>
 
-<body class="bg-gradient-primary">
-    <div class="login-box">
-        <!-- /.login-logo -->
-        <div class="login-box-body">
-            <p class="login-box-msg">
-                <img src="<?= base_url('assets') ?>/img/bcas.png" alt="" width="290" height="100"
-                    style="padding:15px 0 0 0">
-            </p>
+<body class="bg-primary">
+    <div class="container d-flex justify-content-center" style="padding: 100px;">
+        <div class="login-box">
+            <!-- /.login-logo -->
+            <div class="login-box-body">
+                <p class="login-box-msg">
+                    <img src="<?= base_url('assets') ?>/img/bcas.png" alt="" width="290" height="100"
+                        style="padding:15px 0 0 0">
+                </p>
 
-            <form action="<?= base_url() ?>/auth" method="post">
-                <?php if (session()->getFlashdata('msg')) : ?>
-                <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
-                <?php endif; ?>
-                <div class="form-group has-feedback">
-                    <input type="email" name="email" class="form-control" placeholder="Email" id="email"
-                        value="<?= set_value('email') ?>">
-                </div>
-                <div class="form-group has-feedback">
-                    <input type="password" class="form-control" name="password" placeholder="Password" id="password"
-                        value="<?= set_value('password') ?>">
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign in</button>
+                <form action="<?= base_url() ?>/auth" method="post">
+                    <?php if (session()->getFlashdata('msg')) : ?>
+                    <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
+                    <?php endif; ?>
+                    <div class="form-group has-feedback">
+                        <input type="email" name="email" class="form-control" placeholder="Email" id="email"
+                            value="<?= set_value('email') ?>">
                     </div>
-                </div>
-            </form>
+                    <div class="form-group has-feedback">
+                        <input type="password" class="form-control" name="password" placeholder="Password" id="password"
+                            value="<?= set_value('password') ?>">
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- /.login-box-body -->
         </div>
-        <!-- /.login-box-body -->
+        <!-- /.login-box -->
     </div>
-    <!-- /.login-box -->
+
 
     <!-- jQuery 3 -->
     <script src="./AdminLTE 2 _ Log in_files/jquery.min.js.download"></script>

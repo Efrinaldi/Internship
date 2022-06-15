@@ -33,7 +33,7 @@
                         <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
                         <td><?= $o['tujuan'] ?></td>
                         <td>
-                            <a href="#" class="btn btn-danger">Tolak</a>
+                            <a href="reject/<?=$o['ID']?>" class="btn btn-danger">Tolak</a>
                             <a href="approve/<?=$o['ID']?>" class="btn btn-success">Terima</a>
                         </td>
                     </tr>

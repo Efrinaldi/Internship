@@ -47,17 +47,17 @@ $routes->group('', ['filter' => 'loginFilter'], function($routes) {
     $routes->get('/request', 'Home::request');
     $routes->get('/user', 'Home::user');
     $routes->get('/order', 'Home::order');
+    $routes->get('/history', 'Home::history');
+    $routes->get('/process', 'Home::process');
+    $routes->get('/driver', 'Home::driver');
+    $routes->get('/history_approve', 'Home::history_approve');
+    $routes->get('/history_reject', 'Home::history_reject');
     $routes->get('/pick_driver/(:segment)', 'OrderController::show_order/$1');
     $routes->add('/insert_order/(:segment)', 'OrderController::insert_order/$1');
     $routes->get('/order/(:segment)', 'OrderController::order/$1');
     $routes->get('/order_driver/(:segment)', 'OrderController::order_driver/$1');
-
     $routes->get('/showOrder/(:segment)', 'OrderController::showOrder/$1');
-    $routes->get('/driver', 'Home::driver');
     $routes->get('/getMobil', 'DriverController::getMobil');
-
-    $routes->get('/history', 'Home::history');
-    $routes->get('/process', 'Home::process');
     $routes->get('/login_api', 'UserController::login');
     $routes->get('/getUser', 'UserController::get_user');
     $routes->post('send-notification', 'NotificationController::send');
@@ -68,8 +68,8 @@ $routes->group('', ['filter' => 'loginFilter'], function($routes) {
     $routes->post('/insertStatus', 'DriverController::insert_status');
     $routes->add('/updateToken/(:segment)', 'UserController::update_token/$1');
     $routes->add('/updatePlatNomor/(:segment)', 'DriverController::update_plat/$1');
-    
     $routes->get('approve/(:num)', 'OrderController::approve_order/$1');
+    $routes->get('reject/(:num)', 'OrderController::reject_order/$1');
 });
 
 

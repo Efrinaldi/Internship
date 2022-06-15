@@ -213,4 +213,14 @@ class OrderController extends BaseController
 
         return redirect()->back()->with('success', 'Data Berhasil Disetujui');
     }
+
+    public function reject_order($id)
+    {
+        $builder = new OrderModel();
+        $builder->where('ID',$id );
+        $builder->set('keterangan', 'Reject');
+        $builder->update();
+
+        return redirect()->back()->with('success', 'Data Berhasil Ditolak');
+    }
 }
