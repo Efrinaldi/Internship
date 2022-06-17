@@ -44,14 +44,14 @@
             <form action="<?= base_url() ?>/reg" method="post">
                 <div class="form-group has-feedback">
                     <input type="text" id="InputForFirstName" name="first_name" class="form-control"
-                        placeholder="First name">
+                        placeholder="First name" required>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="text" id="InputForLastName" name="last_name" class="form-control"
-                        placeholder="Last name">
+                        placeholder="Last name" required>
                 </div>
                 <div class="form-group has-feedback">
-                    <select name="role" class="form-control">
+                    <select name="role" class="form-control" required>
                         <option value="">Role</option>
                         <option value="Admin">Admin</option>
                         <option value="User">User</option>
@@ -59,16 +59,18 @@
                     </select>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="text" id="InputForName" name="username" class="form-control" placeholder="Username">
+                    <input type="text" id="InputForName" name="username" class="form-control" placeholder="Username"
+                        required>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="email" id="InputForEmail" name="email" class="form-control" placeholder="Email">
+                    <input type="email" id="InputForEmail" name="email" class="form-control" placeholder="Email"
+                        required>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="text" id="InputForNIP" name="nip" class="form-control" placeholder="NIP">
+                    <input type="text" id="InputForNIP" name="nip" class="form-control" placeholder="NIP" required>
                 </div>
                 <div class="form-group has-feedback">
-                    <select name="unit_kerja" class="form-control">
+                    <select name="unit_kerja" class="form-control" required>
                         <option value="">Unit Kerja</option>
                         <option value="SKTILOG">SKTILOG</option>
                         <option value="SKHSDM">SKHSDM</option>
@@ -77,10 +79,11 @@
                     </select>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" name="password" class="form-control" placeholder="Password">
+                    <input type="password" name="password" class="form-control" placeholder="Password" required>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" name="confpassword" class="form-control" placeholder="Retype password">
+                    <input type="password" name="confpassword" class="form-control" placeholder="Retype password"
+                        required>
                 </div>
                 <div class="row">
                     <!-- /.col -->
@@ -90,7 +93,6 @@
                     <!-- /.col -->
                 </div>
             </form>
-
         </div>
         <!-- /.form-box -->
     </div>

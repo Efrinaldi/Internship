@@ -20,7 +20,7 @@ class userController extends ResourceController
     {
         $this->user = new UserModel();
         $this->User = new User();
-        $this->session 	= \Config\Services::session();
+        $this->session     = \Config\Services::session();
     }
     use ResponseTrait;
     public function index()
@@ -84,15 +84,15 @@ class userController extends ResourceController
                 $session->set([
                     'id_user'  => $data['id_user'],
                     'username' => $data['username'],
-                    'first_name' =>$data['first_name'],
-                    'last_name' =>$data['last_name'],
+                    'first_name' => $data['first_name'],
+                    'last_name' => $data['last_name'],
                     'email'    => $data['email'],
                     'role'    => $data['role'],
                     'unit_kerja' => $data['unit_kerja'],
                     'token_id' => null,
                     'logged_in'     => TRUE
                 ]);
-               //dd( session()->get('logged_in'));
+                //dd( session()->get('logged_in'));
                 return redirect()->to('/dashboard');
             } else {
                 $session->setFlashdata('msg', 'Kata sandi salah');
@@ -284,13 +284,13 @@ class userController extends ResourceController
     public function getToken()
     {
     }
-    
-    
+
+
     public function logout()
-    { 
+    {
         $session = session();
         $session->set([
-           
+
             'token_id'      => null,
             'logged_in'     => false
         ]);
