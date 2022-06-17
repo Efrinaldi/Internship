@@ -12,7 +12,7 @@
             <p>Anda dapat melakukan pemesanan kendaraan operasional</p>
 
 
-            <form class="row g-3" action="<?=base_url()?>/requestOrder" method="post" autocomplete="off">
+            <form class="row g-3" action="<?= base_url() ?>/requestOrder" method="post" autocomplete="off">
                 <?= csrf_field(); ?>
                 <div class="col-md-6">
                     <label for="inputNama" class="form-label">Nama Karyawan</label>
@@ -20,7 +20,13 @@
                 </div>
                 <div class="col-md-6">
                     <label for="inputUnit" class="form-label">Unit Kerja</label>
-                    <input type="text" class="form-control" id="inputUnit" name="unit">
+                    <select type="text" class="form-control" id="inputUnit" name="unit">
+                        <option value="">Pilih Unit Kerja</option>
+                        <option value="SKTILOG">SKTILOG</option>
+                        <option value="SKHSDM">SKHSDM</option>
+                        <option value="SKAI">SKAI</option>
+                        <option value="BSIT">BSIT</option>
+                    </select>
                 </div>
                 <div class="col-md-6">
                     <label for="inputWaktu" class="form-label">Waktu</label>

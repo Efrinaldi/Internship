@@ -13,6 +13,7 @@
                     <tr>
                         <th>Nomor</th>
                         <th>Nama</th>
+                        <th>NIP</th>
                         <th>Unit Kerja</th>
                         <th>Waktu</th>
                         <th>Tujuan</th>
@@ -27,6 +28,7 @@
                     <tr>
                         <td><?= $no++; ?></td>
                         <td><?= $o['nama'] ?></td>
+                        <td><?= $o['nip'] ?></td>
                         <td><?= $o['unit_kerja'] ?></td>
                         <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
                         <td><?= $o['tujuan'] ?></td>

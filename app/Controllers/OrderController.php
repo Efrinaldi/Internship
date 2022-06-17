@@ -79,10 +79,10 @@ class OrderController extends BaseController
     {
         $driver = new DriverModel();
 
-       // $driver = $driver->findAll();
+        // $driver = $driver->findAll();
         $query   = $driver->query("select *  FROM pengemudi WHERE status_pengemudi = 'Tersedia'");
         $rows = $query->getResultArray();
-      
+
         $data = [
             'driver' => $rows,
         ];
@@ -95,13 +95,14 @@ class OrderController extends BaseController
         $order = new OrderModel();
         $order->insert([
             'tujuan' => $this->request->getVar('destination'),
-            'unit_kerja'=> $this->request->getVar ('unit'), 
-            'waktu'=> $this->request->getVar('time'), 
-            'nama'=> $this->request->getVar('name'), 
+            'unit_kerja' => $this->request->getVar('unit'),
+            'waktu' => $this->request->getVar('time'),
+            'nama' => $this->request->getVar('name'),
             'tanggal' => $this->request->getVar('date'),
-            'keterangan' => $this->request->getVar('keterangan')
+            'keterangan' => $this->request->getVar('keterangan'),
+            'id_user' => session()->get('id_user'),
         ]);
-      
+
 
         return redirect()->to('request')->with('success', 'Pesanan masuk. Segera proses pesanan!');
     }
@@ -175,8 +176,8 @@ class OrderController extends BaseController
         $user = new UserModel();
 
         $orders = new OrderModel();
-            
-        
+
+
         $id_order = (int)session()->get('id_order');
         $data_order = $orders->where('ID', $id_order)->first();
         $id_user = $data_order['id_user'];
@@ -195,9 +196,9 @@ class OrderController extends BaseController
         $response = [
             "message" => "data berhasil disimpan"
         ];
-        
-        
-        $orders->update($data_order,['keterangan' => 'Approve']);
+
+
+        $orders->update($data_order, ['keterangan' => 'Approve']);
         $this->orders->insert($data_json);
         $notif->sendNotificationDriver($device_token_driver);
         $notif->sendNotificationUser($device_token_user, $nama_pengemudi);
@@ -207,7 +208,7 @@ class OrderController extends BaseController
     public function approve_order($id)
     {
         $builder = new OrderModel();
-        $builder->where('id',$id );
+        $builder->where('id', $id);
         $builder->set('status', 1);
         $builder->update();
 
@@ -217,7 +218,7 @@ class OrderController extends BaseController
     public function reject_order($id)
     {
         $builder = new OrderModel();
-        $builder->where('ID',$id );
+        $builder->where('ID', $id);
         $builder->set('keterangan', 'Reject');
         $builder->update();
 

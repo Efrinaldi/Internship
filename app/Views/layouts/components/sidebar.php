@@ -4,14 +4,17 @@
         <div class="sidebar-brand-icon">
             <i class="fas fa-user-cog"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">BCA SYARIAH</div>
+        <div class="sidebar-brand-text mx-3">
+            <?= session()->get('role') ?>
+            <?= session()->get('unit_kerja') ?>
+        </div>
     </a>
     <?php if (adminLogin()->role === 'Super Admin') : ?>
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="<?=base_url("/dashboard")?>">
+        <a class="nav-link" href="<?= base_url("/dashboard") ?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -20,7 +23,7 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="<?=base_url("/admin")?>">
+        <a class="nav-link" href="<?= base_url("/admin") ?>">
             <i class="fas fa-user-gear"></i>
             <span>Daftar Admin</span></a>
     </li>
@@ -28,7 +31,7 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="<?=base_url("/user")?>">
+        <a class="nav-link" href="<?= base_url("/user") ?>">
             <i class="fas fa-user-friends"></i>
             <span>Daftar User</span></a>
     </li>
@@ -36,7 +39,7 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="<?=base_url("/driver")?>">
+        <a class="nav-link" href="<?= base_url("/driver") ?>">
             <i class="fas fa-car"></i>
             <span>Daftar Pengemudi</span></a>
     </li>
@@ -44,7 +47,7 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="<?=base_url("/request")?>">
+        <a class="nav-link" href="<?= base_url("/request") ?>">
             <i class="fas fa-address-card"></i>
             <span>Pesan Kendaraan</span></a>
     </li>
@@ -52,7 +55,7 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="<?=base_url("/process")?>">
+        <a class="nav-link" href="<?= base_url("/process") ?>">
             <i class="fas fa-clipboard-list"></i>
             <span>Daftar Pesanan</span></a>
     </li>
@@ -60,7 +63,7 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="<?=base_url("/history")?>">
+        <a class="nav-link" href="<?= base_url("/history") ?>">
             <i class="fas fa-history"></i>
             <span>Riwayat Pesanan</span></a>
     </li>
@@ -72,7 +75,7 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="<?=base_url("/request")?>">
+        <a class="nav-link" href="<?= base_url("/request") ?>">
             <i class="fas fa-address-card"></i>
             <span>Pesan Kendaraan</span></a>
     </li>
@@ -81,7 +84,7 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="<?=base_url("/order")?>">
+        <a class="nav-link" href="<?= base_url("/order") ?>">
             <i class="fas fa-clipboard-list"></i>
             <span>Daftar Pesanan</span></a>
     </li>
@@ -94,7 +97,7 @@
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="<?=base_url("/request")?>">
+        <a class="nav-link" href="<?= base_url("/request") ?>">
             <i class="fas fa-address-card"></i>
             <span>Pesan Kendaraan</span></a>
     </li>
