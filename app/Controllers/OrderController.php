@@ -93,18 +93,28 @@ class OrderController extends BaseController
     public function request_order()
     {
         $order = new OrderModel();
-        $order->insert([
-            'tujuan' => $this->request->getVar('destination'),
-            'unit_kerja' => $this->request->getVar('unit'),
-            'waktu' => $this->request->getVar('time'),
-            'nama' => $this->request->getVar('name'),
-            'tanggal' => $this->request->getVar('date'),
-            'keterangan' => $this->request->getVar('keterangan'),
-            'id_user' => session()->get('id_user'),
-        ]);
+        $rules = [
+            'name'          => 'required',
+            'unit'              => 'required',
+            'time'           => 'required',
+            'date'       => 'required',
+            'destination' => 'required'
+        ];
 
+        if ($this->validate($rules)) {
+            $data = [
+                'tujuan' => $this->request->getVar('destination'),
+                'unit_kerja' => $this->request->getVar('unit'),
+                'waktu' => $this->request->getVar('time'),
+                'nama' => $this->request->getVar('name'),
+                'tanggal' => $this->request->getVar('date'),
+                'keterangan' => $this->request->getVar('keterangan'),
+                'id_user' => session()->get('id_user'),
+            ];
 
-        return redirect()->to('request')->with('success', 'Pesanan masuk. Segera proses pesanan!');
+            $order->insert($data);
+            return redirect()->to('request')->with('success', 'Pesanan masuk. Segera proses pesanan!');
+        }
     }
     public function post_order()
     {

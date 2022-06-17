@@ -16,11 +16,11 @@
                 <?= csrf_field(); ?>
                 <div class="col-md-6">
                     <label for="inputNama" class="form-label">Nama Karyawan</label>
-                    <input type="text" class="form-control" id="inputNama" name="name">
+                    <input type="text" class="form-control" id="inputNama" name="name" required>
                 </div>
                 <div class="col-md-6">
                     <label for="inputUnit" class="form-label">Unit Kerja</label>
-                    <select type="text" class="form-control" id="inputUnit" name="unit">
+                    <select type="text" class="form-control" id="inputUnit" name="unit" required>
                         <option value="">Pilih Unit Kerja</option>
                         <option value="SKTILOG">SKTILOG</option>
                         <option value="SKHSDM">SKHSDM</option>
@@ -30,15 +30,15 @@
                 </div>
                 <div class="col-md-6">
                     <label for="inputWaktu" class="form-label">Waktu</label>
-                    <input type="time" class="form-control" id="inputWaktu" name="time">
+                    <input type="time" class="form-control" id="inputWaktu" name="time" required>
                 </div>
                 <div class="col-md-6">
                     <label for="inputTanggal" class="form-label">Tanggal</label>
-                    <input type="date" class="form-control" id="inputTanggal" name="date">
+                    <input type="date" class="form-control" id="inputTanggal" name="date" required>
                 </div>
                 <div class="col-md-6">
                     <label for="inputTujuan" class="form-label">Tujuan</label>
-                    <input type="text" class="form-control" id="inputTujuan" name="destination">
+                    <input type="text" class="form-control" id="inputTujuan" name="destination" required>
                 </div>
                 <input type="hidden" class="form-control " id="keterangan" value="Pending" name="keterangan">
                 <span class="d-flex justify-content-end col-md-12 mt-3 ">
