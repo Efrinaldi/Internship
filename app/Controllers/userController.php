@@ -22,6 +22,7 @@ class userController extends ResourceController
         $this->User = new User();
         $this->session     = \Config\Services::session();
     }
+    protected $helpers = ['custom'];
     use ResponseTrait;
     public function index()
     {
@@ -93,6 +94,9 @@ class userController extends ResourceController
                     'logged_in'     => TRUE
                 ]);
                 //dd( session()->get('logged_in'));
+                if ($data['role'] == 'Admin Reimburse' || $data['role'] == 'Driver') {
+                    return redirect()->to('/homes');
+                }
                 return redirect()->to('/dashboard');
             } else {
                 $session->setFlashdata('msg', 'Kata sandi salah');

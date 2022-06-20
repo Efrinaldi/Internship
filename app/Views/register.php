@@ -56,6 +56,7 @@
                         <option value="Admin">Admin</option>
                         <option value="User">User</option>
                         <option value="Driver">Driver</option>
+                        <option value="Admin Reimburse">Admin Reimburse</option>
                     </select>
                 </div>
                 <div class="form-group has-feedback">

@@ -1,0 +1,127 @@
+ERROR - 2022-06-20 02:50:22 --> Can't create table `bcas_magang`.`reimburse` (errno: 150 "Foreign key constraint is incorrectly formed")
+ERROR - 2022-06-20 02:52:13 --> Can't create table `bcas_magang`.`reimburse` (errno: 150 "Foreign key constraint is incorrectly formed")
+CRITICAL - 2022-06-20 03:07:04 --> Invalid file: homes.php
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('homes.php')
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Common.php(1097): CodeIgniter\View\View->render('homes', Array, true)
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\Home.php(29): view('homes')
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\Home->homes()
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#8 {main}
+CRITICAL - 2022-06-20 03:07:15 --> Invalid file: homes.php
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('homes.php')
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Common.php(1097): CodeIgniter\View\View->render('homes', Array, true)
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\Home.php(29): view('homes')
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\Home->homes()
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#8 {main}
+CRITICAL - 2022-06-20 03:07:47 --> Invalid file: homes.php
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('homes.php')
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Common.php(1097): CodeIgniter\View\View->render('homes', Array, true)
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\Home.php(29): view('homes')
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\Home->homes()
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#8 {main}
+CRITICAL - 2022-06-20 03:57:39 --> isAdmin filter must have a matching alias defined.
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Filters\Filters.php(340): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('isAdmin')
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(375): CodeIgniter\Filters\Filters->enableFilter('isAdmin', 'before')
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#5 {main}
+CRITICAL - 2022-06-20 03:58:02 --> isAdmin filter must have a matching alias defined.
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Filters\Filters.php(340): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('isAdmin')
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(375): CodeIgniter\Filters\Filters->enableFilter('isAdmin', 'before')
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#5 {main}
+CRITICAL - 2022-06-20 04:01:49 --> Class 'App\Controllers\OrdersModel' not found
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(801): App\Controllers\ReimburseController->__construct()
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#5 {main}
+CRITICAL - 2022-06-20 04:03:04 --> Undefined property: App\Controllers\ReimburseController::$model
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\ReimburseController.php(23): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\Users\\muhamm...', 23, Array)
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\ReimburseController->index()
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReimburseController))
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#6 {main}
+CRITICAL - 2022-06-20 04:05:26 --> Call to a member function orderBy() on string
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\ReimburseController->index()
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReimburseController))
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#5 {main}
+CRITICAL - 2022-06-20 04:05:55 --> Call to a member function where() on string
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\ReimburseController->index()
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReimburseController))
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#5 {main}
+CRITICAL - 2022-06-20 04:11:49 --> Undefined property: stdClass::$nama_user
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Views\reimburse\list_order.php(40): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\Users\\muhamm...', 40, Array)
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(214): include('C:\\Users\\muhamm...')
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Common.php(1097): CodeIgniter\View\View->render('reimburse/list_...', Array, true)
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\ReimburseController.php(80): view('reimburse/list_...', Array)
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\ReimburseController->list()
+#6 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReimburseController))
+#7 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#10 {main}
+CRITICAL - 2022-06-20 04:13:51 --> Undefined property: stdClass::$nama_user
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Views\reimburse\list_order.php(40): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\Users\\muhamm...', 40, Array)
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(214): include('C:\\Users\\muhamm...')
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Common.php(1097): CodeIgniter\View\View->render('reimburse/list_...', Array, true)
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\ReimburseController.php(80): view('reimburse/list_...', Array)
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\ReimburseController->list()
+#6 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReimburseController))
+#7 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#10 {main}
+CRITICAL - 2022-06-20 04:21:58 --> Undefined index: nama_user
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Views\reimburse\add_reimburse.php(43): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\muhamm...', 43, Array)
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(214): include('C:\\Users\\muhamm...')
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Common.php(1097): CodeIgniter\View\View->render('reimburse/add_r...', Array, true)
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\ReimburseController.php(92): view('reimburse/add_r...', Array)
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\ReimburseController->add_reimburse('122')
+#6 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReimburseController))
+#7 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#10 {main}
+ERROR - 2022-06-20 04:37:26 --> Unknown column 'deskripsi' in 'field list'
+CRITICAL - 2022-06-20 04:37:26 --> Unknown column 'deskripsi' in 'field list'
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `re...', 0)
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `re...')
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `re...')
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `re...', Array, false)
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\ReimburseController.php(136): CodeIgniter\Model->insert(Array)
+#8 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\ReimburseController->store_reimburse('122')
+#9 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReimburseController))
+#10 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#13 {main}

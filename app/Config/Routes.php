@@ -44,6 +44,7 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('/register', 'RegisterController::index');
     $routes->get('/admin', 'Home::admin');
     $routes->get('/dashboard', 'Home::dashboard');
+    $routes->get('/homes', 'Home::homes');
     $routes->get('/request', 'Home::request');
     $routes->get('/user', 'Home::user');
     $routes->get('/order', 'Home::order');
@@ -70,6 +71,16 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->add('/updatePlatNomor/(:segment)', 'DriverController::update_plat/$1');
     $routes->get('approve/(:num)', 'OrderController::approve_order/$1');
     $routes->get('reject/(:num)', 'OrderController::reject_order/$1');
+    $routes->group('reimburse', function($routes) {
+        $routes->get('/', 'ReimburseController::index', ['filter' => 'isAdmin']);
+        $routes->get('approve', 'ReimburseController::approve', ['filter' => 'isAdmin']);
+        $routes->get('edit/(:any)', 'ReimburseController::edit/$1', ['filter' => 'isAdmin']);
+        $routes->post('update/(:any)', 'ReimburseController::update/$1', ['filter' => 'isAdmin']);
+        $routes->post('delete/(:any)', 'ReimburseController::delete/$1', ['filter' => 'isAdmin']);
+        $routes->get('list', 'ReimburseController::list', ['filter' => 'isDriver']);
+        $routes->get('add_reimburse/(:any)', 'ReimburseController::add_reimburse/$1', ['filter' => 'isDriver']);
+        $routes->post('store_reimburse/(:any)', 'ReimburseController::store_reimburse/$1', ['filter' => 'isDriver']);
+    });
 });
 
 

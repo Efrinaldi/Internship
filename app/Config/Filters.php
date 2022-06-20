@@ -25,7 +25,9 @@ class Filters extends BaseConfig
         'honeypot' => Honeypot::class,
         'cors'      => Cors::class,
         'loginFilter'=> LoginFilter::class,
-        'auth_jwt' => JWTAuthenticationFilter::class // add this line
+        'auth_jwt' => JWTAuthenticationFilter::class, // add this line
+        'isDriver'      => \App\Filters\DriverFilter::class,
+        'isAdmin'       => \App\Filters\AdminFilter::class,
     ];
 
     /**
@@ -75,7 +77,13 @@ class Filters extends BaseConfig
         //         'client', 
         //     ],
         // ],
-
-       
+        'isAdmin' => ['before' =>
+        [
+            'reimburse/approve',
+        ]],
+        'isDriver' => ['before' =>
+        [
+            'reimburse/list',
+        ]],
     ];
 }
