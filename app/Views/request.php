@@ -16,7 +16,8 @@
                 <?= csrf_field(); ?>
                 <div class="col-md-6">
                     <label for="inputNama" class="form-label">Nama Karyawan</label>
-                    <input type="text" class="form-control" id="inputNama" name="name" required>
+                    <input type="text" class="form-control" id="inputNama" name="name" placeholder="Masukkan Nama"
+                        required>
                 </div>
                 <div class="col-md-6">
                     <label for="inputUnit" class="form-label">Unit Kerja</label>
@@ -38,8 +39,15 @@
                 </div>
                 <div class="col-md-6">
                     <label for="inputTujuan" class="form-label">Tujuan</label>
-                    <input type="text" class="form-control" id="inputTujuan" name="destination" required>
+                    <input type="text" class="form-control" id="inputTujuan" name="destination"
+                        placeholder="Pilih Tujuan" required>
                 </div>
+                <div id="map-canvas" hidden></div>
+
+                <script src="<?= base_url('assets/js/javascript.js') ?>"></script>
+                <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8aM8vpu-Y-Qt5hSeeV_mVGGimuwfjpIk&libraries=places&callback=initialize">
+                </script>
                 <input type="hidden" class="form-control " id="keterangan" value="Pending" name="keterangan">
                 <span class="d-flex justify-content-end col-md-12 mt-3 ">
                     <button class="btn btn-primary me-md-2 mb-3" type="submit">Submit</button>

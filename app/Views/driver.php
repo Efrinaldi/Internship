@@ -10,6 +10,7 @@
         <div class="container">
             <h2>Daftar Pengemudi</h2>
             <p>Anda dapat mengelola daftar pengemudi</p>
+            <a href="<?= base_url("/register") ?>" class="btn btn-info mb-3">Tambah Driver</a>
             <table class="table table-dark">
                 <thead>
                     <tr>
@@ -24,16 +25,16 @@
                     $no = 1;
                     foreach ($driver as $d) :
                     ?>
-                        <tr>
-                            <td><?= $no++; ?></td>
-                            <td><?= $d['nama_pengemudi'] ?></td>
-                            <td><?= $d['status_pengemudi'] ?></td>
+                    <tr>
+                        <td><?= $no++; ?></td>
+                        <td><?= $d['nama_pengemudi'] ?></td>
+                        <td><?= $d['status_pengemudi'] ?></td>
 
-                            <td>
-                                <a href="" class="btn btn-warning">Detail</a>
-                                <a href="" class="btn btn-primary">Ubah</a>
-                            </td>
-                        </tr>
+                        <td>
+                            <a href="" class="btn btn-warning">Detail</a>
+                            <a href="" class="btn btn-primary">Ubah</a>
+                        </td>
+                    </tr>
                     <?php
                     endforeach;
                     ?>

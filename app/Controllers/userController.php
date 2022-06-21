@@ -25,7 +25,7 @@ class userController extends ResourceController
     use ResponseTrait;
     public function index()
     {
-        if (session('username')) {
+        if (session('logged_in') == true) {
             return redirect()->back();
         }
         //include helper form

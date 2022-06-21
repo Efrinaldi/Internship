@@ -52,10 +52,12 @@ class Home extends BaseController
         ];
         return view('driver', $data);
     }
+
     public function history()
     {
         return view('history');
     }
+
     public function process()
     {
         // $order = $this->Order_model->findAll();
