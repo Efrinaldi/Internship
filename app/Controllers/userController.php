@@ -25,11 +25,15 @@ class userController extends ResourceController
     use ResponseTrait;
     public function index()
     {
+        if (session('username')) {
+            return redirect()->back();
+        }
         //include helper form
         helper(['form']);
         $data = [];
         echo view('login', $data);
     }
+
     public function authregister()
     {
         helper(['form']);
