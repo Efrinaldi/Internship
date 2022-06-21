@@ -54,6 +54,7 @@ class ReimburseController extends BaseController
 
     public function approve()
     {
+        $session = \Config\Services::session();
         $keyword = $this->request->getGet('keyword');
         $tglAwal = $this->request->getGet('tgl_awal');
         $tglAkhir = $this->request->getGet('tgl_akhir');
@@ -68,12 +69,16 @@ class ReimburseController extends BaseController
             'tgl_akhir' => $tglAkhir,
             'reimburse' => $reimburses
         ];
+        if($timestamp_akhir < $timestamp_awal) {
+            $session->setFlashdata('error', 'Masukkan Data tanggal dengan Benar');
+        }
         return view('reimburse/approve', $data);
     }
 
     public function list()
     {
-        $data_join =  $this->model->getList()->getResult();
+        $get_id_pengemudi = session()->get('id_user');
+        $data_join =  $this->model->getList($get_id_pengemudi)->getResult();
         $data = array(        
             'list' => $data_join   
             );

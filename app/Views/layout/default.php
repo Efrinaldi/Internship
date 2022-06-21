@@ -62,7 +62,7 @@
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="<?= site_url('/login'); ?>" class="dropdown-item has-icon text-danger" id="logout" data-confirm="Logout ?|Anda yakin keluar ?" data-confirm-yes="returnLogout()">
+                            <a href="<?= site_url('/logout'); ?>" class="dropdown-item has-icon text-danger" id="logout" data-confirm="Logout ?|Anda yakin keluar ?" data-confirm-yes="returnLogout()">
                                 <i class="fas fa-sign-out-alt"></i> Logout
                             </a>
                         </div>

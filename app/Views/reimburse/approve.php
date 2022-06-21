@@ -113,29 +113,30 @@
             $(".alert").fadeTo(500,0).slideUp(500,function(){
                 $(this).remove();
             });
-        }, 3000);
-        
-        $("#datepicker1").datepicker( {
-            format: "dd-mm-yyyy",
-            startView: "day", 
-            minViewMode: "day",
-        });
-        $("#datepicker2").datepicker({
-            format: "dd-mm-yyyy",
-            startView: "day", 
-            minViewMode: "day",
-        });
+        }, 2000);
+
         $(document).ready(function()
         {
             $("#btnSearch").click(function()
             {
+                // var startDt=document.getElementById("tgl_awal").value;
+                // var endDt=document.getElementById("tgl_akhir").value;
+
+                // if( (new Date(startDt).getTime() > new Date(endDt).getTime()))
+                // {
+                //     alert('tanggal 2 melebihi tanggal 1!');
+                //     return false;
+                // }
                 $("#entryTable").toggle()
             });
         });
         $(document).ready(function () {
+            let key = $('#keyword').val()
+            let awal = $('#tgl_awal').val()
+            let akhir = $('#tgl_awal').val()
             $("#exportBtn1").click(function(){
                 TableToExcel.convert(document.getElementById("entryTable"), {
-                    name: "Traceability.xlsx",
+                    name: key+awal+akhir+".xlsx",
                     sheet: {
                         name: "Sheet1"
                     }

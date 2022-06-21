@@ -17,6 +17,25 @@
             <div class="card-header">
                 <h4>Data List Perjalanan Order</h4>
             </div>
+            <?php if (session()->getFlashdata('success')) : ?>
+                <div class="alert alert-success alert-dismissible show fade">
+                    <div class="alert-body">
+                        <button class="close" data-dismiss="alert">x</button>
+                        <b>Success !</b>
+                        <?= session()->getFlashdata('success'); ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+            <?php if (session()->getFlashdata('error')) : ?>
+                <div class="alert alert-danger alert-dismissible show fade">
+                    <div class="alert-body">
+                        <button class="close" data-dismiss="alert">x</button>
+                        <b>error !</b>
+                        <?= session()->getFlashdata('error'); ?>
+                    </div>
+                </div>
+            <?php endif; ?>
             
             <div class="card-body table-responsive">
                 <table class="table table-striped table-md" id="table1">
@@ -59,7 +78,7 @@
             $(".alert").fadeTo(500,0).slideUp(500,function(){
                 $(this).remove();
             });
-        }, 3000);
+        }, 2000);
 
     </script>
 
