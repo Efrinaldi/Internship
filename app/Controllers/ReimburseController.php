@@ -69,9 +69,9 @@ class ReimburseController extends BaseController
             'tgl_akhir' => $tglAkhir,
             'reimburse' => $reimburses
         ];
-        if($timestamp_akhir < $timestamp_awal) {
-            $session->setFlashdata('error', 'Masukkan Data tanggal dengan Benar');
-        }
+        // if($timestamp_akhir < $timestamp_awal) {
+        //     $session->setFlashdata('error', 'Masukkan Data tanggal dengan Benar');
+        // }
         return view('reimburse/approve', $data);
     }
 

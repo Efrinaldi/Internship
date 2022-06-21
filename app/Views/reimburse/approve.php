@@ -119,14 +119,14 @@
         {
             $("#btnSearch").click(function()
             {
-                // var startDt=document.getElementById("tgl_awal").value;
-                // var endDt=document.getElementById("tgl_akhir").value;
+                var startDt=document.getElementById("tgl_awal").value;
+                var endDt=document.getElementById("tgl_akhir").value;
 
-                // if( (new Date(startDt).getTime() > new Date(endDt).getTime()))
-                // {
-                //     alert('tanggal 2 melebihi tanggal 1!');
-                //     return false;
-                // }
+                if( (new Date(startDt).getTime() > new Date(endDt).getTime()))
+                {
+                    alert('tanggal awal melebihi tanggal akhir!');
+                    return false;
+                }
                 $("#entryTable").toggle()
             });
         });
