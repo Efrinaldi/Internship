@@ -24,9 +24,7 @@ class ReimburseController extends BaseController
 
     public function index()
     {
-        $data['reimburse'] = $this->model->orderBy('created_at', 'DESC')
-            ->where('status', 'Requesting')
-            ->findAll();
+        $data['reimburse'] = $this->model->getPemesanan()->getResult();
         return view('reimburse/index', $data);
     }
 

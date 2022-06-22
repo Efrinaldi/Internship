@@ -42,13 +42,15 @@
                 <table class="table table-striped table-md" id="table1">
                     <thead>
                         <tr>
-                            <th>
+                            <!-- <th>
                                 <div class="custom-checkbox custom-control">
                                 <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad" class="custom-control-input" id="checkbox-all">
                                 <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
                                 </div>
-                            </th>
+                            </th> -->
                             <th>No</th>
+                            <th>Nama Pengemudi</th>
+                            <th>Tanggal Pengajuan</th>
                             <th>Foto</th>
                             <th>Deskripsi</th>
                             <th>Nominal</th>
@@ -59,13 +61,15 @@
                     <tbody>
                         <?php foreach ($reimburse as $key => $value) : ?>
                             <tr>
-                                <td class="p-0 text-center">
+                                <!-- <td class="p-0 text-center">
                                     <div class="custom-checkbox custom-control">
                                         <input type="checkbox" data-checkboxes="mygroup" name="pilih" class="custom-control-input" id="checkbox-.<?= $key + 1; ?>">
                                         <label for="checkbox-.<?= $key + 1; ?>" class="custom-control-label">&nbsp;</label>
                                     </div>
-                                </td>
+                                </td> -->
                                 <td><?= $key + 1; ?></td>
+                                <td><?= $value->nama_pengemudi; ?></td>
+                                <td><?= date('d F, Y', strtotime($value->created_at)); ?></td>
                                 <td><a href="<?= base_url() . "/template/assets/img/upload/" . $value->photo; ?>" target="_blank"><img width="75px" class="img-thumbnail" src="<?= base_url() . "/template/assets/img/upload/" . $value->photo; ?>"></a></td>
                                 <td><?= $value->deskripsi; ?></td>
                                 <td><?= format_rupiah($value->nominal); ?></td>
@@ -79,8 +83,8 @@
                                 </td>
                                 <td class="text-left">
                                     <a href="<?= site_url('reimburse/edit/' . $value->id); ?>" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
-                                    <a href="#" class="btn btn-success"><i class="fas fa-check"></i></a>
-                                    <a href="#" class="btn btn-danger"><i class="fas fa-times"></i></a>
+                                    <!-- <a href="#" class="btn btn-success"><i class="fas fa-check"></i></a>
+                                    <a href="#" class="btn btn-danger"><i class="fas fa-times"></i></a> -->
                                     <form action="<?= site_url('reimburse/delete/' . $value->id); ?>" method="POST" class="d-inline" id="del-<?= $value->id; ?>">
                                         <?= csrf_field() ?>
                                         <button type="submit" class="btn btn-warning" data-confirm="Hapus Data ?|Apakah Anda yakin ?" data-confirm-yes="submitDel(<?= $value->id; ?>)">
