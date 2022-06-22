@@ -33,10 +33,12 @@
         <div class="login-box">
             <!-- /.login-logo -->
             <div class="login-box-body">
-                <p class="login-box-msg">
-                    <img src="<?= base_url('assets') ?>/img/bcas.png" alt="" width="290" height="100"
-                        style="padding:15px 0 0 0">
-                </p>
+                <div class="table-responsive">
+                    <p class="login-box-msg">
+                        <img src="<?= base_url('assets') ?>/img/bcas.png" alt="" width="330" height="100"
+                            style="padding:15px 0 0 0">
+                    </p>
+                </div>
 
                 <form action="<?= base_url() ?>/auth" method="post">
                     <?php if (session()->getFlashdata('msg')) : ?>

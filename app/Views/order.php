@@ -8,42 +8,45 @@
 
     <body>
         <div class="container">
+
             <h2>Daftar Pesanan</h2>
             <p>Anda dapat mengelola daftar pesanan</p>
-            <table class="table table-dark">
-                <thead>
-                    <tr>
-                        <th>Nomor</th>
-                        <th>Nama</th>
-                        <th>Unit Kerja</th>
-                        <th>Waktu</th>
-                        <th>Tujuan Pakai</th>
-                        <th>Lokasi Tujuan</th>
-                        <th>Proses</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $no = 1;
-                    foreach ($order as $o) :
-                    ?>
-                    <tr>
-                        <td><?= $no++; ?></td>
-                        <td><?= $o['nama'] ?></td>
-                        <td><?= $o['unit_kerja'] ?></td>
-                        <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
-                        <td><?= $o['tujuan_pakai'] ?></td>
-                        <td><?= $o['tujuan'] ?></td>
-                        <td>
-                            <a href="reject/<?= $o['ID'] ?>" class="btn btn-danger">Tolak</a>
-                            <a href="approve/<?= $o['ID'] ?>" class="btn btn-success">Terima</a>
-                        </td>
-                    </tr>
-                    <?php
-                    endforeach;
-                    ?>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="table table-dark ">
+                    <thead>
+                        <tr>
+                            <th>Nomor</th>
+                            <th>Nama</th>
+                            <th>Unit Kerja</th>
+                            <th>Waktu</th>
+                            <th>Tujuan Pakai</th>
+                            <th>Lokasi Tujuan</th>
+                            <th>Proses</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $no = 1;
+                        foreach ($order as $o) :
+                        ?>
+                        <tr>
+                            <td><?= $no++; ?></td>
+                            <td><?= $o['nama'] ?></td>
+                            <td><?= $o['unit_kerja'] ?></td>
+                            <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
+                            <td><?= $o['tujuan_pakai'] ?></td>
+                            <td><?= $o['tujuan'] ?></td>
+                            <td>
+                                <a href="reject/<?= $o['ID'] ?>" class="btn btn-danger">Tolak</a>
+                                <a href="approve/<?= $o['ID'] ?>" class="btn btn-success">Terima</a>
+                            </td>
+                        </tr>
+                        <?php
+                        endforeach;
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </body>
 </div>

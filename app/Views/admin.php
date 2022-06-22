@@ -10,35 +10,38 @@
         <div class="container">
             <h2>Daftar Admin</h2>
             <p>Anda dapat mengelola daftar admin</p>
-            <a href="<?=base_url("/register")?>" class="btn btn-info mb-3">Tambah Admin</a>
-            <table class="table table-dark">
-                <thead>
-                    <tr>
-                        <th>Nomor</th>
-                        <th>NIP</th>
-                        <th>Nama</th>
-                        <th>Unit Kerja</th>
-                        <th>Role</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $no = 1;
-                    foreach ($oauth_user as $o) :
-                        if($o['role'] === 'Admin') {
-                    ?>
-                    <tr>
-                        <td><?= $no++; ?></td>
-                        <td><?= $o['nip'] ?></td>
-                        <td><?= $o['first_name'], " ",$o['last_name'] ?></td>
-                        <td><?= $o['unit_kerja'] ?></td>
-                        <td><?= $o['role']; }?></td>
-                    </tr>
-                    <?php
-                    endforeach;
-                    ?>
-                </tbody>
-            </table>
+            <a href="<?= base_url("/register") ?>" class="btn btn-info mb-3">Tambah Admin</a>
+            <div class="table-responsive">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th>Nomor</th>
+                            <th>NIP</th>
+                            <th>Nama</th>
+                            <th>Unit Kerja</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $no = 1;
+                        foreach ($oauth_user as $o) :
+                            if ($o['role'] === 'Admin') {
+                        ?>
+                        <tr>
+                            <td><?= $no++; ?></td>
+                            <td><?= $o['nip'] ?></td>
+                            <td><?= $o['first_name'], " ", $o['last_name'] ?></td>
+                            <td><?= $o['unit_kerja'] ?></td>
+                            <td><?= $o['role'];
+                                    } ?></td>
+                        </tr>
+                        <?php
+                        endforeach;
+                            ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </body>
 </div>

@@ -11,35 +11,37 @@
             <h2>Daftar Pengemudi</h2>
             <p>Anda dapat mengelola daftar pengemudi</p>
             <a href="<?= base_url("/register") ?>" class="btn btn-info mb-3">Tambah Driver</a>
-            <table class="table table-dark">
-                <thead>
-                    <tr>
-                        <th>Nomor</th>
-                        <th>Nama</th>
-                        <th>Status</th>
-                        <th>Proses</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $no = 1;
-                    foreach ($driver as $d) :
-                    ?>
-                    <tr>
-                        <td><?= $no++; ?></td>
-                        <td><?= $d['nama_pengemudi'] ?></td>
-                        <td><?= $d['status_pengemudi'] ?></td>
+            <div class="table-responsive">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th>Nomor</th>
+                            <th>Nama</th>
+                            <th>Status</th>
+                            <th>Proses</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $no = 1;
+                        foreach ($driver as $d) :
+                        ?>
+                        <tr>
+                            <td><?= $no++; ?></td>
+                            <td><?= $d['nama_pengemudi'] ?></td>
+                            <td><?= $d['status_pengemudi'] ?></td>
 
-                        <td>
-                            <a href="" class="btn btn-warning">Detail</a>
-                            <a href="" class="btn btn-primary">Ubah</a>
-                        </td>
-                    </tr>
-                    <?php
-                    endforeach;
-                    ?>
-                </tbody>
-            </table>
+                            <td>
+                                <a href="" class="btn btn-warning">Detail</a>
+                                <a href="" class="btn btn-primary">Ubah</a>
+                            </td>
+                        </tr>
+                        <?php
+                        endforeach;
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </body>
 </div>

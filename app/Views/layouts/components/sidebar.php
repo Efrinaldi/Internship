@@ -9,7 +9,7 @@
             <?= session()->get('unit_kerja') ?>
         </div>
     </a>
-    <?php if (adminLogin()->role === 'Super Admin') : ?>
+    <?php if (adminLogin()->role === 'Admin Utama') : ?>
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
     <!-- Nav Item - Dashboard -->
