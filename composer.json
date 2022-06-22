@@ -14,6 +14,7 @@
         "firebase/php-jwt": "^6.1",
         "kint-php/kint": "^3.3",
         "laminas/laminas-escaper": "^2.9",
+        "phpoffice/phpspreadsheet": "^1.23",
         "psr/log": "^1.1",
         "pusher/pusher-php-server": "^7.0"
     },

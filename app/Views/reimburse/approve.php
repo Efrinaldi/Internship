@@ -103,7 +103,7 @@
                         </tfoot>
                     </tbody>
                 </table>
-                <button class="btn btn-success mt-3" id="exportBtn1">Export To Excel</button>
+                <a href="<?= site_url('reimburse/export'); ?>" class="btn btn-success mt-3" id="exportBtn1">Export To Excel</a>
             </div>
         </div>
     </div>
@@ -130,19 +130,19 @@
                 $("#entryTable").toggle()
             });
         });
-        $(document).ready(function () {
-            let key = $('#keyword').val()
-            let awal = $('#tgl_awal').val()
-            let akhir = $('#tgl_awal').val()
-            $("#exportBtn1").click(function(){
-                TableToExcel.convert(document.getElementById("entryTable"), {
-                    name: key+awal+akhir+".xlsx",
-                    sheet: {
-                        name: "Sheet1"
-                    }
-                });
-            });
-        });
+        // $(document).ready(function () {
+        //     let key = $('#keyword').val()
+        //     let awal = $('#tgl_awal').val()
+        //     let akhir = $('#tgl_awal').val()
+        //     $("#exportBtn1").click(function(){
+        //         TableToExcel.convert(document.getElementById("entryTable"), {
+        //             name: key+awal+akhir+".xlsx",
+        //             sheet: {
+        //                 name: "Sheet1"
+        //             }
+        //         });
+        //     });
+        // });
     </script>
 </section>
 

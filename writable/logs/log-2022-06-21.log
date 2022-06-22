@@ -40,3 +40,11 @@ CRITICAL - 2022-06-21 02:22:04 --> Undefined variable: session
 #4 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
 #6 {main}
+CRITICAL - 2022-06-21 11:16:16 --> Undefined variable: reimburse
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\ReimburseController.php(169): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\muhamm...', 169, Array)
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\ReimburseController->export()
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReimburseController))
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#6 {main}

@@ -7,6 +7,8 @@ use App\Models\OrdersModel;
 use App\Models\OrderModel;
 use App\Models\DriverModel;
 use App\Models\ReimburseModel;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class ReimburseController extends BaseController
 {
@@ -51,6 +53,11 @@ class ReimburseController extends BaseController
         $this->model->where('id', $id)->delete();
         return redirect()->to(site_url('reimburse'))->with('success', 'Data berhasil Dihapus');
     }
+    public function delete_inDriver($id = null)
+    {
+        $this->model->where('id', $id)->delete();
+        return redirect()->back()->with('success', 'Data berhasil Dihapus');
+    }
 
     public function approve()
     {
@@ -87,13 +94,15 @@ class ReimburseController extends BaseController
 
     public function add_reimburse($id = null)
     {
-        $reimburse = $this->pemesanan->where('id_pemesanan', $id)->first();
-        $getOrder = $this->order->where('id', $reimburse['id_pemesanan'])->first();
-        $getPengemudi = $this->pengemudi->where('id_pengemudi', $reimburse['id_pengemudi'])->first();
-        if ($reimburse) {
-            $data['reimburse'] = $reimburse;
+        $pemesanan = $this->pemesanan->where('id_pemesanan', $id)->first();
+        $reimbursement = $this->model->where('id_pemesanan', $pemesanan['id'])->get()->getResult();
+        $getOrder = $this->order->where('id', $pemesanan['id_pemesanan'])->first();
+        $getPengemudi = $this->pengemudi->where('id_pengemudi', $pemesanan['id_pengemudi'])->first();
+        if ($pemesanan) {
+            $data['pemesanan'] = $pemesanan;
             $data['order'] = $getOrder;
             $data['pengemudi'] = $getPengemudi;
+            $data['reimbursement'] = $reimbursement;
             return view('reimburse/add_reimburse', $data);
         } else {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
@@ -142,5 +151,55 @@ class ReimburseController extends BaseController
         ]);
 
         return redirect()->to(site_url('reimburse/list'))->with('success', 'Data berhasil Disimpan');
+    }
+
+    public function export()
+    {
+        $keyword = $this->request->getGet('keyword');
+        $tglAwal = $this->request->getGet('tgl_awal');
+        $tglAkhir = $this->request->getGet('tgl_akhir');
+        $timestamp_awal = strtotime($tglAwal);
+        $date_awal = date('Y-m-d H:i:s', $timestamp_awal);
+        $timestamp_akhir = strtotime($tglAkhir);
+        $date_akhir = date('Y-m-d H:i:s', $timestamp_akhir);
+        $reimburses = $this->model->getApprove($keyword, $date_awal, $date_akhir)->getResult();
+
+        // dd($reimburses);
+
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setCellValue('A1', 'No');
+        $sheet->setCellValue('B1', 'Nama Driver');
+        $sheet->setCellValue('C1', 'Deskripsi');
+        $sheet->setCellValue('D1', 'Tanggal Approved');
+        $sheet->setCellValue('E1', 'Nominal');
+
+        $column = 2;
+        foreach ($reimburses as $key => $value) {
+            $sheet->setCellValue('A'.$column, ($column-1));
+            $sheet->setCellValue('B'.$column, $value->nama_pengemudi);
+            $sheet->setCellValue('B'.$column, $value->deskripsi);
+            $sheet->setCellValue('B'.$column, $value->updated_at);
+            $sheet->setCellValue('B'.$column, $value->nominal);
+            $column++;
+        }
+
+        $filename = $keyword.$tglAwal.$tglAkhir;
+        $writer = new Xlsx($spreadsheet);
+        $writer->save($filename);
+        header("Content-Type: application/vnd.ms-excel");
+        header("Content-disposition: attachment;filename='".basename($filename)."'");
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Program: public');
+        header('Content-Length:' . filesize($filename));
+        flush();
+        readfile($filename);
+        exit;
+        // header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        // header("Content-disposition: attachment;filename='".basename($filename)."'");
+        // header('Cache-Control: max-age=0');
+        // $writer->save('php://output');
+        // exit();
     }
 }

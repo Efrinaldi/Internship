@@ -64,11 +64,42 @@
                             </div>
                         </div>     
                     </div>
+                    <div class="row card-body table-responsive">
+                        <h5 class="text-center">Daftar Transaksi Reimburse Dalam Proses</h5>
+                        <hr>
+                        <table class="table table-striped table-md">
+                            <thead>
+                                <tr>
+                                    <th>Foto</th>
+                                    <th>Deskripsi</th>
+                                    <th>Nominal</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($reimbursement as $key => $value) : ?>
+                                    <tr>
+                                        <td><img width="75px" class="img-thumbnail" src="<?= base_url() . "/template/assets/img/upload/" . $value->photo; ?>"></td>
+                                        <td><?= $value->deskripsi; ?></td>
+                                        <td><?= format_rupiah($value->nominal); ?></td>
+                                        <td>
+                                            <form action="<?= site_url('reimburse/delete_inDriver/' . $value->id); ?>" method="POST" class="d-inline" id="del-<?= $value->id; ?>">
+                                            <?= csrf_field() ?>
+                                                <button type="submit" class="btn btn-warning" data-confirm="Hapus Data ?|Apakah Anda yakin ?" data-confirm-yes="submitDel(<?= $value->id; ?>)">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <div class="card-body col-md-6">
                 <?php $validation = \Config\Services::validation(); ?>
-                    <form action="<?= site_url('reimburse/store_reimburse/' . $reimburse['id_pemesanan']); ?>" method="post" autocomplete="off" enctype="multipart/form-data">
+                    <form action="<?= site_url('reimburse/store_reimburse/' . $pemesanan['id_pemesanan']); ?>" method="post" autocomplete="off" enctype="multipart/form-data">
                         <?= csrf_field() ?>
                         <div class="form-group">
                             <label>Deskripsi</label>
