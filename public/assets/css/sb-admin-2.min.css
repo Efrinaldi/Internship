@@ -10328,3 +10328,9 @@ body.sidebar-toggled footer.sticky-footer {
   height: 50%;
   width: 50%;
 }
+
+.responsive {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
