@@ -16,7 +16,8 @@
                         <th>NIP</th>
                         <th>Unit Kerja</th>
                         <th>Waktu</th>
-                        <th>Tujuan</th>
+                        <th>Tujuan Pakai</th>
+                        <th>Lokasi Tujuan</th>
                         <th>Keterangan</th>
                     </tr>
                 </thead>
@@ -31,6 +32,7 @@
                         <td><?= $o['nip'] ?></td>
                         <td><?= $o['unit_kerja'] ?></td>
                         <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
+                        <td><?= $o['tujuan_pakai'] ?></td>
                         <td><?= $o['tujuan'] ?></td>
                         <td><?= $o['keterangan'] ?></td>
                     </tr>

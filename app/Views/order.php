@@ -17,7 +17,8 @@
                         <th>Nama</th>
                         <th>Unit Kerja</th>
                         <th>Waktu</th>
-                        <th>Tujuan</th>
+                        <th>Tujuan Pakai</th>
+                        <th>Lokasi Tujuan</th>
                         <th>Proses</th>
                     </tr>
                 </thead>
@@ -31,10 +32,11 @@
                         <td><?= $o['nama'] ?></td>
                         <td><?= $o['unit_kerja'] ?></td>
                         <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
+                        <td><?= $o['tujuan_pakai'] ?></td>
                         <td><?= $o['tujuan'] ?></td>
                         <td>
-                            <a href="reject/<?=$o['ID']?>" class="btn btn-danger">Tolak</a>
-                            <a href="approve/<?=$o['ID']?>" class="btn btn-success">Terima</a>
+                            <a href="reject/<?= $o['ID'] ?>" class="btn btn-danger">Tolak</a>
+                            <a href="approve/<?= $o['ID'] ?>" class="btn btn-success">Terima</a>
                         </td>
                     </tr>
                     <?php

@@ -33,7 +33,7 @@ class Home extends BaseController
         $session = session()->get();
         $user = $session['unit_kerja'];
         // dd($user);
-        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.id_user,oauth_user.nama_user,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE orders.status = 0 AND orders.keterangan = 'Pending' AND orders.unit_kerja = '$user'");
+        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.id_user,oauth_user.nama_user,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE orders.status = 0 AND orders.keterangan = 'Pending' AND orders.unit_kerja = '$user'");
         $rows = $query->getResultArray();
         $data = [
             'order' => $rows,
@@ -65,7 +65,7 @@ class Home extends BaseController
         //     'order' => $order,
         // ];
         $order = new OrderModel();
-        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.id_user,oauth_user.nama_user,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE orders.status = 1 AND orders.keterangan = 'Pending'");
+        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.id_user,oauth_user.nama_user,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE orders.status = 1 AND orders.keterangan = 'Pending'");
         $rows = $query->getResultArray();
 
         $data = [
@@ -95,7 +95,7 @@ class Home extends BaseController
     {
 
         $order = new OrderModel();
-        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.id_user,orders.keterangan,oauth_user.nama_user,oauth_user.nip,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE orders.keterangan = 'Approve'");
+        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.id_user,orders.keterangan,oauth_user.nama_user,oauth_user.nip,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE orders.keterangan = 'Approve'");
         $rows = $query->getResultArray();
 
         $data = [
@@ -108,7 +108,7 @@ class Home extends BaseController
     public function history_reject()
     {
         $order = new OrderModel();
-        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.id_user,orders.keterangan,oauth_user.nama_user,oauth_user.nip,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE orders.keterangan = 'Reject'");
+        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.id_user,orders.keterangan,oauth_user.nama_user,oauth_user.nip,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE orders.keterangan = 'Reject'");
         $rows = $query->getResultArray();
 
         $data = [

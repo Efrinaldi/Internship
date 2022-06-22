@@ -98,12 +98,14 @@ class OrderController extends BaseController
             'unit'              => 'required',
             'time'           => 'required',
             'date'       => 'required',
-            'destination' => 'required'
+            'destination' => 'required',
+            'purpose' => 'required'
         ];
 
         if ($this->validate($rules)) {
             $data = [
                 'tujuan' => $this->request->getVar('destination'),
+                'tujuan_pakai' => $this->request->getVar('purpose'),
                 'unit_kerja' => $this->request->getVar('unit'),
                 'waktu' => $this->request->getVar('time'),
                 'nama' => $this->request->getVar('name'),

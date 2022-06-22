@@ -38,7 +38,12 @@
                     <input type="date" class="form-control" id="inputTanggal" name="date" required>
                 </div>
                 <div class="col-md-6">
-                    <label for="inputTujuan" class="form-label">Tujuan</label>
+                    <label for="inputPemakaian" class="form-label">Tujuan Pakai</label>
+                    <input type="text" class="form-control" id="inputPemakaian" name="purpose"
+                        placeholder="Isi Tujuan Pakai" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputTujuan" class="form-label">Lokasi Tujuan</label>
                     <input type="text" class="form-control" id="inputTujuan" name="destination"
                         placeholder="Pilih Tujuan" required>
                 </div>
