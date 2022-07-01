@@ -5,7 +5,6 @@
             <i class="fas fa-user-cog"></i>
         </div>
         <div class="sidebar-brand-text mx-3">
-            <?= session()->get('role') ?>
             <?= session()->get('unit_kerja') ?>
         </div>
     </a>
@@ -102,6 +101,17 @@
             <span>Pesan Kendaraan</span></a>
     </li>
     <!-- Divider -->
+
+    <?php endif; ?>
+    <?php if (adminLogin()->role === 'Security') : ?>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?= base_url("/driver") ?>">
+            <i class="fas fa-car"></i>
+            <span>Daftar Pengemudi</span></a>
+    </li>
 
     <?php endif; ?>
 

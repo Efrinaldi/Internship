@@ -32,8 +32,8 @@
                             <td><?= $d['status_pengemudi'] ?></td>
 
                             <td>
-                                <a href="" class="btn btn-warning">Detail</a>
-                                <a href="" class="btn btn-primary">Ubah</a>
+                                <button href="" class="btn btn-warning">Info</button>
+                                <button href="" class="btn btn-primary">Ubah</button>
                             </td>
                         </tr>
                         <?php

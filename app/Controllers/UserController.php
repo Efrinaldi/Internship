@@ -14,7 +14,7 @@ use \OAuth2\Request;
 
 use App\Libraries\Oauth;
 
-class userController extends ResourceController
+class UserController extends ResourceController
 {
     public function __construct()
     {

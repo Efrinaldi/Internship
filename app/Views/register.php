@@ -55,6 +55,7 @@
                         <option value="">Role</option>
                         <option value="Admin">Admin</option>
                         <option value="User">User</option>
+                        <option value="Security">Security</option>
                         <option value="Driver">Driver</option>
                     </select>
                 </div>
@@ -76,6 +77,7 @@
                         <option value="SKHSDM">SKHSDM</option>
                         <option value="SKAI">SKAI</option>
                         <option value="BSIT">BSIT</option>
+                        <option value="Security">Security</option>
                     </select>
                 </div>
                 <div class="form-group has-feedback">
