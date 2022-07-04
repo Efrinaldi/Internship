@@ -211,10 +211,11 @@ class OrderController extends BaseController
 
 
         $orders->update($data_order, ['keterangan' => 'Approve']);
+        $driver->update($data_driver, ['status_pengemudi' => 'Tidak Tersedia']);
         $this->orders->insert($data_json);
         $notif->sendNotificationDriver($device_token_driver);
         $notif->sendNotificationUser($device_token_user, $nama_pengemudi);
-        return redirect()->to('dashboard')->with('success', 'Pesanan diterima pengemudi!');
+        return redirect()->to('process')->with('success', 'Pesanan diterima pengemudi!');
     }
 
     public function approve_order($id)
