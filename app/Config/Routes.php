@@ -71,6 +71,8 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->add('/updatePlatNomor/(:segment)', 'DriverController::update_plat/$1');
     $routes->get('approve/(:num)', 'OrderController::approve_order/$1');
     $routes->get('reject/(:num)', 'OrderController::reject_order/$1');
+
+    $routes->get('update/', 'DriverController::update_status');
 });
 
 
