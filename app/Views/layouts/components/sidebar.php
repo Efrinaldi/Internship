@@ -5,10 +5,11 @@
             <i class="fas fa-user-cog"></i>
         </div>
         <div class="sidebar-brand-text mx-3">
+            <?= session()->get('role') ?>
             <?= session()->get('unit_kerja') ?>
         </div>
     </a>
-    <?php if (adminLogin()->role === 'Admin Utama') : ?>
+    <?php if (adminLogin()->role === 'Admin Logistik') : ?>
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
     <!-- Nav Item - Dashboard -->
@@ -25,6 +26,14 @@
         <a class="nav-link" href="<?= base_url("/admin") ?>">
             <i class="fas fa-user-gear"></i>
             <span>Daftar Admin</span></a>
+    </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?= base_url("/otorisator") ?>">
+            <i class="fas fa-user-gear"></i>
+            <span>Daftar Otorisator</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -69,7 +78,7 @@
     <!-- Divider -->
     <?php endif; ?>
 
-    <?php if (adminLogin()->role === 'Admin') : ?>
+    <?php if (adminLogin()->role === 'Otorisator') : ?>
     <!-- Divider -->
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->

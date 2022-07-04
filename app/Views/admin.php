@@ -13,7 +13,7 @@
             <a href="<?= base_url("/register") ?>" class="btn btn-info mb-3">Tambah Admin</a>
             <div class="table-responsive">
                 <table class="table table-dark">
-                    <thead>
+                    <thead class="text-center">
                         <tr>
                             <th>Nomor</th>
                             <th>NIP</th>
@@ -22,11 +22,11 @@
                             <th>Role</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="text-center">
                         <?php
                         $no = 1;
                         foreach ($oauth_user as $o) :
-                            if ($o['role'] === 'Admin') {
+                            if ($o['role'] === 'Admin Logistik') {
                         ?>
                         <tr>
                             <td><?= $no++; ?></td>

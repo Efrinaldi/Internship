@@ -10,7 +10,7 @@
         <div class="container">
             <div class="table-responsive">
                 <table class="table table-dark">
-                    <thead>
+                    <thead class="text-center">
                         <tr>
                             <th>Nomor</th>
                             <th>Nama</th>
@@ -22,7 +22,7 @@
                             <th>Keterangan</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="text-center">
                         <?php
                         $no = 1;
                         foreach ($order as $o) :

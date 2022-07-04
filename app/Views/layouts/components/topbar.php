@@ -20,9 +20,6 @@
                         <?= session()->get('first_name') ?>
                         <?= session()->get('last_name') ?>
                     </div>
-                    <div class="text-center">
-                        <?= session()->get('role') ?>
-                    </div>
                 </span>
                 <img class="img-profile rounded-circle" src="<?= base_url('assets/img/undraw_profile.svg') ?>">
             </a>

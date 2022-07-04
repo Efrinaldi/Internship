@@ -8,37 +8,37 @@
 
     <body>
         <div class="container">
-            <h2>Daftar Pengemudi</h2>
-            <p>Anda dapat mengelola daftar pengemudi</p>
-            <a href="<?= base_url("/register") ?>" class="btn btn-info mb-3">Tambah Driver</a>
+            <h2>Daftar Admin</h2>
+            <p>Anda dapat mengelola daftar admin</p>
+            <a href="<?= base_url("/register") ?>" class="btn btn-info mb-3">Tambah Otorisator</a>
             <div class="table-responsive">
                 <table class="table table-dark">
                     <thead class="text-center">
                         <tr>
                             <th>Nomor</th>
+                            <th>NIP</th>
                             <th>Nama</th>
-                            <th>Status</th>
-                            <th>Proses</th>
+                            <th>Unit Kerja</th>
+                            <th>Role</th>
                         </tr>
                     </thead>
                     <tbody class="text-center">
                         <?php
                         $no = 1;
-                        foreach ($driver as $d) :
+                        foreach ($oauth_user as $o) :
+                            if ($o['role'] === 'Otorisator') {
                         ?>
                         <tr>
                             <td><?= $no++; ?></td>
-                            <td><?= $d['nama_pengemudi'] ?></td>
-                            <td><?= $d['status_pengemudi'] ?></td>
-
-                            <td>
-                                <button href="" class="btn btn-warning">Info</button>
-                                <button href="" class="btn btn-primary">Ubah</button>
-                            </td>
+                            <td><?= $o['nip'] ?></td>
+                            <td><?= $o['first_name'], " ", $o['last_name'] ?></td>
+                            <td><?= $o['unit_kerja'] ?></td>
+                            <td><?= $o['role'];
+                                    } ?></td>
                         </tr>
                         <?php
                         endforeach;
-                        ?>
+                            ?>
                     </tbody>
                 </table>
             </div>

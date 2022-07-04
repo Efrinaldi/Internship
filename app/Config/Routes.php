@@ -43,6 +43,7 @@ $routes->post('/reg', 'UserController::authregister');
 $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('/register', 'RegisterController::index');
     $routes->get('/admin', 'Home::admin');
+    $routes->get('/otorisator', 'Home::otorisator');
     $routes->get('/dashboard', 'Home::dashboard');
     $routes->get('/request', 'Home::request');
     $routes->get('/user', 'Home::user');
