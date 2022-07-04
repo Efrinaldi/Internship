@@ -32,8 +32,10 @@
                             <td><?= $d['status_pengemudi'] ?></td>
 
                             <td>
-                                <button href="" class="btn btn-warning">Info</button>
-                                <button href="" class="btn btn-primary">Ubah</button>
+                                <a href="status_unavailable/<?= $d['id_pengemudi'] ?>" class="btn btn-warning">Tidak
+                                    Tersedia</a>
+                                <a href="status_available/<?= $d['id_pengemudi'] ?>"
+                                    class="btn btn-primary">Tersedia</a>
                             </td>
                         </tr>
                         <?php

@@ -80,4 +80,24 @@ class DriverController extends BaseController
         ];
         return $this->respondCreated($response, 201);
     }
+    public function status_available($id_pengemudi)
+    {
+
+        $builder = new DriverModel();
+        $builder->where('id_pengemudi', $id_pengemudi);
+        $builder->set('status_pengemudi', 'Tersedia');
+        $builder->update();
+
+        return redirect()->back()->with('success', 'Pengemudi Tersedia');
+    }
+    public function status_unavailable($id_pengemudi)
+    {
+
+        $builder = new DriverModel();
+        $builder->where('id_pengemudi', $id_pengemudi);
+        $builder->set('status_pengemudi', 'Tidak Tersedia');
+        $builder->update();
+
+        return redirect()->back()->with('success', 'Pengemudi Tidak Tersedia');
+    }
 }
