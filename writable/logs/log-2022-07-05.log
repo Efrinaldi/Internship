@@ -1,0 +1,66 @@
+CRITICAL - 2022-07-05 02:14:01 --> min:6 is not a valid rule.
+#0 C:\xampp\htdocs\ci2\system\Validation\Validation.php(285): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('min:6')
+#1 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('password', 'password', 'qwe', Array, Array)
+#2 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\ci2\app\Controllers\UserController.php(49): CodeIgniter\Controller->validate(Array)
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\UserController->authregister()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-07-05 02:14:29 --> min:6 is not a valid rule.
+#0 C:\xampp\htdocs\ci2\system\Validation\Validation.php(285): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('min:6')
+#1 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('password', 'password', '1234', Array, Array)
+#2 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\ci2\app\Controllers\UserController.php(49): CodeIgniter\Controller->validate(Array)
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\UserController->authregister()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-07-05 02:16:00 --> min:6 is not a valid rule.
+#0 C:\xampp\htdocs\ci2\system\Validation\Validation.php(285): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('min:6')
+#1 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('password', 'password', '123456', Array, Array)
+#2 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\ci2\app\Controllers\UserController.php(49): CodeIgniter\Controller->validate(Array)
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\UserController->authregister()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-07-05 02:25:52 --> uppercase is not a valid rule.
+#0 C:\xampp\htdocs\ci2\system\Validation\Validation.php(285): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('uppercase')
+#1 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('password', 'password', 'qwertyuiop', Array, Array)
+#2 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\ci2\app\Controllers\UserController.php(49): CodeIgniter\Controller->validate(Array)
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\UserController->authregister()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-07-05 03:00:28 --> regex_match:/^(?=.? is not a valid rule.
+#0 C:\xampp\htdocs\ci2\system\Validation\Validation.php(285): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('regex_match:/^(...')
+#1 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('password', 'password', 'qwertyu', Array, Array)
+#2 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\ci2\app\Controllers\UserController.php(49): CodeIgniter\Controller->validate(Array)
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\UserController->authregister()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-07-05 03:01:01 --> Argument 2 passed to CodeIgniter\Validation\FormatRules::regex_match() must be of the type string, null given, called in C:\xampp\htdocs\ci2\system\Validation\Validation.php on line 277
+#0 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\FormatRules->regex_match('qwerty', NULL)
+#1 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('password', 'password', 'qwerty', Array, Array)
+#2 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\ci2\app\Controllers\UserController.php(49): CodeIgniter\Controller->validate(Array)
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\UserController->authregister()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}

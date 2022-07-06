@@ -42,6 +42,7 @@
             <div class="alert alert-danger"><?= $validation->listErrors() ?></div>
             <?php endif; ?>
             <form action="<?= base_url() ?>/reg" method="post">
+                <?= csrf_field(); ?>
                 <div class="form-group has-feedback">
                     <input type="text" id="InputForFirstName" name="first_name" class="form-control"
                         placeholder="First name" required>

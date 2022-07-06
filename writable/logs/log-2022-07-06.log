@@ -1,0 +1,24 @@
+CRITICAL - 2022-07-06 04:41:23 --> preg_match(): Unknown modifier 'r'
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'preg_match(): U...', 'C:\\xampp\\htdocs...', 161, Array)
+#1 C:\xampp\htdocs\ci2\system\Validation\FormatRules.php(161): preg_match('//regex//', 'Syariah@1')
+#2 C:\xampp\htdocs\ci2\system\Validation\Validation.php(277): CodeIgniter\Validation\FormatRules->regex_match('Syariah@1', '//regex//', Array, NULL)
+#3 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Syariah@1', Array, Array)
+#4 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#5 C:\xampp\htdocs\ci2\app\Controllers\UserController.php(49): CodeIgniter\Controller->validate(Array)
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\UserController->authregister()
+#7 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#8 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-07-06 04:49:36 --> regex_match is not a valid rule.
+#0 C:\xampp\htdocs\ci2\system\Validation\Validation.php(285): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('regex_match')
+#1 C:\xampp\htdocs\ci2\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Syariah@1', Array, Array)
+#2 C:\xampp\htdocs\ci2\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\ci2\app\Controllers\UserController.php(49): CodeIgniter\Controller->validate(Array)
+#4 C:\xampp\htdocs\ci2\system\CodeIgniter.php(824): App\Controllers\UserController->authregister()
+#5 C:\xampp\htdocs\ci2\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\xampp\htdocs\ci2\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ci2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ci2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}

@@ -39,6 +39,7 @@
                 </p>
 
                 <form action="<?= base_url() ?>/auth" method="post">
+                    <?= csrf_field(); ?>
                     <?php if (session()->getFlashdata('msg')) : ?>
                     <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
                     <?php endif; ?>

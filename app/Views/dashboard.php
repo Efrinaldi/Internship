@@ -3,7 +3,11 @@
 <div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Operational Vehicle Management System - BCA Syariah</h1>
+        <div>
+            <h1 class="h3 mb-0 text-gray-800">Selamat Datang di Sistem Manajemen Kendaraan Operasional BCA Syariah,
+                <?= session()->get('first_name') ?>
+                <?= session()->get('last_name') ?></h1>
+        </div>
     </div>
     <!-- Content Row -->
     <div class="row">
