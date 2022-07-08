@@ -10,7 +10,7 @@
         <div class="container">
             <h2>Daftar Pengemudi</h2>
             <p>Anda dapat mengelola daftar pengemudi</p>
-            <a href="<?= base_url("/register") ?>" class="btn btn-info mb-3">Tambah Driver</a>
+            <a href="<?= base_url("/register") ?>" class="btn btn-info mb-3">Tambah Pengemudi</a>
             <div class="table-responsive">
                 <table class="table table-dark">
                     <thead class="text-center">

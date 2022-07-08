@@ -8,9 +8,9 @@
 
     <body>
         <div class="container">
-            <h2>Daftar User</h2>
-            <p>Anda dapat mengelola daftar user</p>
-            <a href="<?= base_url("/register") ?>" class="btn btn-info mb-3">Tambah User</a>
+            <h2>Daftar Operator</h2>
+            <p>Anda dapat mengelola daftar Operator</p>
+            <a href="<?= base_url("/register") ?>" class="btn btn-info mb-3">Tambah Operator</a>
             <div class="table-responsive">
                 <table class="table table-dark">
                     <thead class="text-center">
@@ -26,7 +26,7 @@
                         <?php
                         $no = 1;
                         foreach ($oauth_user as $o) :
-                            if ($o['role'] === 'User') {
+                            if ($o['role'] === 'Operator') {
                         ?>
                         <tr>
                             <td><?= $no++; ?></td>

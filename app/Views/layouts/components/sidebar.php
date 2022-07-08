@@ -9,7 +9,7 @@
             <?= session()->get('unit_kerja') ?>
         </div>
     </a>
-    <?php if (adminLogin()->role === 'Admin Logistik') : ?>
+    <?php if (adminLogin()->role === 'Supervisor Logistik') : ?>
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
     <!-- Nav Item - Dashboard -->
@@ -25,7 +25,7 @@
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url("/admin") ?>">
             <i class="fas fa-user-gear"></i>
-            <span>Daftar Admin</span></a>
+            <span>Supervisor Logistik</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -33,7 +33,7 @@
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url("/otorisator") ?>">
             <i class="fas fa-user-gear"></i>
-            <span>Daftar Otorisator</span></a>
+            <span>Supervisor Unit Kerja</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -41,7 +41,7 @@
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url("/user") ?>">
             <i class="fas fa-user-friends"></i>
-            <span>Daftar User</span></a>
+            <span>Operator</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -49,7 +49,7 @@
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url("/driver") ?>">
             <i class="fas fa-car"></i>
-            <span>Daftar Pengemudi</span></a>
+            <span>Pengemudi</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -78,7 +78,7 @@
     <!-- Divider -->
     <?php endif; ?>
 
-    <?php if (adminLogin()->role === 'Otorisator') : ?>
+    <?php if (adminLogin()->role === 'Supervisor') : ?>
     <!-- Divider -->
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->
@@ -100,7 +100,7 @@
 
     <?php endif; ?>
 
-    <?php if (adminLogin()->role === 'User') : ?>
+    <?php if (adminLogin()->role === 'Operator') : ?>
     <!-- Divider -->
     <hr class="sidebar-divider">
     <!-- Nav Item - Tables -->

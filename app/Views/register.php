@@ -54,9 +54,9 @@
                 <div class="form-group has-feedback">
                     <select name="role" class="form-control" required>
                         <option value="">Role</option>
-                        <option value="Admin Logistik">Admin</option>
-                        <option value="Otorisator">Otorisator</option>
-                        <option value="User">User</option>
+                        <option value="Supervisor Logistik">Supervisor Logistik</option>
+                        <option value="Supervisor">Supervisor</option>
+                        <option value="Operator">Operator</option>
                         <option value="Security">Security</option>
                         <option value="Driver">Driver</option>
                     </select>
