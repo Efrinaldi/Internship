@@ -138,14 +138,31 @@ class ReimburseController extends BaseController
         }
 
         $fileberkas = $this->request->getFile('photo');
+        $filepoto = $this->request->getPost('image');
+        // dd($filepoto);
+        
+        $folderPath = "template/assets/img/upload/";
+  
+        $image_parts = explode(";base64,", $filepoto);
+        $image_type_aux = explode("image/", $image_parts[0]);
+        $image_type = $image_type_aux[1];
+    
+        $image_base64 = base64_decode($image_parts[1]);
+        $fileName = uniqid() . '.png';
+        
+        $file = $folderPath . $fileName;
+        file_put_contents($file, $image_base64);
+
+
         $namaFileUpload = time() .'_'. $fileberkas->getName();
+        // dd($namaFileUpload);
         $fileberkas->move('template/assets/img/upload', $namaFileUpload);
         $nominal = regexCurrency($this->request->getPost('nominal'));
         $this->model->insert([
             'id_pemesanan' => $getId['id'],
             'deskripsi'  => $this->request->getVar('deskripsi'),
             'nominal'   => $nominal,
-            'photo'    => $namaFileUpload,
+            'photo'    => $fileName,
         ]);
 
         return redirect()->to(site_url('reimburse/list'))->with('success', 'Data berhasil Disimpan');
@@ -153,47 +170,47 @@ class ReimburseController extends BaseController
 
     public function export()
     {
-        $keyword = $this->request->getGet('keyword');
-        $tglAwal = $this->request->getGet('tgl_awal');
-        $tglAkhir = $this->request->getGet('tgl_akhir');
-        $timestamp_awal = strtotime($tglAwal);
-        $date_awal = date('Y-m-d H:i:s', $timestamp_awal);
-        $timestamp_akhir = strtotime($tglAkhir);
-        $date_akhir = date('Y-m-d H:i:s', $timestamp_akhir);
-        $reimburses = $this->model->getApprove($keyword, $date_awal, $date_akhir)->getResult();
+        // $keyword = $this->request->getGet('keyword');
+        // $tglAwal = $this->request->getGet('tgl_awal');
+        // $tglAkhir = $this->request->getGet('tgl_akhir');
+        // $timestamp_awal = strtotime($tglAwal);
+        // $date_awal = date('Y-m-d H:i:s', $timestamp_awal);
+        // $timestamp_akhir = strtotime($tglAkhir);
+        // $date_akhir = date('Y-m-d H:i:s', $timestamp_akhir);
+        // $reimburses = $this->model->getApprove($keyword, $date_awal, $date_akhir)->getResult();
 
-        // dd($reimburses);
+        // // dd($reimburses);
 
-        $spreadsheet = new Spreadsheet();
-        $sheet = $spreadsheet->getActiveSheet();
-        $sheet->setCellValue('A1', 'No');
-        $sheet->setCellValue('B1', 'Nama Driver');
-        $sheet->setCellValue('C1', 'Deskripsi');
-        $sheet->setCellValue('D1', 'Tanggal Approved');
-        $sheet->setCellValue('E1', 'Nominal');
+        // $spreadsheet = new Spreadsheet();
+        // $sheet = $spreadsheet->getActiveSheet();
+        // $sheet->setCellValue('A1', 'No');
+        // $sheet->setCellValue('B1', 'Nama Driver');
+        // $sheet->setCellValue('C1', 'Deskripsi');
+        // $sheet->setCellValue('D1', 'Tanggal Approved');
+        // $sheet->setCellValue('E1', 'Nominal');
 
-        $column = 2;
-        foreach ($reimburses as $key => $value) {
-            $sheet->setCellValue('A'.$column, ($column-1));
-            $sheet->setCellValue('B'.$column, $value->nama_pengemudi);
-            $sheet->setCellValue('B'.$column, $value->deskripsi);
-            $sheet->setCellValue('B'.$column, $value->updated_at);
-            $sheet->setCellValue('B'.$column, $value->nominal);
-            $column++;
-        }
+        // $column = 2;
+        // foreach ($reimburses as $key => $value) {
+        //     $sheet->setCellValue('A'.$column, ($column-1));
+        //     $sheet->setCellValue('B'.$column, $value->nama_pengemudi);
+        //     $sheet->setCellValue('B'.$column, $value->deskripsi);
+        //     $sheet->setCellValue('B'.$column, $value->updated_at);
+        //     $sheet->setCellValue('B'.$column, $value->nominal);
+        //     $column++;
+        // }
 
-        $filename = $keyword.$tglAwal.$tglAkhir;
-        $writer = new Xlsx($spreadsheet);
-        $writer->save($filename);
-        header("Content-Type: application/vnd.ms-excel");
-        header("Content-disposition: attachment;filename='".basename($filename)."'");
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate');
-        header('Program: public');
-        header('Content-Length:' . filesize($filename));
-        flush();
-        readfile($filename);
-        exit;
+        // $filename = $keyword.$tglAwal.$tglAkhir;
+        // $writer = new Xlsx($spreadsheet);
+        // $writer->save($filename);
+        // header("Content-Type: application/vnd.ms-excel");
+        // header("Content-disposition: attachment;filename='".basename($filename)."'");
+        // header('Expires: 0');
+        // header('Cache-Control: must-revalidate');
+        // header('Program: public');
+        // header('Content-Length:' . filesize($filename));
+        // flush();
+        // readfile($filename);
+        // exit;
         // header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         // header("Content-disposition: attachment;filename='".basename($filename)."'");
         // header('Cache-Control: max-age=0');

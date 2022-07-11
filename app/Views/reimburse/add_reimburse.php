@@ -117,7 +117,19 @@
                         </div>
                         <div class="form-group">
                             <label>Image</label>
-                            <input type="file" id="photo" name="photo" class="form-control <?= $validation->hasError('photo') ? 'is-invalid' : ''; ?>" onchange="previewImageFile(this);" required>
+                            <!-- <button id="capture">Capture</button>
+                            <div id="enhancerUIContainer" style="height: 100vh;"></div> -->
+
+                            <!-- <div id="my_camera"></div>
+                            <br/>
+                            <input type=button value="Take Snapshot" onClick="take_snapshot()">
+                            <input type="hidden" name="image" class="image-tag">
+                            <div class="col-md-6">
+                                <div id="results">Your captured image will appear here...</div>
+                            </div> -->
+
+
+                            <input type="file" id="photo" name="photo" class="form-control <?= $validation->hasError('photo') ? 'is-invalid' : ''; ?>" onchange="previewImageFile(this);" value="<?= old('photo'); ?>" required>
                             <img src="" alt="Image preview" id="preview-image" width="400px" class="hideImage">
                             <div class="invalid-feedback">
                                 <?= $validation->getError('photo'); ?>
@@ -158,7 +170,6 @@
             sisa     = split[0].length % 3,
             rupiah     = split[0].substr(0, sisa),
             ribuan     = split[0].substr(sisa).match(/\d{3}/gi);
-            
         if (ribuan) {
             separator = sisa ? '.' : '';
             rupiah += separator + ribuan.join('.');
@@ -167,6 +178,47 @@
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
         return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
     }
+
+    // let enhancer = null;
+    //     (async () => {
+    //         enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+    //         document.getElementById("enhancerUIContainer").appendChild(enhancer.getUIElement());
+    //         await enhancer.open(true);
+    //     })();
+
+    //     document.getElementById('capture').onclick = () => {
+    //         if (enhancer) {
+    //             let frame = enhancer.getFrame();
+            
+    //             let width = screen.availWidth;
+    //             let height = screen.availHeight;
+    //             let popW = 640, popH = 640;
+    //             let left = (width - popW) / 2;
+    //             let top = (height - popH) / 2;
+
+    //             popWindow = window.open('', 'popup', 'width=' + popW + ',height=' + popH +
+    //                 ',top=' + top + ',left=' + left + ', scrollbars=yes');
+
+    //             popWindow.document.body.appendChild(frame.canvas);
+    //         }
+    //     };
+
+        // Webcam.set({
+        //     width: 490,
+        //     height: 390,
+        //     image_format: 'jpeg',
+        //     jpeg_quality: 90
+        // });
+    
+        // Webcam.attach( '#my_camera' );
+    
+        // function take_snapshot() {
+        //     Webcam.snap( function(data_uri) {
+        //         $(".image-tag").val(data_uri);
+        //         document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+        //     } );
+        // }
+
 </script>
 
 <?= $this->endSection(); ?>
