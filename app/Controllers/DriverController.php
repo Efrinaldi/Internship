@@ -6,9 +6,9 @@ use App\Controllers\BaseController;
 use App\Models\CarModel;
 use App\Models\DriverModel;
 use CodeIgniter\API\ResponseTrait;
+use CodeIgniter\RESTful\ResourceController;
 
-
-class DriverController extends BaseController
+class DriverController extends ResourceController
 {
     use ResponseTrait;
 

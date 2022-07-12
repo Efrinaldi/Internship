@@ -5,9 +5,9 @@ namespace App\Controllers;
 use App\Models\UserModel;
 
 
-use CodeIgniter\RESTful\ResourceController;
+use App\Controllers\BaseController;
 
-class RegisterController extends ResourceController
+class RegisterController extends BaseController
 {
     public function __construct()
     {

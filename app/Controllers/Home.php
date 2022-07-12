@@ -3,14 +3,9 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\CarModel;
 use App\Models\DriverModel;
 use App\Models\OrderModel;
 use App\Models\UserModel;
-
-
-use App\Models\Driver_model;
-use App\Models\Order_model;
 
 class Home extends BaseController
 {
@@ -19,7 +14,6 @@ class Home extends BaseController
     {
         $this->Driver_model = new DriverModel();
         $this->Order_model = new OrderModel();
-        $this->validate     = \Config\Services::validation();
     }
     public function index()
     {
@@ -29,6 +23,7 @@ class Home extends BaseController
     {
         return view('dashboard');
     }
+
     public function homes()
     {
         return view('homes');
@@ -52,50 +47,11 @@ class Home extends BaseController
         // return view('order', $data);
     }
 
-
-
-    public function post_car($id_user)
-    {
-
-        $order = new CarModel();
-        $rules = [
-            'plat_nomor' => [
-                'rules' => 'required|min_length[3]',
-            ],
-            'id_user' => [
-                'rules' => 'required'
-            ],
-            'keterangan_mobil' => [
-                'rules' => 'required|min_length[3]',
-            ]
-        ];
-        if ($this->validate->setRules($rules)) {
-            $data = [
-                'id_user' => $id_user,
-                'keterangan_mobil' => $this->request->getVar('keterangan_mobil'),
-                'plat_nomor' => $this->request->getVar('plat_nomor'),
-                'status_mobil' => $this->request->getVar('plat_nomor')
-            ];
-            $order->insert($data);
-            return redirect()->to('request')->with('success', 'Berhasil menyimpan data mobil!');
-        }
-    }
-
-    // public function order()
-    // {
-    //     $order = $this->Order_model->findAll();
-    //     $data = [
-    //         'order' => $order,
-    //     ];
-    //     return view('order', $data);
-    // }
     public function driver()
     {
-        $driver = $this->Driver_model->findAll();
-        $data = [
-            'driver' => $driver,
-        ];
+        $driver = $this->Driver_model
 
+            ->findAll();
         $data = [
             'driver' => $driver,
         ];
@@ -125,19 +81,6 @@ class Home extends BaseController
     {
         return view('request');
     }
-
-    public function list_mobil()
-    {
-
-        $user = new UserModel();
-        $query   = $user->query("SELECT * FROM oauth_user inner join pengemudi where oauth_user.id_user = pengemudi.id_user;");
-        $rows = $query->getResultArray();
-
-        $data = [
-            'user' => $rows,
-        ];
-        return view('mobil', $data);
-    }
     public function admin()
     {
         $usermodel = new UserModel();
@@ -161,7 +104,6 @@ class Home extends BaseController
         $data = [
             'order' => $rows,
         ];
-
 
         return view('history_approve', $data);
     }
