@@ -2,9 +2,8 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
-use App\Models\OrdersModel;
-use App\Models\OrderModel;
+use App\Models\UserModel;
+use App\Models\User;
 use App\Models\DriverModel;
 use CodeIgniter\API\ResponseTrait;
 use App\Models\ReimburseModel;
@@ -14,8 +13,10 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Style\Border as StyleBorder;
 use \OAuth2\Request;
-
+use App\Controllers\BaseController;
 use App\Libraries\Oauth;
+use CodeIgniter\RESTful\ResourceController;
+use Firebase\JWT\JWT;
 
 class userController extends ResourceController
 {
@@ -241,7 +242,7 @@ class userController extends ResourceController
             ],
         ];
 
-        if (!$this->validate($rules, $messages)) {
+        if (!$this->validate->setRules($rules, $messages)) {
 
             $response = [
                 'status'  => 500,

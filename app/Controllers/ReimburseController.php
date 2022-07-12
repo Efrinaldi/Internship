@@ -9,6 +9,7 @@ use App\Models\DriverModel;
 use CodeIgniter\API\ResponseTrait;
 use App\Models\ReimburseModel;
 use CodeIgniter\CodeIgniter;
+use CodeIgniter\RESTful\ResourceController;
 use PhpOffice\PhpSpreadsheet\Reader\Xml\Style\Border;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
@@ -176,7 +177,7 @@ class ReimburseController extends BaseController
     public function store_reimburse($id = null)
     {
         $getId = $reimburse = $this->pemesanan->where('id_pemesanan', $id)->first();
-        $validate = $this->validate([
+        $validate = $this->validate->setRules([
             'deskripsi' => [
                 'rules' => 'required|min_length[3]',
                 'errors' => [
