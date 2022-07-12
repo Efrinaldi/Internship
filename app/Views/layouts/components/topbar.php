@@ -5,16 +5,15 @@
     </button>
     <!-- Topbar Navbar -->
     <?php if (!empty(session()->getFlashdata('success'))) : ?>
-    <div class="alert alert-success alert-dismissible fade show mt-auto" role="alert">
-        <?php echo session()->getFlashdata('success'); ?>
-    </div>
+        <div class="alert alert-success alert-dismissible fade show mt-auto" role="alert">
+            <?php echo session()->getFlashdata('success'); ?>
+        </div>
     <?php endif; ?>
     <ul class="navbar-nav ml-auto">
         <div class="topbar-divider d-none d-sm-block"></div>
         <!-- Nav Item - User Information -->
         <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                     <div>
                         <?= session()->get('first_name') ?>
@@ -35,9 +34,9 @@
 </nav>
 
 <script>
-window.setTimeout(function() {
-    $(".alert").fadeTo(500, 0).slideUp(500, function() {
-        $(this).remove();
-    });
-}, 3000);
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function() {
+            $(this).remove();
+        });
+    }, 3000);
 </script>

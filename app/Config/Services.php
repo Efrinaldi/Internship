@@ -23,6 +23,7 @@ class Services extends BaseService
     {
         return getenv('JWT_SECRET_KEY');
     }
+
     /*
      * public static function example($getShared = true)
      * {

@@ -8,6 +8,10 @@ use App\Models\DriverModel;
 use App\Models\OrderModel;
 use App\Models\UserModel;
 
+
+use App\Models\Driver_model;
+use App\Models\Order_model;
+
 class Home extends BaseController
 {
     protected $oauth_user;
@@ -25,7 +29,6 @@ class Home extends BaseController
     {
         return view('dashboard');
     }
-
     public function homes()
     {
         return view('homes');
@@ -78,11 +81,21 @@ class Home extends BaseController
         }
     }
 
+    // public function order()
+    // {
+    //     $order = $this->Order_model->findAll();
+    //     $data = [
+    //         'order' => $order,
+    //     ];
+    //     return view('order', $data);
+    // }
     public function driver()
     {
-        $driver = $this->Driver_model
+        $driver = $this->Driver_model->findAll();
+        $data = [
+            'driver' => $driver,
+        ];
 
-            ->findAll();
         $data = [
             'driver' => $driver,
         ];

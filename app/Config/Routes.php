@@ -66,11 +66,10 @@ $routes->group('api', function ($routes) {
     $routes->get('detailOrder/(:segment)', 'OrderController::detail_order/$1');
     $routes->get('showUser/(:segment)', 'userController::showUser/$1');
     $routes->get('viewPassword', 'userController::view_password');
-
     $routes->post('insertPengemudi/(:segment)', 'OrderController::insert_pengemudi/$1');
 });
 
-$routes->group('', ['filter' => 'loginFilter'], function ($routes) {
+$routes->group('', ['filter' => 'LoginFilter'], function ($routes) {
     $routes->get('/admin', 'Home::admin');
     $routes->get('/dashboard', 'Home::dashboard');
     $routes->get('/homes', 'Home::homes');
@@ -133,6 +132,17 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
 
 
 
+
+// We get a performance increase by specifying the default
+// route since we don't have to scan directories.
+$routes->get('/', 'Home::index');
+$routes->group('', ['filter' => 'LoginFilter'], function ($routes) {
+    $routes->get('dashboard', 'Home::dashboard');
+    $routes->get('order', 'Home::order');
+    $routes->get('driver', 'Home::driver');
+    $routes->get('history', 'Home::history');
+    $routes->get('process', 'Home::process');
+});
 
 /*
  * --------------------------------------------------------------------

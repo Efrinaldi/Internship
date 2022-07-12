@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+
 # CodeIgniter 4 Development
 
 [![Build Status](https://github.com/codeigniter4/CodeIgniter4/workflows/PHPUnit/badge.svg)](https://github.com/codeigniter4/CodeIgniter4/actions?query=workflow%3A%22PHPUnit%22)
@@ -9,11 +11,14 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/codeigniter4/CodeIgniter4/pulls)
 <br>
 
+# CodeIgniter 4 Application Starter
+
 ## What is CodeIgniter?
 
 CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
 More information can be found at the [official site](http://codeigniter.com).
 
+<<<<<<< HEAD
 This repository holds the source code for CodeIgniter 4 only.
 Version 4 is a complete rewrite to bring the quality and the code into a more modern version,
 while still keeping as many of the things intact that has made people love the framework over the years.
@@ -31,17 +36,47 @@ You might also be interested in the [API documentation](https://codeigniter4.git
 
 ## Important Change with index.php
 
-index.php is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+# index.php is no longer in the root of the project! It has been moved inside the _public_ folder,
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
+This repository holds a composer-installable app starter.
+It has been built from the
+[development repository](https://github.com/codeigniter4/CodeIgniter4).
+
+More information about the plans for version 4 can be found in [the announcement](http://forum.codeigniter.com/thread-62615.html) on the forums.
+
+The user guide corresponding to this version of the framework can be found
+[here](https://codeigniter4.github.io/userguide/).
+
+## Installation & updates
+
+`composer create-project codeigniter4/appstarter` then `composer update` whenever
+there is a new release of the framework.
+
+When updating, check the release notes to see if there are any changes you might need to apply
+to your `app` folder. The affected files can be copied or merged from
+`vendor/codeigniter4/framework/app`.
+
+## Setup
+
+Copy `env` to `.env` and tailor for your app, specifically the baseURL
+and any database settings.
+
+## Important Change with index.php
+
+`index.php` is no longer in the root of the project! It has been moved inside the _public_ folder,
+
+> > > > > > > 6626a17deb23f7a828bc637000d64360724f2c39
+> > > > > > > for better security and separation of components.
+
+This means that you should configure your web server to "point" to your project's _public_ folder, and
+not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter _public/..._, as the rest of your logic and the
 framework are exposed.
 
 **Please** read the user guide for a better explanation of how CI4 works!
 
 ## Repository Management
 
+<<<<<<< HEAD
 CodeIgniter is developed completely on a volunteer basis. As such, please give up to 7 days
 for your issues to be reviewed. If you haven't heard from one of the team in that time period,
 feel free to leave a comment on the issue so that it gets brought back to our attention.
@@ -71,23 +106,42 @@ to optional packages, with their own repository.
 
 We **are** accepting contributions from the community!
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/contributing/README.md).
+# Please read the [_Contributing to CodeIgniter_](https://github.com/codeigniter4/CodeIgniter4/blob/develop/contributing/README.md).
+
+We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
+We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
+FEATURE REQUESTS.
+
+This repository is a "distribution" one, built by our release preparation script.
+Problems with it can be raised on our forum, or as issues in the main repository.
+
+> > > > > > > 6626a17deb23f7a828bc637000d64360724f2c39
 
 ## Server Requirements
 
 PHP version 7.3 or higher is required, with the following extensions installed:
 
+<<<<<<< HEAD
 
 - [intl](http://php.net/manual/en/intl.requirements.php)
 - [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+- # [mbstring](http://php.net/manual/en/mbstring.installation.php)
+- [intl](http://php.net/manual/en/intl.requirements.php)
+- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+  > > > > > > > 6626a17deb23f7a828bc637000d64360724f2c39
 
 Additionally, make sure that the following extensions are enabled in your PHP:
 
 - json (enabled by default - don't turn it off)
+  <<<<<<< HEAD
 - xml (enabled by default - don't turn it off)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
 
 ## Running CodeIgniter Tests
 
-Information on running the CodeIgniter test suite can be found in the [README.md](tests/README.md) file in the tests directory.
+# Information on running the CodeIgniter test suite can be found in the [README.md](tests/README.md) file in the tests directory.
+
+- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
+- xml (enabled by default - don't turn it off)
+  > > > > > > > 6626a17deb23f7a828bc637000d64360724f2c39

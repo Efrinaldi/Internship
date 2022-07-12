@@ -2,6 +2,18 @@
 
 namespace Config;
 
+
+/**
+ * Paths
+ *
+ * Holds the paths that are used by the system to
+ * locate the main directories, app, system, etc.
+ *
+ * Modifying these allows you to restructure your application,
+ * share a system folder between multiple applications, and more.
+ *
+ * All paths are relative to the project's root folder.
+ */
 class Paths
 {
     /**
@@ -15,6 +27,7 @@ class Paths
      * @var string
      */
     public $systemDirectory = __DIR__ . '/../../system';
+    // public $systemDirectory = __DIR__ . '/../../vendor/codeigniter4/framework/system';
 
     /**
      * ---------------------------------------------------------------
