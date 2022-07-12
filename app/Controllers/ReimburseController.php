@@ -1,21 +1,17 @@
 <?php
 
 namespace App\Controllers;
-
 use App\Controllers\BaseController;
 use App\Models\OrdersModel;
 use App\Models\OrderModel;
 use App\Models\DriverModel;
 use CodeIgniter\API\ResponseTrait;
 use App\Models\ReimburseModel;
-<<<<<<< HEAD
 use CodeIgniter\CodeIgniter;
-=======
 use PhpOffice\PhpSpreadsheet\Reader\Xml\Style\Border;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Style\Border as StyleBorder;
->>>>>>> fe7f43bba6cc3c73c77aef09ce77b69a83b1bb01
 
 class ReimburseController extends BaseController
 {
@@ -207,9 +203,7 @@ class ReimburseController extends BaseController
         }
 
         $fileberkas = $this->request->getFile('photo');
-<<<<<<< HEAD
         $namaFileUpload = time() . '_' . $fileberkas->getName();
-=======
         $filepoto = $this->request->getPost('image');
         // dd($filepoto);
         
@@ -228,7 +222,6 @@ class ReimburseController extends BaseController
 
         $namaFileUpload = time() .'_'. $fileberkas->getName();
         // dd($namaFileUpload);
->>>>>>> fe7f43bba6cc3c73c77aef09ce77b69a83b1bb01
         $fileberkas->move('template/assets/img/upload', $namaFileUpload);
         $nominal = regexCurrency($this->request->getPost('nominal'));
         $this->model->insert([
