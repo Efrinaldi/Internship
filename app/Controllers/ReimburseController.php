@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Controllers\BaseController;
 use App\Models\OrdersModel;
 use App\Models\OrderModel;
@@ -71,7 +72,7 @@ class ReimburseController extends BaseController
     }
 
 
-  
+
 
 
 
@@ -206,21 +207,21 @@ class ReimburseController extends BaseController
         $namaFileUpload = time() . '_' . $fileberkas->getName();
         $filepoto = $this->request->getPost('image');
         // dd($filepoto);
-        
+
         $folderPath = "template/assets/img/upload/";
-  
+
         $image_parts = explode(";base64,", $filepoto);
         $image_type_aux = explode("image/", $image_parts[0]);
         $image_type = $image_type_aux[1];
-    
+
         $image_base64 = base64_decode($image_parts[1]);
         $fileName = uniqid() . '.png';
-        
+
         $file = $folderPath . $fileName;
         file_put_contents($file, $image_base64);
 
 
-        $namaFileUpload = time() .'_'. $fileberkas->getName();
+        $namaFileUpload = time() . '_' . $fileberkas->getName();
         // dd($namaFileUpload);
         $fileberkas->move('template/assets/img/upload', $namaFileUpload);
         $nominal = regexCurrency($this->request->getPost('nominal'));
@@ -269,23 +270,23 @@ class ReimburseController extends BaseController
                 ->setCellValue('C' . $column, $reimburse['deskripsi'])
                 ->setCellValue('D' . $column, $reimburse['nominal'])
                 ->setCellValue('E' . $column, $reimburse['updated_at']);
-                $total = $total+$reimburse['nominal'];
+            $total = $total + $reimburse['nominal'];
             $i++;
             $column++;
         }
         $last_column = $column - 1;
         $sumrange = 'D' . $first_column . ':D' . $last_column;
-        $sheet->mergeCells('A'.$column.':C'.$column);
-        $sheet->mergeCells('D'.$column.':E'.$column);
+        $sheet->mergeCells('A' . $column . ':C' . $column);
+        $sheet->mergeCells('D' . $column . ':E' . $column);
         $sheet->setCellValue('A' . $column, 'Total');
         $sheet->setCellValue('D' . $column, '=SUM(' . $sumrange . ')');
 
-        $sheet->getStyle('A4:E'.$column)->getBorders()->getAllBorders()->setBorderStyle(StyleBorder::BORDER_THIN);
+        $sheet->getStyle('A4:E' . $column)->getBorders()->getAllBorders()->setBorderStyle(StyleBorder::BORDER_THIN);
         // // membuat file excel
         $lastColumn = $sheet->getHighestColumn();
         $lastRow = $sheet->getHighestRow();
         $sheet->getStyle('A1:E1')->getAlignment()->setHorizontal('center');
-        $sheet->getStyle('A'.$column.':C'.$column)->getAlignment()->setHorizontal('center');
+        $sheet->getStyle('A' . $column . ':C' . $column)->getAlignment()->setHorizontal('center');
         // $sheet->getStyle('D'.$column.':E'.$column)->getAlignment()->setHorizontal('center');
         $sheet->getStyle("A1:$lastColumn$lastRow")->getAlignment()->setVertical('center');
 
