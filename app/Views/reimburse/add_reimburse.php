@@ -64,11 +64,42 @@
                             </div>
                         </div>     
                     </div>
+                    <div class="row card-body table-responsive">
+                        <h5 class="text-center">Daftar Transaksi Reimburse Dalam Proses</h5>
+                        <hr>
+                        <table class="table table-striped table-md">
+                            <thead>
+                                <tr>
+                                    <th>Foto</th>
+                                    <th>Deskripsi</th>
+                                    <th>Nominal</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($reimbursement as $key => $value) : ?>
+                                    <tr>
+                                        <td><img width="75px" class="img-thumbnail" src="<?= base_url() . "/template/assets/img/upload/" . $value->photo; ?>"></td>
+                                        <td><?= $value->deskripsi; ?></td>
+                                        <td><?= format_rupiah($value->nominal); ?></td>
+                                        <td>
+                                            <form action="<?= site_url('reimburse/delete_inDriver/' . $value->id); ?>" method="POST" class="d-inline" id="del-<?= $value->id; ?>">
+                                            <?= csrf_field() ?>
+                                                <button type="submit" class="btn btn-warning" data-confirm="Hapus Data ?|Apakah Anda yakin ?" data-confirm-yes="submitDel(<?= $value->id; ?>)">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <div class="card-body col-md-6">
                 <?php $validation = \Config\Services::validation(); ?>
-                    <form action="<?= site_url('reimburse/store_reimburse/' . $reimburse['id_pemesanan']); ?>" method="post" autocomplete="off" enctype="multipart/form-data">
+                    <form action="<?= site_url('reimburse/store_reimburse/' . $pemesanan['id_pemesanan']); ?>" method="post" autocomplete="off" enctype="multipart/form-data">
                         <?= csrf_field() ?>
                         <div class="form-group">
                             <label>Deskripsi</label>
@@ -86,7 +117,19 @@
                         </div>
                         <div class="form-group">
                             <label>Image</label>
-                            <input type="file" id="photo" name="photo" class="form-control <?= $validation->hasError('photo') ? 'is-invalid' : ''; ?>" onchange="previewImageFile(this);" required>
+                            <!-- <button id="capture">Capture</button>
+                            <div id="enhancerUIContainer" style="height: 100vh;"></div> -->
+
+                            <!-- <div id="my_camera"></div>
+                            <br/>
+                            <input type=button value="Take Snapshot" onClick="take_snapshot()">
+                            <input type="hidden" name="image" class="image-tag">
+                            <div class="col-md-6">
+                                <div id="results">Your captured image will appear here...</div>
+                            </div> -->
+
+
+                            <input type="file" id="photo" name="photo" class="form-control <?= $validation->hasError('photo') ? 'is-invalid' : ''; ?>" onchange="previewImageFile(this);" value="<?= old('photo'); ?>" required>
                             <img src="" alt="Image preview" id="preview-image" width="400px" class="hideImage">
                             <div class="invalid-feedback">
                                 <?= $validation->getError('photo'); ?>
@@ -127,7 +170,6 @@
             sisa     = split[0].length % 3,
             rupiah     = split[0].substr(0, sisa),
             ribuan     = split[0].substr(sisa).match(/\d{3}/gi);
-            
         if (ribuan) {
             separator = sisa ? '.' : '';
             rupiah += separator + ribuan.join('.');
@@ -136,6 +178,47 @@
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
         return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
     }
+
+    // let enhancer = null;
+    //     (async () => {
+    //         enhancer = await Dynamsoft.DCE.CameraEnhancer.createInstance();
+    //         document.getElementById("enhancerUIContainer").appendChild(enhancer.getUIElement());
+    //         await enhancer.open(true);
+    //     })();
+
+    //     document.getElementById('capture').onclick = () => {
+    //         if (enhancer) {
+    //             let frame = enhancer.getFrame();
+            
+    //             let width = screen.availWidth;
+    //             let height = screen.availHeight;
+    //             let popW = 640, popH = 640;
+    //             let left = (width - popW) / 2;
+    //             let top = (height - popH) / 2;
+
+    //             popWindow = window.open('', 'popup', 'width=' + popW + ',height=' + popH +
+    //                 ',top=' + top + ',left=' + left + ', scrollbars=yes');
+
+    //             popWindow.document.body.appendChild(frame.canvas);
+    //         }
+    //     };
+
+        // Webcam.set({
+        //     width: 490,
+        //     height: 390,
+        //     image_format: 'jpeg',
+        //     jpeg_quality: 90
+        // });
+    
+        // Webcam.attach( '#my_camera' );
+    
+        // function take_snapshot() {
+        //     Webcam.snap( function(data_uri) {
+        //         $(".image-tag").val(data_uri);
+        //         document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+        //     } );
+        // }
+
 </script>
 
 <?= $this->endSection(); ?>

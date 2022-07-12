@@ -12,6 +12,17 @@ class ReimburseModel extends Model
     protected $allowedFields    = ['id_pemesanan', 'deskripsi', 'nominal', 'photo', 'status', 'created_by'];
     protected $useTimestamps    = true;
 
+    public function getPemesanan()
+    {
+        $query = $this->db->table('reimburse')
+                ->select('reimburse.*, pengemudi.nama_pengemudi')
+                ->join('pemesanan', 'reimburse.id_pemesanan = pemesanan.id')
+                ->join('pengemudi', 'pemesanan.id_pengemudi = pengemudi.id_pengemudi')
+                ->where('reimburse.status', 'Requesting')
+                ->get();
+        return $query;
+    }
+
     public function getList($get_id_pengemudi = null)
     {
         $query =  $this->db->table('pemesanan')

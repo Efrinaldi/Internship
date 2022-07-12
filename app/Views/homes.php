@@ -13,7 +13,7 @@
     </div>
 
     <div class="section-body">
-        <h1>Selamat datang di Halaman Utama Aplikasi Reimbursement</h1>
+        <h1>Aplikasi Reimbursement Driver</h1>
     </div>
 </section>
 

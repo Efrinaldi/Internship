@@ -43,7 +43,7 @@
                     <div class="form-group mr-sm-5">
                         <input type="text" name="keyword" id="keyword" value="<?= $keyword; ?>" class="form-control" style="width: 155pt" placeholder="search driver" required>
                     </div>
-                    <div class="form-group mr-sm-5">
+                    <div class="form-group mr-sm-2">
                         <label class="mr-sm-2">Tanggal</label>
                         <input type="date" name="tgl_awal" id="tgl_awal" value="<?= $tgl_awal; ?>" class="form-control" style="width: 150pt" required>
                     </div>
@@ -103,7 +103,10 @@
                         </tfoot>
                     </tbody>
                 </table>
-                <button class="btn btn-success mt-3" id="exportBtn1">Export To Excel</button>
+                <div class="btn btn-success mt-3" id="exportBtn1" onclick="downloadExcel()">
+                    Export to Excel
+                </div>
+                <!-- <a href="" class="btn btn-success mt-3" id="exportBtn1" onclick="downloadExcel()">Export To Excel</a> -->
             </div>
         </div>
     </div>
@@ -130,19 +133,20 @@
                 $("#entryTable").toggle()
             });
         });
-        $(document).ready(function () {
-            let key = $('#keyword').val()
-            let awal = $('#tgl_awal').val()
-            let akhir = $('#tgl_awal').val()
-            $("#exportBtn1").click(function(){
-                TableToExcel.convert(document.getElementById("entryTable"), {
-                    name: key+awal+akhir+".xlsx",
-                    sheet: {
-                        name: "Sheet1"
-                    }
-                });
-            });
-        });
+        // $(document).ready(function () {
+        //     let key = $('#keyword').val()
+        //     let awal = $('#tgl_awal').val()
+        //     let akhir = $('#tgl_awal').val()
+        //     $("#exportBtn1").click(function(){
+        //         TableToExcel.convert(document.getElementById("entryTable"), {
+        //             name: key+awal+akhir+".xlsx",
+        //             sheet: {
+        //                 name: "Sheet1"
+        //             }
+        //         });
+        //     });
+        // });
+        
     </script>
 </section>
 

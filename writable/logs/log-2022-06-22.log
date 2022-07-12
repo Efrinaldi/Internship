@@ -1,0 +1,53 @@
+CRITICAL - 2022-06-22 02:25:35 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::getNums()
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\ReimburseController->add_reimburse('139')
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReimburseController))
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#5 {main}
+CRITICAL - 2022-06-22 02:30:55 --> Undefined variable: reimburse
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Views\reimburse\add_reimburse.php(71): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\muhamm...', 71, Array)
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(214): include('C:\\Users\\muhamm...')
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Common.php(1097): CodeIgniter\View\View->render('reimburse/add_r...', Array, true)
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\ReimburseController.php(101): view('reimburse/add_r...', Array)
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\ReimburseController->add_reimburse('139')
+#6 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReimburseController))
+#7 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#10 {main}
+CRITICAL - 2022-06-22 12:33:15 --> Trying to get property 'id_pemesanan' of non-object
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\ReimburseController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\Users\\muhamm...', 30, Array)
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\ReimburseController->index()
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReimburseController))
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#6 {main}
+CRITICAL - 2022-06-22 12:33:30 --> Undefined index: id_pemesanan
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\ReimburseController.php(30): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\muhamm...', 30, Array)
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\ReimburseController->index()
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReimburseController))
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#6 {main}
+CRITICAL - 2022-06-22 18:30:14 --> Could not open file "" for writing.
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx.php(539): PhpOffice\PhpSpreadsheet\Writer\BaseWriter->openFileHandle('')
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\ReimburseController.php(187): PhpOffice\PhpSpreadsheet\Writer\Xlsx->save('')
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\ReimburseController->export()
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReimburseController))
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#7 {main}
+CRITICAL - 2022-06-22 18:30:50 --> Could not open file "" for writing.
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx.php(539): PhpOffice\PhpSpreadsheet\Writer\BaseWriter->openFileHandle('')
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\ReimburseController.php(187): PhpOffice\PhpSpreadsheet\Writer\Xlsx->save('')
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\ReimburseController->export()
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReimburseController))
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#7 {main}

@@ -8,7 +8,14 @@ use App\Models\OrderModel;
 use App\Models\DriverModel;
 use CodeIgniter\API\ResponseTrait;
 use App\Models\ReimburseModel;
+<<<<<<< HEAD
 use CodeIgniter\CodeIgniter;
+=======
+use PhpOffice\PhpSpreadsheet\Reader\Xml\Style\Border;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Style\Border as StyleBorder;
+>>>>>>> fe7f43bba6cc3c73c77aef09ce77b69a83b1bb01
 
 class ReimburseController extends BaseController
 {
@@ -22,15 +29,14 @@ class ReimburseController extends BaseController
         $this->order = new OrderModel();
         $this->pengemudi = new DriverModel();
         $this->model = new ReimburseModel();
+        $this->spreadsheet = new Spreadsheet();
     }
     // protected $model = 'App\Models\ReimburseModel';
     protected $helpers = ['custom'];
 
     public function index()
     {
-        $data['reimburse'] = $this->model->orderBy('created_at', 'DESC')
-            ->where('status', 'Requesting')
-            ->findAll();
+        $data['reimburse'] = $this->model->getPemesanan()->getResult();
         return view('reimburse/index', $data);
     }
 
@@ -61,6 +67,11 @@ class ReimburseController extends BaseController
     {
         $this->model->where('id', $id)->delete();
         return redirect()->to(site_url('reimburse'))->with('success', 'Data berhasil Dihapus');
+    }
+    public function delete_inDriver($id = null)
+    {
+        $this->model->where('id', $id)->delete();
+        return redirect()->back()->with('success', 'Data berhasil Dihapus');
     }
 
 
@@ -147,13 +158,15 @@ class ReimburseController extends BaseController
 
     public function add_reimburse($id = null)
     {
-        $reimburse = $this->pemesanan->where('id_pemesanan', $id)->first();
-        $getOrder = $this->order->where('id', $reimburse['id_pemesanan'])->first();
-        $getPengemudi = $this->pengemudi->where('id_pengemudi', $reimburse['id_pengemudi'])->first();
-        if ($reimburse) {
-            $data['reimburse'] = $reimburse;
+        $pemesanan = $this->pemesanan->where('id_pemesanan', $id)->first();
+        $reimbursement = $this->model->where('id_pemesanan', $pemesanan['id'])->get()->getResult();
+        $getOrder = $this->order->where('id', $pemesanan['id_pemesanan'])->first();
+        $getPengemudi = $this->pengemudi->where('id_pengemudi', $pemesanan['id_pengemudi'])->first();
+        if ($pemesanan) {
+            $data['pemesanan'] = $pemesanan;
             $data['order'] = $getOrder;
             $data['pengemudi'] = $getPengemudi;
+            $data['reimbursement'] = $reimbursement;
             return view('reimburse/add_reimburse', $data);
         } else {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
@@ -194,16 +207,106 @@ class ReimburseController extends BaseController
         }
 
         $fileberkas = $this->request->getFile('photo');
+<<<<<<< HEAD
         $namaFileUpload = time() . '_' . $fileberkas->getName();
+=======
+        $filepoto = $this->request->getPost('image');
+        // dd($filepoto);
+        
+        $folderPath = "template/assets/img/upload/";
+  
+        $image_parts = explode(";base64,", $filepoto);
+        $image_type_aux = explode("image/", $image_parts[0]);
+        $image_type = $image_type_aux[1];
+    
+        $image_base64 = base64_decode($image_parts[1]);
+        $fileName = uniqid() . '.png';
+        
+        $file = $folderPath . $fileName;
+        file_put_contents($file, $image_base64);
+
+
+        $namaFileUpload = time() .'_'. $fileberkas->getName();
+        // dd($namaFileUpload);
+>>>>>>> fe7f43bba6cc3c73c77aef09ce77b69a83b1bb01
         $fileberkas->move('template/assets/img/upload', $namaFileUpload);
         $nominal = regexCurrency($this->request->getPost('nominal'));
         $this->model->insert([
             'id_pemesanan' => $getId['id'],
             'deskripsi'  => $this->request->getVar('deskripsi'),
             'nominal'   => $nominal,
-            'photo'    => $namaFileUpload,
+            'photo'    => $fileName,
         ]);
 
         return redirect()->to(site_url('reimburse/list'))->with('success', 'Data berhasil Disimpan');
+    }
+
+    public function export()
+    {
+        $keyword = $this->request->getVar('driver');
+        $start = $this->request->getVar('startdate');
+        $end = $this->request->getVar('enddate');
+        $reimburses = $this->model->getApprove($keyword, $start, $end)->getResultArray();
+
+        $waktu = "$start sd $end";
+        $filename = $keyword . '-' . $waktu;
+        // $spreadsheet = new Spreadsheet();
+        $sheet = $this->spreadsheet->getActiveSheet();
+        $sheet->mergeCells('A1:E1');
+
+        $sheet->setCellValue('A1', "REKAP $keyword DARI $waktu");
+        $sheet->setCellValue('A3', "NO");
+        $sheet->setCellValue('B3', "NAMA DRIVER");
+        $sheet->setCellValue('C3', "DESKRIPSI");
+        $sheet->setCellValue('D3', "NOMINAL");
+        $sheet->setCellValue('E3', "TANGGAL APPROVED");
+
+        // memberikan border
+        $sheet->getStyle('A3:E3')->getBorders()->getAllBorders()->setBorderStyle(StyleBorder::BORDER_THIN);
+
+        // insert data
+        $column = 4;
+        $first_column = $column;
+        $i = 1;
+        $total = 0;
+        foreach ($reimburses as $key => $reimburse) {
+            $this->spreadsheet->setActiveSheetIndex(0)
+                ->setCellValue('A' . $column, $i)
+                ->setCellValue('B' . $column, $reimburse['nama_pengemudi'])
+                ->setCellValue('C' . $column, $reimburse['deskripsi'])
+                ->setCellValue('D' . $column, $reimburse['nominal'])
+                ->setCellValue('E' . $column, $reimburse['updated_at']);
+                $total = $total+$reimburse['nominal'];
+            $i++;
+            $column++;
+        }
+        $last_column = $column - 1;
+        $sumrange = 'D' . $first_column . ':D' . $last_column;
+        $sheet->mergeCells('A'.$column.':C'.$column);
+        $sheet->mergeCells('D'.$column.':E'.$column);
+        $sheet->setCellValue('A' . $column, 'Total');
+        $sheet->setCellValue('D' . $column, '=SUM(' . $sumrange . ')');
+
+        $sheet->getStyle('A4:E'.$column)->getBorders()->getAllBorders()->setBorderStyle(StyleBorder::BORDER_THIN);
+        // // membuat file excel
+        $lastColumn = $sheet->getHighestColumn();
+        $lastRow = $sheet->getHighestRow();
+        $sheet->getStyle('A1:E1')->getAlignment()->setHorizontal('center');
+        $sheet->getStyle('A'.$column.':C'.$column)->getAlignment()->setHorizontal('center');
+        // $sheet->getStyle('D'.$column.':E'.$column)->getAlignment()->setHorizontal('center');
+        $sheet->getStyle("A1:$lastColumn$lastRow")->getAlignment()->setVertical('center');
+
+
+        for ($i = 'A'; $i !=  $lastColumn; $i++) {
+            $sheet->getColumnDimension($i)->setAutoSize(TRUE);
+        }
+
+        $sheet->getStyle('A3:E3')->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)->getStartColor()->setARGB('FFE900');
+        $writer = new Xlsx($this->spreadsheet);
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename=' . $filename . '.xlsx');
+        header('Cache-Control: max-age=0');
+
+        $writer->save('php://output');
     }
 }
