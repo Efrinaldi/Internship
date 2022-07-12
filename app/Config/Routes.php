@@ -35,6 +35,7 @@ $routes->add('/logout', 'UserController::logout');
 $routes->post('/auth', 'userController::auth');
 $routes->post('/reg', 'userController::authregister');
 $routes->post('/login_api', 'userController::login');
+$routes->get('/register', 'RegisterController::index');
 
 $routes->group('api', function ($routes) {
     $routes->get('showAllOrderUser/(:segment)', 'OrderController::show_order_user/$1');
@@ -69,7 +70,7 @@ $routes->group('api', function ($routes) {
     $routes->post('insertPengemudi/(:segment)', 'OrderController::insert_pengemudi/$1');
 });
 
-$routes->group('', ['filter' => 'LoginFilter'], function ($routes) {
+$routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('/admin', 'Home::admin');
     $routes->get('/dashboard', 'Home::dashboard');
     $routes->get('/homes', 'Home::homes');
