@@ -30,3 +30,32 @@ function returnLogout() {
     var link = $('#logout').attr('href')
     $(location).attr('href', link)
 }
+
+
+function downloadExcel() {
+    let key = $('#keyword').val()
+    let awal = $('#tgl_awal').val()
+    let akhir = $('#tgl_akhir').val()
+    Swal.fire({
+        title: 'Rentang Tanggal',
+        html: `
+        <form action="export" method="post">
+            <div class="form-group">
+                <div class="mb-2">
+                    <input type="text" name="driver" value="`+key+`">
+                </div>
+                <input type="date" name="startdate" id="startdate" value="`+awal+`" required> -
+                <input type="date" name="enddate" id="enddate" value="`+akhir+`" required>
+            </div>    
+            <button type="submit" class="btn btn-primary">Unduh</button>
+        </form>
+   
+        `,
+        focusConfirm: false,
+        showConfirmButton: false,
+
+        // icon: 'success',
+        confirmButtonText: 'Kembali',
+        target: '#content'
+    })
+}
