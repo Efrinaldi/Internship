@@ -10,6 +10,7 @@ use App\Models\DriverModel;
 use App\Models\UserModel;
 use App\Controllers\NotificationController;
 use App\Models\OrdersModel;
+use App\Models\ReimburseModel;
 use Firebase\JWT\JWT;
 
 
@@ -22,12 +23,21 @@ class OrderController extends BaseController
         $this->orders = new OrdersModel();
     }
 
+    public function detail_order($id_order)
+    {
+        $order = new OrderModel();
+        $query   = $order->query("SELECT orders.ID as id_order,orders.nama,orders.unit_kerja,orders.asal,orders.waktu,orders.tujuan,orders.id_user as id_user,oauth_user.nama_user,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan where orders.id = $id_order ");
+        $rows = $query->getResult();
+        $data = [
+            "data" => $rows
+        ];
+        return $this->respondCreated($data, 201);
+    }
     public function order($id_user)
     {
-
         $order = new OrderModel();
         $driver =  new DriverModel();
-        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.id_user,oauth_user.nama_user,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan where orders.id_user = $id_user and tanggal like DATE_FORMAT(CURRENT_DATE,'%m/%d/%Y') order by waktu");
+        $query   = $order->query("SELECT orders.ID as id_order, pemesanan.id as id_pemesanan, orders.asal ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.id_user as id_user,oauth_user.nama_user,orders.tanggal, pemesanan.id_pengemudi as id_pengemudi from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan where orders.id_user = $id_user and tanggal like DATE_FORMAT(CURRENT_DATE,'%m/%d/%Y') order by waktu");
         $rows = $query->getResult();
         $data = [
             "data" => $rows
@@ -37,22 +47,55 @@ class OrderController extends BaseController
 
 
 
-    public function order_driver($id_pengemudi)
+    public function detail_driver($id_user)
     {
-        $order = new OrderModel();
         $driver =  new DriverModel();
-
-        $query   = $order->query("select pengemudi.nama_pengemudi, pengemudi.id_user as id_pengemudi,pemesanan.id_pemesanan,pemesanan.id_user as id_user,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.tanggal from pemesanan left JOIN pengemudi on pemesanan.id_pengemudi = pengemudi.id_pengemudi INNER JOIN orders on orders.ID = pemesanan.id_pemesanan where pengemudi.id_user= $id_pengemudi;");
+        $query   = $driver->query("SELECT id_pengemudi ,id_user,nama_pengemudi,status_pengemudi,plat_nomor,keterangan_mobil  FROM PENGEMUDI inner join mobil on pengemudi.id_mobil = mobil.id_mobil WHERE pengemudi.id_pengemudi=  $id_user;");
         $rows = $query->getResult();
         $data = ["data" => $rows];
         return $this->respondCreated($data, 201);
     }
 
+    public function order_driver($id_user)
+    {
+        $order = new OrderModel();
+        $driver =  new DriverModel();
+        $query   = $order->query("SELECT pengemudi.id_pengemudi as id_pengemudi,orders.id as id_order, pengemudi.nama_pengemudi,pemesanan.id_pemesanan as id_pemesanan,pemesanan.id_user as id_user,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.tanggal from pemesanan left JOIN pengemudi on pemesanan.id_pengemudi = pengemudi.id_pengemudi INNER JOIN orders on orders.ID = pemesanan.id_pemesanan where pengemudi.id_user= $id_user and tanggal like DATE_FORMAT(CURRENT_DATE,'%m/%d/%Y') order by waktu");
+        $rows = $query->getResult();
+        $data = ["data" => $rows];
+        return $this->respondCreated($data, 201);
+    }
+
+    public function show_order_driver($id_user)
+    {
+        $order = new OrderModel();
+        $driver =  new DriverModel();
+        $query   = $order->query("SELECT orders.id as id_order, pengemudi.id_pengemudi as id_pengemudi,pengemudi.nama_pengemudi,pemesanan.id_pemesanan as id_pemesanan,pemesanan.id_user as id_user,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.tanggal from pemesanan left JOIN pengemudi on pemesanan.id_pengemudi = pengemudi.id_pengemudi INNER JOIN orders on orders.ID = pemesanan.id_pemesanan where pengemudi.id_user= $id_user and id_pemesanan  is NOT NULL");
+        $rows = $query->getResult();
+        $data = ["data" => $rows];
+        return $this->respondCreated($data, 201);
+    }
+
+
+
+
+
+    public function show_order_user($id_user)
+    {
+        $order = new OrderModel();
+        $driver =  new DriverModel();
+        $query   = $order->query("SELECT orders.ID as id_order, pemesanan.id as id_pemesanan, orders.asal ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.id_user as id_user,oauth_user.nama_user,orders.tanggal, pemesanan.id_pengemudi as id_pengemudi from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan where orders.id_user = $id_user and id_pemesanan  is NOT NULL ");
+        $rows = $query->getResult();
+        $data = ["data" => $rows];
+        return $this->respondCreated($data, 201);
+    }
+
+
     public function notification_user($id_user)
     {
         $order = new OrderModel();
         $driver =  new DriverModel();
-        $query   = $order->query("select pengemudi.id_pengemudi,pengemudi.nama_pengemudi,mobil.plat_nomor,mobil.status_mobil,mobil.keterangan_mobil,pengemudi.id_user,pemesanan.id_user FROM pengemudi RIGHT JOIN pemesanan ON pengemudi.id_pengemudi = pemesanan.id_pengemudi INNER JOIN mobil on pengemudi.id_mobil = mobil.id_mobil WHERE pemesanan.id_user =       $id_user;");
+        $query   = $order->query("select pengemudi.id_pengemudi,pengemudi.nama_pengemudi,mobil.plat_nomor,mobil.status_mobil,mobil.keterangan_mobil,pengemudi.id_user,pemesanan.id_user,pemesanan.id_pemesanan FROM pengemudi RIGHT JOIN pemesanan ON pengemudi.id_pengemudi = pemesanan.id_pengemudi INNER JOIN mobil on pengemudi.id_mobil = mobil.id_mobil WHERE pemesanan.id_user =       $id_user;");
         $rows = $query->getResult();
         $data = ["data" => $rows];
         return $this->respondCreated($data, 201);
@@ -66,6 +109,7 @@ class OrderController extends BaseController
         $data = ["data" => $rows];
         return $this->respondCreated($data, 201);
     }
+
 
 
 
@@ -116,47 +160,72 @@ class OrderController extends BaseController
             return redirect()->to('request')->with('success', 'Pesanan masuk. Segera proses pesanan!');
         }
     }
+
+
+    public function insert_reimburse($id)
+    {
+        $order = new OrderModel();
+
+        $data = [
+            "unit_kerja" => $this->request->getPost('unit_kerja'),
+            "nama" => $this->request->getPost('nama'),
+            "tanggal" => $this->request->getPost('tanggal'),
+            "waktu" => $this->request->getPost('waktu'),
+
+            "tujuan" => $this->request->getPost('tujuan'),
+
+            "asal" => $this->request->getPost('asal'),
+
+            "id_user" => $this->request->getPost('id_user'),
+        ];
+        $data = json_decode(file_get_contents("php://input"));
+        $order->insert($data);
+        $data_order = $order->query("SELECT id FROM orders ORDER BY id DESC LIMIT 1")->getResultArray();
+        $response = [
+            'id'       => $order->getInsertID(),
+            'status'   => 201,
+            'error'    => null,
+            'messages' => [
+                'success' => 'Data Saved'
+            ]
+        ];
+        return $this->respondCreated($response);
+    }
+
+
+
     public function post_order()
     {
+        $order = new OrderModel();
 
-        $key = getenv('TOKEN_SECRET');
-        $header = $this->request->getServer('HTTP_AUTHORIZATION');
-        if (!$header) return $this->failUnauthorized('Token Required');
-        $token = explode(' ', $header)[1];
+        $data = [
+            "keterangan" => "pending",
+            "status" => 0,
+            "unit_kerja" => $this->request->getPost('unit_kerja'),
+            "nama" => $this->request->getPost('nama'),
+            "tanggal" => $this->request->getPost('tanggal'),
+            "waktu" => $this->request->getPost('waktu'),
 
-        try {
-            $order = new OrderModel();
-            $data = [
-                "unit_kerja" => $this->request->getPost('unit_kerja'),
-                "nama" => $this->request->getPost('nama'),
-                "tanggal" => $this->request->getPost('tanggal'),
-                "waktu" => $this->request->getPost('waktu'),
-                "tujuan" => $this->request->getPost('tujuan'),
-                "id_user" => $this->request->getPost('id_user'),
+            "tujuan" => $this->request->getPost('tujuan'),
 
-            ];
-            $data = json_decode(file_get_contents("php://input"));
-            $order->insert($data);
-            $response = [
-                'id_order' => $data['id'],
-                'status'   => 201,
-                'error'    => null,
-                'messages' => [
-                    'success' => 'Data Saved'
-                ]
-            ];
+            "asal" => $this->request->getPost('asal'),
 
-            return $this->respondCreated($response, 201);
-            $decoded = JWT::decode($token, $key, ['HS256']);
-            $response = [
-                'id' => $decoded->uid,
-                'email' => $decoded->email
-            ];
-            return $this->respond($response);
-        } catch (\Throwable $th) {
-            return $this->fail('Invalid Token');
-        }
+            "id_user" => $this->request->getPost('id_user'),
+        ];
+        $data = json_decode(file_get_contents("php://input"));
+        $order->insert($data);
+        $response = [
+            'id'       => $order->getInsertID(),
+            'status'   => 201,
+            'error'    => null,
+            'messages' => [
+                'success' => 'Data Saved'
+            ]
+        ];
+        return $this->respondCreated($response);
     }
+
+
 
 
     public function showOrder($id_user)

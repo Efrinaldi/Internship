@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'a222b3880ec3a1b7fc7fb2d6946ee7e6118e1fcf',
+        'reference' => '626d7a8eb118e100be583f36fad5864ba6691390',
         'name' => 'codeigniter4/codeigniter4',
         'dev' => true,
     ),
@@ -29,12 +29,12 @@
             'dev_requirement' => true,
         ),
         'codeigniter4/codeigniter4' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'a222b3880ec3a1b7fc7fb2d6946ee7e6118e1fcf',
+            'reference' => '626d7a8eb118e100be583f36fad5864ba6691390',
             'dev_requirement' => false,
         ),
         'composer/pcre' => array(
@@ -101,12 +101,12 @@
             'dev_requirement' => true,
         ),
         'firebase/php-jwt' => array(
-            'pretty_version' => 'v6.1.2',
-            'version' => '6.1.2.0',
+            'pretty_version' => 'v6.2.0',
+            'version' => '6.2.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../firebase/php-jwt',
             'aliases' => array(),
-            'reference' => 'c297139da7c6873dbd67cbd1093f09ec0bbd0c50',
+            'reference' => 'd28e6df83830252650da4623c78aaaf98fb385f3',
             'dev_requirement' => false,
         ),
         'friendsofphp/php-cs-fixer' => array(

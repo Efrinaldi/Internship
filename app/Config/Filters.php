@@ -6,8 +6,9 @@ use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
-use Modules\Auth\Filters\AuthFilter;
 use App\Filters\LoginFilter;
+use App\Filters\AuthFilter;
+
 use App\Filters\Cors;
 
 
@@ -24,7 +25,8 @@ class Filters extends BaseConfig
         'toolbar'  => DebugToolbar::class,
         'honeypot' => Honeypot::class,
         'cors'      => Cors::class,
-        'loginFilter'=> LoginFilter::class,
+        'loginFilter' => LoginFilter::class,
+
         'auth_jwt' => JWTAuthenticationFilter::class, // add this line
         'isDriver'      => \App\Filters\DriverFilter::class,
         'isAdmin'       => \App\Filters\AdminFilter::class,
@@ -41,7 +43,7 @@ class Filters extends BaseConfig
             'cors',
             // 'honeypot',
             // 'csrf',
-           
+
         ],
         'after' => [
             'toolbar',

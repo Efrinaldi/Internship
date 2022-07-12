@@ -16,38 +16,99 @@ use App\Libraries\Oauth;
 
 class userController extends ResourceController
 {
+
+
     public function __construct()
     {
         $this->user = new UserModel();
         $this->User = new User();
         $this->session     = \Config\Services::session();
+        $this->validate     = \Config\Services::validation();
     }
     protected $helpers = ['custom'];
     use ResponseTrait;
     public function index()
     {
-        if(session()->get('logged_in') == true){
+        if (session()->get('logged_in') == true) {
 
-            return redirect()->back(); 
+            return redirect()->back();
         }
         //include helper form
         helper(['form']);
         $data = [];
         echo view('login', $data);
     }
+
+
+    public function changeNumber($id_user)
+    {
+        $user = new UserModel();
+        $data = [
+            "phone_number" => $this->request->getPost('phone_number'),
+        ];
+        $data = json_decode(file_get_contents("php://input"));
+        $user->update($id_user, $data);
+        $response = [
+            'status'   => 201,
+            'error'    => null,
+            'messages' => [
+                'success' => 'Data Saved'
+            ]
+        ];
+        return $this->respondCreated($response);
+    }
+
+
+    public function changePassword($id_user)
+    {
+        $user = new UserModel();
+        $data = [
+            "password" => $this->request->getPost('phone_number'),
+        ];
+        $data = json_decode(file_get_contents("php://input"));
+        $user->update($id_user, $data);
+        $response = [
+            'status'   => 201,
+            'error'    => null,
+            'messages' => [
+                'success' => 'Data Saved'
+            ]
+        ];
+        return $this->respondCreated($response);
+    }
     public function authregister()
     {
         helper(['form']);
 
         //set rules validation form
-        $rules = [
-            'first_name'          => 'required|min_length[3]|max_length[20]',
-            'email'              => 'required|min_length[6]|max_length[50]|valid_email|is_unique[user.email]',
-            'password'           => 'required|min_length[6]|max_length[200]',
-            'confpassword'       => 'matches[password]'
-        ];
+        $rules =  $this->validate->setRules([
+            'first_name'          => [
+                'rules' => 'required|min_length[3]|max_length[20]',
+                'error' => [
+                    'required' => 'isi woy'
+                ]
+            ],
+            'email'          => [
+                'rules' => 'required|min_length[6]|max_length[50]|valid_email|is_unique[user.email]',
+                'error' => [
+                    'required' => 'isi woy'
+                ]
+            ],
+            'password'          => [
+                'rules' => 'required|min_length[6]|max_length[200]',
+                'error' => [
+                    'required' => 'isi woy'
+                ]
+            ],
+            'confpassword'          => [
+                'rules' => 'matches[password]',
+                'error' => [
+                    'required' => 'isi woy'
+                ]
+            ],
+        ]);
 
-        if ($this->validate($rules)) {
+        if ($rules) {
             $data = [
                 'first_name'     => $this->request->getVar('first_name'),
                 'last_name'     => $this->request->getVar('last_name'),
@@ -58,7 +119,8 @@ class userController extends ResourceController
                 'unit_kerja'    => $this->request->getVar('unit_kerja'),
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
-            $this->User->insert($data);
+
+            $this->user->insert($data);
             return redirect()->to('/dashboard');
         } else {
             $data['validation'] = $this->validator;
@@ -172,12 +234,17 @@ class userController extends ResourceController
 
             if (!empty($userdata)) {
                 if (password_verify($this->request->getVar("password"), $userdata['password'])) {
-                    $key = getenv('TOKEN_SECRET');
+                    $key = getenv('JWT_SECRET');
+                    $iat = time(); // current timestamp value
+                    $exp = $iat + 3600;
                     $payload = array(
-                        "iat" => 1356999524,
-                        "nbf" => 1357000000,
-                        "uid" => $userdata['id_user'],
-                        "email" => $userdata['email']
+                        // "iat" => 1356999524,
+                        // "nbf" => 1357000000,
+                        // "uid" => $userdata['id_user'],
+                        "iat" => $iat, //Time the JWT issued at
+                        "exp" => $exp, // Expiration time of token
+                        "email" => $userdata['email'],
+
                     );
 
                     $token = JWT::encode($payload, $key, 'HS256');
@@ -188,7 +255,8 @@ class userController extends ResourceController
                         'user_id' => $userdata['id_user'],
                         'role' => $userdata['role'],
                         'messages' => 'User logged In successfully',
-                        'token' => $token
+                        'token' => $token,
+                        'phone_number' => $userdata['phone_number']
 
                     ];
                     return $this->respondCreated($response);

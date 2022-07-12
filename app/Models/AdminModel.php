@@ -16,7 +16,7 @@ class AdminModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = ["admin_id", "nama_admin", "username", "password", "email"];
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';

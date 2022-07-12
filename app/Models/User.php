@@ -9,15 +9,12 @@ class User extends Model
     protected $DBGroup          = 'default';
     protected $table            = 'oauth_user';
     protected $primaryKey       = 'id_user';
-    protected $useAutoIncrement = true;
-    protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
         'id_user', 'last_name', 'first_name', 'email', 'password', 'username', 'token_id', 'nama_user', 'unit_kerja', 'nip', 'role'
     ];
-    // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';

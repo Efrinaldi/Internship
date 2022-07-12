@@ -6,12 +6,18 @@ use App\Controllers\BaseController;
 use App\Models\OrdersModel;
 use App\Models\OrderModel;
 use App\Models\DriverModel;
+use CodeIgniter\API\ResponseTrait;
 use App\Models\ReimburseModel;
+use CodeIgniter\CodeIgniter;
 
 class ReimburseController extends BaseController
 {
-    function __construct() 
+    use ResponseTrait;
+
+    function __construct()
     {
+
+
         $this->pemesanan = new OrdersModel();
         $this->order = new OrderModel();
         $this->pengemudi = new DriverModel();
@@ -26,6 +32,11 @@ class ReimburseController extends BaseController
             ->where('status', 'Requesting')
             ->findAll();
         return view('reimburse/index', $data);
+    }
+
+
+    public function insertReimburse()
+    {
     }
 
     public function edit($id = null)
@@ -50,6 +61,55 @@ class ReimburseController extends BaseController
     {
         $this->model->where('id', $id)->delete();
         return redirect()->to(site_url('reimburse'))->with('success', 'Data berhasil Dihapus');
+    }
+
+
+  
+
+
+
+    public function uploadImage()
+    {
+
+        $fileberkas = $this->request->getFile('photo');
+        $namaFileUpload = time() . '_' . $fileberkas->getName();
+        if ($fileberkas->move("template/assets/img/upload", $namaFileUpload)) {
+            $reimburse = new ReimburseModel();
+            $data = [
+                "id_pemesanan" => $this->request->getPost("id_pemesanan"),
+                "deskripsi" => $this->request->getPost("deskripsi"),
+                "nominal" => $this->request->getPost("nominal"),
+                "status"  => $this->request->getPost("status"),
+                "photo" => $namaFileUpload
+            ];
+
+            if ($reimburse->insert($data)) {
+
+                $response = [
+                    'status' => 200,
+                    'error' => false,
+                    'message' => 'File uploaded successfully',
+                    'data' => []
+                ];
+            } else {
+
+                $response = [
+                    'status' => 500,
+                    'error' => true,
+                    'message' => 'Failed to save image',
+                    'data' => []
+                ];
+            }
+        } else {
+
+            $response = [
+                'status' => 500,
+                'error' => true,
+                'message' => 'Failed to upload image',
+                'data' => []
+            ];
+        }
+        return $this->respondCreated($response, 201);
     }
 
     public function approve()
@@ -79,10 +139,10 @@ class ReimburseController extends BaseController
     {
         $get_id_pengemudi = session()->get('id_user');
         $data_join =  $this->model->getList($get_id_pengemudi)->getResult();
-        $data = array(        
-            'list' => $data_join   
-            );
-        return view('reimburse/list_order',$data);
+        $data = array(
+            'list' => $data_join
+        );
+        return view('reimburse/list_order', $data);
     }
 
     public function add_reimburse($id = null)
@@ -98,6 +158,9 @@ class ReimburseController extends BaseController
         } else {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
+    }
+    public function refreshToken()
+    {
     }
 
     public function store_reimburse($id = null)
@@ -131,7 +194,7 @@ class ReimburseController extends BaseController
         }
 
         $fileberkas = $this->request->getFile('photo');
-        $namaFileUpload = time() .'_'. $fileberkas->getName();
+        $namaFileUpload = time() . '_' . $fileberkas->getName();
         $fileberkas->move('template/assets/img/upload', $namaFileUpload);
         $nominal = regexCurrency($this->request->getPost('nominal'));
         $this->model->insert([

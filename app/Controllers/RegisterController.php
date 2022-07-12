@@ -43,7 +43,8 @@ class RegisterController extends BaseController
                 'unit_kerja'    => $this->request->getVar('unit_kerja'),
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
-            $this->User->insert($data);
+            dd($data);
+            $this->user->insert($data);
             return redirect()->to('/login');
         } else {
             $data['validation'] = $this->validator;
