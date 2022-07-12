@@ -40,11 +40,22 @@ class userController extends ResourceController
     }
 
 
+    public function showUser($id_user)
+    {
+        $user = new UserModel();
+        $query = $user->query("select phone_number,nama_user,role,unit_kerja  from oauth_user where id_user = $id_user ");
+        $rows = $query->getResult();
+        $data = [
+            "data" => $rows
+        ];
+        return $this->respondCreated($data, 201);
+    }
+
     public function changeNumber($id_user)
     {
         $user = new UserModel();
         $data = [
-            "phone_number" => $this->request->getPost('phone_number'),
+            "phone_number" => $this->request->getVar('phone_number')
         ];
         $data = json_decode(file_get_contents("php://input"));
         $user->update($id_user, $data);
@@ -58,14 +69,23 @@ class userController extends ResourceController
         return $this->respondCreated($response);
     }
 
+    public function view_password()
+    {
+        $data = [
+            "password" => password_hash("18051998", PASSWORD_BCRYPT)
+        ];
+        dd($data);
+    }
+
 
     public function changePassword($id_user)
     {
+        $password = password_hash($this->request->getPost("password"), PASSWORD_DEFAULT);
         $user = new UserModel();
         $data = [
-            "password" => $this->request->getPost('phone_number'),
+            "password" => $password
         ];
-        $data = json_decode(file_get_contents("php://input"));
+        // $data = json_decode(file_get_contents("php://input"));
         $user->update($id_user, $data);
         $response = [
             'status'   => 201,

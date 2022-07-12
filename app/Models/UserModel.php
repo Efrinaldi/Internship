@@ -15,7 +15,7 @@ class UserModel extends Model
     protected $allowedFields    = [
         'id_user', 'last_name', 'first_name', 'email', 'password', 'username', 'token_id', 'nama_user', 'unit_kerja', 'nip', 'role', 'phone_number'
     ];
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';

@@ -59,11 +59,14 @@ $routes->group('api', function ($routes) {
     $routes->post('insertOrder', 'OrderController::post_order');
     $routes->post('changeNumber/(:segment)', 'userController::changeNumber/$1');
     $routes->post('insertMobil', 'CarController::post_order');
+    $routes->post('changePassword/(:any)', 'userController::changePassword/$1');
     $routes->post('insertStatus', 'DriverController::insert_status');
     $routes->add('updateToken/(:segment)', 'UserController::update_token/$1');
     $routes->add('updatePlatNomor/(:segment)', 'DriverController::update_plat/$1');
     $routes->get('detailOrder/(:segment)', 'OrderController::detail_order/$1');
     $routes->get('showUser/(:segment)', 'userController::showUser/$1');
+    $routes->get('viewPassword', 'userController::view_password');
+
     $routes->post('insertPengemudi/(:segment)', 'OrderController::insert_pengemudi/$1');
 });
 
@@ -79,7 +82,6 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('/history', 'Home::history');
     $routes->get('/process', 'Home::process');
     $routes->post('/insert_car_driver/(:segment)', 'Home::post_car/$1');
-
     $routes->get('/driver', 'Home::driver');
     $routes->get('/history_approve', 'Home::history_approve');
     $routes->get('/history_reject', 'Home::history_reject');
