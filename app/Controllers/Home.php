@@ -23,6 +23,12 @@ class Home extends BaseController
     {
         return view('dashboard');
     }
+
+    public function homes()
+    {
+        return view('homes');
+    }
+    
     public function order()
     {
         // $order = $this->Order_model->findAll();

@@ -8,6 +8,7 @@ use App\Models\User;
 use CodeIgniter\RESTful\ResourceController;
 use CodeIgniter\API\ResponseTrait;
 use Firebase\JWT\JWT;
+use App\Models\ReimburseModel;
 
 
 use \OAuth2\Request;
@@ -34,6 +35,63 @@ class UserController extends ResourceController
         echo view('login', $data);
     }
 
+    public function showUser($id_user)
+    {
+        $user = new UserModel();
+        $query = $user->query("select phone_number,nama_user,role,unit_kerja  from oauth_user where id_user = $id_user ");
+        $rows = $query->getResult();
+        $data = [
+            "data" => $rows
+        ];
+        return $this->respondCreated($data, 201);
+    }
+
+    public function changeNumber($id_user)
+    {
+        $user = new UserModel();
+        $data = [
+            "phone_number" => $this->request->getVar('phone_number')
+        ];
+        $data = json_decode(file_get_contents("php://input"));
+        $user->update($id_user, $data);
+        $response = [
+            'status'   => 201,
+            'error'    => null,
+            'messages' => [
+                'success' => 'Data Saved'
+            ]
+        ];
+        return $this->respondCreated($response);
+    }
+
+    public function view_password()
+    {
+        $data = [
+            "password" => password_hash("18051998", PASSWORD_BCRYPT)
+        ];
+        dd($data);
+    }
+
+
+    public function changePassword($id_user)
+    {
+        $password = password_hash($this->request->getPost("password"), PASSWORD_DEFAULT);
+        $user = new UserModel();
+        $data = [
+            "password" => $password
+        ];
+        // $data = json_decode(file_get_contents("php://input"));
+        $user->update($id_user, $data);
+        $response = [
+            'status'   => 201,
+            'error'    => null,
+            'messages' => [
+                'success' => 'Data Saved'
+            ]
+        ];
+        return $this->respondCreated($response);
+    }
+
     public function authregister()
     {
         helper(['form']);
@@ -41,7 +99,7 @@ class UserController extends ResourceController
         //set rules validation form
         $rules = [
             'first_name'          => 'required|min_length[3]|max_length[20]',
-            'email'              => 'required|min_length[6]|max_length[50]|valid_email|is_unique[user.email]',
+            'email'              => 'required|min_length[6]|max_length[50]|valid_email|is_unique[oauth_user.email]',
             'password'           => 'required|min_length[6]|max_length[200]',
             'confpassword'       => 'matches[password]'
         ];
@@ -97,6 +155,9 @@ class UserController extends ResourceController
                     'logged_in'     => TRUE
                 ]);
                 //dd( session()->get('logged_in'));
+                if ($data['role'] == 'Admin Reimburse' || $data['role'] == 'Driver') {
+                    return redirect()->to('/homes');
+                }
                 return redirect()->to('/dashboard');
             } else {
                 $session->setFlashdata('msg', 'Kata sandi salah');

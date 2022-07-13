@@ -40,8 +40,43 @@ $routes->add('/logout', 'UserController::logout');
 $routes->post('/auth', 'UserController::auth');
 $routes->post('/reg', 'UserController::authregister');
 
+
+$routes->group('api', function ($routes) {
+    $routes->get('showAllOrderUser/(:segment)', 'OrderController::show_order_user/$1');
+    $routes->post('login_api', 'userController::login');
+    $routes->post('insertOrder', 'OrderController::post_order');
+    $routes->post('insertStatus', 'DriverController::insert_status');
+    $routes->get('order/(:segment)', 'OrderController::order/$1');
+    $routes->get('showAllOrderUser/(:segment)', 'OrderController::show_order_user/$1');
+    $routes->get('showAllOrderDriver/(:segment)', 'OrderController::show_order_driver/$1');
+    $routes->post('insertPengemudi/(:segment)', 'OrderController::insert_pengemudi/$1');
+    $routes->get('order_driver/(:segment)', 'OrderController::order_driver/$1');
+    $routes->get('detailOrder/(:segment)', 'OrderController::detail_order/$1');
+    $routes->get('showUser/(:segment)', 'userController::showUser/$1');
+    $routes->get('detailDriver/(:segment)', 'OrderController::detail_driver/$1');
+    $routes->get('getMobil', 'DriverController::getMobil');
+    $routes->add('updatePlatNomor/(:segment)', 'DriverController::update_plat/$1');
+    $routes->add('updateToken/(:segment)', 'UserController::update_token/$1');
+    $routes->get('getUser', 'userController::get_user');
+    $routes->post('uploadImage', 'ReimburseController::uploadImage');
+    $routes->post('send-notification', 'NotificationController::send');
+    $routes->get('getOrder/(:segmen)', 'OrderController::order/$1');
+    $routes->post('insertOrder', 'OrderController::post_order');
+    $routes->post('changeNumber/(:segment)', 'userController::changeNumber/$1');
+    $routes->post('insertMobil', 'CarController::post_order');
+    $routes->post('changePassword/(:any)', 'userController::changePassword/$1');
+    $routes->post('insertStatus', 'DriverController::insert_status');
+    $routes->add('updateToken/(:segment)', 'UserController::update_token/$1');
+    $routes->add('updatePlatNomor/(:segment)', 'DriverController::update_plat/$1');
+    $routes->get('detailOrder/(:segment)', 'OrderController::detail_order/$1');
+    $routes->get('showUser/(:segment)', 'userController::showUser/$1');
+    $routes->get('viewPassword', 'userController::view_password');
+    $routes->post('insertPengemudi/(:segment)', 'OrderController::insert_pengemudi/$1');
+});
+
 $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('/register', 'RegisterController::index');
+    $routes->get('/homes', 'Home::homes');
     $routes->get('/admin', 'Home::admin');
     $routes->get('/otorisator', 'Home::otorisator');
     $routes->get('/dashboard', 'Home::dashboard');
@@ -73,6 +108,21 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('reject/(:num)', 'OrderController::reject_order/$1');
     $routes->get('status_unavailable/(:num)', 'DriverController::status_unavailable/$1');
     $routes->get('status_available/(:num)', 'DriverController::status_available/$1');
+
+    $routes->post('/addReimburse/(:segment)/(:segment)', 'ReimburseController::insert_image_reimburse/$1/$2');
+    $routes->group('reimburse', function ($routes) {
+        $routes->get('/', 'ReimburseController::index', ['filter' => 'isAdmin']);
+        $routes->get('approve', 'ReimburseController::approve', ['filter' => 'isAdmin']);
+        $routes->get('edit/(:any)', 'ReimburseController::edit/$1', ['filter' => 'isAdmin']);
+        $routes->add('export', 'ReimburseController::export', ['filter' => 'isAdmin']);
+        $routes->post('update/(:any)', 'ReimburseController::update/$1', ['filter' => 'isAdmin']);
+        $routes->post('delete/(:any)', 'ReimburseController::delete/$1', ['filter' => 'isAdmin']);
+        $routes->post('delete_inDriver/(:any)', 'ReimburseController::delete_inDriver/$1', ['filter' => 'isDriver']);
+        $routes->get('list', 'ReimburseController::list', ['filter' => 'isDriver']);
+        $routes->get('add_reimburse/(:any)', 'ReimburseController::add_reimburse/$1', ['filter' => 'isDriver']);
+        $routes->post('store_reimburse/(:any)', 'ReimburseController::store_reimburse/$1', ['filter' => 'isDriver']);
+        $routes->post('postReimburse/(:any)', 'ReimburseController::post_reimburse/$1', ['filter' => 'isDriver', 'authFilter']);
+    });
 });
 
 

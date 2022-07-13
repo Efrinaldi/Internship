@@ -1,0 +1,105 @@
+CRITICAL - 2022-07-13 05:30:31 --> Trying to get property 'role' of non-object
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Views\layouts\components\sidebar.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\Users\\muhamm...', 12, Array)
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(214): include('C:\\Users\\muhamm...')
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(432): CodeIgniter\View\View->render('layouts/compone...', NULL, true)
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Views\layouts\admin.php(27): CodeIgniter\View\View->include('layouts/compone...')
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(214): include('C:\\Users\\muhamm...')
+#6 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(230): CodeIgniter\View\View->render('layouts/admin', Array, true)
+#8 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Common.php(1097): CodeIgniter\View\View->render('dashboard', Array, true)
+#9 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\Home.php(24): view('dashboard')
+#10 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\Home->dashboard()
+#11 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#12 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#15 {main}
+CRITICAL - 2022-07-13 05:30:45 --> Trying to get property 'role' of non-object
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Views\layouts\components\sidebar.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\Users\\muhamm...', 12, Array)
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(214): include('C:\\Users\\muhamm...')
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(432): CodeIgniter\View\View->render('layouts/compone...', NULL, true)
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Views\layouts\admin.php(27): CodeIgniter\View\View->include('layouts/compone...')
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(214): include('C:\\Users\\muhamm...')
+#6 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\Users\muhammad_aftabuddin\Documents\Internship\system\View\View.php(230): CodeIgniter\View\View->render('layouts/admin', Array, true)
+#8 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Common.php(1097): CodeIgniter\View\View->render('dashboard', Array, true)
+#9 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\Home.php(24): view('dashboard')
+#10 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\Home->dashboard()
+#11 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#12 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#15 {main}
+ERROR - 2022-07-13 14:49:27 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2022-07-13 14:49:27 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\userController.php(170): CodeIgniter\BaseModel->first()
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\userController->auth()
+#6 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\userController))
+#7 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#10 {main}
+CRITICAL - 2022-07-13 14:49:28 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\Users\muhammad_aftabuddin\Documents\Internship\app\Views\errors\html\error_exception.php:98
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\Users\\muhamm...', 98, Array)
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Views\errors\html\error_exception.php(98): print_r(Object(App\Controllers\userController), true)
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Debug\Exceptions.php(229): include('C:\\Users\\muhamm...')
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptio
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-13 17:10:59 --> Class 'PhpOffice\PhpSpreadsheet\Spreadsheet' not found
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(801): App\Controllers\ReimburseController->__construct()
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#5 {main}
+CRITICAL - 2022-07-13 17:11:54 --> Class 'PhpOffice\PhpSpreadsheet\Spreadsheet' not found
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(801): App\Controllers\ReimburseController->__construct()
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#5 {main}
+CRITICAL - 2022-07-13 17:12:02 --> Class 'PhpOffice\PhpSpreadsheet\Spreadsheet' not found
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(801): App\Controllers\ReimburseController->__construct()
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(401): CodeIgniter\CodeIgniter->createController()
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#5 {main}
+CRITICAL - 2022-07-13 17:16:22 --> Undefined property: App\Controllers\ReimburseController::$validate
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\ReimburseController.php(180): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\Users\\muhamm...', 180, Array)
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\ReimburseController->store_reimburse('139')
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReimburseController))
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#6 {main}
+CRITICAL - 2022-07-13 17:19:16 --> Undefined offset: 1
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\ReimburseController.php(217): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\Users\\muhamm...', 217, Array)
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\ReimburseController->store_reimburse('139')
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReimburseController))
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#6 {main}
+CRITICAL - 2022-07-13 17:24:02 --> Undefined variable: fileName
+#0 C:\Users\muhammad_aftabuddin\Documents\Internship\app\Controllers\ReimburseController.php(234): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\Users\\muhamm...', 234, Array)
+#1 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(824): App\Controllers\ReimburseController->store_reimburse('139')
+#2 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReimburseController))
+#3 C:\Users\muhammad_aftabuddin\Documents\Internship\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\muhammad_aftabuddin\Documents\Internship\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\muhammad_aftabuddin\Documents\Internship\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\muhamm...')
+#6 {main}
