@@ -113,7 +113,7 @@ class userController extends ResourceController
                 ]
             ],
             'email'          => [
-                'rules' => 'required|min_length[6]|max_length[50]|valid_email|is_unique[user.email]',
+                'rules' => 'required|min_length[6]|max_length[50]|valid_email|is_unique[oauth_user.email]|callback_email_unique',
                 'error' => [
                     'required' => 'isi woy'
                 ]
