@@ -28,7 +28,19 @@ class Home extends BaseController
     {
         return view('homes');
     }
-    
+    public function list_mobil()
+    {
+
+        $user = new UserModel();
+        $query   = $user->query("SELECT * FROM oauth_user inner join pengemudi where oauth_user.id_user = pengemudi.id_user;");
+        $rows = $query->getResultArray();
+
+        $data = [
+            'user' => $rows,
+        ];
+        return view('mobil', $data);
+    }
+
     public function order()
     {
         // $order = $this->Order_model->findAll();

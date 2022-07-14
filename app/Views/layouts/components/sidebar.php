@@ -10,117 +10,140 @@
         </div>
     </a>
     <?php if (adminLogin()->role === 'Supervisor Logistik') : ?>
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="<?= base_url("/dashboard") ?>">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
-    </li>
-    <!-- Divider -->
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+            <a class="nav-link" href="<?= base_url("/dashboard") ?>">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
+        </li>
+        <!-- Divider -->
 
-    <hr class="sidebar-divider">
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("/admin") ?>">
-            <i class="fas fa-user-gear"></i>
-            <span>Supervisor Logistik</span></a>
-    </li>
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("/otorisator") ?>">
-            <i class="fas fa-user-gear"></i>
-            <span>Supervisor Unit Kerja</span></a>
-    </li>
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("/user") ?>">
-            <i class="fas fa-user-friends"></i>
-            <span>Operator</span></a>
-    </li>
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("/driver") ?>">
-            <i class="fas fa-car"></i>
-            <span>Pengemudi</span></a>
-    </li>
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("/request") ?>">
-            <i class="fas fa-address-card"></i>
-            <span>Pesan Kendaraan</span></a>
-    </li>
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("/process") ?>">
-            <i class="fas fa-clipboard-list"></i>
-            <span>Daftar Pesanan</span></a>
-    </li>
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("/history") ?>">
-            <i class="fas fa-history"></i>
-            <span>Riwayat Pesanan</span></a>
-    </li>
-    <!-- Divider -->
+        <hr class="sidebar-divider">
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url("/admin") ?>">
+                <i class="fas fa-user-gear"></i>
+                <span>Supervisor Logistik</span></a>
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url("/otorisator") ?>">
+                <i class="fas fa-user-gear"></i>
+                <span>Supervisor Unit Kerja</span></a>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url("/user") ?>">
+                <i class="fas fa-user-friends"></i>
+                <span>Operator</span></a>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url("/driver") ?>">
+                <i class="fas fa-car"></i>
+                <span>Pengemudi</span></a>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url("/request") ?>">
+                <i class="fas fa-address-card"></i>
+                <span>Pesan Kendaraan</span></a>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url("/process") ?>">
+                <i class="fas fa-clipboard-list"></i>
+                <span>Daftar Pesanan</span></a>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url("/history") ?>">
+                <i class="fas fa-history"></i>
+                <span>Riwayat Pesanan</span></a>
+        </li>
+        <!-- Divider -->
     <?php endif; ?>
 
     <?php if (adminLogin()->role === 'Supervisor') : ?>
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("/request") ?>">
-            <i class="fas fa-address-card"></i>
-            <span>Pesan Kendaraan</span></a>
-    </li>
-    <!-- Divider -->
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("/order") ?>">
-            <i class="fas fa-clipboard-list"></i>
-            <span>Daftar Pesanan</span></a>
-    </li>
-    <!-- Divider -->
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url("/request") ?>">
+                <i class="fas fa-address-card"></i>
+                <span>Pesan Kendaraan</span></a>
+        </li>
+
+
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url("/list_car") ?>">
+                <i class="fas fa-address-card"></i>
+                <span>Daftar Mobil</span></a>
+        </li>
+        <!-- Divider -->
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url("/order") ?>">
+                <i class="fas fa-clipboard-list"></i>
+                <span>Daftar Pesanan</span></a>
+        </li>
+        <!-- Divider -->
 
     <?php endif; ?>
 
-    <?php if (adminLogin()->role === 'Operator') : ?>
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("/request") ?>">
-            <i class="fas fa-address-card"></i>
-            <span>Pesan Kendaraan</span></a>
-    </li>
-    <!-- Divider -->
+
+
+
+    <?php if (adminLogin()->role === 'User') : ?>
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url("/request") ?>">
+                <i class="fas fa-address-card"></i>
+                <span>Pesan Kendaraan</span></a>
+        </li>
+        <!-- Divider -->
 
     <?php endif; ?>
     <?php if (adminLogin()->role === 'Security') : ?>
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("/driver") ?>">
-            <i class="fas fa-car"></i>
-            <span>Daftar Pengemudi</span></a>
-    </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url("/driver") ?>">
+                <i class="fas fa-car"></i>
+                <span>Daftar Pengemudi</span></a>
+        </li>
 
     <?php endif; ?>
 
