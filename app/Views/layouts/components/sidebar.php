@@ -30,16 +30,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
         <!-- Divider -->
         <hr class="sidebar-divider">
         <!-- Nav Item - Tables -->
@@ -119,10 +109,6 @@
         <!-- Divider -->
 
     <?php endif; ?>
-
-
-
-
     <?php if (adminLogin()->role === 'User') : ?>
         <!-- Divider -->
         <hr class="sidebar-divider">

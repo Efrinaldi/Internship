@@ -39,7 +39,7 @@ $routes->add('/logout', 'UserController::logout');
 
 $routes->post('/auth', 'UserController::auth');
 $routes->post('/reg', 'UserController::authregister');
-$routes->post('/reg', 'UserController::authregister');
+$routes->post('/auth_register_driver', 'UserController::auth_register_driver');
 $routes->get('/register', 'RegisterController::index');
 
 
@@ -81,7 +81,6 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('/register', 'RegisterController::index');
     $routes->get('/register_driver', 'RegisterController::register_driver');
     $routes->get('/auth_register_driver', 'RegisterController::auth_register_driver');
-
     $routes->get('/homes', 'Home::homes');
     $routes->get('/admin', 'Home::admin');
     $routes->get('/otorisator', 'Home::otorisator');

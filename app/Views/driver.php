@@ -10,7 +10,7 @@
         <div class="container">
             <h2>Daftar Pengemudi</h2>
             <p>Anda dapat mengelola daftar pengemudi</p>
-            <a href="<?= base_url("/register") ?>" class="btn btn-info mb-3">Tambah Pengemudi</a>
+            <a href="<?= base_url("/register_driver") ?>" class="btn btn-info mb-3">Tambah Pengemudi</a>
             <div class="table-responsive">
                 <table class="table table-dark">
                     <thead class="text-center">
@@ -26,18 +26,17 @@
                         $no = 1;
                         foreach ($driver as $d) :
                         ?>
-                        <tr>
-                            <td><?= $no++; ?></td>
-                            <td><?= $d['nama_pengemudi'] ?></td>
-                            <td><?= $d['status_pengemudi'] ?></td>
+                            <tr>
+                                <td><?= $no++; ?></td>
+                                <td><?= $d['nama_pengemudi'] ?></td>
+                                <td><?= $d['status_pengemudi'] ?></td>
 
-                            <td>
-                                <a href="status_unavailable/<?= $d['id_pengemudi'] ?>" class="btn btn-warning">Tidak
-                                    Tersedia</a>
-                                <a href="status_available/<?= $d['id_pengemudi'] ?>"
-                                    class="btn btn-primary">Tersedia</a>
-                            </td>
-                        </tr>
+                                <td>
+                                    <a href="status_unavailable/<?= $d['id_pengemudi'] ?>" class="btn btn-warning">Tidak
+                                        Tersedia</a>
+                                    <a href="status_available/<?= $d['id_pengemudi'] ?>" class="btn btn-primary">Tersedia</a>
+                                </td>
+                            </tr>
                         <?php
                         endforeach;
                         ?>
