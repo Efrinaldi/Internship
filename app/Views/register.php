@@ -39,17 +39,15 @@
         <div class="register-box-body">
             <p class="login-box-msg">Form Register</p>
             <?php if (isset($validation)) : ?>
-            <div class="alert alert-danger"><?= $validation->listErrors() ?></div>
+                <div class="alert alert-danger"><?= $validation->listErrors() ?></div>
             <?php endif; ?>
             <form action="<?= base_url() ?>/reg" method="post">
                 <?= csrf_field(); ?>
                 <div class="form-group has-feedback">
-                    <input type="text" id="InputForFirstName" name="first_name" class="form-control"
-                        placeholder="First name" required>
+                    <input type="text" id="InputForFirstName" name="first_name" class="form-control" placeholder="First name" required>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="text" id="InputForLastName" name="last_name" class="form-control"
-                        placeholder="Last name" required>
+                    <input type="text" id="InputForLastName" name="last_name" class="form-control" placeholder="Last name" required>
                 </div>
                 <div class="form-group has-feedback">
                     <select name="role" class="form-control" required>
@@ -59,15 +57,15 @@
                         <option value="Operator">Operator</option>
                         <option value="Security">Security</option>
                         <option value="Driver">Driver</option>
+                        <option value="User">User</option>
+
                     </select>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="text" id="InputForName" name="username" class="form-control" placeholder="Username"
-                        required>
+                    <input type="text" id="InputForName" name="username" class="form-control" placeholder="Username" required>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="email" id="InputForEmail" name="email" class="form-control" placeholder="Email"
-                        required>
+                    <input type="email" id="InputForEmail" name="email" class="form-control" placeholder="Email" required>
                 </div>
                 <div class="form-group has-feedback">
                     <input type="text" id="InputForNIP" name="nip" class="form-control" placeholder="NIP" required>
@@ -86,8 +84,7 @@
                     <input type="password" name="password" class="form-control" placeholder="Password" required>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" name="confpassword" class="form-control" placeholder="Retype password"
-                        required>
+                    <input type="password" name="confpassword" class="form-control" placeholder="Retype password" required>
                 </div>
                 <div class="row">
                     <!-- /.col -->
@@ -109,13 +106,13 @@
     <!-- iCheck -->
     <script src="AdminLTE%202%20Registration%20Page_files/icheck.js"></script>
     <script>
-    $(function() {
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '20%' /* optional */
+        $(function() {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' /* optional */
+            });
         });
-    });
     </script>
 
 

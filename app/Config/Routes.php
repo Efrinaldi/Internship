@@ -39,6 +39,8 @@ $routes->add('/logout', 'UserController::logout');
 
 $routes->post('/auth', 'UserController::auth');
 $routes->post('/reg', 'UserController::authregister');
+$routes->post('/reg', 'UserController::authregister');
+$routes->get('/register', 'RegisterController::index');
 
 
 $routes->group('api', function ($routes) {
