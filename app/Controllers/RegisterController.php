@@ -20,6 +20,16 @@ class RegisterController extends BaseController
         $data = [];
         echo view('register', $data);
     }
+
+
+
+
+    public function register_driver()
+    {
+        helper(['form']);
+        $data = [];
+        echo view('register_driver', $data);
+    }
     public function authregister()
     {
         helper(['form']);
@@ -41,6 +51,39 @@ class RegisterController extends BaseController
                 'email'    => $this->request->getVar('email'),
                 'nip'     => $this->request->getVar('nip'),
                 'unit_kerja'    => $this->request->getVar('unit_kerja'),
+                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
+            ];
+            $this->User->insert($data);
+            return redirect()->to('/login');
+        } else {
+            $data['validation'] = $this->validator;
+            echo view('register', $data);
+        }
+    }
+
+
+
+    public function auth_register_driver()
+    {
+        helper(['form']);
+
+        //set rules validation form
+        $rules = [
+            'first_name'          => 'required|min_length[3]|max_length[20]',
+            'email'              => 'required|min_length[6]|max_length[50]|valid_email|is_unique[user.email]',
+            'password'           => 'required|min_length[6]|max_length[200]',
+            'confpassword'       => 'matches[password]'
+        ];
+
+        if ($this->validate($rules)) {
+            $data = [
+                'first_name'     => $this->request->getVar('first_name'),
+                'last_name'     => $this->request->getVar('last_name'),
+                'username'     => $this->request->getVar('username'),
+                'role'     => "Driver",
+                'email'    => $this->request->getVar('email'),
+                'nip'     => $this->request->getVar('nip'),
+                'unit_kerja'    => "Operator",
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
             $this->User->insert($data);

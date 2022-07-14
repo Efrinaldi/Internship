@@ -77,7 +77,11 @@ $routes->group('api', function ($routes) {
 });
 
 $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
+
     $routes->get('/register', 'RegisterController::index');
+    $routes->get('/register_driver', 'RegisterController::register_driver');
+    $routes->get('/auth_register_driver', 'RegisterController::auth_register_driver');
+
     $routes->get('/homes', 'Home::homes');
     $routes->get('/admin', 'Home::admin');
     $routes->get('/otorisator', 'Home::otorisator');
