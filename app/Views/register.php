@@ -9,15 +9,15 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="<?= base_url() ?>/AdminLTE%202%20Registration%20Page_files/bootstrap.css">
+    <link rel="stylesheet" href="<?= base_url("/public") ?>/AdminLTE%202%20Registration%20Page_files/bootstrap.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?= base_url() ?>/AdminLTE%202%20Registration%20Page_files/font-awesome.css">
+    <link rel="stylesheet" href="<?= base_url("/public") ?>/AdminLTE%202%20Registration%20Page_files/font-awesome.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="<?= base_url() ?>/AdminLTE%202%20Registration%20Page_files/ionicons.css">
+    <link rel="stylesheet" href="<?= base_url("/public") ?>/AdminLTE%202%20Registration%20Page_files/ionicons.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="<?= base_url() ?>/AdminLTE%202%20Registration%20Page_files/AdminLTE.css">
+    <link rel="stylesheet" href="<?= base_url("/public") ?>/AdminLTE%202%20Registration%20Page_files/AdminLTE.css">
     <!-- iCheck -->
-    <link rel="stylesheet" href="<?= base_url() ?>/AdminLTE%202%20Registration%20Page_files/blue.css">
+    <link rel="stylesheet" href="<?= base_url("/public") ?>/AdminLTE%202%20Registration%20Page_files/blue.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -54,9 +54,7 @@
                         <option value="">Role</option>
                         <option value="Supervisor Logistik">Supervisor Logistik</option>
                         <option value="Supervisor">Supervisor</option>
-                        <option value="Operator">Operator</option>
                         <option value="Security">Security</option>
-                        <option value="Driver">Driver</option>
                         <option value="User">User</option>
 
                     </select>
@@ -77,7 +75,6 @@
                         <option value="SKHSDM">SKHSDM</option>
                         <option value="SKAI">SKAI</option>
                         <option value="BSIT">BSIT</option>
-                        <option value="Security">Security</option>
                     </select>
                 </div>
                 <div class="form-group has-feedback">

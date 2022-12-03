@@ -1,0 +1,78 @@
+CRITICAL - 2022-08-04 02:57:02 --> mail(): Bad Message Return Path
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Bad Mes...', 'C:\\xampp73\\htdo...', 179, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(179): mail('081904763823@vt...', '', 'This was sent w...')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-08-04 02:58:13 --> mail(): Bad Message Return Path
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Bad Mes...', 'C:\\xampp73\\htdo...', 179, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(179): mail('081904763823@vt...', '', 'This was sent w...')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-08-04 04:25:46 --> mail(): Bad Message Return Path
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Bad Mes...', 'C:\\xampp73\\htdo...', 179, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(179): mail('5555551234@vtex...', '', 'This is a Test ...')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-08-04 04:27:30 --> mail(): Bad Message Return Path
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Bad Mes...', 'C:\\xampp73\\htdo...', 179, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(179): mail('5555551234@vtex...', '', 'This is a Test ...')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-08-04 04:37:01 --> mail(): Bad Message Return Path
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Bad Mes...', 'C:\\xampp73\\htdo...', 185, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(185): mail('someone@example...', 'My subject', 'First line of t...')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-08-04 04:47:19 --> mail(): Bad Message Return Path
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Bad Mes...', 'C:\\xampp73\\htdo...', 185, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(185): mail('someone@example...', 'My subject', 'First line of t...')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-08-04 04:51:21 --> mail(): Bad Message Return Path
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Bad Mes...', 'C:\\xampp73\\htdo...', 185, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(185): mail('081904763823@vt...', 'My subject', 'First line of t...')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-08-04 05:06:12 --> Undefined variable: URL
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(199): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp73\\htdo...', 199, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-08-04 05:07:33 --> Undefined variable: URL
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(199): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp73\\htdo...', 199, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-08-04 05:08:43 --> file_get_contents(): php_network_getaddresses: getaddrinfo failed: No such host is known. 
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', 'C:\\xampp73\\htdo...', 201, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(201): file_get_contents('http://v2.smsga...', false, Resource id #175)
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}

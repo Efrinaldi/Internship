@@ -1,6 +1,6 @@
-<?= $this->extend('layout/default'); ?>
+<?= $this->extend('/layout/default'); ?>
 
-<?= $this->section('title'); ?>
+<?= $this->section('public/title'); ?>
 <title>Home &mdash; Project</title>
 
 <?= $this->endSection(); ?>

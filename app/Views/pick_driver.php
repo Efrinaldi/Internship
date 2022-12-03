@@ -15,6 +15,7 @@
                     <tr>
                         <th>Nomor</th>
                         <th>Nama</th>
+                        <th>Plat Mobil</th>
                         <th>Status</th>
                         <th>Proses</th>
                     </tr>
@@ -24,15 +25,15 @@
                     $no = 1;
                     foreach ($driver as $d) :
                     ?>
-                    <tr>
-                        <td><?= $no++; ?></td>
-                        <td><?= $d['nama_pengemudi'] ?></td>
-                        <td><?= $d['status_pengemudi'] ?></td>
-                        <td>
-                            <a href="<?= base_url('insert_order/' . $d['id_pengemudi']) ?>"
-                                class="btn btn-success">Pilih</a>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td><?= $no++; ?></td>
+                            <td><?= $d['nama_pengemudi'] ?></td>
+                            <td><?= $d['plat_nomor'] ?></td>
+                            <td><?= $d['status_pengemudi'] ?></td>
+                            <td>
+                                <a href="<?= base_url('insert_order/' . $d['id_pengemudi']) ?>" class="btn btn-success">Pilih</a>
+                            </td>
+                        </tr>
                     <?php
                     endforeach;
                     ?>

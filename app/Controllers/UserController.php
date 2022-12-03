@@ -9,51 +9,53 @@ use CodeIgniter\RESTful\ResourceController;
 use CodeIgniter\API\ResponseTrait;
 use Firebase\JWT\JWT;
 use App\Models\ReimburseModel;
-
-
 use \OAuth2\Request;
-
 use App\Libraries\Oauth;
+use App\Models\AtasanModel;
+use App\Models\DepartmentWorkerModel;
+use App\Models\DivisiModel;
+use App\Models\InformasiUserModel;
+use App\Models\SecureModel;
+use App\Models\UserDivisiModel;
+use App\Models\WorkerModel;
+use Tests\Support\RESTful\Worker;
 
 class UserController extends ResourceController
 {
     public function __construct()
     {
-        $this->user = new UserModel();
-        $this->User = new User();
+        $this->User = new UserModel();
         $this->session     = \Config\Services::session();
     }
     use ResponseTrait;
+
     public function index()
     {
         if (session('logged_in') == true) {
             return redirect()->back();
         }
-        //include helper form
         helper(['form']);
         $data = [];
         echo view('login', $data);
     }
-
     public function showUser($id_user)
     {
         $user = new UserModel();
-        $query = $user->query("select phone_number,nama_user,role,unit_kerja  from oauth_user where id_user = $id_user ");
+        $query = $user->query("select phone_number,first_name, last_name,nama_user,role,unit_kerja  from oauth_user where id_user = $id_user ");
         $rows = $query->getResult();
         $data = [
             "data" => $rows
         ];
         return $this->respondCreated($data, 201);
     }
-
     public function changeNumber($id_user)
     {
-        $user = new UserModel();
+
         $data = [
             "phone_number" => $this->request->getVar('phone_number')
         ];
         $data = json_decode(file_get_contents("php://input"));
-        $user->update($id_user, $data);
+        $this->User->update($id_user, $data);
         $response = [
             'status'   => 201,
             'error'    => null,
@@ -63,47 +65,25 @@ class UserController extends ResourceController
         ];
         return $this->respondCreated($response);
     }
-
     public function view_password()
     {
         $data = [
             "password" => password_hash("18051998", PASSWORD_BCRYPT)
         ];
-        dd($data);
-    }
-
-
-    public function changePassword($id_user)
-    {
-        $password = password_hash($this->request->getPost("password"), PASSWORD_DEFAULT);
-        $user = new UserModel();
-        $data = [
-            "password" => $password
-        ];
-        // $data = json_decode(file_get_contents("php://input"));
-        $user->update($id_user, $data);
-        $response = [
-            'status'   => 201,
-            'error'    => null,
-            'messages' => [
-                'success' => 'Data Saved'
-            ]
-        ];
-        return $this->respondCreated($response);
     }
 
     public function authregister()
     {
         helper(['form']);
-
-        //set rules validation form
         $rules = [
-            'first_name'          => 'required|min_length[3]|max_length[20]',
+            'first_name'          => 'required|min_length[3]|max_length[50]',
             'email'              => 'required|min_length[6]|max_length[50]|valid_email|is_unique[oauth_user.email]',
             'password'           => 'required|min_length[6]|max_length[200]',
-            'confpassword'       => 'matches[password]'
+            'confpassword'       => 'matches[password]',
+            'last_name'          => 'required|min_length[3]|max_length[50]',
+            'unit_kerja'        => 'required|min_length[6]|max_length[200]',
+            'nip'               => 'required|min_length[6]|max_length[200]'
         ];
-
         if ($this->validate($rules)) {
             $data = [
                 'first_name'     => $this->request->getVar('first_name'),
@@ -123,6 +103,16 @@ class UserController extends ResourceController
         }
     }
 
+
+    public function password_check($str)
+    {
+        if (preg_match('#[0-9]#', $str) && preg_match('#[a-zA-Z]#', $str)) {
+            return TRUE;
+        }
+        return FALSE;
+    }
+
+
     public function login_api()
     {
         $oauth = new Oauth();
@@ -135,39 +125,137 @@ class UserController extends ResourceController
     public function auth()
     {
         $session = session();
-        $model = new UserModel();
-        $email = $this->request->getVar('email');
-        $password = $this->request->getVar('password');
-        $data = $model->where('email', $email)->first();
-        if ($data) {
-            $pass = $data['password'];
-            $verify_pass = password_verify($password, $pass);
-            if ($verify_pass) {
-                $session->set([
-                    'id_user'  => $data['id_user'],
-                    'username' => $data['username'],
-                    'first_name' => $data['first_name'],
-                    'last_name' => $data['last_name'],
-                    'email'    => $data['email'],
-                    'role'    => $data['role'],
-                    'unit_kerja' => $data['unit_kerja'],
-                    'token_id' => null,
-                    'logged_in'     => TRUE
-                ]);
-                //dd( session()->get('logged_in'));
-                if ($data['role'] == 'Admin Reimburse' || $data['role'] == 'Driver') {
-                    return redirect()->to('/homes');
-                }
-                return redirect()->to('/dashboard');
-            } else {
-                $session->setFlashdata('msg', 'Kata sandi salah');
-                return redirect()->to('/login');
-            }
-        } else {
-            $session->setFlashdata('msg', 'Email tidak terdaftar');
+        $user = new SecureModel();
+        $userdiv = new UserDivisiModel();
+        $username = $this->request->getPost('username');
+        $password = $this->request->getPost('password');
+        $data_coba = $user->query("exec uspLogonPHP @userid = '" . $username . "',@kode_aplikasi = '00033', @pass = '" . $password .  "', @result='' ")->getResultArray();
+        $data_user = $user->query("exec uspLogonPHP @userid = '" . $username . "',@kode_aplikasi = '00033', @pass = '" . $password .  "', @result='' ")->getResultArray();
+        $user_coba = current($data_user[0]);
+        $coba = current($data_coba[0]);
+        if ($coba === "20UidApplNotListed" or $user_coba === "20UidApplNotListed") {
+            $session->setFlashdata('msg', 'User ID tidak terdaftar untuk aplikasi');
             return redirect()->to('/login');
+        } else if ($coba === "30UidNotAktif" or $user_coba === "30UidNotAktif") {
+            $session->setFlashdata('msg', 'User ID tidak aktif');
+            return redirect()->to('/login');
+        } else if ($coba === "50UidExpired" or $user_coba === "50UidExpired") {
+            $session->setFlashdata('msg', 'User tidak aktif');
+            return redirect()->to('/login');
+        } else if ($coba === "60UidPassNotMatched" or $user_coba === "60UidPassNotMatched") {
+            $session->setFlashdata('msg', 'Password salah');
+            return redirect()->to('/login');
+        } else {
+            dd($user_coba);
+            $session->set([
+                'userid'  => $username,
+                'divisi'  => "user",
+                'logged_in' => true,
+                'user_domain' => $username
+            ]);
+            $data_user    = $userdiv->query("SELECT * FROM USER_DIVISI  where user_domain = '$username' ")->getResultArray();
+            $pekerja      = str_replace("_", " ", $username);
+            $data = [
+                "user_domain" => $username
+            ];
+            if (count($data_user) == 0) {
+                $data = [
+                    "user_domain" => $username,
+                    "userid"      => $username
+                ];
+                $userdiv->insert($data);
+            }
         }
+        // else if ($user_coba === "") {
+        //         $session->set([
+        //             'userid'  => $username,
+        //             'divisi'  => "user",
+        //             'logged_in' => true,
+        //             'user_domain' => $username
+        //         ]);
+        //         $data_user    = $userdiv->query("SELECT * FROM USER_DIVISI  where user_domain = '$username' ")->getResultArray();
+        //         $pekerja      = str_replace("_", " ", $username);
+        //         $data = [
+        //             "user_domain" => $username
+        //         ];
+        //         if (count($data_user) == 0) {
+        //             $data = [
+        //                 "user_domain" => $username,
+        //                 "userid"      => $username
+        //             ];
+        //             $userdiv->insert($data);
+        //     } else {
+
+        //         $data = [
+        //             "user_domain" => $username,
+        //             "userid"      => $username,
+        //         ];
+        //         $userdiv->update($username, $data);
+        //     }
+        //     return redirect()->to('/dashboard');
+        // }
     }
+    public function change_user($userid)
+    {
+        $divisiuser = new UserDivisiModel();
+        $user = $divisiuser->query("SELECT * FROM user_divisi WHERE userid= '$userid' ")->getResultArray();
+        $atasan = new AtasanModel();
+        $check_atasan = $this->request->getPost("atasan");
+        $atasan_exist = $atasan->query("SELECT * FROM atasan WHERE userid='$userid'")->getResultArray();
+        $divisiModel = new DivisiModel();
+        $id_divisi = $this->request->getPost("departemen");
+        $divisi = $divisiModel->query("SELECT * FROM divisi WHERE id_divisi='$id_divisi'")->getResultArray();
+        $data = [
+            "divisi"  => $divisi[0]["divisi"],
+            "userid" => $userid,
+            "id_divisi" => $this->request->getPost("departemen"),
+            "email" => $this->request->getPost("email")
+        ];
+        $data_atasan = [
+            "id_divisi" => $this->request->getPost("departemen"),
+            "userid" => $userid,
+        ];
+        if (count($user) == 0) {
+            $divisiuser->insert($data);
+        }
+        if (count($user) > 0) {
+            $divisiuser->update($userid, $data);
+        }
+        if (count($atasan_exist) == 0) {
+            if (isset($_POST['check_atasan'])) {
+                $atasan->insert($data_atasan);
+            }
+        }
+        if (count($atasan_exist) > 0) {
+            if (isset($_POST['check_atasan'])) {
+                $atasan->update($userid, $data_atasan);
+            }
+        }
+        return redirect()->to("list_user");
+    }
+
+
+    public function list_user()
+    {
+        $divisiuser = new UserDivisiModel();
+        $user = new SecureModel();
+        $divisi = new DivisiModel();
+        $data_user = $user->query("SELECT t_users.userdomain, t_usraplikasi.userid,[username] ,t_usraplikasi.kodeaplikasi  FROM t_users right join t_usraplikasi  on t_usraplikasi.userid = t_users.userid where t_usraplikasi.kodeaplikasi= '00028' ")->getResultArray();
+        $data_divisi = $divisi->query("SELECT * FROM DIVISI")->getResultArray();
+        $divisi_user = $divisi->query("SELECT * FROM user_divisi")->getResultArray();
+
+        $data = [
+            "data_user" => $data_user,
+            "data_divisi" => $data_divisi,
+            "divisiuser"      => $divisi_user
+        ];
+        return view('list_user', $data);
+    }
+
+
+
+
+
     public function update_token($id = null)
     {
         $model = new UserModel();
@@ -225,7 +313,7 @@ class UserController extends ResourceController
             return $this->respondCreated($response);
         } else {
 
-            $userdata = $this->user->where("email", $this->request->getVar("email"))->first();
+            $userdata = $this->User->where("email", $this->request->getVar("email"))->first();
 
             if (!empty($userdata)) {
                 if (password_verify($this->request->getVar("password"), $userdata['password'])) {
@@ -238,7 +326,6 @@ class UserController extends ResourceController
                     );
 
                     $token = JWT::encode($payload, $key, 'HS256');
-
                     $response = [
                         'status'   => 200,
                         'error'    => false,
@@ -272,6 +359,9 @@ class UserController extends ResourceController
     }
 
 
+
+
+
     public function updateId($id_user)
     {
 
@@ -283,7 +373,7 @@ class UserController extends ResourceController
         ]);
         $isDataValid = $validation->withRequest($this->request)->run();
         if ($isDataValid) {
-            $this->user->update($id_user, [
+            $this->User->update($id_user, [
                 "token_id" => $this->request->getPost('token_id')
             ]);
 
@@ -316,7 +406,7 @@ class UserController extends ResourceController
             "email" => $this->request->getVar('email'),
             "password" => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
         ];
-        $this->user->insert($data);
+        $this->User->insert($data);
         $response = [
             'status'   => 404,
             'error'    => null,
@@ -335,7 +425,7 @@ class UserController extends ResourceController
             'confpassword'  => 'matches[password]'
         ];
         if ($this->$rules) {
-            $this->user->insert([
+            $this->User->insert([
                 "id" => $this->request->getPost('id'),
                 "username" => $this->request->getPost('username'),
                 "email" => $this->request->getPost('email'),
@@ -346,10 +436,30 @@ class UserController extends ResourceController
             return $this->respondCreated($user, 201);
         }
     }
+
+
     public function getToken()
     {
     }
-
+    public function changePassword($id_user)
+    {
+        $rules = [
+            'name'          => 'required|min_length[3]|max_length[20]',
+            'email'         => 'required|min_length[6]|max_length[50]|valid_email|is_unique[users.user_email]',
+            'password'      => 'required|min_length[6]|max_length[200]',
+            'confpassword'  => 'matches[password]'
+        ];
+        $data_user = [
+            "password" => md5($this->request->getVar("password"))
+        ];
+        $response = [
+            'status'   => 201,
+            'error'    => null,
+            'messages' => "Berhasil di update"
+        ];
+        $this->User->update($id_user, $data_user);
+        return $this->respondCreated($response, 201);
+    }
 
     public function logout()
     {

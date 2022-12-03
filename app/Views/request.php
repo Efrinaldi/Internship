@@ -10,48 +10,47 @@
         <div class="container">
             <h2>Pesan Kendaraan</h2>
             <p>Anda dapat melakukan pemesanan kendaraan operasional</p>
-
-
             <form class="row g-3" action="<?= base_url() ?>/requestOrder" method="post" autocomplete="off">
                 <?= csrf_field(); ?>
-                <div class="col-md-6">
-                    <label for="inputNama" class="form-label">Nama Karyawan</label>
-                    <input type="text" class="form-control" id="inputNama" name="name" placeholder="Masukkan Nama"
-                        required>
-                </div>
+
                 <div class="col-md-6">
                     <label for="inputUnit" class="form-label">Unit Kerja</label>
+
                     <select type="text" class="form-control" id="inputUnit" name="unit" required>
                         <option value="">Pilih Unit Kerja</option>
-                        <option value="SKTILOG">SKTILOG</option>
-                        <option value="SKHSDM">SKHSDM</option>
-                        <option value="SKAI">SKAI</option>
-                        <option value="BSIT">BSIT</option>
+                        <?php foreach ($divisi as $div) : ?>
+                            <option value="<?= $div["id_divisi"] ?>"><?= $div["divisi"] ?></option>
+                        <?php endforeach ?>
                     </select>
                 </div>
+
+
                 <div class="col-md-6">
                     <label for="inputWaktu" class="form-label">Waktu</label>
                     <input type="time" class="form-control" id="inputWaktu" name="time" required>
                 </div>
+
+
                 <div class="col-md-6">
                     <label for="inputTanggal" class="form-label">Tanggal</label>
                     <input type="date" class="form-control" id="inputTanggal" name="date" required>
                 </div>
+
+
                 <div class="col-md-6">
                     <label for="inputPemakaian" class="form-label">Tujuan Pakai</label>
-                    <input type="text" class="form-control" id="inputPemakaian" name="purpose"
-                        placeholder="Isi Tujuan Pakai" required>
+                    <input type="text" class="form-control" id="inputPemakaian" name="purpose" placeholder="Isi Tujuan Pakai" required>
                 </div>
+
+
                 <div class="col-md-6">
                     <label for="inputTujuan" class="form-label">Lokasi Tujuan</label>
-                    <input type="text" class="form-control" id="inputTujuan" name="destination"
-                        placeholder="Pilih Tujuan" required>
+                    <input type="text" class="form-control" id="inputTujuan" name="destination" placeholder="Pilih Tujuan" required>
                 </div>
+                
                 <div id="map-canvas" hidden></div>
-
-                <script src="<?= base_url('assets/js/javascript.js') ?>"></script>
-                <script async defer
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8aM8vpu-Y-Qt5hSeeV_mVGGimuwfjpIk&libraries=places&callback=initialize">
+                <script src="<?= base_url('public/assets/js/javascript.js') ?>"></script>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8aM8vpu-Y-Qt5hSeeV_mVGGimuwfjpIk&libraries=places&callback=initialize">
                 </script>
                 <input type="hidden" class="form-control " id="keterangan" value="Pending" name="keterangan">
                 <span class="d-flex justify-content-end col-md-12 mt-3 ">

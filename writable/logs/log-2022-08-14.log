@@ -1,0 +1,30 @@
+CRITICAL - 2022-08-14 22:01:52 --> file_get_contents(): php_network_getaddresses: getaddrinfo failed: No such host is known. 
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', 'C:\\xampp73\\htdo...', 201, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(201): file_get_contents('http://v2.smsga...', false, Resource id #175)
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-08-14 22:04:48 --> syntax error, unexpected 'if' (T_IF)
+#0 C:\xampp73\htdocs\order_mobil\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp73\\htdo...')
+#1 C:\xampp73\htdocs\order_mobil\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(789): class_exists('\\App\\Controller...', true)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(397): CodeIgniter\CodeIgniter->startController()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-08-14 23:00:35 --> Cannot redeclare App\Controllers\Home::history_approve()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-08-14 23:01:20 --> Cannot redeclare App\Controllers\Home::history_approve()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-08-14 23:01:29 --> Cannot redeclare App\Controllers\Home::history_approve()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-08-14 23:03:53 --> Cannot redeclare App\Controllers\Home::history_approve()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}

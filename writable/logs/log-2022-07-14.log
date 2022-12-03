@@ -52,3 +52,157 @@ Stack trace:
   thrown
 #0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
 #1 {main}
+CRITICAL - 2022-07-14 05:16:39 --> Trying to get property 'role' of non-object
+#0 C:\xampp\htdocs\coba_mobil\app\Views\layouts\components\sidebar.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 12, Array)
+#1 C:\xampp\htdocs\coba_mobil\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\coba_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\coba_mobil\system\View\View.php(432): CodeIgniter\View\View->render('layouts/compone...', NULL, true)
+#4 C:\xampp\htdocs\coba_mobil\app\Views\layouts\admin.php(28): CodeIgniter\View\View->include('layouts/compone...')
+#5 C:\xampp\htdocs\coba_mobil\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\coba_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\coba_mobil\system\View\View.php(230): CodeIgniter\View\View->render('layouts/admin', Array, true)
+#8 C:\xampp\htdocs\coba_mobil\system\Common.php(1097): CodeIgniter\View\View->render('dashboard', Array, true)
+#9 C:\xampp\htdocs\coba_mobil\app\Controllers\Home.php(24): view('dashboard')
+#10 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(824): App\Controllers\Home->dashboard()
+#11 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#12 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\coba_mobil\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 {main}
+CRITICAL - 2022-07-14 05:23:07 --> Undefined variable: data
+#0 C:\xampp\htdocs\coba_mobil\app\Controllers\Home.php(71): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 71, Array)
+#1 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(824): App\Controllers\Home->driver()
+#2 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\coba_mobil\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-14 05:23:49 --> Undefined index: nama_pengemudi
+#0 C:\xampp\htdocs\coba_mobil\app\Views\driver.php(31): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\coba_mobil\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\coba_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\coba_mobil\system\Common.php(1097): CodeIgniter\View\View->render('driver', Array, true)
+#4 C:\xampp\htdocs\coba_mobil\app\Controllers\Home.php(73): view('driver', Array)
+#5 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(824): App\Controllers\Home->driver()
+#6 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\coba_mobil\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-07-14 05:26:00 --> Unknown column 'oauth_user.id' in 'on clause'
+CRITICAL - 2022-07-14 05:26:00 --> Unknown column 'oauth_user.id' in 'on clause'
+#0 C:\xampp\htdocs\coba_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT * from o...', 0)
+#1 C:\xampp\htdocs\coba_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * from o...')
+#2 C:\xampp\htdocs\coba_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * from o...')
+#3 C:\xampp\htdocs\coba_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT * from o...')
+#4 C:\xampp\htdocs\coba_mobil\app\Controllers\Home.php(68): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(824): App\Controllers\Home->driver()
+#6 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\coba_mobil\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-07-14 05:39:47 --> Unknown column 'oauth_user.id' in 'on clause'
+CRITICAL - 2022-07-14 05:39:47 --> Unknown column 'oauth_user.id' in 'on clause'
+#0 C:\xampp\htdocs\coba_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT * from o...', 0)
+#1 C:\xampp\htdocs\coba_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * from o...')
+#2 C:\xampp\htdocs\coba_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * from o...')
+#3 C:\xampp\htdocs\coba_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT * from o...')
+#4 C:\xampp\htdocs\coba_mobil\app\Controllers\Home.php(68): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(824): App\Controllers\Home->driver()
+#6 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\coba_mobil\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-07-14 05:43:17 --> Table 'bcas_mobil.user' doesn't exist
+CRITICAL - 2022-07-14 05:43:17 --> Table 'bcas_mobil.user' doesn't exist
+#0 C:\xampp\htdocs\coba_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\coba_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\coba_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\coba_mobil\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\coba_mobil\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\coba_mobil\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina2@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\coba_mobil\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina2@gm...', Array, Array)
+#7 C:\xampp\htdocs\coba_mobil\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\coba_mobil\app\Controllers\RegisterController.php(80): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(824): App\Controllers\RegisterController->auth_register_driver()
+#10 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\coba_mobil\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-07-14 05:44:21 --> Table 'bcas_mobil.user' doesn't exist
+CRITICAL - 2022-07-14 05:44:21 --> Table 'bcas_mobil.user' doesn't exist
+#0 C:\xampp\htdocs\coba_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\coba_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\coba_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\coba_mobil\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\coba_mobil\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\coba_mobil\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina2@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\coba_mobil\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina2@gm...', Array, Array)
+#7 C:\xampp\htdocs\coba_mobil\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\coba_mobil\app\Controllers\RegisterController.php(80): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(824): App\Controllers\RegisterController->auth_register_driver()
+#10 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\coba_mobil\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-07-14 05:46:39 --> Table 'bcas_mobil.user' doesn't exist
+CRITICAL - 2022-07-14 05:46:39 --> Table 'bcas_mobil.user' doesn't exist
+#0 C:\xampp\htdocs\coba_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\coba_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\coba_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\coba_mobil\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\coba_mobil\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\coba_mobil\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina2@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\coba_mobil\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina2@gm...', Array, Array)
+#7 C:\xampp\htdocs\coba_mobil\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\coba_mobil\app\Controllers\RegisterController.php(79): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(824): App\Controllers\RegisterController->auth_register_driver()
+#10 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\coba_mobil\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-07-14 05:49:37 --> Table 'bcas_mobil.user' doesn't exist
+CRITICAL - 2022-07-14 05:49:37 --> Table 'bcas_mobil.user' doesn't exist
+#0 C:\xampp\htdocs\coba_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\coba_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\coba_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\coba_mobil\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\coba_mobil\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\coba_mobil\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina2@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\coba_mobil\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina2@gm...', Array, Array)
+#7 C:\xampp\htdocs\coba_mobil\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\coba_mobil\app\Controllers\RegisterController.php(79): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(824): App\Controllers\RegisterController->auth_register_driver()
+#10 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\coba_mobil\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-07-14 05:50:56 --> Table 'bcas_mobil.user' doesn't exist
+CRITICAL - 2022-07-14 05:50:56 --> Table 'bcas_mobil.user' doesn't exist
+#0 C:\xampp\htdocs\coba_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\coba_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\coba_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\coba_mobil\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\coba_mobil\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\coba_mobil\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina2@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\coba_mobil\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina2@gm...', Array, Array)
+#7 C:\xampp\htdocs\coba_mobil\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\coba_mobil\app\Controllers\RegisterController.php(80): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(824): App\Controllers\RegisterController->auth_register_driver()
+#10 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\coba_mobil\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-07-14 05:52:15 --> Table 'bcas_mobil.user' doesn't exist
+CRITICAL - 2022-07-14 05:52:15 --> Table 'bcas_mobil.user' doesn't exist
+#0 C:\xampp\htdocs\coba_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\coba_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\coba_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\coba_mobil\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\coba_mobil\system\Validation\Rules.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\coba_mobil\system\Validation\Validation.php(277): CodeIgniter\Validation\Rules->is_unique('gita.refina2@gm...', 'email', Array, NULL)
+#6 C:\xampp\htdocs\coba_mobil\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('email', 'email', 'gita.refina2@gm...', Array, Array)
+#7 C:\xampp\htdocs\coba_mobil\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\coba_mobil\app\Controllers\RegisterController.php(81): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(824): App\Controllers\RegisterController->auth_register_driver()
+#10 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#11 C:\xampp\htdocs\coba_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\coba_mobil\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}

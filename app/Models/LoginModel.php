@@ -15,9 +15,6 @@ class LoginModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = ['username', 'email', 'password'];
-
-
-    // Validation
     protected $validationRules      = [
         'name'          => 'required|min_length[3]|max_length[20]',
         'email'         => 'required|min_length[6]|max_length[50]|valid_email|is_unique[users.user_email]',
@@ -27,4 +24,5 @@ class LoginModel extends Model
     protected $validationMessages   = [];
     protected $skipValidation       = false;
     protected $cleanValidationRules = true;
+    
 }

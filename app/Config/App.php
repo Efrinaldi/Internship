@@ -23,7 +23,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://localhost/coba_mobil/public/';
+    public $baseURL = 'http://202.152.28.117:8073/order_mobil/';
 
     /**
      * --------------------------------------------------------------------------

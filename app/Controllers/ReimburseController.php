@@ -18,11 +18,10 @@ use PhpOffice\PhpSpreadsheet\Style\Border as StyleBorder;
 class ReimburseController extends BaseController
 {
     use ResponseTrait;
+    // use Spreadsheet;
 
     function __construct()
     {
-
-
         $this->pemesanan = new OrdersModel();
         $this->order = new OrderModel();
         $this->pengemudi = new DriverModel();
@@ -80,19 +79,17 @@ class ReimburseController extends BaseController
 
     public function uploadImage()
     {
-
         $fileberkas = $this->request->getFile('photo');
         $namaFileUpload = time() . '_' . $fileberkas->getName();
         if ($fileberkas->move("template/assets/img/upload", $namaFileUpload)) {
             $reimburse = new ReimburseModel();
             $data = [
-                "id_pemesanan" => $this->request->getPost("id_pemesanan"),
-                "deskripsi" => $this->request->getPost("deskripsi"),
-                "nominal" => $this->request->getPost("nominal"),
-                "status"  => $this->request->getPost("status"),
+                // "id_pemesanan" => $this->request->getPost("id_pemesanan"),
+                // "deskripsi" => $this->request->getPost("deskripsi"),
+                // "nominal" => $this->request->getPost("nominal"),
+                // "status"  => $this->request->getPost("status"),
                 "photo" => $namaFileUpload
             ];
-
             if ($reimburse->insert($data)) {
 
                 $response = [

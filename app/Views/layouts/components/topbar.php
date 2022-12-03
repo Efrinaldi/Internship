@@ -5,26 +5,23 @@
     </button>
     <!-- Topbar Navbar -->
     <?php if (!empty(session()->getFlashdata('success'))) : ?>
-    <div class="alert alert-success alert-dismissible fade show mt-auto" role="alert">
-        <?php echo session()->getFlashdata('success'); ?>
-    </div>
+        <div class="alert alert-success alert-dismissible fade show mt-auto" role="alert">
+            <?php echo session()->getFlashdata('success'); ?>
+        </div>
     <?php endif; ?>
     <ul class="navbar-nav ml-auto">
         <div class="topbar-divider d-none d-sm-block"></div>
         <!-- Nav Item - User Information -->
         <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                     <div>
-                        <?= session()->get('first_name') ?>
-                        <?= session()->get('last_name') ?>
                     </div>
                 </span>
-                <img class="img-profile rounded-circle" src="<?= base_url('assets/img/undraw_profile.svg') ?>">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
             </a>
             <!-- Dropdown - User Information -->
-            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+            <div class=" dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                     Logout
@@ -35,9 +32,9 @@
 </nav>
 
 <script>
-window.setTimeout(function() {
-    $(".alert").fadeTo(500, 0).slideUp(500, function() {
-        $(this).remove();
-    });
-}, 3000);
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function() {
+            $(this).remove();
+        });
+    }, 3000);
 </script>

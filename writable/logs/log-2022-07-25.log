@@ -1,0 +1,14 @@
+CRITICAL - 2022-07-25 23:15:07 --> Undefined index: photo
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(210): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp73\\htdo...', 210, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->detail_reimburse('1')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-25 23:15:51 --> Undefined index: status
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(207): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp73\\htdo...', 207, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->detail_reimburse('1')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

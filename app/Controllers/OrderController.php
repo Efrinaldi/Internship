@@ -22,7 +22,12 @@ class OrderController extends BaseController
     {
         $this->orders = new OrdersModel();
     }
+    public function log()
+    {
 
+
+
+    }
     public function detail_order($id_order)
     {
         $order = new OrderModel();
@@ -31,26 +36,37 @@ class OrderController extends BaseController
         $data = [
             "data" => $rows
         ];
-        return $this->respondCreated($data, 201);
+        return $this->respondCreated($data, 201);   
     }
+    
+
+
+
+    public function insert_user_id(){
+
+
+
+
+    }
+
     public function order($id_user)
     {
         $order = new OrderModel();
         $driver =  new DriverModel();
-        $query   = $order->query("SELECT orders.ID as id_order, pemesanan.id as id_pemesanan, orders.asal ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.id_user as id_user,oauth_user.nama_user,orders.tanggal, pemesanan.id_pengemudi as id_pengemudi from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan where orders.id_user = $id_user and tanggal like DATE_FORMAT(CURRENT_DATE,'%m/%d/%Y') order by waktu");
+        $query   = $order->query("SELECT orders.ID as id_order, pemesanan.id as id_pemesanan, orders.asal ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.id_user as id_user,oauth_user.nama_user,orders.tanggal, pemesanan.id_pengemudi as id_pengemudi from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan where orders.id_user = $id_user and tanggal like DATE_FORMAT(CURRENT_DATE,'%m/%d/%Y') order by waktu ");
         $rows = $query->getResult();
         $data = [
             "data" => $rows
         ];
         return $this->respondCreated($data, 201);
     }
-
+    // and tanggal like DATE_FORMAT(CURRENT_DATE,'%m/%d/%Y') order by waktu
 
 
     public function detail_driver($id_user)
     {
         $driver =  new DriverModel();
-        $query   = $driver->query("SELECT id_pengemudi ,id_user,nama_pengemudi,status_pengemudi,plat_nomor,keterangan_mobil  FROM PENGEMUDI inner join mobil on pengemudi.id_mobil = mobil.id_mobil WHERE pengemudi.id_pengemudi=  $id_user;");
+        $query   = $driver->query("SELECT id_pengemudi ,id_user,nama_pengemudi,status_pengemudi,plat_nomor,keterangan_mobil  FROM PENGEMUDI inner join mobil on pengemudi.id_mobil = mobil.id_mobil WHERE pengemudi.id_pengemudi=  $id_user ;");
         $rows = $query->getResult();
         $data = ["data" => $rows];
         return $this->respondCreated($data, 201);
@@ -60,7 +76,7 @@ class OrderController extends BaseController
     {
         $order = new OrderModel();
         $driver =  new DriverModel();
-        $query   = $order->query("SELECT pengemudi.id_pengemudi as id_pengemudi,orders.id as id_order, pengemudi.nama_pengemudi,pemesanan.id_pemesanan as id_pemesanan,pemesanan.id_user as id_user,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.tanggal from pemesanan left JOIN pengemudi on pemesanan.id_pengemudi = pengemudi.id_pengemudi INNER JOIN orders on orders.ID = pemesanan.id_pemesanan where pengemudi.id_user= $id_user and tanggal like DATE_FORMAT(CURRENT_DATE,'%m/%d/%Y') order by waktu");
+        $query   = $order->query("SELECT pengemudi.id_pengemudi as id_pengemudi,orders.id as id_order, pengemudi.nama_pengemudi,pemesanan.id as id_pemesanan, pemesanan.id_user as id_user,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.tanggal from pemesanan left JOIN pengemudi on pemesanan.id_pengemudi = pengemudi.id_pengemudi INNER JOIN orders on orders.ID = pemesanan.id_pemesanan where pengemudi.id_user= $id_user and tanggal like DATE_FORMAT(CURRENT_DATE,'%m/%d/%Y') order by waktu");
         $rows = $query->getResult();
         $data = ["data" => $rows];
         return $this->respondCreated($data, 201);
@@ -70,7 +86,7 @@ class OrderController extends BaseController
     {
         $order = new OrderModel();
         $driver =  new DriverModel();
-        $query   = $order->query("SELECT orders.id as id_order, pengemudi.id_pengemudi as id_pengemudi,pengemudi.nama_pengemudi,pemesanan.id_pemesanan as id_pemesanan,reimburse.id as id_reimburse,pemesanan.id_user as id_user,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.tanggal from pemesanan left JOIN pengemudi on pemesanan.id_pengemudi = pengemudi.id_pengemudi INNER JOIN orders on orders.ID = pemesanan.id_pemesanan LEFT JOIN reimburse on reimburse.id_pemesanan = pemesanan.id_pemesanan where pengemudi.id_user= $id_user and pemesanan.id_pemesanan is NOT NULL; ");
+        $query   = $order->query("SELECT orders.id as id_order, pengemudi.id_pengemudi as id_pengemudi,pengemudi.nama_pengemudi,pemesanan.id as id_pemesanan,reimburse.id as id_reimburse,pemesanan.id_user as id_user,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.tanggal from pemesanan left JOIN pengemudi on pemesanan.id_pengemudi = pengemudi.id_pengemudi INNER JOIN orders on orders.ID = pemesanan.id_pemesanan LEFT JOIN reimburse on reimburse.id_pemesanan = pemesanan.id where pengemudi.id_user= $id_user and pemesanan.id_pemesanan is NOT NULL; ");
         $rows = $query->getResult();
         $data = ["data" => $rows];
         return $this->respondCreated($data, 201);
@@ -84,7 +100,7 @@ class OrderController extends BaseController
     {
         $order = new OrderModel();
         $driver =  new DriverModel();
-        $query   = $order->query("SELECT orders.ID as id_order, pemesanan.id as id_pemesanan, orders.asal ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.id_user as id_user,oauth_user.nama_user,orders.tanggal,reimburse.id as id_reimburse ,pemesanan.id_pengemudi as id_pengemudi from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan  LEFT JOIN reimburse on reimburse.id_pemesanan = pemesanan.id_pemesanan where orders.id_user = $id_user and pemesanan.id_pemesanan is NOT NULL ");
+        $query   = $order->query("SELECT orders.ID as id_order, pemesanan.id as id_pemesanan, orders.asal ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.id_user as id_user,oauth_user.nama_user,orders.tanggal,reimburse.id as id_reimburse ,pemesanan.id_pengemudi as id_pengemudi from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan  LEFT JOIN reimburse on reimburse.id_pemesanan = pemesanan.id where orders.id_user = $id_user and pemesanan.id_pemesanan is NOT NULL ");
         $rows = $query->getResult();
         $data = ["data" => $rows];
         return $this->respondCreated($data, 201);
@@ -124,7 +140,7 @@ class OrderController extends BaseController
         $driver = new DriverModel();
 
         // $driver = $driver->findAll();
-        $query   = $driver->query("select *  FROM pengemudi WHERE status_pengemudi = 'Tersedia'");
+        $query   = $driver->query("select *  FROM pengemudi inner join mobil on pengemudi.id_mobil = mobil.id_mobil WHERE status_pengemudi = 'Tersedia'");
         $rows = $query->getResultArray();
 
         $data = [
@@ -138,11 +154,12 @@ class OrderController extends BaseController
     {
         $order = new OrderModel();
         $rules = [
-            'name'          => 'required',
-            'unit'              => 'required',
-            'time'           => 'required',
-            'date'       => 'required',
-            'destination' => 'required'
+            'name'        => 'required',
+            'unit'        => 'required',
+            'time'        => 'required',
+            'date'        => 'required',
+            'destination' => 'required',
+            'purpose'     => 'required'
         ];
 
         if ($this->validate($rules)) {
@@ -152,6 +169,8 @@ class OrderController extends BaseController
                 'waktu' => $this->request->getVar('time'),
                 'nama' => $this->request->getVar('name'),
                 'tanggal' => $this->request->getVar('date'),
+                'status' => 0,
+                'tujuan_pakai' => $this->request->getVar('purpose'),
                 'keterangan' => $this->request->getVar('keterangan'),
                 'id_user' => session()->get('id_user'),
             ];
@@ -160,6 +179,7 @@ class OrderController extends BaseController
             return redirect()->to('request')->with('success', 'Pesanan masuk. Segera proses pesanan!');
         }
     }
+
 
 
     public function insert_reimburse($id)
@@ -171,11 +191,8 @@ class OrderController extends BaseController
             "nama" => $this->request->getPost('nama'),
             "tanggal" => $this->request->getPost('tanggal'),
             "waktu" => $this->request->getPost('waktu'),
-
             "tujuan" => $this->request->getPost('tujuan'),
-
             "asal" => $this->request->getPost('asal'),
-
             "id_user" => $this->request->getPost('id_user'),
         ];
         $data = json_decode(file_get_contents("php://input"));
@@ -193,6 +210,124 @@ class OrderController extends BaseController
     }
 
 
+    public function detail_reimburse($id_pemesanan)
+    {
+        $reimburse = new ReimburseModel();
+        $sql = "SELECT * FROM `reimburse` where id_pemesanan=$id_pemesanan and nominal is NOT null;";
+        $sql_photo = "SELECT photo FROM `reimburse` where id_pemesanan=$id_pemesanan and nominal is NOT null;";
+        $data_photo = $reimburse->query($sql_photo)->getResultArray();
+        $data_reimburse = $reimburse->query($sql)->getResultArray();
+        $data = [
+            "status" => $data_reimburse[0]["status"],
+            "nominal" => $data_reimburse[0]["nominal"],
+            "deskripsi" => $data_reimburse[0]["deskripsi"],
+            "photo" => $data_photo
+        ];
+        return $this->respondCreated($data, 201);
+    }
+
+
+
+    public function updateStatusReimburse()
+    {
+        $reimburse = new ReimburseModel();
+        $data = [
+            "id_pemesanan" => $this->request->getPost("id_pemesanan"),
+            "status"  => "Requesting",
+        ];
+        $data = json_decode(file_get_contents("php://input"));
+        if ($reimburse->insert($data)) {
+
+            $response = [
+                'status' => 200,
+                'error' => false,
+                'message' => 'File uploaded successfully',
+                'data' => []
+            ];
+        } else {
+
+            $response = [
+                'status' => 500,
+                'error' => true,
+                'message' => 'Failed to save image',
+                'data' => []
+            ];
+        }
+
+        return $this->respondCreated($response, 201);
+    }
+    public function uploadImage()
+    {
+        $fileberkas = $this->request->getFile('photo');
+        $namaFileUpload = time() . '_' . $fileberkas->getName();
+        if ($fileberkas->move("template/assets/img/upload", $namaFileUpload)) {
+            $reimburse = new ReimburseModel();
+            $data = [
+                "id_pemesanan" => $this->request->getPost("id_pemesanan"),
+                "deskripsi" => $this->request->getPost("deskripsi"),
+                "nominal" => $this->request->getPost("nominal"),
+                "status"  => "Pending",
+                "photo" => $namaFileUpload
+            ];
+            if ($reimburse->insert($data)) {
+
+                $response = [
+                    'status' => 200,
+                    'error' => false,
+                    'message' => 'File uploaded successfully',
+                    'data' => []
+                ];
+            } else {
+
+                $response = [
+                    'status' => 500,
+                    'error' => true,
+                    'message' => 'Failed to save image',
+                    'data' => []
+                ];
+            }
+        } else {
+
+            $response = [
+                'status' => 500,
+                'error' => true,
+                'message' => 'Failed to upload image',
+                'data' => []
+            ];
+        }
+        return $this->respondCreated($response, 201);
+    }
+
+    public function uploadKeterangan()
+    {
+        $reimburse = new ReimburseModel();
+        $data = [
+            "id_pemesanan" => $this->request->getPost("id_pemesanan"),
+            "deskripsi" => $this->request->getPost("deskripsi"),
+            "nominal" => $this->request->getPost("nominal"),
+            "status" => "Pending"
+        ];
+        $data = json_decode(file_get_contents("php://input"));
+        if ($reimburse->insert($data)) {
+
+            $response = [
+                'status' => 200,
+                'error' => false,
+                'message' => 'File uploaded successfully',
+                'data' => []
+            ];
+        } else {
+
+            $response = [
+                'status' => 500,
+                'error' => true,
+                'message' => 'Failed to save image',
+                'data' => []
+            ];
+        }
+        return $this->respondCreated($response, 201);
+    }
+
 
     public function post_order()
     {
@@ -205,11 +340,9 @@ class OrderController extends BaseController
             "nama" => $this->request->getPost('nama'),
             "tanggal" => $this->request->getPost('tanggal'),
             "waktu" => $this->request->getPost('waktu'),
-
             "tujuan" => $this->request->getPost('tujuan'),
-
             "asal" => $this->request->getPost('asal'),
-
+            "tujuan" => $this->request->getPost('tujuan_pakai'),
             "id_user" => $this->request->getPost('id_user'),
         ];
         $data = json_decode(file_get_contents("php://input"));
@@ -245,6 +378,15 @@ class OrderController extends BaseController
         $data_driver = $driver->where('status_pengemudi', 'tersedia')->find();
         return $this->insert_order($id_user, $data_driver['id_pengemudi']);
     }
+    public function whatsapp($id_user)
+    {
+        $user = new UserModel();
+        $data = $user->where('id_user', $id_user)->first();
+        $phone = $data["phone_number"];
+    }
+
+
+
 
     public function insert_order($id_pengemudi)
     {
@@ -253,10 +395,7 @@ class OrderController extends BaseController
         $order = new OrdersModel();
         $notif = new NotificationController();
         $user = new UserModel();
-
         $orders = new OrderModel();
-
-
         $id_order = (int)session()->get('id_order');
         $data_order = $orders->where('ID', $id_order)->first();
         $id_user = $data_order['id_user'];
@@ -275,7 +414,6 @@ class OrderController extends BaseController
         $response = [
             "message" => "data berhasil disimpan"
         ];
-
 
         $orders->update($data_order, ['keterangan' => 'Approve']);
         $this->orders->insert($data_json);
