@@ -9,8 +9,10 @@ use CodeIgniter\API\ResponseTrait;
 use App\Models\DriverModel;
 use App\Models\UserModel;
 use App\Controllers\NotificationController;
+use App\Models\ActivityLogModel;
 use App\Models\OrdersModel;
 use App\Models\ReimburseModel;
+use App\Models\SecureModel;
 use Firebase\JWT\JWT;
 
 
@@ -24,9 +26,6 @@ class OrderController extends BaseController
     }
     public function log()
     {
-
-
-
     }
     public function detail_order($id_order)
     {
@@ -36,17 +35,14 @@ class OrderController extends BaseController
         $data = [
             "data" => $rows
         ];
-        return $this->respondCreated($data, 201);   
+        return $this->respondCreated($data, 201);
     }
-    
-
-
-
-    public function insert_user_id(){
 
 
 
 
+    public function insert_user_id()
+    {
     }
 
     public function order($id_user)
@@ -116,8 +112,7 @@ class OrderController extends BaseController
         $data = ["data" => $rows];
         return $this->respondCreated($data, 201);
     }
-    public function notification_driver($id_pengemudi)
-    {
+    public function notification_driver($id_pengemudi){
         $order = new OrderModel();
         $driver =  new DriverModel();
         $query   = $order->query("");
@@ -126,11 +121,7 @@ class OrderController extends BaseController
         return $this->respondCreated($data, 201);
     }
 
-
-
-
-    public function get_order()
-    {
+    public function get_order(){
         $order = new OrderModel();
         $data['order'] = $order->findAll();
         return $this->respond($data, 200);
@@ -153,8 +144,20 @@ class OrderController extends BaseController
     public function request_order()
     {
         $order = new OrderModel();
+        $acitivity = new  ActivityLogModel();
+        $user = new SecureModel();
+        $userid = session("userid");
+        $data = [
+            "activity" => "Menambahkan pesanan atas nama $userid",
+            "tanggal"  =>  date("Y-m-d H:i:s"),
+
+
+
+        ];
+        $userid = session("userid");
+        $s = $user->query("SELECT * FROM T_USERS WHERE USERID = '$userid'")->getResultArray();
+        $acitivity->insert($data);
         $rules = [
-            'name'        => 'required',
             'unit'        => 'required',
             'time'        => 'required',
             'date'        => 'required',
@@ -163,20 +166,30 @@ class OrderController extends BaseController
         ];
 
         if ($this->validate($rules)) {
+            if (!empty($s[0]["userdomain"])) {
+                $nama = $s[0]["userdomain"];
+            } else {
+                $nama = $s[0]["username"];
+            }
+
             $data = [
+                'nama' => $nama,
+                'asal' => $this->request->getVar('asal'),
                 'tujuan' => $this->request->getVar('destination'),
-                'unit_kerja' => $this->request->getVar('unit'),
+                'id_divisi' => $this->request->getVar('unit'),
                 'waktu' => $this->request->getVar('time'),
-                'nama' => $this->request->getVar('name'),
                 'tanggal' => $this->request->getVar('date'),
                 'status' => 0,
                 'tujuan_pakai' => $this->request->getVar('purpose'),
                 'keterangan' => $this->request->getVar('keterangan'),
-                'id_user' => session()->get('id_user'),
-            ];
+                'userid' => session("userid"),
+                'jumlah_orang' => $this->request->getVar("jumlah_orang")
 
+            ];
             $order->insert($data);
             return redirect()->to('request')->with('success', 'Pesanan masuk. Segera proses pesanan!');
+        } else {
+            return redirect()->to('request')->with('success', 'Pesanan gagal masuk. Isi form kembali!');
         }
     }
 
@@ -428,6 +441,11 @@ class OrderController extends BaseController
         $builder->where('id', $id);
         $builder->set('status', 1);
         $builder->update();
+        $activity = new ActivityLogModel();
+        $data = [
+            "activity" => "data order telah disetujui oleh otorisator departemen"
+        ];
+        $activity->insert($data);
 
         return redirect()->back()->with('success', 'Data Berhasil Disetujui');
     }

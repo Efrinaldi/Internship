@@ -14,9 +14,9 @@
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Pesanan Disetujui
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">10 Pesanan</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><? ?>Pesanan</div>
                         </div>
-                        <a href="<?=base_url("/history_approve")?>" class="stretched-link" type="hidden"></a>
+                        <a href="<?= base_url("/history_approve") ?>" class="stretched-link" type="hidden"></a>
                         <div class="col-auto">
                             <i class="fas fa-car fa-2x text-gray-300"></i>
                         </div>
@@ -33,11 +33,11 @@
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">5 Pesanan</div>
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?        ?>Pesanan</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="<?=base_url("/history_reject")?>" class="stretched-link" type="hidden"></a>
+                        <a href="<?= base_url("/history_reject") ?>" class="stretched-link" type="hidden"></a>
                         <div class="col-auto">
                             <i class="fas fa-car-side fa-2x text-gray-300"></i>
                         </div>

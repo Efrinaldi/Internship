@@ -9,12 +9,6 @@ $routes = Services::routes();
 if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
     require SYSTEMPATH . 'Config/Routes.php';
 }
-
-/*
- * --------------------------------------------------------------------
- * Router Setup
- * --------------------------------------------------------------------
- */
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
@@ -22,10 +16,12 @@ $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 $routes->setAutoRoute(true);
 $routes->get('/login', 'UserController::index');
+$routes->get('/login_sa', 'UserController::login_sa');
 $routes->get('/', 'UserController::index');
 $routes->post('/login_api', 'UserController::login');
 $routes->add('/logout', 'UserController::logout');
 $routes->post('/auth', 'UserController::auth');
+$routes->post('/auth_sa', 'UserController::auth');
 $routes->post('/reg', 'UserController::authregister');
 $routes->post('/auth_register_driver', 'RegisterController::auth_register_driver');
 $routes->get('/register', 'RegisterController::index');
@@ -68,6 +64,7 @@ $routes->group('api', function ($routes) {
 });
 
 $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
+    $routes->get('hapus_atasan/(:segment)', 'UserController::hapus_atasan/$1');
     $routes->get('/register', 'RegisterController::index');
     $routes->get('/register_driver', 'RegisterController::register_driver');
     $routes->get('/homes', 'Home::homes');
@@ -108,7 +105,6 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('reject/(:num)', 'OrderController::reject_order/$1');
     $routes->get('status_unavailable/(:num)', 'DriverController::status_unavailable/$1');
     $routes->get('status_available/(:num)', 'DriverController::status_available/$1');
-
     $routes->post('/addReimburse/(:segment)/(:segment)', 'ReimburseController::insert_image_reimburse/$1/$2');
     $routes->group('reimburse', function ($routes) {
         $routes->get('/', 'ReimburseController::index', ['filter' => 'isAdmin']);

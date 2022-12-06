@@ -11,47 +11,30 @@
             <h2>Daftar Mobil</h2>
             <p>Anda dapat melakukan pendaftaran mobil sesuai dengan pengemudi</p>
 
-            <?php
-            $no = 1;
-            foreach ($user as $d) :
-            ?>
-                <form class="row g-3" action="<?= base_url("/insert_car_driver/" . $d["id_user"]) ?>" method="post" autocomplete="off">
-                    <?= csrf_field(); ?>
-                    <div class="col-md-6">
-                        <label for="inputNama" class="form-label">Plat Nomor</label>
-                        <input type="text" class="form-control" id="inputPlat" name="plat_nomor" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputNama" class="form-label">Jenis Mobil</label>
-                        <input type="text" class="form-control" id="inputJenis" name="keterangan_mobil" required>
-                    </div>
+            <?= csrf_field(); ?>
+            <div class="col-md-6">
+                <label for="inputNama" class="form-label">Plat Nomor</label>
+                <input type="text" class="form-control" id="inputPlat" name="plat_nomor" required>
+            </div>
+            <div class="col-md-6">
+                <label for="inputNama" class="form-label">Jenis Mobil</label>
+                <input type="text" class="form-control" id="inputJenis" name="keterangan_mobil" required>
+            </div>
 
-                    <div class="col-md-6">
-                        <label for="inputUnit" class="form-label">Status Mobil</label>
-                        <select type="text" name="status_mobil" class="form-control" id="inputId" required>
-                            <option name="status_mobil" value="Tersedia">Tersedia</option>
-                            <option name="status_mobil" value="Tidak Tersedia">Tidak Tersedia</option>
-
-                        </select>
-
-
-                    </div>
+            <div class="col-md-6">
+                <label for="inputUnit" class="form-label">Status Mobil</label>
+                <select type="text" name="status_mobil" class="form-control" id="inputId" required>
+                    <option name="status_mobil" value="Tersedia">Tersedia</option>
+                    <option name="status_mobil" value="Tidak Tersedia">Tidak Tersedia</option>
+                </select>
+            </div>
         </div>
-
-
         <div class="col-md-6">
             <label for="inputUnit" class="form-label">Nama Pengemudi</label>
             <select type="text" class="form-control" id="inputId" required>
-                <option name="id_user" value=<? $d['id_user'] ?>> <?= $d['first_name'], "    ", $d['last_name'] ?></option>
             </select>
-        <?php
-            endforeach;
-        ?>
+
         </div>
-
-
-
-
         <input type="hidden" class="form-control " id="keterangan" value="Pending" name="keterangan">
         <span class="d-flex justify-content-end col-md-12 mt-3 ">
             <button class="btn btn-primary me-md-2 mb-3" type="submit">Submit</button>

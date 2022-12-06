@@ -14,7 +14,7 @@ class AtasanModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ["id_divisi", "atasan", "id_user"];
+    protected $allowedFields    = ["id_divisi", "atasan", "userid", "username"];
 
     // Dates
     protected $useTimestamps = false;

@@ -7,6 +7,7 @@ use App\Models\DepartmentWorkerModel;
 use App\Models\DivisiModel;
 use App\Models\DriverModel;
 use App\Models\OrderModel;
+use App\Models\SecureModel;
 use App\Models\UserDivisiModel;
 use App\Models\UserModel;
 use App\Models\WorkerModel;
@@ -35,9 +36,8 @@ class Home extends BaseController
     }
     public function list_car()
     {
-
-        $user = new UserModel();
-        $query   = $user->query("SELECT * FROM oauth_user inner join pengemudi where oauth_user.id_user = pengemudi.id_user;");
+        $user = new SecureModel();
+        $query   = $user->query("SELECT * FROM t_users ;");
         $rows = $query->getResultArray();
         $data = [
             'user' => $rows,
@@ -48,28 +48,27 @@ class Home extends BaseController
     {
         $order = new OrderModel();
         $session = session()->get();
-        $user = $session['unit_kerja'];
-        // dd($user);
+        $userid = session("userid");
+        $id_divisi = session("id_divisi");
+
         $query = $order->query(
-            "SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,
-         orders.tujuan_pakai,orders.id_user,oauth_user.nama_user,orders.tanggal,pemesanan.id
-         as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user 
-         LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE orders.status = 0 
-         AND orders.keterangan = 'Pending' AND orders.unit_kerja = '$user'"
+            "SELECT orders.ID ,divisi.divisi,orders.nama,orders.id_divisi,orders.waktu,orders.tujuan, orders.tujuan_pakai,orders.userid,
+            orders.tanggal,pemesanan_mobil.id as id_pemesanan from orders left join 
+            divisi on divisi.id_divisi = orders.id_divisi LEFT JOIN atasan on atasan.id_divisi = orders.id_divisi
+            LEFT JOIN pemesanan_mobil on orders.id =pemesanan_mobil.id_pemesanan WHERE orders.status = 0 AND orders.keterangan = 
+            'Pending' and atasan.id_divisi = $id_divisi   "
         );
         $rows = $query->getResultArray();
+
         $data = [
             'order' => $rows,
         ];
         return view('order', $data);
-        // return view('order', $data);
     }
 
     public function driver()
     {
         $driver = new DriverModel();
-
-
         $query   = $driver->query("SELECT * from oauth_user inner join pengemudi  on pengemudi.id_user = oauth_user.id_user inner join mobil on mobil.id_mobil = pengemudi.id_mobil where oauth_user.role = 'Driver'");
         $rows = $query->getResultArray();
         $data = [
@@ -90,7 +89,7 @@ class Home extends BaseController
     public function process()
     {
         $order = new OrderModel();
-        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.id_user,oauth_user.nama_user,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE orders.status = 1 AND orders.keterangan = 'Pending'");
+        $query   = $order->query("SELECT orders.ID ,orders.nama,,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.id_user,oauth_user.nama_user,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE orders.status = 1 AND orders.keterangan = 'Pending'");
         $rows = $query->getResultArray();
 
         $data = [
@@ -129,8 +128,10 @@ class Home extends BaseController
 
     public function history_approve()
     {
+
         $order = new OrderModel();
-        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.id_user,orders.keterangan,oauth_user.nama_user,oauth_user.nip,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE orders.keterangan = 'Approve' and orders.unit_kerja= 'SKTILOG' ");
+        $id_divisi = session("id_divisi");
+        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.id_divisi,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.userid,orders.keterangan,orders.tanggal,pemesanan_mobil.id as id_pemesanan from orders LEFT JOIN pemesanan_mobil on orders.id =pemesanan_mobil.id_pemesanan WHERE orders.keterangan = 'Approve' and orders.id_divisi = $id_divisi ");
         $rows = $query->getResultArray();
 
         $data = [
@@ -145,9 +146,9 @@ class Home extends BaseController
     public function history_reject()
     {
         $order = new OrderModel();
-        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.id_user,orders.keterangan,oauth_user.nama_user,oauth_user.nip,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE orders.keterangan = 'Reject'");
+        $id_divisi = session("id_divisi");
+        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.id_divisi,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.userid,orders.keterangan,orders.tanggal,pemesanan_mobil.id as id_pemesanan from orders LEFT JOIN pemesanan_mobil on orders.id =pemesanan_mobil.id_pemesanan WHERE orders.keterangan = 'Approve' and orders.id_divisi =$id_divisi ");
         $rows = $query->getResultArray();
-
         $data = [
             'order' => $rows,
         ];
@@ -158,8 +159,13 @@ class Home extends BaseController
     public function history_supervisor_approve()
     {
         $unit_kerja = session()->get("unit_kerja");
+        $id_divisi = session("id_divisi");
+
         $order = new OrderModel();
-        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.id_user,orders.keterangan,oauth_user.nama_user,oauth_user.nip,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE orders.keterangan = 'Approve' and orders.unit_kerja= $unit_kerja ");
+        $divisi = new DivisiModel();
+
+        $data_divisi = $divisi->query()->getResultArray();
+        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.id_divisi,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.userid,orders.keterangan,orders.tanggal,pemesanan_mobil.id as id_pemesanan from orders LEFT JOIN pemesanan_mobil on orders.id =pemesanan_mobil.id_pemesanan WHERE orders.keterangan = 'Reject' and orders.id_divisi = $id_divisi");
         $rows = $query->getResultArray();
         $data = [
             'order' => $rows,
@@ -169,11 +175,13 @@ class Home extends BaseController
 
     public function history_supervisor_reject()
     {
+        $id_divisi = session("id_divisi");
+
         $unit_kerja = session()->get("unit_kerja");
         $order = new OrderModel();
-        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.id_user,orders.keterangan,oauth_user.nama_user,oauth_user.nip,orders.tanggal,pemesanan.id as id_pemesanan from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan WHERE orders.keterangan = 'Reject' and orders.unit_kerja = $unit_kerja");
+        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.id_divisi,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.userid,orders.keterangan,orders.tanggal,pemesanan_mobil.id as id_pemesanan from orders LEFT JOIN pemesanan_mobil on orders.id =pemesanan_mobil.id_pemesanan  WHERE orders.keterangan = 'Reject' and orders.id_divisi =1;
+");
         $rows = $query->getResultArray();
-
         $data = [
             'order' => $rows,
         ];
