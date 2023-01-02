@@ -4,6 +4,8 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Operational Vehicle Management System - BCA Syariah</h1>
+        <h1 class="h3 mb-0 text-gray-800">Daftar Pesanan Reject</h1>
+
     </div>
 
     <body>
@@ -27,16 +29,16 @@
                         $no = 1;
                         foreach ($order as $o) :
                         ?>
-                        <tr>
-                            <td><?= $no++; ?></td>
-                            <td><?= $o['nama'] ?></td>
-                            <td><?= $o['nip'] ?></td>
-                            <td><?= $o['unit_kerja'] ?></td>
-                            <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
-                            <td><?= $o['tujuan_pakai'] ?></td>
-                            <td><?= $o['tujuan'] ?></td>
-                            <td><?= $o['keterangan'] ?></td>
-                        </tr>
+                            <tr>
+                                <td><?= $no++; ?></td>
+                                <td><?= $o['nama'] ?></td>
+                                <td><?= $o['nip'] ?></td>
+                                <td><?= $o['unit_kerja'] ?></td>
+                                <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
+                                <td><?= $o['tujuan_pakai'] ?></td>
+                                <td><?= $o['tujuan'] ?></td>
+                                <td><?= $o['keterangan'] ?></td>
+                            </tr>
                         <?php
                         endforeach;
                         ?>

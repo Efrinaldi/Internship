@@ -14,7 +14,7 @@ class UserDivisiModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ["id_divisi", "divisi", "userid", "user_domain"];
+    protected $allowedFields    = ["id_divisi", "divisi", "userid", "user_domain", "username"];
     protected $useTimestamps    = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';

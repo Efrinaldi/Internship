@@ -10,9 +10,12 @@ use App\Models\DriverModel;
 use App\Models\UserModel;
 use App\Controllers\NotificationController;
 use App\Models\ActivityLogModel;
+use App\Models\CarModel;
+use App\Models\DivisiModel;
 use App\Models\OrdersModel;
 use App\Models\ReimburseModel;
 use App\Models\SecureModel;
+use App\Models\UserDivisiModel;
 use Firebase\JWT\JWT;
 
 
@@ -23,7 +26,11 @@ class OrderController extends BaseController
     function __construct()
     {
         $this->orders = new OrdersModel();
+        $this->validate     = \Config\Services::validation();
     }
+
+
+
     public function log()
     {
     }
@@ -38,13 +45,6 @@ class OrderController extends BaseController
         return $this->respondCreated($data, 201);
     }
 
-
-
-
-    public function insert_user_id()
-    {
-    }
-
     public function order($id_user)
     {
         $order = new OrderModel();
@@ -56,8 +56,6 @@ class OrderController extends BaseController
         ];
         return $this->respondCreated($data, 201);
     }
-    // and tanggal like DATE_FORMAT(CURRENT_DATE,'%m/%d/%Y') order by waktu
-
 
     public function detail_driver($id_user)
     {
@@ -88,10 +86,6 @@ class OrderController extends BaseController
         return $this->respondCreated($data, 201);
     }
 
-
-
-
-
     public function show_order_user($id_user)
     {
         $order = new OrderModel();
@@ -102,7 +96,6 @@ class OrderController extends BaseController
         return $this->respondCreated($data, 201);
     }
 
-
     public function notification_user($id_user)
     {
         $order = new OrderModel();
@@ -112,7 +105,8 @@ class OrderController extends BaseController
         $data = ["data" => $rows];
         return $this->respondCreated($data, 201);
     }
-    public function notification_driver($id_pengemudi){
+    public function notification_driver($id_pengemudi)
+    {
         $order = new OrderModel();
         $driver =  new DriverModel();
         $query   = $order->query("");
@@ -121,55 +115,122 @@ class OrderController extends BaseController
         return $this->respondCreated($data, 201);
     }
 
-    public function get_order(){
+    public function get_order()
+    {
         $order = new OrderModel();
         $data['order'] = $order->findAll();
         return $this->respond($data, 200);
     }
-    public function show_order($id_order)
+    public function show_order($id_order, $id_user)
     {
-        $driver = new DriverModel();
-
-        // $driver = $driver->findAll();
-        $query   = $driver->query("select *  FROM pengemudi inner join mobil on pengemudi.id_mobil = mobil.id_mobil WHERE status_pengemudi = 'Tersedia'");
-        $rows = $query->getResultArray();
-
+        $driver  = new DriverModel();
+        $userdiv = new UserDivisiModel();
+        $order = new OrderModel();
+        $rows     = $userdiv->query("SELECT * FROM user_divisi where divisi = 'DRIVER' ")->getResultArray();
+        $car      = $driver->query("SELECT * FROM mobil RIGHT  JOIN pengemudi ON mobil.id_mobil = pengemudi.id_mobil where status_pengemudi ='Tersedia'   ")->getResultArray();
         $data = [
             'driver' => $rows,
+            'mobil'  => $car,
+            'id_pemesanan' => $id_order,
+            'id_user' => $id_user
         ];
+
+        $data_order = [
+            "keterangan" => "approve"
+        ];
+        $order->update($id_order, $data_order);
         session()->set('id_order', $id_order);
         return view('pick_driver', $data);
     }
-
     public function request_order()
     {
         $order = new OrderModel();
         $acitivity = new  ActivityLogModel();
         $user = new SecureModel();
+        $pemesanan = new OrdersModel();
         $userid = session("userid");
+        $waktu_awal = $this->request->getVar('inputWaktuStart');
+        $waktu_akhir = $this->request->getVar('inputWaktuEnd');
+        $waktu_awal_hours = substr($waktu_awal, 0, 2);
+        $waktu_awal_minute = substr($waktu_awal, 3, 5);
+        $data_hours_awal = ((int)$waktu_awal_hours) * 60;
+        $data_minutes_awal = (int)$waktu_awal_minute;
+        $waktu_akhir_hours = substr($waktu_akhir, 0, 2);
+        $waktu_akhir_minute = substr($waktu_akhir, 3, 5);
+        $data_hours_akhir = ((int)$waktu_akhir_hours) * 60;
+        $data_minutes_akhir = (int)$waktu_akhir_minute;
+        $waktuErr = "";
         $data = [
             "activity" => "Menambahkan pesanan atas nama $userid",
             "tanggal"  =>  date("Y-m-d H:i:s"),
-
-
-
         ];
-        $userid = session("userid");
-        $s = $user->query("SELECT * FROM T_USERS WHERE USERID = '$userid'")->getResultArray();
+        $s = $user->query("SELECT * FROM t_users WHERE userid = '$userid' or userdomain = '$userid'    ")->getResultArray();
         $acitivity->insert($data);
         $rules = [
             'unit'        => 'required',
-            'time'        => 'required',
+            'waktu_awal'  => 'required',
+            'waktu_akhir' => 'required',
             'date'        => 'required',
             'destination' => 'required',
-            'purpose'     => 'required'
-        ];
+            'purpose'     => 'required',
+            'jumlah_orang' => 'integer|required'
 
-        if ($this->validate($rules)) {
+        ];
+        if ($this->validate->setRules([
+            'unit' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'inputWaktuStart' => [
+                'rules' => 'required|valid_email',
+                'errors' => [
+                    'required' => '{field} Harus diisi',
+                    'valid_email' => 'Format Email Harus Valid'
+                ]
+            ],
+            'inputWaktuEnd' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'tanggal_memakai' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'purpose' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'asal' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'destination' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'jumlah_orang' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ]
+        ])) {
             if (!empty($s[0]["userdomain"])) {
                 $nama = $s[0]["userdomain"];
             } else {
-                $nama = $s[0]["username"];
+                $nama = $s[0]["userid"];
             }
 
             $data = [
@@ -177,19 +238,35 @@ class OrderController extends BaseController
                 'asal' => $this->request->getVar('asal'),
                 'tujuan' => $this->request->getVar('destination'),
                 'id_divisi' => $this->request->getVar('unit'),
-                'waktu' => $this->request->getVar('time'),
+                'waktu_awal' => $this->request->getVar('inputWaktuStart'),
+                'waktu_akhir' => $this->request->getVar('inputWaktuEnd'),
                 'tanggal' => $this->request->getVar('date'),
                 'status' => 0,
                 'tujuan_pakai' => $this->request->getVar('purpose'),
                 'keterangan' => $this->request->getVar('keterangan'),
                 'userid' => session("userid"),
                 'jumlah_orang' => $this->request->getVar("jumlah_orang")
-
             ];
+
+
+
             $order->insert($data);
+            $id = $order->getInsertID();
             return redirect()->to('request')->with('success', 'Pesanan masuk. Segera proses pesanan!');
         } else {
-            return redirect()->to('request')->with('success', 'Pesanan gagal masuk. Isi form kembali!');
+            session()->setFlashdata('error', $this->validator->listErrors());
+
+            if (((int)($data_hours_akhir - $data_hours_awal) + ($data_minutes_akhir - $data_minutes_awal) < 180)) {
+                $waktuErr = "memesan harus melebihi dari 3 Jam";
+            }
+            $divisi = new DivisiModel();
+            $div = $divisi->query("SELECT * FROM  divisi ")->getResultArray();
+            $data = [
+                "divisi" => $div,
+                "waktuErr" => $waktuErr,
+                "gagal" => "pesanan gagal masuk"
+            ];
+            return view('request', $data);
         }
     }
 
@@ -198,7 +275,6 @@ class OrderController extends BaseController
     public function insert_reimburse($id)
     {
         $order = new OrderModel();
-
         $data = [
             "unit_kerja" => $this->request->getPost('unit_kerja'),
             "nama" => $this->request->getPost('nama'),
@@ -222,7 +298,6 @@ class OrderController extends BaseController
         return $this->respondCreated($response);
     }
 
-
     public function detail_reimburse($id_pemesanan)
     {
         $reimburse = new ReimburseModel();
@@ -238,9 +313,6 @@ class OrderController extends BaseController
         ];
         return $this->respondCreated($data, 201);
     }
-
-
-
     public function updateStatusReimburse()
     {
         $reimburse = new ReimburseModel();
@@ -340,8 +412,6 @@ class OrderController extends BaseController
         }
         return $this->respondCreated($response, 201);
     }
-
-
     public function post_order()
     {
         $order = new OrderModel();
@@ -370,68 +440,59 @@ class OrderController extends BaseController
         ];
         return $this->respondCreated($response);
     }
-
-
-
-
     public function showOrder($id_user)
     {
         $order = new OrderModel();
         $data = $order->where('id_user', $id_user)->find();
         return $this->respondCreated($data, 200);
     }
-
-
-
-
-    public function pick_driver($id_user)
+    public function pick_driver($id_user, $id_order)
     {
+        $secure = new SecureModel();
+        $data_secure = $secure->query("SELECT * FROM t_users")->getResultArray();
+        $data = [
+            "users" => $data_secure,
+        ];
         $user = new UserModel();
         $driver = new DriverModel();
         $data_driver = $driver->where('status_pengemudi', 'tersedia')->find();
-        return $this->insert_order($id_user, $data_driver['id_pengemudi']);
+        // $this->insert_order($id_user, $data_driver['id_pengemudi']);
     }
+
     public function whatsapp($id_user)
     {
         $user = new UserModel();
         $data = $user->where('id_user', $id_user)->first();
         $phone = $data["phone_number"];
     }
-
-
-
-
-    public function insert_order($id_pengemudi)
+    public function insert_order($id_order, $id_pengemudi, $id_mobil)
     {
-
+        $acitivity = new ActivityLogModel();
+        $pemesanan = new OrdersModel();
+        $mobil = new CarModel();
         $driver = new DriverModel();
-        $order = new OrdersModel();
-        $notif = new NotificationController();
-        $user = new UserModel();
-        $orders = new OrderModel();
-        $id_order = (int)session()->get('id_order');
-        $data_order = $orders->where('ID', $id_order)->first();
-        $id_user = $data_order['id_user'];
-        $data_driver = $driver->where('id_pengemudi', $id_pengemudi)->first();
-        $id_driver = $data_driver['id_pengemudi'];
-        $nama_pengemudi = $data_driver["nama_pengemudi"];
-        $token_user = $user->where('id_user', $id_user)->first();
-        $token_driver = $user->where('id_user', $id_pengemudi)->first();
-        $device_token_driver = $token_driver['token_id'];
-        $device_token_user = $token_user['token_id'];
-        $data_json = [
-            "id_user" => $id_user,
-            "id_pengemudi" => (int) $id_pengemudi,
+        $order = [
+            "id_pengemudi" => $id_pengemudi,
             "id_pemesanan" => $id_order
         ];
-        $response = [
-            "message" => "data berhasil disimpan"
+        $user = $pemesanan->query("SELECT * FROM orders where id = $id_order  ")->getResultArray();
+        $id = $user[0]["userid"];
+        $pemesanan->insert($order);
+        $data_activity = [
+            "activity" => " $id sudah berhasil mendapatkan driver",
+            "date"     => date("Y-m-d h:i:sa")
         ];
 
-        $orders->update($data_order, ['keterangan' => 'Approve']);
-        $this->orders->insert($data_json);
-        $notif->sendNotificationDriver($device_token_driver);
-        $notif->sendNotificationUser($device_token_user, $nama_pengemudi);
+        $car = [
+            "status_mobil" =>     "Tidak Tersedia"
+        ];
+
+        $pengemudi = [
+            "status_pengemudi" => "Tidak Tersedia"
+        ];
+        $mobil->update($id_mobil, $car);
+        $driver->update($id_pengemudi, $pengemudi);
+        $acitivity->insert($data_activity);
         return redirect()->to('dashboard')->with('success', 'Pesanan diterima pengemudi!');
     }
 
@@ -440,23 +501,51 @@ class OrderController extends BaseController
         $builder = new OrderModel();
         $builder->where('id', $id);
         $builder->set('status', 1);
+        $builder->set('keterangan', "approve_logistik");
         $builder->update();
         $activity = new ActivityLogModel();
         $data = [
             "activity" => "data order telah disetujui oleh otorisator departemen"
         ];
         $activity->insert($data);
-
         return redirect()->back()->with('success', 'Data Berhasil Disetujui');
     }
-
     public function reject_order($id)
     {
         $builder = new OrderModel();
-        $builder->where('ID', $id);
-        $builder->set('keterangan', 'Reject');
+        $builder->where('id', $id);
+        $builder->set('status', 0);
+        $builder->set('keterangan', "reject_logistik");
         $builder->update();
+        $activity = new ActivityLogModel();
+        $data = [
+            "activity" => "data order telah ditolak oleh otorisator departemen"
+        ];
 
-        return redirect()->back()->with('success', 'Data Berhasil Ditolak');
+        $activity->insert($data);
+        return redirect()->back()->with('success', 'Data Ditolak');
+    }
+    public function reject_logistik($id)
+    {
+        $order = new OrderModel();
+        $order->delete($id);
+        return redirect()->back()->with('success', 'Data Ditolak');
+    }
+
+    public function status_available($id_pengemudi)
+    {
+        $builder = new DriverModel();
+        $builder->where('userid', $id_pengemudi);
+        $builder->set('status_pengemudi', 'Tersedia');
+        $builder->update();
+        return redirect()->back()->with('success', 'Pengemudi Tersedia');
+    }
+    public function status_unavailable($id_pengemudi)
+    {
+        $builder = new DriverModel();
+        $builder->where('userid', $id_pengemudi);
+        $builder->set('status_pengemudi', 'Tidak Tersedia');
+        $builder->update();
+        return redirect()->back()->with('success', 'Pengemudi Tidak Tersedia');
     }
 }

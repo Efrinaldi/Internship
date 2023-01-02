@@ -8,7 +8,7 @@ class AtasanModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'atasan';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'userid';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';

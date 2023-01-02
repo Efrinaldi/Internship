@@ -14,8 +14,7 @@ class OrdersModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_pemesanan', 'id_pengemudi', 'id_user'];
-
+    protected $allowedFields    = ['id_pemesanan', 'id_pengemudi', 'userid', 'id', 'id_mobil'];
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';

@@ -20,26 +20,21 @@
                             <th>Unit Kerja</th>
                             <th>Waktu</th>
                             <th>Tujuan Pakai</th>
+                            <th>Keterangan</th>
+                            <th>Plat Nomor</th>
                             <th>Lokasi Tujuan</th>
-                            <th>Proses</th>
                         </tr>
                     </thead>
                     <tbody class="text-center">
-                        <?php
-                        $no = 1;
-                        foreach ($order as $o) :
-                        ?>
-                            <tr>
+                        <?php $no = 1; foreach ($order as $o) : ?><tr>
                                 <td><?= $no++; ?></td>
                                 <td><?= $o['nama'] ?></td>
                                 <td><?= $o['divisi'] ?></td>
                                 <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
                                 <td><?= $o['tujuan_pakai'] ?></td>
+                                <td><?= $o['keterangan'] ?></td>
+                                <td><?= $o['plat_nomor'] ?></td>
                                 <td><?= $o['tujuan'] ?></td>
-                                <td>
-                                    <a href="reject/<?= $o['ID'] ?>" class="btn btn-secondary btn-lg">Tolak</a>
-                                    <a href="approve/<?= $o['ID'] ?>" class="btn btn-primary btn-lg">Terima</a>
-                                </td>
                             </tr>
                         <?php
                         endforeach;

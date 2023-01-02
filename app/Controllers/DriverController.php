@@ -84,7 +84,7 @@ class DriverController extends BaseController
     {
 
         $builder = new DriverModel();
-        $builder->where('id_pengemudi', $id_pengemudi);
+        $builder->where('userid', $id_pengemudi);
         $builder->set('status_pengemudi', 'Tersedia');
         $builder->update();
 
@@ -92,12 +92,10 @@ class DriverController extends BaseController
     }
     public function status_unavailable($id_pengemudi)
     {
-
         $builder = new DriverModel();
-        $builder->where('id_pengemudi', $id_pengemudi);
+        $builder->where('userid', $id_pengemudi);
         $builder->set('status_pengemudi', 'Tidak Tersedia');
         $builder->update();
-
         return redirect()->back()->with('success', 'Pengemudi Tidak Tersedia');
     }
 }

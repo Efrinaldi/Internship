@@ -10,10 +10,12 @@ use Firebase\JWT\JWT;
 use App\Models\ReimburseModel;
 use \OAuth2\Request;
 use App\Libraries\Oauth;
+use App\Models\ActivityLogModel;
 use App\Models\AtasanModel;
 use App\Models\DepartmentWorkerModel;
 use App\Models\DivisiModel;
 use App\Models\InformasiUserModel;
+use App\Models\OrderModel;
 use App\Models\SecureModel;
 use App\Models\UserDivisiModel;
 use App\Models\WorkerModel;
@@ -55,10 +57,6 @@ class UserController extends ResourceController
         ];
         return $this->respondCreated($data, 201);
     }
-
-
-
-
     public function showAtasan($id_user)
     {
     }
@@ -137,11 +135,10 @@ class UserController extends ResourceController
         $session = session();
         $user = new SecureModel();
         $userdiv = new UserDivisiModel();
-        $divisi = new DivisiModel();
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
-        $data_coba = $user->query("exec uspLogonPHP @userid = '" . $username . "',@kode_aplikasi = '00033', @pass = '" . $password .  "', @result='' ")->getResultArray();
-        $id_divisi = $userdiv->query("SELECT * FROM divisi inner join user_divisi where userid = '$username'")->getResultArray();
+        $data_coba = $user->query("exec uspLogonPHP @userid = '" . $username . "',@kode_aplikasi = '00033',@pass = '" . $password .  "', @result='' ")->getResultArray();
+        $divisi = $userdiv->query("SELECT * FROM divisi RIGHT join user_divisi on user_divisi.id_divisi= divisi.id_divisi where user_divisi.userid= '$username'")->getResultArray();
         $user_coba = current($data_coba[0]);
         $coba = current($data_coba[0]);
         if ($coba === "20UidApplNotListed" or $user_coba === "20UidApplNotListed") {
@@ -159,25 +156,83 @@ class UserController extends ResourceController
         } else {
             $session->set([
                 'userid'  => $username,
-                'id_divisi'  => $id_divisi[0]["id_divisi"],
                 'logged_in' => true,
                 'user_domain' => $username
             ]);
+            if (count($divisi) > 0) {
+                $session->set([
+                    'userid'  => $username,
+                    'id_divisi'  => $divisi[0]["id_divisi"],
+                    'logged_in' => true,
+                    'user_domain' => $username
+                ]);
+            } else {
+                $session->set([
+                    'userid'  => $username,
+                    'logged_in' => true,
+                    'user_domain' => $username
+                ]);
+            }
+            $data = [];
             $data_user    = $userdiv->query("SELECT * FROM USER_DIVISI  where user_domain = '$username' ")->getResultArray();
             $pekerja      = str_replace("_", " ", $username);
-            $data = [
-                "user_domain" => $username
-            ];
-            if (count($data_user) == 0) {
+            $data_userid = $user->query("SELECT * FROM t_users where userid = '$username' ")->getResultArray();
+            if (count($data_user) == 0 and count($divisi) > 0) {
                 $data = [
                     "user_domain" => $username,
-                    "userid"      => $username
+                    "userid"      => $username,
+                    "username"    => $data_userid[0]["username"],
+                    "id_divisi"   =>  $divisi[0]["id_divisi"],
+                    "divisi"   =>  $divisi[0]["divisi"]
                 ];
-                $userdiv->insert($data);
+                // $userdiv->insert($data);
+            } else if (count($data_user) == 0 and count($divisi) == 0) {
+                $data = [
+                    "user_domain" => $username,
+                    "userid"      => $username,
+                ];
+                // $userdiv->insert($data);
+            } else if (count($data_user) > 0 and count($divisi) > 0) {
+                $data = [
+                    "user_domain" => $username,
+                    "userid"      => $username,
+                    "id_divisi"   =>  $divisi[0]["id_divisi"],
+                    "divisi"   =>  $divisi[0]["divisi"]
+
+                ];
+                // $userdiv->update($username, $data);
+            } else if (count($data_user) > 0 and count($divisi) == 0) {
+                $data = [
+                    "user_domain" => $username,
+                    "userid"      => $username,
+
+                ];
+                // $userdiv->update($username, $data);
             }
-            return redirect()->to('/dashboard');
+            return redirect()->to("/dashboard")->with("success", "berhasil login");
         }
     }
+
+
+
+    public function getActivity()
+    {
+        $activity = new ActivityLogModel();
+        $data = $activity->query("SELECT * FROM activity_log")->getResultArray();
+        $activity = [
+            "data" => $data
+        ];
+        return view("dashboard", $activity);
+    }
+
+
+    public function reject_logistik($id_order)
+    {
+        $order = new OrderModel();
+        $order->delete($id_order);
+        return redirect()->to("dashboard")->with("success", "data berhasil dihapus");
+    }
+
 
     public function auth_sa()
     {
@@ -223,11 +278,6 @@ class UserController extends ResourceController
             return redirect()->to('/list_user');
         }
     }
-
-
-
-
-
     public function change_user($userid)
     {
         $divisiuser = new UserDivisiModel();
@@ -253,24 +303,13 @@ class UserController extends ResourceController
         ];
         if (count($user) == 0) {
             $divisiuser->insert($data);
-        }
-        if (count($user) > 0) {
+        } elseif (count($user) > 0) {
             $divisiuser->update($userid, $data);
         }
-        if (count($atasan_exist) == 0) {
-            if (isset($_POST['check_atasan'])) {
-                $atasan->insert($data_atasan);
-            }
-        }
-        if (count($atasan_exist) > 0) {
-            if (count($user) > 0) {
-                $atasan->update($userid, $data_atasan);
-            } else {
-                $atasan->insert($data_atasan);
-            }
-            if (isset($_POST['check_atasan'])) {
-                $atasan->update($userid, $data_atasan);
-            }
+        if (count($atasan_exist) == 0 and isset($_POST['check_atasan'])) {
+            $atasan->insert($data_atasan);
+        } else if (count($atasan_exist) > 0) {
+            $atasan->update($userid, $data_atasan);
         }
         return redirect()->to("list_user");
     }
@@ -301,9 +340,6 @@ class UserController extends ResourceController
         ];
         return view('list_user', $data);
     }
-
-
-
 
 
     public function update_token($id = null)

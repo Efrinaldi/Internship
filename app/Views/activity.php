@@ -8,32 +8,27 @@
 
     <body>
         <div class="container">
+            <h2>Activity Log</h2>
             <div class="table-responsive">
                 <table class="table table-dark">
                     <thead class="text-center">
                         <tr>
                             <th>Nomor</th>
-                            <th>Nama</th>
-                            <th>Unit Kerja</th>
-                            <th>Waktu</th>
-                            <th>Tujuan Pakai</th>
-                            <th>Lokasi Tujuan</th>
-                            <th>Keterangan</th>
+                            <th>Activity</th>
+                            <th>Tanggal</th>
+
                         </tr>
                     </thead>
                     <tbody class="text-center">
                         <?php
                         $no = 1;
-                        foreach ($order as $o) :
+                        foreach ($data as $o) :
                         ?>
+                        
                             <tr>
                                 <td><?= $no++; ?></td>
-                                <td><?= $o['nama'] ?></td>
-                                <td><?= $o['divisi'] ?></td>
-                                <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
-                                <td><?= $o['tujuan_pakai'] ?></td>
-                                <td><?= $o['tujuan'] ?></td>
-                                <td><?= $o['keterangan'] ?></td>
+                                <td><?= $o['activity'] ?></td>
+                                <td><?= $o['date'] ?></td>
                             </tr>
                         <?php
                         endforeach;
@@ -43,7 +38,5 @@
             </div>
         </div>
     </body>
-
-
 </div>
 <?= $this->endSection() ?>

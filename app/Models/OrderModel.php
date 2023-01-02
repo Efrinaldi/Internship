@@ -14,7 +14,7 @@ class OrderModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id', 'asal', 'tujuan', 'tujuan_pakai', 'nama', 'unit_kerja', 'waktu', 'id_user', 'tanggal', 'status', 'keterangan', "userid", "id_divisi"];
+    protected $allowedFields    = ['id', 'asal', 'tujuan', 'tujuan_pakai', 'nama', 'unit_kerja', 'waktu', 'tanggal', 'status', 'keterangan', "userid", "id_divisi"];
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
@@ -22,7 +22,7 @@ class OrderModel extends Model
     protected $updatedField  = 'updated_at';
     protected $deletedField  = 'deleted_at';
 
-    // Validation
+    // Validation 
     protected $validationRules      = [];
     protected $validationMessages   = [];
     protected $skipValidation       = false;

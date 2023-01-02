@@ -14,7 +14,7 @@
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Pesanan Disetujui
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><? ?>Pesanan</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($available) ?> Pesanan</div>
                         </div>
                         <a href="<?= base_url("/history_approve") ?>" class="stretched-link" type="hidden"></a>
                         <div class="col-auto">
@@ -33,7 +33,7 @@
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?        ?>Pesanan</div>
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo ($unavailable) ?> Pesanan</div>
                                 </div>
                             </div>
                         </div>

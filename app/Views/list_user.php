@@ -25,6 +25,7 @@
                     </thead>
                     <tbody class="text-center">
                         <?php
+
                         use App\Models\AtasanModel;
                         use App\Models\DivisiModel;
                         use App\Models\UserDivisiModel;
@@ -59,7 +60,6 @@
                             <?php endif ?>
                             </tr>
 
-
                             <div class="modal" tabindex="-1" role="dialog" id="hapusAtasan<?php echo $o["userid"] ?>">
                                 <div class=" modal-dialog" role="document">
                                     <div class="modal-content">
@@ -79,11 +79,7 @@
                                     </div>
                                 </div>
                             </div>
-
-
-                            
                             </a>
-
 
                             <form class="forms-sample" action="<?= base_url("/change_user/" . $o["userid"]) ?>" method="POST">
                                 <div class="modal mx-auto" tabindex="-1" role="dialog" id="userModal<?php echo $o["userid"] ?>">
@@ -119,31 +115,16 @@
 
                                                 </div>
 
-                                                <?php if (count($data_atasan) == 0) : ?>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" name="check_atasan" type="checkbox" value="ada" id="flexCheckDefault">
-                                                        <label class="form-check-label" for="flexCheckDefault">Tandai sebagai supervisor</label>
-                                                    </div>
-                                                <?php endif ?>
-                                                <?php if (count($data_atasan) > 0) : ?>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" name="check_atasan" type="checkbox" style="color: red;accent-color: red;" value="ada" id="flexCheckDefault">
-                                                        <label class="form-check-label" for="flexCheckDefault">Hapus sebagai supervisor</label>
-                                                    </div>
-                                                <?php endif ?>
-
+                                                <div class="form-check">
+                                                    <input class="form-check-input" name="check_atasan" type="checkbox" value="ada" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">Tandai sebagai supervisor</label>
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
                                                 <button class="btn btn-primary" type="submit" name="submit">Submit</button>
 
                             </form>
-
-
-
-
-
-
 
 
                         <?php
@@ -157,4 +138,7 @@
         </div>
     </body>
 </div>
+<script>
+    $
+</script>
 <?= $this->endSection() ?>

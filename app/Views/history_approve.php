@@ -14,7 +14,6 @@
                         <tr>
                             <th>Nomor</th>
                             <th>Nama</th>
-                            <th>NIP</th>
                             <th>Unit Kerja</th>
                             <th>Waktu</th>
                             <th>Tujuan Pakai</th>
@@ -25,18 +24,16 @@
                     <tbody class="text-center">
                         <?php
                         $no = 1;
-                        foreach ($order as $o) :
-                        ?>
-                        <tr>
-                            <td><?= $no++; ?></td>
-                            <td><?= $o['nama'] ?></td>
-                            <td><?= $o['nip'] ?></td>
-                            <td><?= $o['unit_kerja'] ?></td>
-                            <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
-                            <td><?= $o['tujuan_pakai'] ?></td>
-                            <td><?= $o['tujuan'] ?></td>
-                            <td><?= $o['keterangan'] ?></td>
-                        </tr>
+                        foreach ($order as $o) : ?>
+                            <tr>
+                                <td><?= $no++; ?></td>
+                                <td><?= $o['nama'] ?></td>
+                                <td><?= $o['divisi'] ?></td>
+                                <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
+                                <td><?= $o['tujuan_pakai'] ?></td>
+                                <td><?= $o['tujuan'] ?></td>
+                                <td><?= $o['keterangan'] ?></td>
+                            </tr>
                         <?php
                         endforeach;
                         ?>
@@ -45,7 +42,5 @@
             </div>
         </div>
     </body>
-
-
 </div>
 <?= $this->endSection() ?>
