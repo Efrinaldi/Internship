@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ActivityLogModel;
+use App\Models\AtasanModel;
 use App\Models\CarModel;
 use App\Models\DepartmentWorkerModel;
 use App\Models\DivisiModel;
@@ -21,8 +22,6 @@ class Home extends BaseController
     protected $oauth_user;
     public function __construct()
     {
-        $this->Driver_model = new DriverModel();
-        $this->Order_model = new OrderModel();
     }
     public function index()
     {
@@ -78,22 +77,36 @@ class Home extends BaseController
     }
     public function order()
     {
+
         $order = new OrderModel();
+        $atasan = new AtasanModel();
         $session = session()->get();
         $userid = session("userid");
         $id_divisi = session("id_divisi");
+        $divisi = new DivisiModel();
+        $list_dept = $divisi->query("SELECT * FROM departemen")->getResultArray();
+        $list_atasan = $divisi->query("SELECT id_divisi FROM user_divisi where userid = '$userid' ")->getResultArray();
+        $id_divisi_atasan = $list_atasan[0]["id_divisi"];
+        $sat_ker = $divisi->query("SELECT * FROM departemen where id_divisi = $id_divisi_atasan")->getResultArray();
+        $id_satker = $sat_ker[0]["id_satker"];
+        $list_approval = $divisi->query("SELECT * FROM `departemen` where id_satker =$id_satker;")->getResultArray();
+
         $query = $order->query(
-            "SELECT orders.nama,orders.tujuan,orders.asal,orders.tujuan_pakai,orders.tanggal, orders.waktu
-            ,orders.keterangan,mobil.plat_nomor,divisi.divisi FROM pemesanan_mobil
-             RIGHT JOIN orders ON orders.id = pemesanan_mobil.id LEFT JOIN mobil on mobil.id_mobil=pemesanan_mobil.id_mobil LEFT JOIN divisi 
-            on orders.id_divisi = divisi.id_divisi WHERE orders.keterangan = 'Pending' and orders.userid ='$userid'  "
+            "SELECT orders.nama,orders.tujuan,orders.asal,orders.tujuan_pakai,orders.tanggal, orders.waktu,orders.id as id_order,orders.keterangan,mobil.plat_nomor,departemen.divisi FROM pemesanan_mobil
+             RIGHT JOIN orders ON orders.id = pemesanan_mobil.id LEFT JOIN mobil on mobil.id_mobil=pemesanan_mobil.id_mobil LEFT join departemen 
+            on orders.id_divisi = departemen.id_divisi WHERE orders.keterangan = 'Pending' and orders.userid ='$userid'  "
         );
         $rows = $query->getResultArray();
         $data = [
             'order' => $rows,
+            'data_divisi' => $list_approval
         ];
+
         return view('order', $data);
     }
+
+
+
 
     public function order_departemen()
     {
@@ -104,9 +117,9 @@ class Home extends BaseController
 
         $query = $order->query(
             "SELECT orders.id, orders.nama,orders.tujuan,orders.asal,orders.tujuan_pakai,orders.tanggal, orders.waktu
-            ,orders.keterangan,mobil.plat_nomor,divisi.divisi  FROM `orders` LEFT JOIN atasan on atasan.id_divisi=orders.id_divisi left JOIN pemesanan_mobil on 
-            pemesanan_mobil.id_pemesanan = orders.id LEFT JOIN mobil on pemesanan_mobil.id_mobil = mobil.id_mobil LEFT JOIN divisi 
-            on orders.id_divisi = divisi.id_divisi 
+            ,orders.keterangan,mobil.plat_nomor,departemen.divisi  FROM `orders` LEFT JOIN atasan on atasan.id_divisi=orders.id_divisi left JOIN pemesanan_mobil on 
+            pemesanan_mobil.id_pemesanan = orders.id LEFT JOIN mobil on pemesanan_mobil.id_mobil = mobil.id_mobil LEFT join departemen 
+            on orders.id_divisi = departemen.id_divisi 
             WHERE atasan.id_divisi =$id_divisi AND orders.keterangan = 
             'Pending'"
         );
@@ -125,10 +138,10 @@ class Home extends BaseController
         $id_divisi = session("id_divisi");
         $query = $order->query(
             "SELECT orders.userid,orders.id,orders.nama,orders.tujuan,orders.asal,orders.tujuan_pakai,orders.tanggal, orders.waktu
-            ,orders.keterangan,mobil.plat_nomor,divisi.divisi FROM pemesanan_mobil
-             RIGHT JOIN orders ON orders.id = pemesanan_mobil.id LEFT JOIN mobil on mobil.id_mobil=pemesanan_mobil.id_mobil LEFT JOIN divisi 
-            on orders.id_divisi = divisi.id_divisi WHERE  orders.keterangan = 
-            'Pending' and divisi.divisi='DEPARTEMEN LOGISTIK'   or  orders.keterangan='approve_logistik'  "
+            ,orders.keterangan,mobil.plat_nomor,departemen.divisi FROM pemesanan_mobil
+             RIGHT JOIN orders ON orders.id = pemesanan_mobil.id LEFT JOIN mobil on mobil.id_mobil=pemesanan_mobil.id_mobil LEFT join departemen 
+            on orders.id_divisi = departemen.id_divisi WHERE  orders.keterangan = 
+            'Pending' and departemen.divisi='DEPARTEMEN LOGISTIK'   or  orders.keterangan='approve_logistik'  "
         );
         $rows = $query->getResultArray();
         $data = [
@@ -230,9 +243,30 @@ class Home extends BaseController
     }
     public function history_supervisor()
     {
-        return view('history_supervisor');
+        $orders = new OrdersModel();
+        $data_order = $orders->query("SELECT count(id) as jml_available FROM orders where orders.keterangan like '%approve%';  ")->getResultArray();
+        $data_order_reject = $orders->query("SELECT count(id) as jml_unavailable FROM orders where orders.keterangan like '%reject%'; ")->getResultArray();
+
+        $data = [
+            "available" => $data_order[0]["jml_available"],
+            "unavailable" => $data_order_reject[0]["jml_unavailable"]
+        ];
+        return view('history', $data);
     }
 
+    public function riwayat()
+    {
+        $userid = session("userid");
+        $orders = new OrdersModel();
+        $data_order = $orders->query("SELECT count(id) as jml_available FROM orders where orders.userid like '$userid' ;  ")->getResultArray();
+        $data_order_reject = $orders->query("SELECT count(id) as jml_unavailable FROM orders where orders.keterangan like '%reject%' and orders.userid like '$userid'; ")->getResultArray();
+
+        $data = [
+            "available" => $data_order[0]["jml_available"],
+            "unavailable" => $data_order_reject[0]["jml_unavailable"]
+        ];
+        return view('riwayat', $data);
+    }
     public function process()
     {
         $order = new OrderModel();
@@ -246,7 +280,7 @@ class Home extends BaseController
     public function request()
     {
         $divisi = new DivisiModel();
-        $div = $divisi->query("SELECT * FROM  divisi ")->getResultArray();
+        $div = $divisi->query("SELECT * FROM  departemen ")->getResultArray();
         $data = [
             "divisi" => $div,
             "waktuErr" => ""
@@ -279,8 +313,8 @@ class Home extends BaseController
     {
         $order = new OrderModel();
         $id_divisi = session("id_divisi");
-        $query   = $order->query("SELECT divisi.divisi,orders.ID ,orders.nama,orders.id_divisi,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.userid,orders.keterangan,orders.tanggal,pemesanan_mobil.id as id_pemesanan from orders LEFT JOIN pemesanan_mobil on orders.id =pemesanan_mobil.id_pemesanan 
-        left join divisi on divisi.id_divisi = orders.id_divisi WHERE orders.keterangan like '%approve%';");
+        $query   = $order->query("SELECT departemen.divisi,orders.ID ,orders.waktu_end,mobil.plat_nomor,orders.nama,orders.id_divisi,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.userid,orders.keterangan,orders.tanggal,pemesanan_mobil.id as id_pemesanan from orders LEFT JOIN pemesanan_mobil on orders.id =pemesanan_mobil.id_pemesanan 
+        left join departemen on departemen.id_divisi = orders.id_divisi left join mobil on pemesanan_mobil.id_mobil = mobil.id_mobil WHERE orders.keterangan like '%approve%' ;");
         $rows = $query->getResultArray();
         $data = [
             'order' => $rows,
@@ -292,8 +326,35 @@ class Home extends BaseController
     {
         $order = new OrderModel();
         $id_divisi = session("id_divisi");
-        $query   = $order->query("SELECT divisi.divisi,orders.ID ,orders.nama,orders.id_divisi,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.userid,orders.keterangan,orders.tanggal,pemesanan_mobil.id as id_pemesanan from orders LEFT JOIN pemesanan_mobil on orders.id =pemesanan_mobil.id_pemesanan 
-        left join divisi on divisi.id_divisi = orders.id_divisi WHERE orders.keterangan like '%reject%';");
+        $query   = $order->query("SELECT departemen.divisi,orders.ID ,orders.waktu_end,orders.nama,orders.id_divisi,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.userid,orders.keterangan,orders.tanggal,pemesanan_mobil.id as id_pemesanan from orders LEFT JOIN pemesanan_mobil on orders.id =pemesanan_mobil.id_pemesanan 
+        left join departemen on departemen.id_divisi = orders.id_divisi WHERE orders.keterangan like '%reject%';");
+        $rows = $query->getResultArray();
+        $data = [
+            'order' => $rows,
+        ];
+        return view('history_reject', $data);
+    }
+    public function approve()
+    {
+        $userid = session("userid");
+        $order = new OrderModel();
+        $id_divisi = session("id_divisi");
+        $query   = $order->query("SELECT departemen.divisi,orders.ID,orders.waktu_end ,mobil.plat_nomor,orders.nama,orders.id_divisi,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.userid,orders.keterangan,orders.tanggal,pemesanan_mobil.id as id_pemesanan from orders LEFT JOIN pemesanan_mobil on orders.id =pemesanan_mobil.id_pemesanan 
+        left join departemen on departemen.id_divisi = orders.id_divisi left join mobil on pemesanan_mobil.id_mobil = mobil.id_mobil WHERE   orders.userid = '$userid'  and orders.keterangan like '%approve%' ;");
+        $rows = $query->getResultArray();
+        $data = [
+            'order' => $rows,
+        ];
+        return view('history_approve', $data);
+    }
+
+    public function reject()
+    {
+        $order = new OrderModel();
+        $id_divisi = session("id_divisi");
+        $userid = session("userid");
+        $query   = $order->query("SELECT departemen.divisi,orders.ID ,orders.waktu_end,orders.nama,orders.id_divisi,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.userid,orders.keterangan,orders.tanggal,pemesanan_mobil.id as id_pemesanan from orders LEFT JOIN pemesanan_mobil on orders.id =pemesanan_mobil.id_pemesanan 
+        left join departemen on departemen.id_divisi = orders.id_divisi WHERE orders.userid = '$userid' and orders.keterangan like '%reject%';");
         $rows = $query->getResultArray();
         $data = [
             'order' => $rows,
@@ -301,22 +362,20 @@ class Home extends BaseController
         return view('history_reject', $data);
     }
 
-
     public function history_supervisor_approve()
     {
         $unit_kerja = session()->get("unit_kerja");
         $id_divisi = session("id_divisi");
-
         $order = new OrderModel();
         $divisi = new DivisiModel();
-
-        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.id_divisi,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.userid,orders.keterangan,orders.tanggal,pemesanan_mobil.id as id_pemesanan from orders LEFT JOIN pemesanan_mobil on orders.id =pemesanan_mobil.id_pemesanan WHERE orders.keterangan = 'approve_logistik' ");
+        $query   = $order->query("SELECT orders.ID ,orders.nama,orders.id_divisi,orders.waktu_end,orders.waktu,orders.tujuan,orders.tujuan_pakai,orders.userid,orders.keterangan,orders.tanggal,pemesanan_mobil.id as id_pemesanan from orders LEFT JOIN pemesanan_mobil on orders.id =pemesanan_mobil.id_pemesanan WHERE orders.keterangan = 'approve_logistik' ");
         $rows = $query->getResultArray();
         $data = [
             'order' => $rows,
         ];
         return view('history_approve', $data);
     }
+
 
 
     public function history_supervisor_reject()

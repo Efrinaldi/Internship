@@ -31,7 +31,7 @@
                                 <td><?= $c['plat_nomor'] ?></td>
                                 <td><?= $c['status_pengemudi'] ?></td>
                                 <td>
-                                    <a href="<?= base_url("insert_order/" . $id_pemesanan . "/" . $id_user . "/" . $c["id_mobil"]) ?>" class="btn btn-primary" type="hidden">Pilih Driver</a>
+                                    <a href="<?= base_url("insert_order/" . $id_pemesanan . "/" . $c['id_mobil']  . "/" . $c["userid"]) ?>" class="btn btn-primary" type="hidden">Pilih Driver</a>
 
                                 </td>
                             </tr>

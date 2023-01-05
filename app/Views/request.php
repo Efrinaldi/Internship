@@ -23,14 +23,14 @@
         <form class="row g-3" action="<?= base_url() ?>/requestOrder" onsubmit="return validate();" method="post" autocomplete="off">
             <?= csrf_field(); ?>
             <div class="col-md-12">
+                <label for="inputWaktu" class="form-label">Nama </label>
+                <input type="text" class="form-control" id="nama" name="nama" value="<?= session("username") ?>" pattern="([1]?[0-9]|2[0-3]):[0-5][0-9]" readonly>
+                <?php  ?>
+            </div>
+            <div class="col-md-12">
                 <label for="inputUnit" class="form-label">Unit Kerja</label>
-                <p id="demo"></p>
-                <select type="text" class="form-control" id="inputUnit" name="unit" required>
-                    <option value="">Pilih Unit Kerja</option>
-                    <?php foreach ($divisi as $div) : ?>
-                        <option value="<?= $div["id_divisi"] ?>"><?= $div["divisi"] ?></option>
-                    <?php endforeach ?>
-                </select>
+                <input type="text" class="form-control" id="unit_kerja" name="nama" value="<?= session("unit_kerja") ?>" pattern="([1]?[0-9]|2[0-3]):[0-5][0-9]" readonly>
+
             </div>
             <div class="col-md-12">
                 <label for="inputWaktu" class="form-label">Waktu Mulai</label>

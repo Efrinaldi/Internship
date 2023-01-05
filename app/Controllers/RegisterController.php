@@ -13,8 +13,6 @@ class RegisterController extends BaseController
 {
     public function __construct()
     {
-        $this->User = new UserModel();
-        $this->validate     = \Config\Services::validation();
     }
     public function index()
     {
@@ -31,6 +29,9 @@ class RegisterController extends BaseController
     }
     public function authregister()
     {
+        $user = new UserModel();
+        $validate =
+            \Config\Services::validation();
         helper(['form']);
 
         //set rules validation form
@@ -41,7 +42,7 @@ class RegisterController extends BaseController
             'confpassword'       => 'matches[password]'
         ];
 
-        if ($this->validate->setRules($rules)) {
+        if ($validate->setRules($rules)) {
             $data = [
                 'first_name'     => $this->request->getVar('first_name'),
                 'last_name'     => $this->request->getVar('last_name'),
@@ -53,7 +54,7 @@ class RegisterController extends BaseController
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
             dd($data);
-            $this->User->insert($data);
+            $user->insert($data);
             return redirect()->to('/login');
         } else {
             $data['validation'] = $this->validator;
@@ -65,6 +66,9 @@ class RegisterController extends BaseController
 
     public function auth_register_driver()
     {
+        $user = new UserModel();
+        $validate =
+            \Config\Services::validation();
         helper(['form']);
         $driver = new DriverModel();
         $car = new CarModel();
@@ -78,7 +82,7 @@ class RegisterController extends BaseController
             'confpassword'       => 'matches[password]'
         ];
 
-        if ($this->validate->setRules($rules)) {
+        if ($validate->setRules($rules)) {
             $data = [
                 'first_name'     => $this->request->getVar('first_name'),
                 'last_name'     => $this->request->getVar('last_name'),

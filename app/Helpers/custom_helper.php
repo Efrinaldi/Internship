@@ -26,7 +26,7 @@ function adminLogin()
 {
     $userid = session("userid");
     $atasan = new DivisiModel();
-    $user = $atasan->query("SELECT divisi.divisi FROM divisi inner join user_divisi on divisi.id_divisi = user_divisi.id_divisi where userid = '$userid' ")->getResultArray();
+    $user = $atasan->query("SELECT departemen.divisi FROM departemen inner join user_divisi on departemen.id_divisi = user_divisi.id_divisi where userid = '$userid' ")->getResultArray();
     if (empty($user[0]["divisi"])) {
         return "user";
     } else {
@@ -38,7 +38,7 @@ function adminAtasan()
 {
     $userid = session("userid");
     $atasan = new AtasanModel();
-    $data_atasan = $atasan->query("SELECT divisi.divisi FROM divisi left join user_divisi on divisi.id_divisi = user_divisi.id_divisi left JOIN atasan on atasan.id_divisi= user_divisi.id_divisi where user_divisi.userid = '$userid';")->getResultArray();
+    $data_atasan = $atasan->query("SELECT atasan.id_divisi, atasan.userid, departemen.divisi FROM atasan left join user_divisi on atasan.id_divisi = user_divisi.id_divisi left join departemen on atasan.id_divisi = departemen.id_divisi where atasan.userid = '$userid';")->getResultArray();
     if (empty($data_atasan[0]["divisi"])) {
         return "user";
     } else {

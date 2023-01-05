@@ -18,7 +18,7 @@
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">10 Pesanan</div>
                         </div>
-                        <a href="<?=base_url("/history_supervisor_approve")?>" class="stretched-link" type="hidden"></a>
+                        <a href="<?= base_url("/history_approve") ?>" class="stretched-link" type="hidden"></a>
                         <div class="col-auto">
                             <i class="fas fa-car fa-2x text-gray-300"></i>
                         </div>
@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="<?=base_url("/history_supervisor_reject")?>" class="stretched-link" type="hidden"></a>
+                        <a href="<?= base_url("/history_reject") ?>" class="stretched-link" type="hidden"></a>
                         <div class="col-auto">
                             <i class="fas fa-car-side fa-2x text-gray-300"></i>
                         </div>

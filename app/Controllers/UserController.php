@@ -26,8 +26,6 @@ class UserController extends ResourceController
 {
     public function __construct()
     {
-        $this->User = new UserModel();
-        $this->session     = \Config\Services::session();
     }
     public function index()
     {
@@ -62,12 +60,13 @@ class UserController extends ResourceController
     }
     public function changeNumber($id_user)
     {
+        $user = new UserModel();
 
         $data = [
             "phone_number" => $this->request->getVar('phone_number')
         ];
         $data = json_decode(file_get_contents("php://input"));
-        $this->User->update($id_user, $data);
+        $user->update($id_user, $data);
         $response = [
             'status'   => 201,
             'error'    => null,
@@ -86,6 +85,8 @@ class UserController extends ResourceController
 
     public function authregister()
     {
+        $user = new UserModel();
+
         helper(['form']);
         $rules = [
             'first_name'          => 'required|min_length[3]|max_length[50]',
@@ -107,7 +108,7 @@ class UserController extends ResourceController
                 'unit_kerja'    => $this->request->getVar('unit_kerja'),
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
-            $this->User->insert($data);
+            $user->insert($data);
             return redirect()->to('/dashboard');
         } else {
             $data['validation'] = $this->validator;
@@ -138,7 +139,7 @@ class UserController extends ResourceController
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
         $data_coba = $user->query("exec uspLogonPHP @userid = '" . $username . "',@kode_aplikasi = '00033',@pass = '" . $password .  "', @result='' ")->getResultArray();
-        $divisi = $userdiv->query("SELECT * FROM divisi RIGHT join user_divisi on user_divisi.id_divisi= divisi.id_divisi where user_divisi.userid= '$username'")->getResultArray();
+        $divisi = $userdiv->query("SELECT * FROM departemen RIGHT join user_divisi on user_divisi.id_divisi= departemen.id_divisi where user_divisi.userid= '$username'")->getResultArray();
         $user_coba = current($data_coba[0]);
         $coba = current($data_coba[0]);
         if ($coba === "20UidApplNotListed" or $user_coba === "20UidApplNotListed") {
@@ -157,58 +158,27 @@ class UserController extends ResourceController
             $session->set([
                 'userid'  => $username,
                 'logged_in' => true,
-                'user_domain' => $username
+                'user_domain' => $username, "username" => $username
             ]);
             if (count($divisi) > 0) {
                 $session->set([
                     'userid'  => $username,
                     'id_divisi'  => $divisi[0]["id_divisi"],
                     'logged_in' => true,
-                    'user_domain' => $username
+                    'user_domain' => $username,
+                    "username" => $username
                 ]);
             } else {
                 $session->set([
                     'userid'  => $username,
                     'logged_in' => true,
-                    'user_domain' => $username
+                    'user_domain' => $username,
+                    "username" => $username
                 ]);
             }
-            $data = [];
             $data_user    = $userdiv->query("SELECT * FROM USER_DIVISI  where user_domain = '$username' ")->getResultArray();
             $pekerja      = str_replace("_", " ", $username);
             $data_userid = $user->query("SELECT * FROM t_users where userid = '$username' ")->getResultArray();
-            if (count($data_user) == 0 and count($divisi) > 0) {
-                $data = [
-                    "user_domain" => $username,
-                    "userid"      => $username,
-                    "username"    => $data_userid[0]["username"],
-                    "id_divisi"   =>  $divisi[0]["id_divisi"],
-                    "divisi"   =>  $divisi[0]["divisi"]
-                ];
-                // $userdiv->insert($data);
-            } else if (count($data_user) == 0 and count($divisi) == 0) {
-                $data = [
-                    "user_domain" => $username,
-                    "userid"      => $username,
-                ];
-                // $userdiv->insert($data);
-            } else if (count($data_user) > 0 and count($divisi) > 0) {
-                $data = [
-                    "user_domain" => $username,
-                    "userid"      => $username,
-                    "id_divisi"   =>  $divisi[0]["id_divisi"],
-                    "divisi"   =>  $divisi[0]["divisi"]
-
-                ];
-                // $userdiv->update($username, $data);
-            } else if (count($data_user) > 0 and count($divisi) == 0) {
-                $data = [
-                    "user_domain" => $username,
-                    "userid"      => $username,
-
-                ];
-                // $userdiv->update($username, $data);
-            }
             return redirect()->to("/dashboard")->with("success", "berhasil login");
         }
     }
@@ -288,7 +258,7 @@ class UserController extends ResourceController
         $id_divisi = $this->request->getPost("departemen");
         $secure = new SecureModel();
         $data_secure = $secure->query("SELECT * FROM t_users where userid='$userid' ")->getResultArray();
-        $divisi = $divisiModel->query("SELECT * FROM divisi WHERE id_divisi='$id_divisi'")->getResultArray();
+        $divisi = $divisiModel->query("SELECT * FROM departemen WHERE id_divisi='$id_divisi'")->getResultArray();
         $data = [
             "divisi"  => $divisi[0]["divisi"],
             "userid" => $userid,
@@ -324,12 +294,34 @@ class UserController extends ResourceController
 
     public function list_user()
     {
+        
+        $divisiuser = new UserDivisiModel();
+        $user = new SecureModel();
+        $divisi = new DivisiModel();
+        $atasan = new AtasanModel();
+        $data_user = $user->query("SELECT t_users.userdomain, t_usraplikasi.userid,t_users.username ,t_usraplikasi.kodeaplikasi  FROM t_users right join t_usraplikasi  on t_usraplikasi.userid = t_users.userid where t_usraplikasi.kodeaplikasi= '00033' ")->getResultArray();
+        $data_divisi = $divisi->query("SELECT * FROM departemen")->getResultArray();
+        
+        $divisi_user = $divisi->query("SELECT * FROM user_divisi")->getResultArray();
+        $data = [
+            "data_user"   => $data_user,
+            "data_divisi" => $data_divisi,
+            "divisiuser"  => $divisi_user,
+            "atasan"      => $atasan
+        ];
+
+        return view('list_user', $data);
+    }
+
+
+    public function list_atasan()
+    {
         $divisiuser = new UserDivisiModel();
         $user = new SecureModel();
         $divisi = new DivisiModel();
         $atasan = new AtasanModel();
         $data_user = $user->query("SELECT t_users.userdomain, t_usraplikasi.userid,[username] ,t_usraplikasi.kodeaplikasi  FROM t_users right join t_usraplikasi  on t_usraplikasi.userid = t_users.userid where t_usraplikasi.kodeaplikasi= '00033' ")->getResultArray();
-        $data_divisi = $divisi->query("SELECT * FROM DIVISI")->getResultArray();
+        $data_divisi = $divisi->query("SELECT * FROM departemen")->getResultArray();
         $divisi_user = $divisi->query("SELECT * FROM user_divisi")->getResultArray();
 
         $data = [
@@ -338,10 +330,27 @@ class UserController extends ResourceController
             "divisiuser"      => $divisi_user,
             "atasan"     => $atasan
         ];
-        return view('list_user', $data);
+        return view('list_atasan', $data);
     }
 
 
+    public function list_satker()
+    {
+        $divisiuser = new UserDivisiModel();
+        $user = new SecureModel();
+        $divisi = new DivisiModel();
+        $atasan = new AtasanModel();
+        $data_user = $user->query("SELECT t_users.userdomain, t_usraplikasi.userid,[username] ,t_usraplikasi.kodeaplikasi  FROM t_users right join t_usraplikasi  on t_usraplikasi.userid = t_users.userid where t_usraplikasi.kodeaplikasi= '00033' ")->getResultArray();
+        $data_divisi = $divisi->query("SELECT * FROM departemen")->getResultArray();
+        $divisi_user = $divisi->query("SELECT * FROM user_divisi")->getResultArray();
+        $data = [
+            "data_user"    => $data_user,
+            "data_divisi" => $data_divisi,
+            "divisiuser"  => $divisi_user,
+            "atasan"  => $atasan
+        ];
+        return view('list_atasan', $data);
+    }
     public function update_token($id = null)
     {
         $model = new UserModel();
@@ -367,9 +376,6 @@ class UserController extends ResourceController
         ];
         return $this->respond($response);
     }
-
-
-
     public function login()
     {
         $rules = [
@@ -398,8 +404,8 @@ class UserController extends ResourceController
 
             return $this->respondCreated($response);
         } else {
-
-            $userdata = $this->User->where("email", $this->request->getVar("email"))->first();
+            $user = new UserModel();
+            $userdata = $user->where("email", $this->request->getVar("email"))->first();
 
             if (!empty($userdata)) {
                 if (password_verify($this->request->getVar("password"), $userdata['password'])) {
@@ -455,9 +461,10 @@ class UserController extends ResourceController
         $validation->setRules([
             'id' => 'required'
         ]);
+
         $isDataValid = $validation->withRequest($this->request)->run();
         if ($isDataValid) {
-            $this->User->update($id_user, [
+            $user->update($id_user, [
                 "token_id" => $this->request->getPost('token_id')
             ]);
 
@@ -482,6 +489,8 @@ class UserController extends ResourceController
 
     public function register_user()
     {
+        $user = new UserModel();
+
         $model = new UserModel();
         $data = [
             "id_user" => $this->request->getVar('id_user'),
@@ -490,7 +499,7 @@ class UserController extends ResourceController
             "email" => $this->request->getVar('email'),
             "password" => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
         ];
-        $this->User->insert($data);
+        $user->insert($data);
         $response = [
             'status'   => 404,
             'error'    => null,
@@ -502,6 +511,7 @@ class UserController extends ResourceController
 
     public function register_driver()
     {
+        $user = new UserModel();
         $rules = [
             'name'          => 'required|min_length[3]|max_length[20]',
             'email'         => 'required|min_length[6]|max_length[50]|valid_email|is_unique[users.user_email]',
@@ -509,7 +519,7 @@ class UserController extends ResourceController
             'confpassword'  => 'matches[password]'
         ];
         if ($this->$rules) {
-            $this->User->insert([
+            $user->insert([
                 "id" => $this->request->getPost('id'),
                 "username" => $this->request->getPost('username'),
                 "email" => $this->request->getPost('email'),
@@ -527,6 +537,8 @@ class UserController extends ResourceController
     }
     public function changePassword($id_user)
     {
+        $user = new UserModel();
+
         $rules = [
             'name'          => 'required|min_length[3]|max_length[20]',
             'email'         => 'required|min_length[6]|max_length[50]|valid_email|is_unique[users.user_email]',
@@ -541,7 +553,7 @@ class UserController extends ResourceController
             'error'    => null,
             'messages' => "Berhasil di update"
         ];
-        $this->User->update($id_user, $data_user);
+        $user->update($id_user, $data_user);
         return $this->respondCreated($response, 201);
     }
 

@@ -71,6 +71,8 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('/homes', 'Home::homes');
     $routes->get('/admin', 'Home::admin');
     $routes->get('/list_user', 'UserController::list_user');
+    $routes->get('/list_atasan', 'UserController::list_atasan');
+    $routes->get('/list_satker', 'UserController::list_satker');
     $routes->get('/otorisator', 'Home::otorisator');
     $routes->get('/dashboard', 'Home::dashboard');
     $routes->get('/request', 'Home::request');
@@ -83,8 +85,11 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('/order_departemen', 'Home::order_departemen');
     $routes->get('/order_logistik', 'Home::order_logistik');
     $routes->get('/activity_log', 'Home::activity_log');
-    $routes->get('/history', 'Home::history');
-    $routes->get('/history_supervisor', 'Home::history');
+    $routes->get('/history', 'Home::history_supervisor');
+    $routes->get('/riwayat', 'Home::riwayat');
+    $routes->get('/approve', 'Home::approve');
+    $routes->get('/reject', 'Home::reject');
+    $routes->get('/history_supervisor', 'Home::history_supervisor');
     $routes->get('/process', 'Home::process');
     $routes->get('/driver', 'Home::driver');
     $routes->post('/add_car_order', 'Home::add_car_order');
@@ -97,6 +102,7 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('/pick_driver/(:segment)/(:segment)', 'OrderController::show_order/$1/$2');
     $routes->add('/insert_order/(:segment)/(:segment)/(:segment)', 'OrderController::insert_order/$1/$2/$3');
     $routes->get('/order/(:segment)', 'OrderController::order/$1');
+    $routes->post('/get_sub_spv', 'OrderController::get_sub_spv');
     $routes->get('/order_driver/(:segment)', 'OrderController::order_driver/$1');
     $routes->get('/showOrder/(:segment)', 'OrderController::showOrder/$1');
     $routes->get('/getMobil', 'DriverController::getMobil');

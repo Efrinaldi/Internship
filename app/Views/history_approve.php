@@ -16,7 +16,9 @@
                             <th>Nama</th>
                             <th>Unit Kerja</th>
                             <th>Waktu</th>
+                            <th>Waktu Berakhir</th>
                             <th>Tujuan Pakai</th>
+                            <th>Plat Nomor</th>
                             <th>Lokasi Tujuan</th>
                             <th>Keterangan</th>
                         </tr>
@@ -30,7 +32,9 @@
                                 <td><?= $o['nama'] ?></td>
                                 <td><?= $o['divisi'] ?></td>
                                 <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
+                                <td><?= $o['waktu_end'] ?></td>
                                 <td><?= $o['tujuan_pakai'] ?></td>
+                                <td><?= $o['plat_nomor'] ?></td>
                                 <td><?= $o['tujuan'] ?></td>
                                 <td><?= $o['keterangan'] ?></td>
                             </tr>

@@ -76,13 +76,7 @@
     <script src="<?= base_url('/public/assets/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url('/public/assets/js/sb-admin-2.min.js') ?>"></script>
-    <script>
-        $('#datepicker_dev_awal').datepicker({
-            format: 'mm/dd/yyyy',
 
-            uiLibrary: 'bootstrap4'
-        });
-    </script>
     <?= $this->renderSection('/scripts') ?>
 </body>
 

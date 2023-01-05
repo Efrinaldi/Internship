@@ -10,6 +10,7 @@ use App\Models\DriverModel;
 use App\Models\UserModel;
 use App\Controllers\NotificationController;
 use App\Models\ActivityLogModel;
+use App\Models\AtasanModel;
 use App\Models\CarModel;
 use App\Models\DivisiModel;
 use App\Models\OrdersModel;
@@ -17,6 +18,8 @@ use App\Models\ReimburseModel;
 use App\Models\SecureModel;
 use App\Models\UserDivisiModel;
 use Firebase\JWT\JWT;
+use PHPMailer\PHPMailer\PHPMailer;
+
 
 
 class OrderController extends BaseController
@@ -25,15 +28,10 @@ class OrderController extends BaseController
 
     function __construct()
     {
-        $this->orders = new OrdersModel();
-        $this->validate     = \Config\Services::validation();
+        // $this->orders = new OrdersModel();
+        // $this->vallidator     = \Config\Services::validation();
     }
 
-
-
-    public function log()
-    {
-    }
     public function detail_order($id_order)
     {
         $order = new OrderModel();
@@ -44,12 +42,25 @@ class OrderController extends BaseController
         ];
         return $this->respondCreated($data, 201);
     }
+    function get_sub_spv()
+    {
+        $id = $this->request->getVar('id');
+        
+        $atasan = new AtasanModel();
+        $data = $atasan->query("SELECT * FROM atasan where id_divisi = $id")->getResultArray();
+        echo json_encode($data);
+    }
 
     public function order($id_user)
     {
         $order = new OrderModel();
         $driver =  new DriverModel();
-        $query   = $order->query("SELECT orders.ID as id_order, pemesanan.id as id_pemesanan, orders.asal ,orders.nama,orders.unit_kerja,orders.waktu,orders.tujuan,orders.id_user as id_user,oauth_user.nama_user,orders.tanggal, pemesanan.id_pengemudi as id_pengemudi from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan where orders.id_user = $id_user and tanggal like DATE_FORMAT(CURRENT_DATE,'%m/%d/%Y') order by waktu ");
+        $query   = $order->query("SELECT orders.ID as id_order, pemesanan.id as id_pemesanan, orders.asal ,orders.nama,
+        orders.unit_kerja,orders.waktu,orders.tujuan,orders.id_user as id_user,oauth_user.nama_user,orders.tanggal, 
+        pemesanan.id_pengemudi as id_pengemudi from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user 
+        LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan where orders.id_user = $id_user and tanggal like 
+        DATE_FORMAT(CURRENT_DATE,'%m/%d/%Y') order by waktu ");
+
         $rows = $query->getResult();
         $data = [
             "data" => $rows
@@ -127,14 +138,13 @@ class OrderController extends BaseController
         $userdiv = new UserDivisiModel();
         $order = new OrderModel();
         $rows     = $userdiv->query("SELECT * FROM user_divisi where divisi = 'DRIVER' ")->getResultArray();
-        $car      = $driver->query("SELECT * FROM mobil RIGHT  JOIN pengemudi ON mobil.id_mobil = pengemudi.id_mobil where status_pengemudi ='Tersedia'   ")->getResultArray();
+        $car      = $driver->query("SELECT *  FROM mobil RIGHT  JOIN pengemudi ON mobil.id_mobil = pengemudi.id_mobil where status_pengemudi ='Tersedia'  ")->getResultArray();
         $data = [
             'driver' => $rows,
             'mobil'  => $car,
             'id_pemesanan' => $id_order,
             'id_user' => $id_user
         ];
-
         $data_order = [
             "keterangan" => "approve"
         ];
@@ -164,6 +174,8 @@ class OrderController extends BaseController
             "activity" => "Menambahkan pesanan atas nama $userid",
             "tanggal"  =>  date("Y-m-d H:i:s"),
         ];
+
+
         $s = $user->query("SELECT * FROM t_users WHERE userid = '$userid' or userdomain = '$userid'    ")->getResultArray();
         $acitivity->insert($data);
         $rules = [
@@ -176,7 +188,8 @@ class OrderController extends BaseController
             'jumlah_orang' => 'integer|required'
 
         ];
-        if ($this->validate->setRules([
+        $validate = \Config\Services::validation();
+        if ($validate->setRules([
             'unit' => [
                 'rules' => 'required',
                 'errors' => [
@@ -232,14 +245,15 @@ class OrderController extends BaseController
             } else {
                 $nama = $s[0]["userid"];
             }
-
+            $div = new UserDivisiModel();
+            $data_div = $div->query("SELECT id_divisi FROM user_divisi where userid = '$userid'")->getResultArray();
             $data = [
                 'nama' => $nama,
                 'asal' => $this->request->getVar('asal'),
                 'tujuan' => $this->request->getVar('destination'),
-                'id_divisi' => $this->request->getVar('unit'),
-                'waktu_awal' => $this->request->getVar('inputWaktuStart'),
-                'waktu_akhir' => $this->request->getVar('inputWaktuEnd'),
+                'id_divisi' => $data_div[0]["id_divisi"],
+                'waktu' => $this->request->getVar('inputWaktuStart'),
+                'waktu_end' => $this->request->getVar('inputWaktuEnd'),
                 'tanggal' => $this->request->getVar('date'),
                 'status' => 0,
                 'tujuan_pakai' => $this->request->getVar('purpose'),
@@ -248,19 +262,16 @@ class OrderController extends BaseController
                 'jumlah_orang' => $this->request->getVar("jumlah_orang")
             ];
 
-
-
             $order->insert($data);
             $id = $order->getInsertID();
             return redirect()->to('request')->with('success', 'Pesanan masuk. Segera proses pesanan!');
         } else {
             session()->setFlashdata('error', $this->validator->listErrors());
-
             if (((int)($data_hours_akhir - $data_hours_awal) + ($data_minutes_akhir - $data_minutes_awal) < 180)) {
                 $waktuErr = "memesan harus melebihi dari 3 Jam";
             }
             $divisi = new DivisiModel();
-            $div = $divisi->query("SELECT * FROM  divisi ")->getResultArray();
+            $div = $divisi->query("SELECT * from departemen")->getResultArray();
             $data = [
                 "divisi" => $div,
                 "waktuErr" => $waktuErr,
@@ -296,6 +307,66 @@ class OrderController extends BaseController
             ]
         ];
         return $this->respondCreated($response);
+    }
+    public function sendEmail($to, $title, $message)
+
+    {
+
+        ini_set('display_errors', 1);
+
+        error_reporting(E_ALL);
+
+
+
+        $smtpkantor = "10.125.1.43";
+
+        ini_set("SMTP", $smtpkantor);
+
+        ini_set("smtp_port", "587");
+
+        ini_set("sendmail_from", "adminmail@bcasyariah.co.id");
+        $mail = new PHPMailer();
+
+        $mail->isSMTP();
+
+        $mail->Host = $smtpkantor;
+
+        $mail->SMTPAuth = true;
+
+        $mail->Username = "adminmail@bcasyariah.co.id";
+
+        $mail->Password = "syariah@1";
+
+        $mail->SMTPSecure = "starttls";
+
+        $mail->Port = 587;
+
+        $mail->SMTPOptions = array(
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            )
+        );
+
+        $mail->ClearAllRecipients();
+
+        $mail->clearAddresses();
+
+        $mail->clearAttachments();
+        $mail->ClearCCs();
+        $mail->ClearBCCs();
+        $mail->From = "employee@bcasyariah.co.id"; //email pengirim
+        $mail->FromName = "PT Bank BCA Syariah"; //nama pengirim
+        $mail->addAddress($to);
+
+        $mail->isHTML(true);
+
+        $mail->Subject = $title;
+
+        $mail->Body    = $message;
+
+        $mailer = $mail->send();
     }
 
     public function detail_reimburse($id_pemesanan)
@@ -465,7 +536,7 @@ class OrderController extends BaseController
         $data = $user->where('id_user', $id_user)->first();
         $phone = $data["phone_number"];
     }
-    public function insert_order($id_order, $id_pengemudi, $id_mobil)
+    public function insert_order($id_order, $id_mobil, $id_pengemudi)
     {
         $acitivity = new ActivityLogModel();
         $pemesanan = new OrdersModel();
@@ -473,8 +544,10 @@ class OrderController extends BaseController
         $driver = new DriverModel();
         $order = [
             "id_pengemudi" => $id_pengemudi,
-            "id_pemesanan" => $id_order
+            "id_pemesanan" => $id_order,
+            "id_mobil"    => $id_mobil
         ];
+
         $user = $pemesanan->query("SELECT * FROM orders where id = $id_order  ")->getResultArray();
         $id = $user[0]["userid"];
         $pemesanan->insert($order);
@@ -482,11 +555,9 @@ class OrderController extends BaseController
             "activity" => " $id sudah berhasil mendapatkan driver",
             "date"     => date("Y-m-d h:i:sa")
         ];
-
         $car = [
             "status_mobil" =>     "Tidak Tersedia"
         ];
-
         $pengemudi = [
             "status_pengemudi" => "Tidak Tersedia"
         ];
