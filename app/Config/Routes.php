@@ -83,7 +83,8 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('/reject_order/(:segment)', 'OrderController::reject_order/$1');
     $routes->get('/reject_logistik/(:segment)', 'OrderController::reject_logistik/$1');
     $routes->get('/order_departemen', 'Home::order_departemen');
-    $routes->get('/order_logistik', 'Home::order_logistik');
+    $routes->get('/approval_spv', 'Home::approval_spv');
+    $routes->post('/order_logistik', 'Home::order_logistik');
     $routes->get('/activity_log', 'Home::activity_log');
     $routes->get('/history', 'Home::history_supervisor');
     $routes->get('/riwayat', 'Home::riwayat');

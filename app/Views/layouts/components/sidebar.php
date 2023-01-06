@@ -31,7 +31,12 @@
                 <i class="fas fa-history"></i>
                 <span>Riwayat Pesanan</span></a>
         </li>
-
+        <hr class="sidebar-divider">
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url("/order") ?>">
+                <i class="fas fa-clipboard-list"></i>
+                <span>Daftar Pesanan</span></a>
+        </li>
         <hr class="sidebar-divider">
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url("/order_departemen") ?>">
@@ -72,11 +77,16 @@
                 <span>Pesan Kendaraan</span></a>
         </li>
         <hr class="sidebar-divider">
-
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url("/order_logistik") ?>">
                 <i class="fas fa-user-friends"></i>
                 <span>Order Logistik</span></a>
+        </li>
+        <hr class="sidebar-divider">
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url("/order") ?>">
+                <i class="fas fa-clipboard-list"></i>
+                <span>Daftar Pesanan</span></a>
         </li>
         <hr class="sidebar-divider">
         <li class="nav-item">

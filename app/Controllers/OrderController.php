@@ -45,7 +45,7 @@ class OrderController extends BaseController
     function get_sub_spv()
     {
         $id = $this->request->getVar('id');
-        
+
         $atasan = new AtasanModel();
         $data = $atasan->query("SELECT * FROM atasan where id_divisi = $id")->getResultArray();
         echo json_encode($data);
@@ -511,6 +511,18 @@ class OrderController extends BaseController
         ];
         return $this->respondCreated($response);
     }
+    public function approval_spv($id_order, $userid, $user_domain)
+    {
+
+        $order = new OrderModel();
+        $data = [
+            "approval_userid" => $userid,
+            "approval_domain" => $user_domain
+        ];
+        $order->update($id_order, $data);
+        return redirect()->to("pick_driver")->with("success", "data berhasil dimasukkan");
+    }
+
     public function showOrder($id_user)
     {
         $order = new OrderModel();

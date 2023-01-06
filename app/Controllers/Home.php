@@ -44,7 +44,6 @@ class Home extends BaseController
         ];
         return view('dashboard', $data);
     }
-
     public function activity_log()
     {
         $driver = new DriverModel();
@@ -105,9 +104,6 @@ class Home extends BaseController
         return view('order', $data);
     }
 
-
-
-
     public function order_departemen()
     {
         $order = new OrderModel();
@@ -115,6 +111,28 @@ class Home extends BaseController
         $userid = session("userid");
         $id_divisi = session("id_divisi");
 
+        $query = $order->query(
+            "SELECT orders.id, orders.nama,orders.tujuan,orders.asal,orders.tujuan_pakai,orders.tanggal, orders.waktu
+            ,orders.keterangan,mobil.plat_nomor,departemen.divisi  FROM `orders` LEFT JOIN atasan on atasan.id_divisi=orders.id_divisi left JOIN pemesanan_mobil on 
+            pemesanan_mobil.id_pemesanan = orders.id LEFT JOIN mobil on pemesanan_mobil.id_mobil = mobil.id_mobil LEFT join departemen 
+            on orders.id_divisi = departemen.id_divisi 
+            WHERE atasan.id_divisi =$id_divisi AND orders.keterangan = 
+            'Pending'"
+        );
+        $rows = $query->getResultArray();
+        $data = [
+            'order' => $rows,
+        ];
+        return view('order_departemen', $data);
+    }
+
+
+    public function approval_spv()
+    {
+        $order = new OrderModel();
+        $session = session()->get();
+        $userid = session("userid");
+        $id_divisi = session("id_divisi");
         $query = $order->query(
             "SELECT orders.id, orders.nama,orders.tujuan,orders.asal,orders.tujuan_pakai,orders.tanggal, orders.waktu
             ,orders.keterangan,mobil.plat_nomor,departemen.divisi  FROM `orders` LEFT JOIN atasan on atasan.id_divisi=orders.id_divisi left JOIN pemesanan_mobil on 
