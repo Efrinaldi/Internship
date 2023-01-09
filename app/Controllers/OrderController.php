@@ -45,12 +45,25 @@ class OrderController extends BaseController
     function get_sub_spv()
     {
         $id = $this->request->getVar('id');
-
         $atasan = new AtasanModel();
         $data = $atasan->query("SELECT * FROM atasan where id_divisi = $id")->getResultArray();
         echo json_encode($data);
     }
+    function approval_spv()
+    {
+        $userid      = $this->request->getVar('id_spv');
+        $id_order    = $this->request->getVar('id_order');
 
+        $order = new OrderModel();
+        $data = [
+            "approval_userid" => $userid,
+        ];
+        $order->update($id_order, $data);
+        $message = [
+            "berhasil" => "berhasil"
+        ];
+        echo json_encode($message);
+    }
     public function order($id_user)
     {
         $order = new OrderModel();
@@ -60,7 +73,6 @@ class OrderController extends BaseController
         pemesanan.id_pengemudi as id_pengemudi from orders LEFT JOIN oauth_user on orders.id_user = oauth_user.id_user 
         LEFT JOIN pemesanan on orders.id =pemesanan.id_pemesanan where orders.id_user = $id_user and tanggal like 
         DATE_FORMAT(CURRENT_DATE,'%m/%d/%Y') order by waktu ");
-
         $rows = $query->getResult();
         $data = [
             "data" => $rows
@@ -511,17 +523,7 @@ class OrderController extends BaseController
         ];
         return $this->respondCreated($response);
     }
-    public function approval_spv($id_order, $userid, $user_domain)
-    {
 
-        $order = new OrderModel();
-        $data = [
-            "approval_userid" => $userid,
-            "approval_domain" => $user_domain
-        ];
-        $order->update($id_order, $data);
-        return redirect()->to("pick_driver")->with("success", "data berhasil dimasukkan");
-    }
 
     public function showOrder($id_user)
     {

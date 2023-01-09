@@ -110,14 +110,12 @@ class Home extends BaseController
         $session = session()->get();
         $userid = session("userid");
         $id_divisi = session("id_divisi");
-
         $query = $order->query(
             "SELECT orders.id, orders.nama,orders.tujuan,orders.asal,orders.tujuan_pakai,orders.tanggal, orders.waktu
-            ,orders.keterangan,mobil.plat_nomor,departemen.divisi  FROM `orders` LEFT JOIN atasan on atasan.id_divisi=orders.id_divisi left JOIN pemesanan_mobil on 
+            ,orders.keterangan,mobil.plat_nomor,departemen.divisi  FROM `orders` LEFT JOIN user_divisi on user_divisi.userid= orders.userid left JOIN pemesanan_mobil on 
             pemesanan_mobil.id_pemesanan = orders.id LEFT JOIN mobil on pemesanan_mobil.id_mobil = mobil.id_mobil LEFT join departemen 
-            on orders.id_divisi = departemen.id_divisi 
-            WHERE atasan.id_divisi =$id_divisi AND orders.keterangan = 
-            'Pending'"
+            on user_divisi.id_divisi = departemen.id_divisi 
+            WHERE orders.keterangan = 'Pending' and orders.approval_userid = '$userid' "
         );
         $rows = $query->getResultArray();
         $data = [

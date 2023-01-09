@@ -260,7 +260,6 @@ class UserController extends ResourceController
         $data_secure = $secure->query("SELECT * FROM t_users where userid='$userid' ")->getResultArray();
         $divisi = $divisiModel->query("SELECT * FROM departemen WHERE id_divisi='$id_divisi'")->getResultArray();
         $data = [
-            "divisi"  => $divisi[0]["divisi"],
             "userid" => $userid,
             "id_divisi" => $this->request->getPost("departemen"),
             "email" => $this->request->getPost("email")
@@ -294,24 +293,23 @@ class UserController extends ResourceController
 
     public function list_user()
     {
-        
+
         $divisiuser = new UserDivisiModel();
         $user = new SecureModel();
         $divisi = new DivisiModel();
         $atasan = new AtasanModel();
         $data_user = $user->query("SELECT t_users.userdomain, t_usraplikasi.userid,t_users.username ,t_usraplikasi.kodeaplikasi  FROM t_users right join t_usraplikasi  on t_usraplikasi.userid = t_users.userid where t_usraplikasi.kodeaplikasi= '00033' ")->getResultArray();
         $data_divisi = $divisi->query("SELECT * FROM departemen")->getResultArray();
-        
-        $divisi_user = $divisi->query("SELECT * FROM user_divisi")->getResultArray();
+        $divisi_user = $divisi->query("SELECT * FROM user_divisi inner join departemen where user_divisi.id_divisi = departemen.id_divisi")->getResultArray();
         $data = [
             "data_user"   => $data_user,
             "data_divisi" => $data_divisi,
             "divisiuser"  => $divisi_user,
             "atasan"      => $atasan
         ];
-
         return view('list_user', $data);
     }
+
 
 
     public function list_atasan()
@@ -332,7 +330,6 @@ class UserController extends ResourceController
         ];
         return view('list_atasan', $data);
     }
-
 
     public function list_satker()
     {

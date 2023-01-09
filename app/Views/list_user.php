@@ -33,16 +33,12 @@
                         $no = 1;
                         foreach ($data_user as $o) :
                             $id = $o["userid"];
+                            $divisi = new DivisiModel();
+                            $div = $divisi->query("SELECT * FROM user_divisi inner join departemen where user_divisi.id_divisi = departemen.id_divisi where user_divisi.userid = $id ")->getResultArray();
                             $divisi = new UserDivisiModel();
                             $departemen = new DivisiModel();
                             $data_atasan = $atasan->query("SELECT * FROM atasan where userid = '$id' ")->getResultArray();
-                            $data = $divisi->select('*')->where('userid', $o["userid"])->get()->getResultArray();
-                            $id_divisi = dd($data[0]["id_divisi"]);
-                            $depart = $divisi->query("SELECT")
-
-
-                            ?>
-
+                            $data = $divisi->select('*')->where('userid', $o["userid"])->get()->getResultArray(); ?>
                             <td><?= $no++; ?></td>
                             <td><?= $o['userid'] ?></td>
                             <td><?= $o['username'] ?></td>
@@ -50,17 +46,13 @@
                                 <td><?= $o['userdomain'] ?></td>
                             <?php endif ?>
                             <?php if (count($data) == 0) : ?>
-                                <td>
-                                </td>
+                                <td><?= $d['divisi'] ?></td>
+
                             <?php endif ?>
                             <?php if (count($data) > 0) : ?>
                             <?php endif ?>
                             <?php if (count($data) == 0) : ?>
                                 <td>
-
-
-
-
                                 </td>
                             <?php endif ?>
                             <td> <button type="submit" class="btn btn-primary mt-1 mr-2" data-toggle="modal" data-target="#userModal<?php echo $o["userid"] ?>"><i class="fa fa-solid fa-pen"></i></button></td>
@@ -118,6 +110,7 @@
                                                         <?php endforeach; ?>
                                                     </select>
                                                 </div>
+
                                                 <?php
                                                 $atasan = new AtasanModel();
                                                 $data_atasan = $atasan->query("SELECT * FROM atasan where userid = '$id' ")->getResultArray(); ?>

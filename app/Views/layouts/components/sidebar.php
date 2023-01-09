@@ -41,7 +41,7 @@
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url("/order_departemen") ?>">
                 <i class="fas fa-user-friends"></i>
-                <span>Order Departemen</span></a>
+                <span>Approval Pesanan</span></a>
         </li>
     <?php endif; ?>
     <?php if (adminAtasan() === "user") : ?>
@@ -63,6 +63,8 @@
                 <i class="fas fa-history"></i>
                 <span>Pesan Kendaraan</span></a>
         </li>
+
+
     <?php endif; ?>
 
     <!-- Supervisor logistik -->
