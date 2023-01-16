@@ -1,144 +1,81 @@
-<?= $this->extend('layouts/admin') ?>
+<?= $this->extend('layouts/general') ?>
 <?= $this->section('content') ?>
-<div class="container-fluid">
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <div>
-            <h1 class="h3 mb-0 text-gray-800">Selamat Datang di Sistem Manajemen Kendaraan Operasional BCA Syariah,
+
+<!-- partial -->
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-12 grid-margin">
+                <div class="row">
+                    <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                        <h3 class="font-weight-bold">Welcome <?php echo (session("userid")) ?></h3>
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="justify-content-end d-flex">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div class="row">
+
+
+            <div class="col-md-12 grid-margin transparent">
+                <div class="row">
+                    <div class="col-md-6 mb-4 stretch-card transparent">
+                        <div class="card card-tale">
+                            <div class="card-body">
+                                <p class="fs-10 mb-2"> Pemesanan Mobil </p>
+                                <p class="fs-30 mb-2"> <?php echo $pemesanan ?> Pemesanan </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 stretch-card transparent">
+                        <div class="card card-dark-blue">
+                            <div class="card-body">
+                                <p class="fs-10 mb-2"> Pemesanan Mobil </p>
+                                <p class="fs-30 mb-2"> <?php echo $pemesanan ?> Pemesanan </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                        <div class="card card-light-blue">
+                            <div class="card-body">
+                                <p class="fs-10 mb-4"> Pengemudi Tidak Tersedia </p>
+                                <p class="fs-30 mb-2"> <?php echo ($tidak_tersedia) ?> Pengemudi
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 stretch-card transparent">
+                        <div class="card card-light-danger">
+                            <div class="card-body">
+                                <p class="fs-10 mb-2"> Pengemudi Tersedia </p>
+                                <p class="fs-30 mb-2"> <?php echo $tersedia ?> Pengemudi
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
-    <div class="row">
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Permintaan Pemesanan
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                <?php echo $pemesanan ?> Pemesanan
-
-
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-tasks fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:partials/_footer.html -->
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
         </div>
-
-
-
-
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Pengemudi Tersedia
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"> <?php echo $tersedia ?> Pengemudi </div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-car fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed by <a href="https://www.themewagon.com/" target="_blank">Themewagon</a></span>
         </div>
-
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Pengemudi Bertugas
-                            </div>
-                            <div class="row no-gutters align-items-center">
-                                <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo ($tidak_tersedia) ?> Pengemudi</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-car-side fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <script type="text/javascript" src="<?php echo base_url() . 'assets/js/jquery.js' ?>"></script>
-        <script type="text/javascript" src="<?php echo base_url() . 'assets/js/bootstrap.js' ?>"></script>
-        <script type="text/javascript" src="<?php echo base_url() . 'assets/js/jquery.dataTables.js' ?>"></script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                tampil_data_barang();
-                $('#mydata').dataTable();
-
-                function tampil_data_barang() {
-                    $.ajax({
-                        type: 'ajax',
-                        url: '<?php echo base_url() ?>index.php/barang/data_barang',
-                        async: false,
-                        dataType: 'json',
-                        success: function(data) {
-                            var html = '';
-                            var i;
-                            for (i = 0; i < data.length; i++) {
-                                html += '<tr>' +
-                                    '<td>' + data[i].barang_kode + '</td>' +
-                                    '<td>' + data[i].barang_nama + '</td>' +
-                                    '<td>' + data[i].barang_harga + '</td>' +
-                                    '</tr>';
-
-                            }
-                            $('#show_data').html(html);
-                        }
-                    });
-                }
-            });
-        </script>
-
-
-
-
-        <!-- </div>
-    Content Row
-    <div> -->
-        <!-- <h2>Aktivitas</h2>
-        <div>
-            <table class="table table-striped table-hover table-bordered">
-                <thead class="text-center">
-                    <tr>
-                        <th scope="col">Tanggal</th>
-                        <th scope="col">Waktu</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Kegiatan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                </tbody>
-
-            </table> -->
-        <!-- </div> -->
-    </div>
+    </footer>
+    <!-- partial -->
 </div>
 <?= $this->endSection() ?>

@@ -1,50 +1,50 @@
-<?= $this->extend('layouts/admin') ?>
+<?= $this->extend('layouts/general') ?>
 <?= $this->section('content') ?>
-<div class="container-fluid">
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Operational Vehicle Management System - BCA Syariah</h1>
-    </div>
-    <div class="row">
-        <div class="col-xl-3 col-md-6 mb-4 ">
-            <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Pesanan Disetujui
-                            </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo ($available) ?> Pesanan</div>
-                        </div>
-                        <a href="<?= base_url("/approve") ?>" class="stretched-link" type="hidden"></a>
-                        <div class="col-auto">
-                            <i class="fas fa-car fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-danger shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Pesanan Ditolak
-                            </div>
-                            <div class="row no-gutters align-items-center">
-                                <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo ($unavailable) ?> Pesanan</div>
+<div class="main-panel">
+    <div class="content-wrapper col-md-12 col-sm-12 col-lg-12">
+        <div class="row">
+            <div class="card-body col-md-12  col-sm-12 col-lg-12">
+                <h4 class="card-title">Riwayat Pemesanan</h4>
+                <p class="card-description col-md-12 col-sm-12 col-lg-12">
+                </p>
+                <a href="<?= base_url("/approve") ?>" class="">
+                    <div class="col-md-6 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="<?= base_url("/approve") ?>">
+                                    <h4 class="card-title">Pemesanan Disetujui</h4>
+                                </a>
+                                <div class="media">
+                                    <i class="ti-world icon-md text-info d-flex align-self-start mr-3"></i>
+                                    <div class="media-body">
+                                        <p class="card-text"><?php echo ($available) ?> Pesanan</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <a href="<?= base_url("/reject") ?>" class="stretched-link" type="hidden"></a>
-                        <div class="col-auto">
-                            <i class="fas fa-car-side fa-2x text-gray-300"></i>
+                    </div>
+                </a>
+                <div class="col-md-6 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="<?= base_url("/reject") ?>">
+                                <h4 class="card-title">Pemesanan Ditolak</h4>
+                            </a>
+                            <div class="media">
+                                <i class="ti-world icon-md text-info d-flex align-self-center mr-3"></i>
+                                <div class="media-body">
+                                    <p class="card-text"><?php echo ($unavailable) ?> Pesanan</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
 </div>
+</div>
+</div>
+
 <?= $this->endSection() ?>

@@ -15,17 +15,20 @@ use App\Models\SecureModel;
 use App\Models\UserDivisiModel;
 use App\Models\UserModel;
 use App\Models\WorkerModel;
+use CodeIgniter\HTTP\Request;
 use Tests\Support\RESTful\Worker;
 
 class Home extends BaseController
 {
     protected $oauth_user;
+    protected $request;
     public function __construct()
     {
     }
     public function index()
     {
         return view('welcome_message');
+        $this->request = (\Config\Services::request());
     }
     public function dashboard()
     {
@@ -36,7 +39,6 @@ class Home extends BaseController
         $activity = new ActivityLogModel();
         $data_activity = $activity->query("SELECT * FROM activity_log")->getResultArray();
         $data_orders = $driver->query(" SELECT count(id) as jumlah from orders where tanggal = NOW();")->getResultArray();
-
         $data = [
             "tersedia" => $available[0]["jml_pengemudi"],
             "tidak_tersedia" => $unavailable[0]["jml_pengemudi"],
@@ -45,6 +47,22 @@ class Home extends BaseController
         return view('dashboard', $data);
     }
     public function activity_log()
+    {
+        $driver = new DriverModel();
+        $available = $driver->query("SELECT count(pengemudi.userid) as jml_pengemudi FROM pengemudi left join mobil on pengemudi.id_mobil = mobil.id_mobil where status_mobil = 'Tersedia'")->getResultArray();
+        $unavailable = $driver->query("SELECT count(pengemudi.userid) as jml_pengemudi FROM pengemudi left join mobil on pengemudi.id_mobil = mobil.id_mobil where status_mobil = 'Tidak Tersedia'")->getResultArray();
+        $activity = new ActivityLogModel();
+        $data_activity = $activity->query("SELECT * FROM activity_log")->getResultArray();
+        $data = [
+            "tersedia" => $available[0]["jml_pengemudi"],
+            "tidak_tersedia" => $unavailable[0]["jml_pengemudi"],
+            "data" => $data_activity
+        ];
+        return view('activity', $data);
+    }
+
+
+    public function activity_db()
     {
         $driver = new DriverModel();
         $available = $driver->query("SELECT count(pengemudi.userid) as jml_pengemudi FROM pengemudi left join mobil on pengemudi.id_mobil = mobil.id_mobil where status_mobil = 'Tersedia'")->getResultArray();
@@ -89,7 +107,6 @@ class Home extends BaseController
         $sat_ker = $divisi->query("SELECT * FROM departemen where id_divisi = $id_divisi_atasan")->getResultArray();
         $id_satker = $sat_ker[0]["id_satker"];
         $list_approval = $divisi->query("SELECT * FROM `departemen` where id_satker =$id_satker;")->getResultArray();
-
         $query = $order->query(
             "SELECT orders.nama,orders.tujuan,orders.asal,orders.tujuan_pakai,orders.tanggal, orders.waktu,orders.id as id_order,orders.keterangan,mobil.plat_nomor,departemen.divisi FROM pemesanan_mobil
              RIGHT JOIN orders ON orders.id = pemesanan_mobil.id LEFT JOIN mobil on mobil.id_mobil=pemesanan_mobil.id_mobil LEFT join departemen 
@@ -103,7 +120,33 @@ class Home extends BaseController
 
         return view('order', $data);
     }
+    public function perjalanan()
+    {
 
+        $order = new OrderModel();
+        $atasan = new AtasanModel();
+        $session = session()->get();
+        $userid = session("userid");
+        $id_divisi = session("id_divisi");
+        $divisi = new DivisiModel();
+        $list_dept = $divisi->query("SELECT * FROM departemen")->getResultArray();
+        $list_atasan = $divisi->query("SELECT id_divisi FROM user_divisi where userid = '$userid' ")->getResultArray();
+        $id_divisi_atasan = $list_atasan[0]["id_divisi"];
+        $sat_ker = $divisi->query("SELECT * FROM departemen where id_divisi = $id_divisi_atasan")->getResultArray();
+        $id_satker = $sat_ker[0]["id_satker"];
+        $list_approval = $divisi->query("SELECT * FROM `departemen` where id_satker =$id_satker;")->getResultArray();
+        $query = $order->query(
+            "SELECT orders.nama,orders.tujuan,orders.asal,orders.tujuan_pakai,orders.tanggal, orders.waktu,orders.id as id_order,orders.keterangan,mobil.plat_nomor,departemen.divisi FROM pemesanan_mobil
+             RIGHT JOIN orders ON orders.id = pemesanan_mobil.id LEFT JOIN mobil on mobil.id_mobil=pemesanan_mobil.id_mobil LEFT join departemen 
+            on orders.id_divisi = departemen.id_divisi WHERE orders.keterangan = 'approve' "
+        );
+        $rows = $query->getResultArray();
+        $data = [
+            'order' => $rows,
+            'data_divisi' => $list_approval
+        ];
+        return view('order', $data);
+    }
     public function order_departemen()
     {
         $order = new OrderModel();
@@ -115,7 +158,7 @@ class Home extends BaseController
             ,orders.keterangan,mobil.plat_nomor,departemen.divisi  FROM `orders` LEFT JOIN user_divisi on user_divisi.userid= orders.userid left JOIN pemesanan_mobil on 
             pemesanan_mobil.id_pemesanan = orders.id LEFT JOIN mobil on pemesanan_mobil.id_mobil = mobil.id_mobil LEFT join departemen 
             on user_divisi.id_divisi = departemen.id_divisi 
-            WHERE orders.keterangan = 'Pending' and orders.approval_userid = '$userid' "
+            WHERE orders.keterangan = 'approval_departemen' and orders.approval_userid = '$userid' "
         );
         $rows = $query->getResultArray();
         $data = [
@@ -182,6 +225,8 @@ class Home extends BaseController
         $car = new CarModel();
         $driver = new DriverModel();
         $userdiv = new UserDivisiModel();
+        $this->request = (\Config\Services::request());
+
         $userid = $this->request->getVar("userid");
         $data_driver = $driver->query("SELECT * FROM pengemudi where userid='$userid' ")->getResultArray();
         $data_user = $userdiv->query("SELECT * FROM user_divisi where userid='$userid' ")->getResultArray();
@@ -221,6 +266,8 @@ class Home extends BaseController
     }
     public function add_car()
     {
+        $this->request = (\Config\Services::request());
+
         $car = new CarModel();
         $driver = new DriverModel();
         $userdiv = new UserDivisiModel();
@@ -228,7 +275,7 @@ class Home extends BaseController
         $data_driver = $driver->query("SELECT * FROM pengemudi where userid='$userid' ")->getResultArray();
         $data_user = $userdiv->query("SELECT * FROM user_divisi where userid='$userid' ")->getResultArray();
         $data_car = [
-            "plat_nomor" => $this->request->getVar("plat_nomor"),
+            "plat_nomor" => $this->request->getPost("plat_nomor"),
             "keterangan_mobil" => $this->request->getVar("keterangan_mobil"),
             "status_mobil" => $this->request->getVar("status_mobil"),
             "userid" => $userid
@@ -363,7 +410,23 @@ class Home extends BaseController
         ];
         return view('history_approve', $data);
     }
-
+    public function change_mobil()
+    {
+        $userid = session("userid");
+        $order = new OrderModel();
+        $car = new CarModel();
+        $data = $car->query("SELECT * FROM PENGEMUDI")->getResultArray();
+        $id_divisi = session("id_divisi");
+        $query   = $order->query("SELECT departemen.divisi,orders.ID,orders.waktu_end ,mobil.plat_nomor,orders.nama,orders.id_divisi,orders.waktu,
+        orders.tujuan,orders.tujuan_pakai,orders.userid,orders.keterangan,orders.tanggal,pemesanan_mobil.id as id_pemesanan from orders LEFT JOIN pemesanan_mobil on orders.id =pemesanan_mobil.id_pemesanan 
+        left join departemen on departemen.id_divisi = orders.id_divisi left join mobil on pemesanan_mobil.id_mobil = mobil.id_mobil WHERE orders.keterangan like '%approve%'; ;");
+        $rows = $query->getResultArray();
+        $data = [
+            'order' => $rows,
+            'data' => $data
+        ];
+        return view('change_mobil', $data);
+    }
     public function reject()
     {
         $order = new OrderModel();

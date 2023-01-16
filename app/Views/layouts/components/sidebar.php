@@ -8,22 +8,15 @@
         ?>
         <div class="sidebar-brand-text mx-3">
             <?= adminLogin() ?>
+
         </div>
     </a>
-
     <li class="nav-item active">
         <a class="nav-link" href="<?= base_url("/dashboard") ?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
-
     <?php if (adminAtasan() !== "DEPARTEMEN LOGISTIK" and adminAtasan() !== "DRIVER" and adminAtasan() !== "SECURITY" and adminAtasan() !== "user") : ?>
-        <hr class="sidebar-divider">
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url("/request") ?>">
-                <i class="fas fa-history"></i>
-                <span>Pesan Kendaraan</span></a>
-        </li>
 
         <hr class="sidebar-divider">
         <li class="nav-item">
@@ -64,7 +57,6 @@
                 <span>Pesan Kendaraan</span></a>
         </li>
 
-
     <?php endif; ?>
 
     <!-- Supervisor logistik -->
@@ -78,12 +70,7 @@
                 <i class="fas fa-history"></i>
                 <span>Pesan Kendaraan</span></a>
         </li>
-        <hr class="sidebar-divider">
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url("/order_logistik") ?>">
-                <i class="fas fa-user-friends"></i>
-                <span>Order Logistik</span></a>
-        </li>
+
         <hr class="sidebar-divider">
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url("/order") ?>">
@@ -109,7 +96,18 @@
                 <i class="fas fa-history"></i>
                 <span>Activity Log</span></a>
         </li>
-
+        <hr class="sidebar-divider">
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url("/order_departemen") ?>">
+                <i class="fas fa-user-friends"></i>
+                <span>Approval Pesanan</span></a>
+        </li>
+        <hr class="sidebar-divider">
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url("/order_logistik") ?>">
+                <i class="fas fa-user-friends"></i>
+                <span>Order Logistik</span></a>
+        </li>
         <!-- Divider -->
     <?php endif; ?>
     <!-- Supervisor -->
@@ -142,20 +140,11 @@
                 <span>List Satuan Kerja</span></a>
         </li>
 
-
-
         <hr class="sidebar-divider d-none d-md-block">
         <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
     <?php endif; ?>
-
-
-
-
-
-
-
 
     <?php if (adminAtasan() === "SECURITY") : ?>
         <!-- Security -->

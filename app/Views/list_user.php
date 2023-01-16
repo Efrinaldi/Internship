@@ -20,23 +20,20 @@
                             <th>DIVISI</th>
                             <th>ACTION</th>
                             <th>Atasan</th>
-
                         </tr>
                     </thead>
                     <tbody class="text-center">
                         <?php
-
                         use App\Models\AtasanModel;
                         use App\Models\DivisiModel;
                         use App\Models\UserDivisiModel;
-
                         $no = 1;
                         foreach ($data_user as $o) :
                             $id = $o["userid"];
                             $divisi = new DivisiModel();
-                            $div = $divisi->query("SELECT * FROM user_divisi inner join departemen where user_divisi.id_divisi = departemen.id_divisi where user_divisi.userid = $id ")->getResultArray();
                             $divisi = new UserDivisiModel();
                             $departemen = new DivisiModel();
+                            $div = $departemen->query("SELECT * FROM departemen inner join user_divisi on user_divisi.id_divisi=departemen.id_divisi where userid = '$id'  ")->getResultArray();
                             $data_atasan = $atasan->query("SELECT * FROM atasan where userid = '$id' ")->getResultArray();
                             $data = $divisi->select('*')->where('userid', $o["userid"])->get()->getResultArray(); ?>
                             <td><?= $no++; ?></td>
@@ -45,15 +42,16 @@
                             <?php if (count($data) > 0) : ?>
                                 <td><?= $o['userdomain'] ?></td>
                             <?php endif ?>
-                            <?php if (count($data) == 0) : ?>
-                                <td><?= $d['divisi'] ?></td>
-
+                            <?php if (count($div) > 0) : ?>
+                                <td><?= $div[0]['divisi'] ?></td>
+                            <?php endif ?>
+                            <?php if (count($div) == 0) : ?>
+                                <td><?= "" ?></td>
                             <?php endif ?>
                             <?php if (count($data) > 0) : ?>
                             <?php endif ?>
                             <?php if (count($data) == 0) : ?>
-                                <td>
-                                </td>
+                            <td></td>
                             <?php endif ?>
                             <td> <button type="submit" class="btn btn-primary mt-1 mr-2" data-toggle="modal" data-target="#userModal<?php echo $o["userid"] ?>"><i class="fa fa-solid fa-pen"></i></button></td>
                             <?php if (count($data_atasan) == 0) : ?>
@@ -86,7 +84,7 @@
                             </a>
 
                             <form class="forms-sample" action="<?= base_url("/change_user/" . $o["userid"]) ?>" method="POST">
-                                <div class="modal mx-auto" tabindex="-1" role="dialog" id="userModal<?php echo $o["userid"] ?>">
+                                <div class="modal fade in mx-auto" tabindex="-1" role="dialog" id="userModal<?php echo $o["userid"] ?>">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">

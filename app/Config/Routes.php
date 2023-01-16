@@ -2,13 +2,11 @@
 
 namespace Config;
 
-// Create a new instance of our RouteCollection class.
 $routes = Services::routes();
-// Load the system's routing file first, so that the app and ENVIRONMENT
-// can override as needed.
 if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
     require SYSTEMPATH . 'Config/Routes.php';
 }
+
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
@@ -66,6 +64,7 @@ $routes->group('api', function ($routes) {
 $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('hapus_atasan/(:segment)', 'UserController::hapus_atasan/$1');
     $routes->get('hapus_driver/(:segment)', 'Home::hapus_driver/$1');
+    $routes->post('edit_user/(:segment)', 'Home::edit_user/$1');
     $routes->get('/register', 'RegisterController::index');
     $routes->get('/register_driver', 'RegisterController::register_driver');
     $routes->get('/homes', 'Home::homes');
@@ -73,6 +72,7 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('/list_user', 'UserController::list_user');
     $routes->get('/list_atasan', 'UserController::list_atasan');
     $routes->get('/list_satker', 'UserController::list_satker');
+    $routes->post('/change_order/(:segment)', 'OrderController::change_order/$1');
     $routes->get('/otorisator', 'Home::otorisator');
     $routes->get('/dashboard', 'Home::dashboard');
     $routes->get('/request', 'Home::request');
@@ -80,12 +80,14 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('/list_car', 'Home::list_car');
     $routes->get('/order', 'Home::order');
     $routes->get('/approve_order/(:segment)', 'OrderController::approve_order/$1');
+    $routes->get('/change_mobil', 'Home::change_mobil');
     $routes->get('/reject_order/(:segment)', 'OrderController::reject_order/$1');
     $routes->get('/reject_logistik/(:segment)', 'OrderController::reject_logistik/$1');
     $routes->get('/order_departemen', 'Home::order_departemen');
     $routes->post('/approval_spv', 'OrderController::approval_spv');
-    $routes->post('/order_logistik', 'Home::order_logistik');
+    $routes->get('/order_logistik', 'Home::order_logistik');
     $routes->get('/activity_log', 'Home::activity_log');
+    $routes->post('/show_activity', 'OrderController::show_activity');
     $routes->get('/history', 'Home::history_supervisor');
     $routes->get('/riwayat', 'Home::riwayat');
     $routes->get('/approve', 'Home::approve');
@@ -121,6 +123,7 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('reject/(:num)', 'OrderController::reject_order/$1');
     $routes->get('/status_unavailable/(:segment)', 'OrderController::status_unavailable/$1');
     $routes->get('/status_available/(:segment)', 'OrderController::status_available/$1');
+    $routes->get('/perjalanan', 'Home::perjalanan');
     $routes->post('/addReimburse/(:segment)/(:segment)', 'ReimburseController::insert_image_reimburse/$1/$2');
     $routes->group('reimburse', function ($routes) {
         $routes->get('/', 'ReimburseController::index', ['filter' => 'isAdmin']);

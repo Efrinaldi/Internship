@@ -176,6 +176,7 @@ class UserController extends ResourceController
                     "username" => $username
                 ]);
             }
+
             $data_user    = $userdiv->query("SELECT * FROM USER_DIVISI  where user_domain = '$username' ")->getResultArray();
             $pekerja      = str_replace("_", " ", $username);
             $data_userid = $user->query("SELECT * FROM t_users where userid = '$username' ")->getResultArray();
@@ -202,8 +203,6 @@ class UserController extends ResourceController
         $order->delete($id_order);
         return redirect()->to("dashboard")->with("success", "data berhasil dihapus");
     }
-
-
     public function auth_sa()
     {
         $session = session();
@@ -211,7 +210,14 @@ class UserController extends ResourceController
         $userdiv = new UserDivisiModel();
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
-        $data_coba = $user->query("exec uspLogonPHP @userid = '" . $username . "',@kode_aplikasi = '00001', @pass = '" . $password .  "', @result='' ")->getResultArray();
+        $data_coba = $user->query(
+            "exec uspLogonPHP
+        @userid = '" . $username . "',
+        @kode_aplikasi = '00001', @pass = '" .
+                $password .  "',
+         @result='' "
+        )->getResultArray();
+
         $user_coba = current($data_coba[0]);
         $coba = current($data_coba[0]);
         if ($coba === "20UidApplNotListed" or $user_coba === "20UidApplNotListed") {
@@ -298,9 +304,11 @@ class UserController extends ResourceController
         $user = new SecureModel();
         $divisi = new DivisiModel();
         $atasan = new AtasanModel();
-        $data_user = $user->query("SELECT t_users.userdomain, t_usraplikasi.userid,t_users.username ,t_usraplikasi.kodeaplikasi  FROM t_users right join t_usraplikasi  on t_usraplikasi.userid = t_users.userid where t_usraplikasi.kodeaplikasi= '00033' ")->getResultArray();
+        $data_user = $user->query("SELECT t_users.userdomain, t_usraplikasi.userid,t_users.username ,t_usraplikasi.kodeaplikasi  FROM t_users right join t_usraplikasi 
+        on t_usraplikasi.userid = t_users.userid where t_usraplikasi.kodeaplikasi= '00033' ")->getResultArray();
         $data_divisi = $divisi->query("SELECT * FROM departemen")->getResultArray();
         $divisi_user = $divisi->query("SELECT * FROM user_divisi inner join departemen where user_divisi.id_divisi = departemen.id_divisi")->getResultArray();
+
         $data = [
             "data_user"   => $data_user,
             "data_divisi" => $data_divisi,
@@ -529,9 +537,6 @@ class UserController extends ResourceController
     }
 
 
-    public function getToken()
-    {
-    }
     public function changePassword($id_user)
     {
         $user = new UserModel();

@@ -1,50 +1,54 @@
-<?= $this->extend('layouts/admin') ?>
+<?= $this->extend('layouts/general') ?>
 <?= $this->section('content') ?>
-<div class="container-fluid">
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Operational Vehicle Management System - BCA Syariah</h1>
-    </div>
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Daftar Pesanan</h4>
+                        <p class="card-description">
+                            Add class <code>.table-striped</code> </p>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nomor</th>
+                                        <th>Nama</th>
+                                        <th>Unit Kerja</th>
+                                        <th>Waktu</th>
+                                        <th>Waktu Berakhir</th>
+                                        <th>Tujuan Pakai</th>
+                                        <th>Plat Nomor</th>
+                                        <th>Lokasi Tujuan</th>
+                                        <th>Keterangan</th>
+                                    </tr>
+                                </thead>
 
-    <body>
-        <div class="container">
-            <div class="table-responsive">
-                <table class="table table-dark">
-                    <thead class="text-center">
-                        <tr>
-                            <th>Nomor</th>
-                            <th>Nama</th>
-                            <th>Unit Kerja</th>
-                            <th>Waktu</th>
-                            <th>Waktu Berakhir</th>
-                            <th>Tujuan Pakai</th>
-                            <th>Plat Nomor</th>
-                            <th>Lokasi Tujuan</th>
-                            <th>Keterangan</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-center">
-                        <?php
-                        $no = 1;
-                        foreach ($order as $o) : ?>
-                            <tr>
-                                <td><?= $no++; ?></td>
-                                <td><?= $o['nama'] ?></td>
-                                <td><?= $o['divisi'] ?></td>
-                                <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
-                                <td><?= $o['waktu_end'] ?></td>
-                                <td><?= $o['tujuan_pakai'] ?></td>
-                                <td><?= $o['plat_nomor'] ?></td>
-                                <td><?= $o['tujuan'] ?></td>
-                                <td><?= $o['keterangan'] ?></td>
-                            </tr>
-                        <?php
-                        endforeach;
-                        ?>
-                    </tbody>
-                </table>
+                                <tbody>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($order as $o) : ?>
+                                        <tr>
+                                            <td class="py-1"><?= $no++; ?></td>
+                                            <td><?= $o['nama'] ?></td>
+                                            <td><?= $o['divisi'] ?></td>
+                                            <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
+                                            <td><?= $o['waktu_end'] ?></td>
+                                            <td><?= $o['tujuan_pakai'] ?></td>
+                                            <td><?= $o['plat_nomor'] ?></td>
+                                            <td><?= $o['tujuan'] ?></td>
+                                            <td><?= $o['keterangan'] ?></td>
+                                        </tr>
+
+
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </body>
-</div>
-<?= $this->endSection() ?>
+            <!-- Page Heading -->
+
+            <?= $this->endSection() ?>
