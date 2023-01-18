@@ -136,7 +136,7 @@ class Home extends BaseController
         $id_satker = $sat_ker[0]["id_satker"];
         $list_approval = $divisi->query("SELECT * FROM `departemen` where id_satker =$id_satker;")->getResultArray();
         $query = $order->query(
-            "SELECT orders.nama,orders.tujuan,orders.asal,orders.tujuan_pakai,orders.tanggal, orders.waktu,orders.id as id_order,orders.keterangan,mobil.plat_nomor,departemen.divisi FROM pemesanan_mobil
+            "SELECT orders.nama,orders.tujuan,orders.asal,orders.tujuan_pakai,orders.tanggal, orders.waktu,orders.id,pemesanan_mobil.id_pengemudi as id_pengemudi,orders.id as id_order,orders.keterangan,mobil.plat_nomor,departemen.divisi FROM pemesanan_mobil
              RIGHT JOIN orders ON orders.id = pemesanan_mobil.id LEFT JOIN mobil on mobil.id_mobil=pemesanan_mobil.id_mobil LEFT join departemen 
             on orders.id_divisi = departemen.id_divisi WHERE orders.keterangan = 'approve' "
         );
@@ -145,7 +145,7 @@ class Home extends BaseController
             'order' => $rows,
             'data_divisi' => $list_approval
         ];
-        return view('order', $data);
+        return view('perjalanan', $data);
     }
     public function order_departemen()
     {

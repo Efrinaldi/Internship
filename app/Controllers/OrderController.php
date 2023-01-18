@@ -63,7 +63,6 @@ class OrderController extends BaseController
             "id_pemesanan" => $id_pemesanan
         ];
         $data = $orders->query("SELECT id FROM pemesanan_mobil where id_pemesanan = $id_pemesanan")->getResultArray();
-        dd($data_div[0]["id"]);
         //$orders->update($id, $data);
         return \redirect()->to("dashboard")->with("success", "Order mobil berhasil terupdate");
     }

@@ -9,43 +9,25 @@
                         <h4 class="card-title">Daftar Pesanan</h4>
                         <p class="card-description">
                             Add class <code>.table-striped</code> </p>
-                        <div class="table-responsive">
-                            <table style="width:100%" class="table table-striped">
+                        <div class="table-responsive " style="word-wrap: break-word;">
+                            <table class="table table-striped ">
                                 <thead>
                                     <tr>
-                                        <th>
-                                            Nomor
-                                        </th>
-                                        <th>
-                                            Nama
-                                        </th>
-                                        <th>
-                                            Unit Kerja
-                                        </th>
-                                        <th>
-                                            Waktu
-                                        </th>
-                                        <th>
-                                            Tujuan Pakai
-                                        </th>
-                                        <th>
-                                            Keterangan
-                                        </th>
-                                        <th>
-                                            Plat Nomor
-                                        </th>
-                                        <th style="width: 10%;">
-                                            Lokasi Tujuan
-                                        </th>
-
-                                        <th>
-                                            Perjalanan
-                                        </th>
+                                        <th>Nomor</th>
+                                        <th>Nama</th>
+                                        <th>Unit Kerja</th>
+                                        <th>Waktu </th>
+                                        <th>Tujuan Pakai</th>
+                                        <th>Keterangan</th>
+                                        <th>Plat Nomor</th>
+                                        <th style="max-width:200px;  inline-size: 150px; overflow: hidden;">Lokasi Tujuan</th>
+                                        <th>Perjalanan</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
                                     <?php
+
                                     $no = 1;
                                     foreach ($order as $o) : ?>
                                         <tr>
@@ -56,7 +38,7 @@
                                             <td class="py-1"><?= $o['tujuan_pakai'] ?></td>
                                             <td class="py-1"><?= $o['keterangan'] ?></td>
                                             <td class="py-1"><?= $o['plat_nomor'] ?></td>
-                                            <td style="width: 10%;" class=" py-1 "><?= $o['tujuan'] ?></td>
+                                            <td style="max-width:200px;  inline-size: 150px; overflow: hidden;" class=" py-1 "><?= $o['tujuan'] ?></td>
                                             <td class=" py-1"><button id="range-submit" type="submit" value="Submit" class="btn btn-primary col-lg-12" data-toggle="modal" data-target="#endSession<?php echo $o["id_order"] ?>" type="button" class="btn btn-primary">Perjalanan Selesai</button></td>
                                         </tr>
                                         <div class="modal fade in" tabindex="-1" role="dialog" id="sendApproval<?php echo $o["id_order"] ?>">
@@ -105,8 +87,7 @@
                                                     </div>
 
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
-                                                        <a class="btn btn-primary" type="submit" name="submit" href="<?= base_url("end_session" . $o['id_pengemudi']) ?>" onclick="<?php echo "approvalSpv(" . $o["id_order"] . ")" ?>" class="btn btn-info mb-3">Submit SPV</a>
+                                                        <a class="btn btn-primary" type="submit" name="submit" href="<?= base_url("end_session" . $o['id_pengemudi']) ?>" onclick="<?php echo "approvalSpv(" . $o["id_order"] . ")" ?>" class="btn btn-info mb-3">Ya</a>
                                                         </form>
                                                     </div>
 
