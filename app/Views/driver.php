@@ -79,7 +79,7 @@
                                                                     <span aria-hidden="true">&times;</span>
                                                                 </button>
                                                             </div>
-                                                            <div class="form-group">
+                                                            <div class="form-group" style="margin: 10px 50px 20px 0;">
                                                                 <label for="exampleSelectGender">User</label>
                                                                 <select class="form-control" style="height:50px !important;" name="userid">
                                                                     <?php foreach ($driver as $d) : ?>

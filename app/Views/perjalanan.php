@@ -72,28 +72,30 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="modal fade in" tabindex="-1" role="dialog" id="endSession<?php echo $o["id_order"] ?>">
-                                            <div class="modal-dialog" role="document">
+
+                                        <div class="modal" tabindex="-1" role="dialog" id="endSession<?php echo $o["id_order"] ?>">
+                                            <div class=" modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 id="b" class="modal-title">Selesaikan Perjalanan</h5>
+                                                        <h5 class="modal-title">Selesaikan Perjalanan</h5>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
-
-                                                    <div class="modal-body">
+                                                    <div class="modal-body" style="padding: 25px 50px 75px 100px;">
                                                         <label for="exampleSelectGender">Apakah anda yakin menyelesaikan perjalanan?</label>
                                                     </div>
-
-                                                    <div class="modal-footer">
-                                                        <a class="btn btn-primary" type="submit" name="submit" href="<?= base_url("end_session" . $o['id_pengemudi']) ?>" class="btn btn-info mb-3">Ya</a>
-                                                        </form>
+                                                    <div class="modal-footer" style="padding: 25px 50px 75px 100px;">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
+                                                        <a href="<?= base_url("/hapus_atasan/" . $o["userid"]) ?>" class="btn btn-primary" type="submit" name="submit">Hapus</a>
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>
+                                        </form>
+
+
+
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
