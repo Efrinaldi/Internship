@@ -18,8 +18,8 @@
                                     <thead>
                                         <tr>
                                             <th>Nomor</th>
-                                            <th>Nama</th>
                                             <th>Plat Mobil</th>
+                                            <th>Nama</th>
                                             <th>Status</th>
                                             <th>Proses</th>
                                             <th>Action</th>
@@ -30,8 +30,9 @@
                                         foreach ($mobil as $c) : ?>
                                             <tr>
                                                 <td><?= $c['id_mobil'] ?></td>
-                                                <td><?= $c['nama_pengemudi'] ?></td>
                                                 <td><?= $c['plat_nomor'] ?></td>
+
+                                                <td><?= $c['nama_pengemudi'] ?></td>
                                                 <td><?= $c['status_pengemudi'] ?></td>
                                                 <td>
                                                     <a href="status_unavailable/<?= $c['userid'] ?>" class="btn btn-warning">Tidak Tersedia</a>
@@ -39,7 +40,7 @@
                                                 </td>
                                                 <td>
                                                     <button type="submit" class="btn btn-primary mt-1" data-toggle="modal" data-target="#hapus_driver<?php echo $c["id_mobil"] ?>"><i class="fa fa-solid fa-trash"></i></button>
-                                                    <button type="submit" class="btn btn-primary mt-1" data-toggle="modal" data-target="#edit_user<?php echo $c["id_mobil"] ?>"><i class="fa fa-solid fa-pen"></i></button>
+                                                    <button type="submit" class="btn btn-primary mt-1" data-toggle="modal" data-target="#edit_user<?php echo $c["id_mobil"] ?>"><i class="fa fa-solid fa-pencil"></i></button>
                                                 </td>
                                             </tr>
                                             <form class="forms-sample" action="<?= base_url("/edit_user/" . $c["id_mobil"])  ?>" method="POST">
@@ -101,7 +102,7 @@
 
 
 
-                                            
+
 
                                             <div class="modal fade in mx-auto" tabindex="-1" role="dialog" id="hapus_driver<?php echo $c["id_mobil"] ?>">
                                                 <div class=" modal-dialog" role="document">

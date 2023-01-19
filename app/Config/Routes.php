@@ -17,7 +17,7 @@ $routes->get('/login', 'UserController::index');
 $routes->get('/login_sa', 'UserController::login_sa');
 $routes->get('/', 'UserController::index');
 $routes->post('/login_api', 'UserController::login');
-$routes->add('/logout', 'UserController::logout');
+$routes->get('/logout', 'UserController::logout');
 $routes->post('/auth', 'UserController::auth');
 $routes->post('/auth_sa', 'UserController::auth');
 $routes->post('/reg', 'UserController::authregister');

@@ -7,7 +7,7 @@ use App\Models\DivisiModel;
 
 $data_div = new DivisiModel();
 $userid = session("userid");
-$divisi = $data_div->query("SELECT * FROM user_divisi where userid= '$userid'")->getResultArray();
+$divisi = $data_div->query("SELECT * FROM user_divisi where userid= '$userid' or user_domain='$userid'")->getResultArray();
 $id_divisi = $divisi[0]["id_divisi"];
 $div  = $data_div->query("SELECT    *    FROM departemen where id_divisi= '$id_divisi'")->getResultArray();
 $d_div = $div[0]["divisi"];
@@ -118,7 +118,7 @@ $d_div = $div[0]["divisi"];
                                                 </div>
 
                                             </div>
-                                            <button onclick="myFunction()" class="col-md-12 btn btn-primary me-md-2 mb-3" type="submit">Submit</button>
+                                            <button onclick="myFunction()" data-toggle="modal" data-target="#myModal" class="col-md-12 btn btn-primary me-md-2 mb-3" type="submit">Submit</button>
 
                                         </div>
                                     </div>
@@ -127,36 +127,29 @@ $d_div = $div[0]["divisi"];
 
                             </div>
                     </div>
+                    
+                    <div id="myModal" class="modal fade">
+                        <div class="modal-dialog modal-confirm">
+                            <div class="modal-content">
+                                <div class="modal-header justify-content-center">
+                                    <div class="icon-box">
+                                        <i class="material-icons">&#xE876;</i>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <h2>Berhasil</h2>
+                                    <h2>Pesanan Berhasil Dibuat</h2>
+                                    <button class="btn btn-success" data-dismiss="modal"><span>Start Exploring</span> <i class="material-icons">&#xE5C8;</i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </form>
 
                 </div>
             </div>
-            <div id="success_tic" class="modal fade" role="dialog">
-                <div class="modal-dialog">
 
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <a class="close" href="#" data-dismiss="modal">&times;</a>
-                        <div class="page-body">
-                            <div class="head">
-                                <h3 style="margin-top:5px;">Lorem ipsum dolor sit amet</h3>
-                                <h4>Lorem ipsum dolor sit amet</h4>
-                            </div>
-
-                            <h1 style="text-align:center;">
-                                <div class="checkmark-circle">
-                                    <div class="background"></div>
-                                    <div class="checkmark draw"></div>
-                                </div>
-                                <h1>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-            </div>
         </div>
         <script type="text/javascript">
             function myFunction() {

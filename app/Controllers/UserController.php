@@ -139,6 +139,9 @@ class UserController extends ResourceController
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
         $data_coba = $user->query("exec uspLogonPHP @userid = '" . $username . "',@kode_aplikasi = '00033',@pass = '" . $password .  "', @result='' ")->getResultArray();
+        $session->set([
+            'logout'  => $username
+        ]);
         $divisi = $userdiv->query("SELECT * FROM departemen RIGHT join user_divisi on user_divisi.id_divisi= departemen.id_divisi where user_divisi.userid= '$username'")->getResultArray();
         $user_coba = current($data_coba[0]);
         $coba = current($data_coba[0]);
@@ -150,6 +153,9 @@ class UserController extends ResourceController
             return redirect()->to('/login');
         } else if ($coba === "50UidExpired" or $user_coba === "50UidExpired") {
             $session->setFlashdata('msg', 'User tidak aktif');
+            return redirect()->to('/login');
+        } else if ($coba === "40UidAlreadyInUse" or $user_coba === "40UidAlreadyInUse") {
+            $session->setFlashdata('msg', 'User ID sudah terpakai, logout terlebih dahulu');
             return redirect()->to('/login');
         } else if ($coba === "60UidPassNotMatched" or $user_coba === "60UidPassNotMatched") {
             $session->setFlashdata('msg', 'Password salah');
@@ -561,12 +567,10 @@ class UserController extends ResourceController
 
     public function logout()
     {
-        $session = session();
-        $session->set([
-
-            'token_id'      => null,
-            'logged_in'     => false
-        ]);
-        return redirect()->to('/login');
+        $user = new SecureModel();
+        $userid = session("logout");
+        $user->query("exec uspLogoffPHP @userid = '" . $userid . "',@result='' ")->getResultArray();
+        session_destroy();
+        return \redirect()->to("/login");
     }
 }

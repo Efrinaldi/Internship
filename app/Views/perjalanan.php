@@ -87,7 +87,7 @@
                                                     </div>
 
                                                     <div class="modal-footer">
-                                                        <a class="btn btn-primary" type="submit" name="submit" href="<?= base_url("end_session" . $o['id_pengemudi']) ?>" onclick="<?php echo "approvalSpv(" . $o["id_order"] . ")" ?>" class="btn btn-info mb-3">Ya</a>
+                                                        <a class="btn btn-primary" type="submit" name="submit" href="<?= base_url("end_session" . $o['id_pengemudi']) ?>" class="btn btn-info mb-3">Ya</a>
                                                         </form>
                                                     </div>
 

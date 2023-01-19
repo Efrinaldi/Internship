@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?= base_url('/public/assets_p/css/vertical-layout-light/style.css') ?>">
     <link rel="stylesheet" href="<?= base_url('/public/assets_p/images/favicon.png') ?>">
 </head>
+
 <body>
     <div class="container-scroller">
         <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -23,8 +24,12 @@
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-center py-5 px-4 px-sm-5">
                             <?= csrf_field(); ?>
-                            <?php if (session()->getFlashdata('msg')) : ?>
-                                <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
+                            <?php if (session()->getFlashdata('msg') === "User ID sudah terpakai, logout terlebih dahulu") : ?>
+                                <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?> <a href="<?= base_url("logout") ?>">Logout</a></div>
+
+                            <?php endif ?>
+                            <?php if (session()->getFlashdata('msg') !== "User ID sudah terpakai, logout terlebih dahulu") : ?>
+                                <div class=" alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
                             <?php endif; ?>
                             <div class="brand-logo justify-content-between align-items-center">
 

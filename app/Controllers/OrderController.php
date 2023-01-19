@@ -207,10 +207,6 @@ class OrderController extends BaseController
             'id_pemesanan' => $id_order,
             'id_user' => $id_user
         ];
-        $data_order = [
-            "keterangan" => "approve"
-        ];
-        $order->update($id_order, $data_order);
         session()->set('id_order', $id_order);
         return view('pick_driver', $data);
     }
@@ -564,6 +560,13 @@ class OrderController extends BaseController
         $pengemudi = [
             "status_pengemudi" => "Tidak Tersedia"
         ];
+        $data_order = [
+            "keterangan" => "approve"
+        ];
+        $id= $pemesanan->query("SELECT * FROM orders where id = $id_order  ")->getResultArray();
+
+
+        $pemesanan->update($id_order, $data_order);
         $mobil->update($id_mobil, $car);
         $driver->update($id_pengemudi, $pengemudi);
         $acitivity->insert($data_activity);
