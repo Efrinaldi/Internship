@@ -42,6 +42,25 @@ class OrderController extends BaseController
         ];
         return $this->respondCreated($data, 201);
     }
+    public function add_driver()
+    {
+        $driver = new DriverModel;
+        $user = new UserDivisiModel();
+        $data_user = [
+            "userid" => $this->request->getPost("userid"),
+            "username" => $this->request->getPost("username"),
+            "id_divisi" => 50,
+            "divisi"    => "driver"
+        ];
+        $data_driver = [
+            "userid" => $this->request->getPost("userid"),
+            "nama_pengemudi" => $this->request->getPost("username"),
+            "status_pengemudi"   => "Tersedia",
+        ];
+        $driver->insert($data_user);
+        $user->insert($data_driver);
+        return \redirect()->to("/dashboard");
+    }
     function get_sub_spv()
     {
         $id = $this->request->getVar('id');
@@ -73,10 +92,9 @@ class OrderController extends BaseController
     {
         $userid      = $this->request->getVar('id_spv');
         $id_order    = $this->request->getVar('id_order');
-
         $order = new OrderModel();
         $data = [
-            "approval_userid" => $userid,
+            "approval_userid"      => $userid,
             "keterangan"          => "approval_departemen"
         ];
         $order->update($id_order, $data);
@@ -297,6 +315,8 @@ class OrderController extends BaseController
                 ]
             ]
         ]) and (int)($data_hours_akhir - $data_hours_awal) + ($data_minutes_akhir - $data_minutes_awal) > 180)) {
+
+
             if (!empty($s[0]["userdomain"])) {
                 $nama = $s[0]["userdomain"];
             } else {
@@ -305,7 +325,7 @@ class OrderController extends BaseController
             if (($data_hours_akhir - $data_hours_awal) + ($data_minutes_akhir - $data_minutes_awal) > 180) {
                 $waktuErr = "memesan harus melebihi dari 3 Jam";
             }
-            $data_div = $div->query("SELECT id_divisi FROM user_divisi where userid = '$userid'")->getResultArray();
+            $data_div = $div->query("SELECT id_divisi FROM user_divisi where userid = '$userid' or user_domain= '$userid'")->getResultArray();
             $data = [
                 'nama' => $nama,
                 'asal' => $this->request->getVar('asal'),
@@ -320,10 +340,9 @@ class OrderController extends BaseController
                 'userid' => session("userid"),
                 'jumlah_orang' => $this->request->getVar("jumlah_orang")
             ];
-
             $order->insert($data);
             $id = $order->getInsertID();
-            return redirect()->to('dashboard')->with('success', 'Pesanan masuk. Segera proses pesanan!');
+            return redirect()->to('order')->with('success', 'Pesanan masuk. Segera proses pesanan!');
         } else {
             if (((int)($data_hours_akhir - $data_hours_awal) + ($data_minutes_akhir - $data_minutes_awal) < 180)) {
                 $waktuErr = "memesan harus melebihi dari 3 Jam";
@@ -338,8 +357,6 @@ class OrderController extends BaseController
             return view('request', $data);
         }
     }
-
-
 
     public function insert_reimburse($id)
     {
@@ -547,6 +564,7 @@ class OrderController extends BaseController
             "id_mobil"    => $id_mobil
         ];
 
+
         $user = $pemesanan->query("SELECT * FROM orders where id = $id_order  ")->getResultArray();
         $id = $user[0]["userid"];
         $pemesanan->insert($order);
@@ -561,12 +579,12 @@ class OrderController extends BaseController
             "status_pengemudi" => "Tidak Tersedia"
         ];
         $data_order = [
-            "keterangan" => "approve"
+            "id_mobil" => $id_mobil,
+            "id_pengemudi" => $id_pengemudi,
+            "id_order"   => $id_order
         ];
-        $id= $pemesanan->query("SELECT * FROM orders where id = $id_order  ")->getResultArray();
-
-
-        $pemesanan->update($id_order, $data_order);
+        $data_id = $pemesanan->query("SELECT id FROM pemesanan_mobil where id_pemesanan = $id_order  ")->getResultArray();
+        $pemesanan->update($data_id[0]["id"], $data_order);
         $mobil->update($id_mobil, $car);
         $driver->update($id_pengemudi, $pengemudi);
         $acitivity->insert($data_activity);
@@ -608,18 +626,18 @@ class OrderController extends BaseController
         $order->delete($id);
         return redirect()->back()->with('success', 'Data Ditolak');
     }
-    public function end_session($id_pengemudi)
+    public function end_session($id_order, $id_pengemudi)
     {
         $builder = new DriverModel();
         $builder->where('userid', $id_pengemudi);
-        if ($id_pengemudi === \null) {
-            return redirect()->back()->with('success', 'Tambah Pengemudi ');
-        } else {
-            $builder->set('status_pengemudi', 'Tidak Tersedia');
-
-            $builder->update();
-            return redirect()->back()->with('success', 'Pengemudi Tidak Tersedia');
-        }
+        $builder->set('status_pengemudi', 'Tidak Tersedia');
+        $builder->update();
+        $pemesanan = new OrderModel();
+        $data_order = [
+            "keterangan" => "end"
+        ];
+        $pemesanan->update($id_order, $data_order);
+        return redirect()->back()->with('success', 'Pengemudi Tidak Tersedia');
     }
     public function status_available($id_pengemudi)
     {

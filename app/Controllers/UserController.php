@@ -14,6 +14,7 @@ use App\Models\ActivityLogModel;
 use App\Models\AtasanModel;
 use App\Models\DepartmentWorkerModel;
 use App\Models\DivisiModel;
+use App\Models\DriverModel;
 use App\Models\InformasiUserModel;
 use App\Models\OrderModel;
 use App\Models\SecureModel;
@@ -302,6 +303,15 @@ class UserController extends ResourceController
         $atasan->delete($id);
         return redirect()->to("list_user");
     }
+    public function hapus_driver($userid)
+    {
+        $Driver = new DriverModel();
+        $User = new UserDivisiModel();
+
+        $Driver->delete($userid);
+        $User->delete($userid);
+        return redirect()->to("list_driver");
+    }
 
     public function list_user()
     {
@@ -323,6 +333,24 @@ class UserController extends ResourceController
         ];
         return view('list_user', $data);
     }
+    public function list_driver()
+    {
+
+        $divisiuser = new UserDivisiModel();
+        $Driver = new DriverModel();
+        $divisi = new DivisiModel();
+        $atasan = new AtasanModel();
+        $data_user = $Driver->query("SELECT * from pengemudi")->getResultArray();
+        $data_divisi = $divisi->query("SELECT * FROM departemen")->getResultArray();
+        $divisi_user = $divisi->query("SELECT * FROM user_divisi inner join departemen where user_divisi.id_divisi = departemen.id_divisi")->getResultArray();
+        $data = [
+            "data_user"   => $data_user,
+            "data_divisi" => $data_divisi,
+            "divisiuser"  => $divisi_user,
+            "atasan"      => $atasan
+        ];
+        return view('list_driver', $data);
+    }
 
 
 
@@ -332,12 +360,12 @@ class UserController extends ResourceController
         $user = new SecureModel();
         $divisi = new DivisiModel();
         $atasan = new AtasanModel();
-        $data_user = $user->query("SELECT t_users.userdomain, t_usraplikasi.userid,[username] ,t_usraplikasi.kodeaplikasi  FROM t_users right join t_usraplikasi  on t_usraplikasi.userid = t_users.userid where t_usraplikasi.kodeaplikasi= '00033' ")->getResultArray();
+        $data_user = $atasan->query("SELECT * FROM atasan ")->getResultArray();
         $data_divisi = $divisi->query("SELECT * FROM departemen")->getResultArray();
         $divisi_user = $divisi->query("SELECT * FROM user_divisi")->getResultArray();
 
         $data = [
-            "data_user" => $data_user,
+            "data_atasan" => $data_user,
             "data_divisi" => $data_divisi,
             "divisiuser"      => $divisi_user,
             "atasan"     => $atasan
@@ -361,6 +389,79 @@ class UserController extends ResourceController
             "atasan"  => $atasan
         ];
         return view('list_atasan', $data);
+    }
+    public function add_driver()
+    {
+        $validate = \Config\Services::validation();
+        $driver = new DriverModel;
+        $user = new UserDivisiModel();
+        if ($validate->setRules([
+            'unit' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'inputWaktuStart' => [
+                'rules' => 'required|valid_email',
+                'errors' => [
+                    'required' => '{field} Harus diisi',
+                    'valid_email' => 'Format Email Harus Valid'
+                ]
+            ],
+            'inputWaktuEnd' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'tanggal_memakai' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'purpose' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'asal' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'destination' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'jumlah_orang' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ]
+        ])) {
+        }
+
+        $data_user = [
+            "userid" => $this->request->getPost("userid"),
+            "username" => $this->request->getPost("username"),
+            "id_divisi" => 50,
+            "divisi"    => "driver"
+        ];
+        $data_driver = [
+            "userid" => $this->request->getPost("userid"),
+            "nama_pengemudi" => $this->request->getPost("username"),
+            "status_pengemudi"   => "Tersedia",
+        ];
+        $user->insert($data_user);
+        $driver->insert($data_driver);
+        return \redirect()->to("/dashboard");
     }
     public function update_token($id = null)
     {

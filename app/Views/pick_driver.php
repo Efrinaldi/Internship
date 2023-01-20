@@ -32,9 +32,10 @@
                                                 <td><?= $c['plat_nomor'] ?></td>
                                                 <td><?= $c['status_pengemudi'] ?></td>
                                                 <td>
-                                                    <a href="<?= base_url("insert_order/" . $id_pemesanan . "/" . $c['id_mobil']  . "/" . $c["userid"]) ?>" class="btn btn-primary" type="hidden">Pilih Driver</a>
+                                                <a href="<?= base_url("insert_order/" . $id_pemesanan . "/" . $c['id_mobil']  . "/" . $c["userid"]) ?>" class="btn btn-primary" type="hidden">Pilih Driver</a>
                                                 </td>
                                             </tr>
+                                            
                                             <div class="modal" tabindex="-1" role="dialog" id="hapus_driver<?php echo $c["userid"] ?>">
                                                 <div class=" modal-dialog" role="document">
                                                     <div class="modal-content">
@@ -100,7 +101,6 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
                                                 <button class="btn btn-primary" type="submit" name="submit">Submit</button>
-
                             </form>
 
                         </div>

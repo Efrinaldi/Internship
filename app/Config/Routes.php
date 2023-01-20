@@ -63,7 +63,7 @@ $routes->group('api', function ($routes) {
 });
 $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('hapus_atasan/(:segment)', 'UserController::hapus_atasan/$1');
-    $routes->get('hapus_driver/(:segment)', 'Home::hapus_driver/$1');
+    $routes->get('hapus_driver/(:segment)', 'UserController::hapus_driver/$1');
     $routes->post('edit_user/(:segment)', 'Home::edit_user/$1');
     $routes->get('/register', 'RegisterController::index');
     $routes->get('/register_driver', 'RegisterController::register_driver');
@@ -72,6 +72,8 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('/list_user', 'UserController::list_user');
     $routes->get('/list_atasan', 'UserController::list_atasan');
     $routes->get('/list_satker', 'UserController::list_satker');
+    $routes->get('/list_driver', 'UserController::list_driver');
+    $routes->post('/add_driver', 'UserController::add_driver');
     $routes->post('/change_order/(:segment)', 'OrderController::change_order/$1');
     $routes->get('/otorisator', 'Home::otorisator');
     $routes->get('/dashboard', 'Home::dashboard');
@@ -112,7 +114,9 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('/login_api', 'UserController::login');
     $routes->get('/getUser', 'UserController::get_user');
     $routes->post('send-notification', 'NotificationController::send');
-    $routes->get('/getOrder/(:segmen)', 'OrderController::order/$1');
+    $routes->get('/end_session/(:segment)/(:segment)', 'OrderController::end_session/$1/$2');
+
+    $routes->get('/getOrder/(:segment)', 'OrderController::order/$1');
     $routes->post('/insertOrder', 'OrderController::post_order');
     $routes->post('/requestOrder', 'OrderController::request_order');
     $routes->post('/insertMobil', 'CarController::post_order');

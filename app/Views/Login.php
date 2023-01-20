@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skydash Admin</title>
+    <title>Order Mobil BCA Syariah</title>
 
     <link rel="stylesheet" href="<?= base_url('/public/assets_p/vendors/feather/feather.css') ?>">
     <link rel="stylesheet" href="<?= base_url('/public/assets_p/vendors/ti-icons/css/themify-icons.css') ?>">
@@ -28,9 +28,10 @@
                                 <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?> <a href="<?= base_url("logout") ?>">Logout</a></div>
 
                             <?php endif ?>
-                            <?php if (session()->getFlashdata('msg') !== "User ID sudah terpakai, logout terlebih dahulu") : ?>
-                                <div class=" alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
-                            <?php endif; ?>
+                            <?php if (session()->getFlashdata('msg') and  session()->getFlashdata('msg') !== "User ID sudah terpakai, logout terlebih dahulu") : ?>
+                                <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
+                            <?php endif ?>
+
                             <div class="brand-logo justify-content-between align-items-center">
 
                                 <img src="<?= base_url('/public/assets_p/images/bcas.png') ?>" class="justify-content-between align-items-center" alt="logo">

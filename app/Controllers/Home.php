@@ -102,7 +102,7 @@ class Home extends BaseController
         $id_divisi = session("id_divisi");
         $divisi = new DivisiModel();
         $list_dept = $divisi->query("SELECT * FROM departemen")->getResultArray();
-        $list_atasan = $divisi->query("SELECT id_divisi FROM user_divisi where userid = '$userid' ")->getResultArray();
+        $list_atasan = $divisi->query("SELECT id_divisi FROM user_divisi where userid = '$userid' or user_domain = '$userid'")->getResultArray();
         $id_divisi_atasan = $list_atasan[0]["id_divisi"];
         $sat_ker = $divisi->query("SELECT * FROM departemen where id_divisi = $id_divisi_atasan")->getResultArray();
         $id_satker = $sat_ker[0]["id_satker"];
@@ -137,7 +137,7 @@ class Home extends BaseController
         $list_approval = $divisi->query("SELECT * FROM `departemen` where id_satker =$id_satker;")->getResultArray();
         $query = $order->query(
             "SELECT orders.nama,orders.tujuan,orders.asal,orders.tujuan_pakai,orders.tanggal, orders.waktu,orders.id,pemesanan_mobil.id_pengemudi 
-            as id_pengemudi,orders.id as id_order,orders.keterangan,mobil.plat_nomor,departemen.divisi FROM pemesanan_mobil LEFT JOIN orders ON orders.id = pemesanan_mobil.id 
+            as id_pengemudi,orders.userid as userid,orders.id as id_order,orders.keterangan,mobil.plat_nomor,departemen.divisi FROM pemesanan_mobil LEFT JOIN orders ON orders.id = pemesanan_mobil.id_pemesanan
             LEFT JOIN mobil on mobil.id_mobil=pemesanan_mobil.id_mobil LEFT join departemen on orders.id_divisi = departemen.id_divisi WHERE orders.keterangan = 'approve'; "
         );
         $rows = $query->getResultArray();
@@ -145,6 +145,8 @@ class Home extends BaseController
             'order' => $rows,
             'data_divisi' => $list_approval
         ];
+
+
         return view('perjalanan', $data);
     }
     public function order_departemen()
@@ -348,8 +350,6 @@ class Home extends BaseController
             "divisi" => $div,
             "waktuErr" => ""
         ];
-
-
         return view('request', $data);
     }
     public function admin()

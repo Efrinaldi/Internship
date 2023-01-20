@@ -1,7 +1,6 @@
 <?= $this->extend('layouts/general') ?>
 <?= $this->section('content') ?>
 
-
 <body>
     <div class="main-panel">
         <div class="content-wrapper">
@@ -27,12 +26,11 @@
                                             <th>Proses</th>
                                         </tr>
                                     </thead>
-
                                     <tbody>
                                         <?php
                                         $no = 1;
                                         foreach ($order as $o) : ?>
-                                            <tr>
+                                           <tr>
                                                 <td><?= $no++; ?></td>
                                                 <td><?= $o['nama'] ?></td>
                                                 <td><?= $o['divisi'] ?></td>
@@ -46,8 +44,6 @@
                                                     <a href="reject_order/<?= $o['id'] ?>" class="btn btn-secondary">Tolak</a>
                                                 </td>
                                             </tr>
-
-
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>

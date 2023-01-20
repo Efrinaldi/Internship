@@ -8,7 +8,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Daftar Pesanan</h4>
                         <p class="card-description">
-                            Add class <code>.table-striped</code> </p>
+                            Add class <code>.table-striped</code></p>
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
@@ -70,7 +70,8 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <label for="exampleSelectGender">Departemen</label>
-                                                        <select id="dept" class="form-control" style="height:50px !important;" name="dept" value="" onchange="getValue(this.value)">
+                                                        <?php $id_order = $o["id_order"]; ?>
+                                                        <select id="dept" class="form-control" style="height:50px !important;" name="dept" value="" onchange="getValue(this.value,<?php echo $id_order ?>)">
                                                             <option selected disabled>Pilih Departemen</option>
                                                             <?php foreach ($data_divisi as $di) : ?>
                                                                 <option id="div" value="<?= $di["id_divisi"] ?>"><?= $di["divisi"] ?></option>
@@ -78,7 +79,7 @@
                                                             <?php endforeach; ?>
                                                         </select>
                                                         <label for="exampleSelectGender">Supervisor</label>
-                                                        <select id="category" class="form-control" style="height:50px !important;" name="category" value="">
+                                                        <select id="category<?php echo ($id_order) ?>" class="form-control" style="height:50px !important;" name="category" value="">
                                                         </select>
                                                     </div>
 
@@ -122,10 +123,10 @@
             </div>
             </body>
             <script type="text/javascript">
-                function getValue(v) {
+                function getValue(v, id_order) {
                     var div = $('#dept').val();
                     var id = document.getElementById("dept").value;
-                    console.log(v);
+                    console.log(v, id_order);
                     $.ajax({
                         url: "<?php echo site_url('get_sub_spv'); ?>",
                         method: "POST",
@@ -140,7 +141,8 @@
                             for (i = 0; i < data.length; i++) {
                                 html += '<option value=' + data[i].userid + '>' + data[i].username + '</option>';
                             }
-                            $('#category').html(html);
+                            $('#category' + (id_order)).html(html);
+
                         }
                     });
                 }
@@ -148,7 +150,7 @@
                 function approvalSpv(val) {
                     var div = $('#dept').val();
                     var id = document.getElementById("dept").value;
-                    var spv = document.getElementById("category").value;
+                    var spv = document.getElementById("category" + val).value;
                     console.log(val);
                     $.ajax({
                         url: "<?php echo site_url('approval_spv'); ?>",

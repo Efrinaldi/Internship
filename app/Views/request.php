@@ -18,9 +18,7 @@ $d_div = $div[0]["divisi"];
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-
                         <h4 class="card-title">Request Pemesanan Mobil</h4>
-
                         <form class="form-sample" action="<?= base_url() ?>/requestOrder" onsubmit="return validate();" method="post" autocomplete="off">
 
                             <div class="col-12 grid-margin">
@@ -127,24 +125,36 @@ $d_div = $div[0]["divisi"];
 
                             </div>
                     </div>
-                    
+
                     <div id="myModal" class="modal fade">
                         <div class="modal-dialog modal-confirm">
                             <div class="modal-content">
                                 <div class="modal-header justify-content-center">
                                     <div class="icon-box">
-                                        <i class="material-icons">&#xE876;</i>
+                                        <i class="material-icons"></i>
                                     </div>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>
-                                <div class="modal-body text-center">
-                                    <h2>Berhasil</h2>
-                                    <h2>Pesanan Berhasil Dibuat</h2>
-                                    <button class="btn btn-success" data-dismiss="modal"><span>Start Exploring</span> <i class="material-icons">&#xE5C8;</i></button>
-                                </div>
+                                <?php if (!empty($gagal)) : ?>
+                                    <div class="modal-body text-center">
+                                        <h2>Gagal</h2>
+                                        <h2><?php echo ($gagal) ?></h2>
+                                        <button class="btn btn-failure" data-dismiss="modal"><span>Kembali</span> <i class="material-icons">&#xE5C8;</i></button>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if (empty($gagal)) : ?>
+                                    <div class="modal-body text-center">
+                                        <h2>Berhasil</h2>
+                                        <h2>Pesanan Berhasil Masuk</h2>
+                                        <button class="btn btn-success" data-dismiss="modal"><span>Kembali</span> <i class="material-icons">&#xE5C8;</i></button>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
+
+
+
                     </form>
 
                 </div>

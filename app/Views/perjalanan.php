@@ -27,7 +27,6 @@
 
                                 <tbody>
                                     <?php
-
                                     $no = 1;
                                     foreach ($order as $o) : ?>
                                         <tr>
@@ -87,7 +86,7 @@
                                                     </div>
                                                     <div class="modal-footer" style="padding: 25px 50px 75px 100px;">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
-                                                        <a href="<?= base_url("/hapus_atasan/" . $o["userid"]) ?>" class="btn btn-primary" type="submit" name="submit">Hapus</a>
+                                                        <a href="<?= base_url("/end_session/" . $o["id_order"] . "/" . $o["id_pengemudi"]) ?>" class="btn btn-primary" type="submit" name="submit">Submit</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -104,6 +103,7 @@
                 </div>
             </div>
             </body>
+
             <script type="text/javascript">
                 function getValue(v) {
                     var div = $('#dept').val();
