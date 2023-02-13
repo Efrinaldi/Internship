@@ -1,0 +1,11 @@
+CRITICAL - 2023-01-06 17:01:38 --> Undefined index: id_order
+#0 C:\xampp73\htdocs\order_mobil\app\Views\order.php(73): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp73\\htdo...', 73, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('order', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(104): view('order', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->order()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

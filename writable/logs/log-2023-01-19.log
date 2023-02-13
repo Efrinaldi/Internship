@@ -1,0 +1,228 @@
+CRITICAL - 2023-01-19 13:17:48 --> Undefined index: plat_nomor
+#0 C:\xampp73\htdocs\order_mobil\app\Views\history_reject.php(40): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp73\\htdo...', 40, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('history_reject', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(441): view('history_reject', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->reject()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-19 14:30:06 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(567): CodeIgniter\Model->update('158', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->insert_order('158', '44', 'MBL001')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-01-19 14:35:11 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(567): CodeIgniter\Model->update('158', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->insert_order('158', '44', 'MBL001')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-01-19 14:40:26 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(567): CodeIgniter\Model->update('158', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->insert_order('158', '44', 'MBL001')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-01-19 14:44:18 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(567): CodeIgniter\Model->update('158', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->insert_order('158', '44', 'MBL001')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-01-19 14:48:55 --> Undefined offset: 0
+#0 C:\xampp73\htdocs\order_mobil\app\Views\request.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp73\\htdo...', 11, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('request', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(354): view('request', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->request()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-19 14:49:00 --> Undefined offset: 0
+#0 C:\xampp73\htdocs\order_mobil\app\Views\request.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp73\\htdo...', 11, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('request', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(354): view('request', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->request()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-19 14:49:12 --> Undefined offset: 0
+#0 C:\xampp73\htdocs\order_mobil\app\Views\request.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp73\\htdo...', 11, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('request', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(354): view('request', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->request()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-19 14:49:40 --> Undefined offset: 0
+#0 C:\xampp73\htdocs\order_mobil\app\Views\request.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp73\\htdo...', 11, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('request', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(354): view('request', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->request()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-19 14:51:09 --> Undefined offset: 0
+#0 C:\xampp73\htdocs\order_mobil\app\Views\request.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp73\\htdo...', 11, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('request', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(354): view('request', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->request()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-19 14:52:51 --> Undefined offset: 0
+#0 C:\xampp73\htdocs\order_mobil\app\Views\request.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp73\\htdo...', 11, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('request', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(354): view('request', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->request()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2023-01-19 14:53:23 --> Unknown column 'userdomain' in 'where clause'
+CRITICAL - 2023-01-19 14:53:23 --> Unknown column 'userdomain' in 'where clause'
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT * FROM u...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM u...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM u...')
+#3 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...')
+#4 C:\xampp73\htdocs\order_mobil\app\Views\request.php(10): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#6 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('request', Array, true)
+#8 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(354): view('request', Array)
+#9 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->request()
+#10 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#11 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2023-01-19 14:53:35 --> Unknown column 'userdomain' in 'where clause'
+CRITICAL - 2023-01-19 14:53:35 --> Unknown column 'userdomain' in 'where clause'
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT * FROM u...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM u...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM u...')
+#3 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...')
+#4 C:\xampp73\htdocs\order_mobil\app\Views\request.php(10): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#6 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('request', Array, true)
+#8 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(354): view('request', Array)
+#9 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->request()
+#10 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#11 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2023-01-19 14:53:53 --> Unknown column 'userdomain' in 'where clause'
+CRITICAL - 2023-01-19 14:53:53 --> Unknown column 'userdomain' in 'where clause'
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT * FROM u...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM u...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM u...')
+#3 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...')
+#4 C:\xampp73\htdocs\order_mobil\app\Views\request.php(10): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#6 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('request', Array, true)
+#8 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(354): view('request', Array)
+#9 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->request()
+#10 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#11 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2023-01-19 15:16:12 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@kode_aplikasi is not a parameter for procedure uspLogoffPHP.
+CRITICAL - 2023-01-19 15:16:12 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]@kode_aplikasi is not a parameter for procedure uspLogoffPHP.
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\SQLSRV\Connection->execute('exec uspLogoffP...')
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('exec uspLogoffP...')
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('exec uspLogoffP...')
+#3 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(571): CodeIgniter\Model->__call('query', Array)
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->logout()
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2023-01-19 15:19:06 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Procedure or function uspLogoffPHP has too many arguments specified.
+CRITICAL - 2023-01-19 15:19:06 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Procedure or function uspLogoffPHP has too many arguments specified.
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\SQLSRV\Connection->execute('exec uspLogoffP...')
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('exec uspLogoffP...')
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('exec uspLogoffP...')
+#3 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(571): CodeIgniter\Model->__call('query', Array)
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->logout()
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-19 15:24:04 --> Invalid file: logout.php
+#0 C:\xampp73\htdocs\order_mobil\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('logout.php')
+#1 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('logout', Array, true)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(570): view('logout')
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->logout()
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2023-01-19 15:29:45 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Unclosed quotation mark after the character string 'githa_refina,@result=' '.
+CRITICAL - 2023-01-19 15:29:45 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Unclosed quotation mark after the character string 'githa_refina,@result=' '.
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\SQLSRV\Connection->execute('exec uspLogoffP...')
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('exec uspLogoffP...')
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('exec uspLogoffP...')
+#3 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(569): CodeIgniter\Model->__call('query', Array)
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->logout()
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-19 15:42:30 --> syntax error, unexpected ':'
+#0 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('login', Array, true)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(37): view('login', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->index()
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-01-19 15:57:14 --> Undefined offset: 0
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(313): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp73\\htdo...', 313, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->request_order()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-01-19 17:18:47 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(567): CodeIgniter\Model->update('158', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->insert_order('158', '44', 'MBL001')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

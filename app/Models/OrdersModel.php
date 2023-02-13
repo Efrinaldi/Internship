@@ -7,14 +7,14 @@ use CodeIgniter\Model;
 class OrdersModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'pemesanan';
+    protected $table            = 'pemesanan_mobil';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_pemesanan', 'id_pengemudi', 'id_user'];
+    protected $allowedFields    = ['id_pemesanan', 'id_pengemudi', 'userid', 'id', 'id_mobil'];
 
     // Dates
     protected $useTimestamps = false;

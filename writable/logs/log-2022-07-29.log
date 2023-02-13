@@ -1,0 +1,107 @@
+ERROR - 2022-07-29 03:21:53 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'oauth_user'.
+CRITICAL - 2022-07-29 03:21:53 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'oauth_user'.
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\SQLSRV\Connection->execute('select phone_nu...')
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('select phone_nu...')
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('select phone_nu...')
+#3 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(40): CodeIgniter\Model->__call('query', Array)
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->showUser('11')
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2022-07-29 03:21:53 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'orders'.
+CRITICAL - 2022-07-29 03:21:53 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'orders'.
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT orders.I...')
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT orders.I...')
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT orders.I...')
+#3 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(91): CodeIgniter\Model->__call('query', Array)
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->show_order_user('11')
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2022-07-29 03:21:53 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'CURRENT_DATE'.
+CRITICAL - 2022-07-29 03:21:53 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'CURRENT_DATE'.
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT orders.I...')
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT orders.I...')
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT orders.I...')
+#3 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(44): CodeIgniter\Model->__call('query', Array)
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->order('11')
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2022-07-29 04:43:49 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'oauth_user'.
+CRITICAL - 2022-07-29 04:43:49 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'oauth_user'.
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\SQLSRV\Connection->execute('select phone_nu...')
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('select phone_nu...')
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('select phone_nu...')
+#3 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(40): CodeIgniter\Model->__call('query', Array)
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->showUser('11')
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2022-07-29 04:43:49 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'CURRENT_DATE'.
+CRITICAL - 2022-07-29 04:43:49 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'CURRENT_DATE'.
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT orders.I...')
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT orders.I...')
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT orders.I...')
+#3 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(44): CodeIgniter\Model->__call('query', Array)
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->order('11')
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2022-07-29 04:43:54 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'CURRENT_DATE'.
+CRITICAL - 2022-07-29 04:43:54 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'CURRENT_DATE'.
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT orders.I...')
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT orders.I...')
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT orders.I...')
+#3 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(44): CodeIgniter\Model->__call('query', Array)
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->order('11')
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2022-07-29 04:43:54 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'oauth_user'.
+CRITICAL - 2022-07-29 04:43:54 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'oauth_user'.
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\SQLSRV\Connection->execute('select phone_nu...')
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('select phone_nu...')
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('select phone_nu...')
+#3 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(40): CodeIgniter\Model->__call('query', Array)
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->showUser('11')
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2022-07-29 04:44:14 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'CURRENT_DATE'.
+CRITICAL - 2022-07-29 04:44:14 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'CURRENT_DATE'.
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT orders.I...')
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT orders.I...')
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT orders.I...')
+#3 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(44): CodeIgniter\Model->__call('query', Array)
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->order('11')
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2022-07-29 04:44:14 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'oauth_user'.
+CRITICAL - 2022-07-29 04:44:14 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'oauth_user'.
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\SQLSRV\Connection->execute('select phone_nu...')
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('select phone_nu...')
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('select phone_nu...')
+#3 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(40): CodeIgniter\Model->__call('query', Array)
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->showUser('11')
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-07-29 09:39:57 --> key must be a string when using hmac
+#0 C:\xampp73\htdocs\order_mobil\vendor\firebase\php-jwt\src\JWT.php(203): Firebase\JWT\JWT::sign('eyJ0eXAiOiJKV1Q...', false, 'HS256')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(261): Firebase\JWT\JWT::encode(Array, false, 'HS256')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}

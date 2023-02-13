@@ -1,155 +1,112 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-    <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center">
-        <div class="sidebar-brand-icon">
-            <i class="fas fa-user-cog"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">
-            <?= session()->get('role') ?>
-            <?= session()->get('unit_kerja') ?>
-        </div>
-    </a>
-    <?php if (adminLogin()->role === 'Supervisor Logistik') : ?>
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-        <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
-            <a class="nav-link" href="<?= base_url("/dashboard") ?>">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
-        </li>
-        <!-- Divider -->
+     <?php helper('custom_helper'); ?>
 
-        <hr class="sidebar-divider">
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url("/admin") ?>">
-                <i class="fas fa-user-gear"></i>
-                <span>Supervisor Logistik</span></a>
-        </li>
+     <ul class="nav">
+         <li class="nav-item">
+             <a class="nav-link" href="<?= base_url("/dashboard") ?>">
+                 <i class="icon-grid menu-icon"></i>
+                 <span class="menu-title">Dashboard</span>
+             </a>
+         </li>
+         <li class="nav-item">
+             <a class="nav-link" href="<?= base_url("/request") ?>">
+                 <i class="icon-grid menu-icon"></i>
+                 <span class="menu-title">Pemesanan Kendaraan</span>
+             </a>
+         </li>
 
+         <li class="nav-item">
+             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                 <i class="icon-columns menu-icon"></i>
+                 <span class="menu-title">Riwayat Pesanan</span>
+                 <i class="menu-arrow"></i>
+             </a>
+             <div class="collapse" id="form-elements">
+                 <ul class="nav flex-column sub-menu">
+                     <li class="nav-item"> <a href="<?= base_url("/order_pesanan") ?>" class="nav-link">Daftar Pesanan</a></li>
+                     <?php if (adminAtasan() === "DEPARTEMEN LOGISTIK") : ?>
+                         <li class="nav-item"> <a class="nav-link" href="<?= base_url("/activity_log") ?>">Activity Log</a></li>
+                     <?php endif; ?>
+                     <li class="nav-item"><a href="<?= base_url("/riwayat") ?>" class="nav-link">Riwayat Pemesanan</a></li>
+                 </ul>
+             </div>
+         </li>
+         <?php if (adminAtasan() !== "DRIVER" and adminAtasan() !== "SECURITY" and adminAtasan() !== "user") : ?>
 
+             <li class="nav-item">
+                 <a class="nav-link" href="<?= base_url("/order_departemen") ?>">
+                     <i class="icon-grid menu-icon"></i>
+                     <span class="menu-title">Approval</span>
+                 </a>
+             </li>
 
-
-
-
-
-
-
-
-
-
-
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url("/otorisator") ?>">
-                <i class="fas fa-user-gear"></i>
-                <span>Supervisor Unit Kerja</span></a>
-        </li>
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url("/user") ?>">
-                <i class="fas fa-user-friends"></i>
-                <span>Operator</span></a>
-        </li>
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url("/driver") ?>">
-                <i class="fas fa-car"></i>
-                <span>Pengemudi</span></a>
-        </li>
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url("/request") ?>">
-                <i class="fas fa-address-card"></i>
-                <span>Pesan Kendaraan</span></a>
-        </li>
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url("/process") ?>">
-                <i class="fas fa-clipboard-list"></i>
-                <span>Daftar Pesanan</span></a>
-        </li>
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url("/history") ?>">
-                <i class="fas fa-history"></i>
-                <span>Riwayat Pesanan</span></a>
-        </li>
-        <!-- Divider -->
-    <?php endif; ?>
-
-    <?php if (adminLogin()->role === 'Supervisor') : ?>
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url("/request") ?>">
-                <i class="fas fa-address-card"></i>
-                <span>Pesan Kendaraan</span></a>
-        </li>
+         <?php endif; ?>
 
 
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url("/list_car") ?>">
-                <i class="fas fa-address-card"></i>
-                <span>Daftar Mobil</span></a>
-        </li>
-        <!-- Divider -->
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url("/order") ?>">
-                <i class="fas fa-clipboard-list"></i>
-                <span>Daftar Pesanan</span></a>
-        </li>
-        <!-- Divider -->
+         <?php if (adminAtasan() === "SECURITY") : ?>
+             <li class="nav-item">
+                 <a class="nav-link" href="<?= base_url("/driver") ?>">
+                     <i class="icon-bar-graph menu-icon"></i>
+                     <span class="menu-title">Daftar Pengemudi</span>
+                     <i class="menu-arrow"></i>
+                 </a>
+             </li>
+         <?php endif; ?>
 
-    <?php endif; ?>
+
+         <?php if (adminLogin() === "SEKURITI TEKNOLOGI INFORMASI") : ?>
+
+             <li class="nav-item">
+                 <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+                     <i class="icon-contract menu-icon"></i>
+                     <span class="menu-title">Security Administrator</span>
+                     <i class="menu-arrow"></i>
+                 </a>
+                 <div class="collapse" id="icons">
+                     <ul class="nav flex-column sub-menu">
+                         <li class="nav-item"> <a class="nav-link" href="<?= base_url("/list_user") ?>">List User</a></li>
+                         <li class="nav-item"> <a class="nav-link" href="<?= base_url("/list_atasan") ?>">List Atasan</a></li>
+                     </ul>
+                 </div>
+             </li>
+         <?php endif; ?>
+
+         <?php if (adminAtasan() === "DISPATCHER") : ?>
+
+             <li class="nav-item">
+                 <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                     <i class="icon-head menu-icon"></i>
+                     <span class="menu-title">Pilih Driver</span>
+                     <i class="menu-arrow"></i>
+                 </a>
+                 <div class="collapse" id="auth">
+                     <ul class="nav flex-column sub-menu">
+                         <li class="nav-item"><a href="<?= base_url("/order_logistik") ?>" class="nav-link">Pilih Driver</a></li>
+                         <li class="nav-item"><a href="<?= base_url("/change_mobil") ?>" class="nav-link">Ubah Mobil</a></li>
+                     </ul>
+                 </div>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
+                     <i class="icon-ban menu-icon"></i>
+                     <span class="menu-title">Pengemudi</span>
+                     <i class="menu-arrow"></i>
+                 </a>
+                 <div class="collapse" id="error">
+                     <ul class="nav flex-column sub-menu">
+                         <li class="nav-item"><a href="<?= base_url("/driver") ?>" class="nav-link">Tambah Pengemudi</a></li>
+                     </ul>
+                 </div>
+             </li>
+
+             <li class="nav-item">
+                 <a class="nav-link" href="<?= base_url("/reporting") ?>">
+                     <i class="icon-grid menu-icon"></i>
+                     <span class="menu-title">Reporting</span>
+                 </a>
+             </li>
+         <?php endif; ?>
 
 
 
 
-    <?php if (adminLogin()->role === 'User') : ?>
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url("/request") ?>">
-                <i class="fas fa-address-card"></i>
-                <span>Pesan Kendaraan</span></a>
-        </li>
-        <!-- Divider -->
-
-    <?php endif; ?>
-    <?php if (adminLogin()->role === 'Security') : ?>
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url("/driver") ?>">
-                <i class="fas fa-car"></i>
-                <span>Daftar Pengemudi</span></a>
-        </li>
-
-    <?php endif; ?>
-
-    <hr class="sidebar-divider d-none d-md-block">
-    <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
-</ul>
+     </ul>

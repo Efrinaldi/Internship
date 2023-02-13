@@ -1,0 +1,242 @@
+CRITICAL - 2023-01-10 08:42:58 --> Undefined offset: 0
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(90): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp73\\htdo...', 90, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->order()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2023-01-10 08:43:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where user_divisi.userid = DPTIOPR' at line 1
+CRITICAL - 2023-01-10 08:43:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where user_divisi.userid = DPTIOPR' at line 1
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT * FROM u...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM u...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM u...')
+#3 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...')
+#4 C:\xampp73\htdocs\order_mobil\app\Views\list_user.php(37): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#6 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('list_user', Array, true)
+#8 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(310): view('list_user', Array)
+#9 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->list_user()
+#10 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#11 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2023-01-10 08:43:10 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where user_divisi.userid = DPTIOPR' at line 1
+CRITICAL - 2023-01-10 08:43:10 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where user_divisi.userid = DPTIOPR' at line 1
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT * FROM u...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM u...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM u...')
+#3 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...')
+#4 C:\xampp73\htdocs\order_mobil\app\Views\list_user.php(37): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#6 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('list_user', Array, true)
+#8 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(310): view('list_user', Array)
+#9 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->list_user()
+#10 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#11 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2023-01-10 08:48:23 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where user_divisi.userid = DPTIOPR' at line 1
+CRITICAL - 2023-01-10 08:48:23 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where user_divisi.userid = DPTIOPR' at line 1
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT * FROM u...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM u...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM u...')
+#3 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...')
+#4 C:\xampp73\htdocs\order_mobil\app\Views\list_user.php(37): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#6 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('list_user', Array, true)
+#8 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(310): view('list_user', Array)
+#9 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->list_user()
+#10 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#11 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2023-01-10 08:48:43 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where user_divisi.userid = 'DPTIOPR'' at line 1
+CRITICAL - 2023-01-10 08:48:43 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where user_divisi.userid = 'DPTIOPR'' at line 1
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT * FROM u...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM u...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM u...')
+#3 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...')
+#4 C:\xampp73\htdocs\order_mobil\app\Views\list_user.php(37): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#6 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('list_user', Array, true)
+#8 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(310): view('list_user', Array)
+#9 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->list_user()
+#10 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#11 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2023-01-10 08:49:03 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where user_divisi.userid = 'githa'' at line 1
+CRITICAL - 2023-01-10 08:49:03 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'where user_divisi.userid = 'githa'' at line 1
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT * FROM u...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM u...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM u...')
+#3 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...')
+#4 C:\xampp73\htdocs\order_mobil\app\Views\list_user.php(37): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#6 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('list_user', Array, true)
+#8 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(310): view('list_user', Array)
+#9 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->list_user()
+#10 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#11 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-01-10 08:49:35 --> Undefined variable: d
+#0 C:\xampp73\htdocs\order_mobil\app\Views\list_user.php(48): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp73\\htdo...', 48, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('list_user', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(310): view('list_user', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->list_user()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-10 08:51:40 --> Undefined variable: d
+#0 C:\xampp73\htdocs\order_mobil\app\Views\list_user.php(49): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp73\\htdo...', 49, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('list_user', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(310): view('list_user', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->list_user()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-10 08:52:01 --> Undefined offset: 0
+#0 C:\xampp73\htdocs\order_mobil\app\Views\list_user.php(49): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp73\\htdo...', 49, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('list_user', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(310): view('list_user', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->list_user()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-10 08:52:45 --> Undefined offset: 0
+#0 C:\xampp73\htdocs\order_mobil\app\Views\list_user.php(49): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp73\\htdo...', 49, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('list_user', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(310): view('list_user', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->list_user()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-10 08:55:19 --> Undefined offset: 0
+#0 C:\xampp73\htdocs\order_mobil\app\Views\list_user.php(49): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp73\\htdo...', 49, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('list_user', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(310): view('list_user', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->list_user()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-10 09:08:41 --> Undefined offset: 0
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(90): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp73\\htdo...', 90, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->order()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-01-10 09:08:44 --> Undefined offset: 0
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(90): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp73\\htdo...', 90, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->order()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-01-10 09:56:51 --> Undefined offset: 0
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(90): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp73\\htdo...', 90, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->order()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-01-10 09:56:56 --> Undefined offset: 0
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(90): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp73\\htdo...', 90, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->order()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-01-10 09:59:01 --> Undefined offset: 0
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(90): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp73\\htdo...', 90, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->order()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-01-10 10:03:24 --> Undefined offset: 0
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(90): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp73\\htdo...', 90, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->order()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2023-01-10 11:05:46 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Departemen' at line 1
+CRITICAL - 2023-01-10 11:05:46 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Departemen' at line 1
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT * FROM a...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM a...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM a...')
+#3 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT * FROM a...')
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(49): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->get_sub_spv()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2023-01-10 12:54:09 --> Unknown column 'divisi' in 'where clause'
+CRITICAL - 2023-01-10 12:54:09 --> Unknown column 'divisi' in 'where clause'
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT * FROM u...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM u...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM u...')
+#3 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...')
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(172): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->driver()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-10 13:15:00 --> Undefined index: divisi
+#0 C:\xampp73\htdocs\order_mobil\app\Views\request.php(33): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp73\\htdo...', 33, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('request', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(305): view('request', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->request()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-10 13:16:50 --> Undefined index: divisi
+#0 C:\xampp73\htdocs\order_mobil\app\Views\request.php(33): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp73\\htdo...', 33, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('request', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(305): view('request', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->request()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2023-01-10 13:30:02 --> Unknown column 'divisi' in 'where clause'
+CRITICAL - 2023-01-10 13:30:02 --> Unknown column 'divisi' in 'where clause'
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT * FROM u...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM u...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM u...')
+#3 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...')
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(171): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->driver()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

@@ -1,0 +1,32 @@
+CRITICAL - 2022-07-22 00:47:24 --> The original file is not a valid file.
+#0 C:\xampp73\htdocs\order_mobil\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(202): CodeIgniter\HTTP\Files\UploadedFile->move('template/assets...', '1658468844_file')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->uploadImage()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-07-22 00:47:25 --> The original file is not a valid file.
+#0 C:\xampp73\htdocs\order_mobil\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(202): CodeIgniter\HTTP\Files\UploadedFile->move('template/assets...', '1658468845_file')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->uploadImage()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-07-22 02:24:42 --> The original file is not a valid file.
+#0 C:\xampp73\htdocs\order_mobil\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(202): CodeIgniter\HTTP\Files\UploadedFile->move('template/assets...', '1658474682_file')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->uploadImage()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-07-22 02:24:45 --> The original file is not a valid file.
+#0 C:\xampp73\htdocs\order_mobil\system\HTTP\Files\UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(202): CodeIgniter\HTTP\Files\UploadedFile->move('template/assets...', '1658474685_file')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->uploadImage()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}

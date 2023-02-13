@@ -83,21 +83,28 @@ class DriverController extends BaseController
     public function status_available($id_pengemudi)
     {
 
-        $builder = new DriverModel();
-        $builder->where('id_pengemudi', $id_pengemudi);
-        $builder->set('status_pengemudi', 'Tersedia');
-        $builder->update();
+        // $builder = new DriverModel();
+        // $builder->where('userid', $id_pengemudi);
+        // $builder->set('status_pengemudi', 'Tersedia');
+        // $builder->update();
+        $builder2 = new CarModel();
+        $builder2->where('userid', $id_pengemudi);
+        $builder2->set('status_mobil', 'Tersedia');
+        $builder2->update();
+
 
         return redirect()->back()->with('success', 'Pengemudi Tersedia');
     }
     public function status_unavailable($id_pengemudi)
     {
-
-        $builder = new DriverModel();
-        $builder->where('id_pengemudi', $id_pengemudi);
-        $builder->set('status_pengemudi', 'Tidak Tersedia');
-        $builder->update();
-
+        // $builder = new DriverModel();
+        // $builder->where('userid', $id_pengemudi);
+        // $builder->set('status_pengemudi', 'Tidak Tersedia');
+        // $builder->update();
+        $builder2 = new CarModel();
+        $builder2->where('userid', $id_pengemudi);
+        $builder2->set('status_mobil', 'Tidak Tersedia');
+        $builder2->update();
         return redirect()->back()->with('success', 'Pengemudi Tidak Tersedia');
     }
 }

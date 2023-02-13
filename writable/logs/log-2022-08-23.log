@@ -1,0 +1,68 @@
+ERROR - 2022-08-23 10:44:46 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2022-08-23 10:44:46 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(163): CodeIgniter\BaseModel->first()
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-08-23 10:44:46 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp73\htdocs\order_mobil\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp73\\htdo...', 96, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\UserController), true)
+#2 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(229): include('C:\\xampp73\\htdo...')
+#3 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2022-08-23 13:48:32 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2022-08-23 13:48:32 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(163): CodeIgniter\BaseModel->first()
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-08-23 13:48:32 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp73\htdocs\order_mobil\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp73\\htdo...', 96, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\UserController), true)
+#2 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(229): include('C:\\xampp73\\htdo...')
+#3 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2022-08-23 16:48:53 --> Table 'bcas_mobil.oauth_user' doesn't exist in engine
+CRITICAL - 2022-08-23 16:48:53 --> Table 'bcas_mobil.oauth_user' doesn't exist in engine
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp73\htdocs\order_mobil\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp73\htdocs\order_mobil\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(163): CodeIgniter\BaseModel->first()
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#8 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}

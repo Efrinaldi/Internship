@@ -1,0 +1,232 @@
+CRITICAL - 2022-11-30 14:06:43 --> Class 'App\Models\InformasiUserModel' not found
+#0 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+ERROR - 2022-11-30 14:08:14 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'exec uspLogonPHP @userid = '', @kode_aplikasi = '00031', @pass = 'JSKFKFDKFS'...' at line 1
+CRITICAL - 2022-11-30 14:08:14 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'exec uspLogonPHP @userid = '', @kode_aplikasi = '00031', @pass = 'JSKFKFDKFS'...' at line 1
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('exec uspLogonPH...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('exec uspLogonPH...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('exec uspLogonPH...')
+#3 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('exec uspLogonPH...')
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(130): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-11-30 14:35:08 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'exec uspLogonPHP @userid = 'BCSHQT801S', @kode_aplikasi = '00031', @pass = 's...' at line 1
+CRITICAL - 2022-11-30 14:35:08 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'exec uspLogonPHP @userid = 'BCSHQT801S', @kode_aplikasi = '00031', @pass = 's...' at line 1
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('exec uspLogonPH...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('exec uspLogonPH...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('exec uspLogonPH...')
+#3 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('exec uspLogonPH...')
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(130): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-11-30 14:38:19 --> secure is not a valid database connection group.
+#0 C:\xampp73\htdocs\order_mobil\system\Model.php(97): CodeIgniter\Database\Config::connect('secure')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(127): CodeIgniter\Model->__construct()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-11-30 14:38:46 --> secure is not a valid database connection group.
+#0 C:\xampp73\htdocs\order_mobil\system\Model.php(97): CodeIgniter\Database\Config::connect('secure')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(127): CodeIgniter\Model->__construct()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-11-30 15:08:12 --> secure is not a valid database connection group.
+#0 C:\xampp73\htdocs\order_mobil\system\Model.php(97): CodeIgniter\Database\Config::connect('secure')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(127): CodeIgniter\Model->__construct()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-11-30 15:08:50 --> secure is not a valid database connection group.
+#0 C:\xampp73\htdocs\order_mobil\system\Model.php(97): CodeIgniter\Database\Config::connect('secure')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(127): CodeIgniter\Model->__construct()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-11-30 15:10:56 --> secure is not a valid database connection group.
+#0 C:\xampp73\htdocs\order_mobil\system\Model.php(97): CodeIgniter\Database\Config::connect('secure')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(127): CodeIgniter\Model->__construct()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-11-30 15:40:25 --> secure is not a valid database connection group.
+#0 C:\xampp73\htdocs\order_mobil\system\Model.php(97): CodeIgniter\Database\Config::connect('secure')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(127): CodeIgniter\Model->__construct()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-11-30 15:40:31 --> secure is not a valid database connection group.
+#0 C:\xampp73\htdocs\order_mobil\system\Model.php(97): CodeIgniter\Database\Config::connect('secure')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(127): CodeIgniter\Model->__construct()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-11-30 15:40:41 --> secure is not a valid database connection group.
+#0 C:\xampp73\htdocs\order_mobil\system\Model.php(97): CodeIgniter\Database\Config::connect('secure')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(127): CodeIgniter\Model->__construct()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-11-30 15:41:46 --> secure is not a valid database connection group.
+#0 C:\xampp73\htdocs\order_mobil\system\Model.php(97): CodeIgniter\Database\Config::connect('secure')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(127): CodeIgniter\Model->__construct()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-11-30 15:44:12 --> secure is not a valid database connection group.
+#0 C:\xampp73\htdocs\order_mobil\system\Model.php(97): CodeIgniter\Database\Config::connect('secure')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(127): CodeIgniter\Model->__construct()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-11-30 15:47:19 --> secure is not a valid database connection group.
+#0 C:\xampp73\htdocs\order_mobil\system\Model.php(97): CodeIgniter\Database\Config::connect('secure')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(127): CodeIgniter\Model->__construct()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+ERROR - 2022-11-30 15:48:24 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'exec uspLogonPHP @userid = 'CRSSSPV', @kode_aplikasi = '00031', @pass = 'Syar...' at line 1
+CRITICAL - 2022-11-30 15:48:24 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'exec uspLogonPHP @userid = 'CRSSSPV', @kode_aplikasi = '00031', @pass = 'Syar...' at line 1
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('exec uspLogonPH...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('exec uspLogonPH...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('exec uspLogonPH...')
+#3 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('exec uspLogonPH...')
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(130): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-11-30 15:53:27 --> You must set the database table to be used with your query.
+#0 C:\xampp73\htdocs\order_mobil\system\Model.php(545): CodeIgniter\Database\BaseConnection->table('')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(717): CodeIgniter\Model->builder()
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(146): CodeIgniter\Model->__call('query', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-11-30 15:54:28 --> You must set the database table to be used with your query.
+#0 C:\xampp73\htdocs\order_mobil\system\Model.php(545): CodeIgniter\Database\BaseConnection->table('')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(717): CodeIgniter\Model->builder()
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(146): CodeIgniter\Model->__call('query', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-11-30 16:01:40 --> You must set the database table to be used with your query.
+#0 C:\xampp73\htdocs\order_mobil\system\Model.php(545): CodeIgniter\Database\BaseConnection->table('')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(717): CodeIgniter\Model->builder()
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(146): CodeIgniter\Model->__call('query', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-11-30 17:05:05 --> You must set the database table to be used with your query.
+#0 C:\xampp73\htdocs\order_mobil\system\Model.php(545): CodeIgniter\Database\BaseConnection->table('')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(717): CodeIgniter\Model->builder()
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(143): CodeIgniter\Model->__call('query', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-11-30 17:47:27 --> You must set the database table to be used with your query.
+#0 C:\xampp73\htdocs\order_mobil\system\Model.php(545): CodeIgniter\Database\BaseConnection->table('')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(717): CodeIgniter\Model->builder()
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(143): CodeIgniter\Model->__call('query', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-11-30 17:48:16 --> Illegal offset type in isset or empty
+#0 C:\xampp73\htdocs\order_mobil\system\Database\Config.php(68): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal offset ...', 'C:\\xampp73\\htdo...', 68, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Helpers\custom_helper.php(4): CodeIgniter\Database\Config::connect()
+#2 C:\xampp73\htdocs\order_mobil\app\Views\layouts\components\sidebar.php(12): adminLogin()
+#3 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#4 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 C:\xampp73\htdocs\order_mobil\system\View\View.php(432): CodeIgniter\View\View->render('layouts/compone...', NULL, true)
+#6 C:\xampp73\htdocs\order_mobil\app\Views\layouts\admin.php(26): CodeIgniter\View\View->include('layouts/compone...')
+#7 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#8 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#9 C:\xampp73\htdocs\order_mobil\system\View\View.php(230): CodeIgniter\View\View->render('layouts/admin', Array, true)
+#10 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('dashboard', Array, true)
+#11 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(31): view('dashboard', Array)
+#12 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->dashboard()
+#13 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#14 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#15 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#16 {main}
+CRITICAL - 2022-11-30 17:50:43 --> Illegal offset type in isset or empty
+#0 C:\xampp73\htdocs\order_mobil\system\Database\Config.php(68): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal offset ...', 'C:\\xampp73\\htdo...', 68, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Helpers\custom_helper.php(4): CodeIgniter\Database\Config::connect()
+#2 C:\xampp73\htdocs\order_mobil\app\Views\layouts\components\sidebar.php(12): adminLogin()
+#3 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#4 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 C:\xampp73\htdocs\order_mobil\system\View\View.php(432): CodeIgniter\View\View->render('layouts/compone...', NULL, true)
+#6 C:\xampp73\htdocs\order_mobil\app\Views\layouts\admin.php(26): CodeIgniter\View\View->include('layouts/compone...')
+#7 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#8 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#9 C:\xampp73\htdocs\order_mobil\system\View\View.php(230): CodeIgniter\View\View->render('layouts/admin', Array, true)
+#10 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('dashboard', Array, true)
+#11 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(31): view('dashboard', Array)
+#12 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->dashboard()
+#13 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#14 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#15 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#16 {main}
+ERROR - 2022-11-30 17:58:33 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'MBL0001'.
+CRITICAL - 2022-11-30 17:58:33 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'MBL0001'.
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\SQLSRV\Connection->execute('select *  from ...')
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('select *  from ...')
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('select *  from ...')
+#3 C:\xampp73\htdocs\order_mobil\app\Helpers\custom_helper.php(9): CodeIgniter\Model->__call('query', Array)
+#4 C:\xampp73\htdocs\order_mobil\app\Views\layouts\components\sidebar.php(12): adminLogin()
+#5 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#6 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp73\htdocs\order_mobil\system\View\View.php(432): CodeIgniter\View\View->render('layouts/compone...', NULL, true)
+#8 C:\xampp73\htdocs\order_mobil\app\Views\layouts\admin.php(26): CodeIgniter\View\View->include('layouts/compone...')
+#9 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#10 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#11 C:\xampp73\htdocs\order_mobil\system\View\View.php(230): CodeIgniter\View\View->render('layouts/admin', Array, true)
+#12 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('dashboard', Array, true)
+#13 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(31): view('dashboard', Array)
+#14 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->dashboard()
+#15 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#16 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#17 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#18 {main}

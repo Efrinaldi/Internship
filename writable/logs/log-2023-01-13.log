@@ -1,0 +1,294 @@
+CRITICAL - 2023-01-13 08:53:03 --> Undefined variable: d_div
+#0 C:\xampp73\htdocs\order_mobil\app\Views\request.php(25): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp73\\htdo...', 25, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('request', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(305): view('request', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->request()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-13 08:54:10 --> Undefined variable: d_div
+#0 C:\xampp73\htdocs\order_mobil\app\Views\request.php(25): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp73\\htdo...', 25, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('request', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(305): view('request', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->request()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-13 08:54:58 --> Class 'DivisiModel' not found
+#0 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include()
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('request', Array, true)
+#3 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(305): view('request', Array)
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->request()
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-13 10:55:52 --> Call to a member function listErrors() on null
+#0 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->request_order()
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-01-13 10:56:53 --> Call to a member function listErrors() on null
+#0 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->request_order()
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-01-13 10:57:31 --> Call to a member function listErrors() on null
+#0 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->request_order()
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-01-13 10:57:41 --> Call to a member function listErrors() on null
+#0 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->request_order()
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-01-13 14:42:54 --> Call to a member function listErrors() on null
+#0 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->request_order()
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-01-13 14:54:36 --> Undefined index: id_order
+#0 C:\xampp73\htdocs\order_mobil\app\Views\history_approve.php(44): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp73\\htdo...', 44, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('history_approve', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(369): view('history_approve', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->approve()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-13 14:55:02 --> Undefined index: id_order
+#0 C:\xampp73\htdocs\order_mobil\app\Views\history_approve.php(45): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp73\\htdo...', 45, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('history_approve', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(369): view('history_approve', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->approve()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-13 15:58:16 --> Cannot redeclare App\Controllers\Home::activity_log()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2023-01-13 15:58:18 --> Cannot redeclare App\Controllers\Home::activity_log()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2023-01-13 15:58:26 --> Cannot redeclare App\Controllers\Home::activity_log()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2023-01-13 18:06:17 --> Cannot delete or update a parent row: a foreign key constraint fails (`bcas_mobil`.`pemesanan_mobil`, CONSTRAINT `pemesanan_mobil_ibfk_2` FOREIGN KEY (`id_mobil`) REFERENCES `mobil` (`id_mobil`))
+CRITICAL - 2023-01-13 18:06:17 --> Cannot delete or update a parent row: a foreign key constraint fails (`bcas_mobil`.`pemesanan_mobil`, CONSTRAINT `pemesanan_mobil_ibfk_2` FOREIGN KEY (`id_mobil`) REFERENCES `mobil` (`id_mobil`))
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('DELETE FROM `mo...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `mo...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `mo...')
+#3 C:\xampp73\htdocs\order_mobil\system\Database\BaseBuilder.php(2213): CodeIgniter\Database\BaseConnection->query('DELETE FROM `mo...', Array, false)
+#4 C:\xampp73\htdocs\order_mobil\system\Model.php(359): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(963): CodeIgniter\Model->doDelete(Array, false)
+#6 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(265): CodeIgniter\BaseModel->delete(Array)
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->hapus_driver('44')
+#8 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-13 19:04:35 --> Invalid file: change_mobil.php
+#0 C:\xampp73\htdocs\order_mobil\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('change_mobil.ph...')
+#1 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('change_mobil', Array, true)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(397): view('change_mobil', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->change_mobil()
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-01-13 19:05:16 --> Invalid file: change_mobil.php
+#0 C:\xampp73\htdocs\order_mobil\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('change_mobil.ph...')
+#1 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('change_mobil', Array, true)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(397): view('change_mobil', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->change_mobil()
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-01-13 19:11:08 --> Too few arguments to function CodeIgniter\Database\BaseConnection::query(), 0 passed in C:\xampp73\htdocs\order_mobil\system\Model.php on line 721 and at least 1 expected
+#0 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query()
+#1 C:\xampp73\htdocs\order_mobil\app\Views\change_mobil.php(35): CodeIgniter\Model->__call('query', Array)
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#3 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('change_mobil', Array, true)
+#5 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(399): view('change_mobil', Array)
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->change_mobil()
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-01-13 19:31:46 --> Undefined variable: data_divisi
+#0 C:\xampp73\htdocs\order_mobil\app\Views\change_mobil.php(73): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp73\\htdo...', 73, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('change_mobil', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(399): view('change_mobil', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->change_mobil()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-13 19:45:11 --> Undefined variable: user_divisi
+#0 C:\xampp73\htdocs\order_mobil\app\Views\change_mobil.php(60): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp73\\htdo...', 60, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('change_mobil', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(399): view('change_mobil', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->change_mobil()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-13 19:45:16 --> Undefined variable: user_divisi
+#0 C:\xampp73\htdocs\order_mobil\app\Views\change_mobil.php(60): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp73\\htdo...', 60, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('change_mobil', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(399): view('change_mobil', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->change_mobil()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-13 19:45:44 --> Undefined variable: user_divisi
+#0 C:\xampp73\htdocs\order_mobil\app\Views\change_mobil.php(60): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp73\\htdo...', 60, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('change_mobil', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(399): view('change_mobil', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->change_mobil()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-13 19:46:37 --> Undefined variable: user_divisi
+#0 C:\xampp73\htdocs\order_mobil\app\Views\change_mobil.php(60): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp73\\htdo...', 60, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('change_mobil', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(399): view('change_mobil', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->change_mobil()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-13 19:47:51 --> Undefined variable: data
+#0 C:\xampp73\htdocs\order_mobil\app\Views\change_mobil.php(60): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp73\\htdo...', 60, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('change_mobil', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(399): view('change_mobil', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->change_mobil()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-13 19:51:03 --> Too few arguments to function App\Controllers\OrderController::change_order(), 1 passed in C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php on line 824 and exactly 2 expected
+#0 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->change_order('127')
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+ERROR - 2023-01-13 19:51:58 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order where id_pemesanan = '124'' at line 1
+CRITICAL - 2023-01-13 19:51:58 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order where id_pemesanan = '124'' at line 1
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT id FROM ...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT id FROM ...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT id FROM ...')
+#3 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT id FROM ...')
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(65): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->change_order('124')
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2023-01-13 19:52:23 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order where id_pemesanan = 126' at line 1
+CRITICAL - 2023-01-13 19:52:23 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order where id_pemesanan = 126' at line 1
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT id FROM ...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT id FROM ...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT id FROM ...')
+#3 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('SELECT id FROM ...')
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(65): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->change_order('126')
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-13 19:52:58 --> Undefined index: ID
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp73\\htdo...', 66, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->change_order('126')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-01-13 19:53:38 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(66): CodeIgniter\Model->update('50', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->change_order('127')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-01-13 19:56:41 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(67): CodeIgniter\Model->update('50', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->change_order('127')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-01-13 19:57:02 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(67): CodeIgniter\Model->update('49', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->change_order('126')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-01-13 19:57:59 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(68): CodeIgniter\Model->update('50', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->change_order('127')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-01-13 19:58:40 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(68): CodeIgniter\Model->update('50', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->change_order('127')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-01-13 20:00:06 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(67): CodeIgniter\Model->update('49', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->change_order('126')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

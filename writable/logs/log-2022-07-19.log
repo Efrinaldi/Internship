@@ -1,0 +1,369 @@
+CRITICAL - 2022-07-19 01:48:26 --> key must be a string when using hmac
+#0 C:\xampp73\htdocs\order_mobil\vendor\firebase\php-jwt\src\JWT.php(203): Firebase\JWT\JWT::sign('eyJ0eXAiOiJKV1Q...', false, 'HS256')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(240): Firebase\JWT\JWT::encode(Array, false, 'HS256')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-07-19 01:48:26 --> key must be a string when using hmac
+#0 C:\xampp73\htdocs\order_mobil\vendor\firebase\php-jwt\src\JWT.php(203): Firebase\JWT\JWT::sign('eyJ0eXAiOiJKV1Q...', false, 'HS256')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(240): Firebase\JWT\JWT::encode(Array, false, 'HS256')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-07-19 01:48:51 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(56): CodeIgniter\Model->update('11', Object(stdClass))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->changeNumber('11')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-07-19 01:49:50 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(56): CodeIgniter\Model->update('11', Object(stdClass))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->changeNumber('11')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-07-19 01:52:46 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(56): CodeIgniter\Model->update('5', Object(stdClass))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->changeNumber('5')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-07-19 01:53:16 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(56): CodeIgniter\Model->update('10', Object(stdClass))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->changeNumber('10')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-07-19 01:53:36 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(56): CodeIgniter\Model->update('11', Object(stdClass))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->changeNumber('11')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-07-19 01:55:28 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(56): CodeIgniter\Model->update('11', Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->changeNumber('11')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-07-19 01:57:19 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(55): CodeIgniter\Model->update('11', Object(stdClass))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->changeNumber('11')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-07-19 02:04:04 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(55): CodeIgniter\Model->update('11', Object(stdClass))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->changeNumber('11')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-07-19 02:04:08 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(55): CodeIgniter\Model->update('11', Object(stdClass))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->changeNumber('11')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-07-19 02:04:44 --> There is no data to update.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(646): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(55): CodeIgniter\Model->update('11', Object(stdClass))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->changeNumber('11')
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-07-19 02:13:44 --> Undefined property: App\Controllers\UserController::$user
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp73\\htdo...', 238, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-19 02:13:47 --> Undefined property: App\Controllers\UserController::$user
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp73\\htdo...', 238, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-19 02:13:54 --> Undefined property: App\Controllers\UserController::$user
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp73\\htdo...', 238, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-19 02:14:38 --> Undefined property: App\Controllers\UserController::$user
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp73\\htdo...', 238, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-19 02:14:38 --> Undefined property: App\Controllers\UserController::$user
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp73\\htdo...', 238, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-19 02:15:48 --> Undefined property: App\Controllers\UserController::$user
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp73\\htdo...', 238, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-19 02:15:48 --> Undefined property: App\Controllers\UserController::$user
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp73\\htdo...', 238, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-19 02:15:48 --> Undefined property: App\Controllers\UserController::$user
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp73\\htdo...', 238, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-19 02:15:50 --> Undefined property: App\Controllers\UserController::$user
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp73\\htdo...', 238, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-19 02:17:05 --> Undefined property: App\Controllers\UserController::$user
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp73\\htdo...', 238, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-19 02:22:34 --> Undefined property: App\Controllers\UserController::$user
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(238): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp73\\htdo...', 238, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-19 02:25:04 --> key must be a string when using hmac
+#0 C:\xampp73\htdocs\order_mobil\vendor\firebase\php-jwt\src\JWT.php(203): Firebase\JWT\JWT::sign('eyJ0eXAiOiJKV1Q...', false, 'HS256')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(250): Firebase\JWT\JWT::encode(Array, false, 'HS256')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+ERROR - 2022-07-19 02:34:36 --> Cannot add or update a child row: a foreign key constraint fails (`bcas_mobil`.`pengemudi`, CONSTRAINT `pengemudi_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `oauth_user` (`id_user`))
+CRITICAL - 2022-07-19 02:34:36 --> Cannot add or update a child row: a foreign key constraint fails (`bcas_mobil`.`pengemudi`, CONSTRAINT `pengemudi_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `oauth_user` (`id_user`))
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp73\htdocs\order_mobil\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp73\htdocs\order_mobil\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp73\htdocs\order_mobil\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp73\htdocs\order_mobil\app\Controllers\RegisterController.php(99): CodeIgniter\Model->insert(Array)
+#8 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\RegisterController->auth_register_driver()
+#9 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#10 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-07-19 02:39:15 --> Cannot add or update a child row: a foreign key constraint fails (`bcas_mobil`.`pengemudi`, CONSTRAINT `pengemudi_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `oauth_user` (`id_user`))
+CRITICAL - 2022-07-19 02:39:15 --> Cannot add or update a child row: a foreign key constraint fails (`bcas_mobil`.`pengemudi`, CONSTRAINT `pengemudi_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `oauth_user` (`id_user`))
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp73\htdocs\order_mobil\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp73\htdocs\order_mobil\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp73\htdocs\order_mobil\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp73\htdocs\order_mobil\app\Controllers\RegisterController.php(99): CodeIgniter\Model->insert(Array)
+#8 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\RegisterController->auth_register_driver()
+#9 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#10 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-07-19 02:41:19 --> Cannot add or update a child row: a foreign key constraint fails (`bcas_mobil`.`pengemudi`, CONSTRAINT `pengemudi_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `oauth_user` (`id_user`))
+CRITICAL - 2022-07-19 02:41:19 --> Cannot add or update a child row: a foreign key constraint fails (`bcas_mobil`.`pengemudi`, CONSTRAINT `pengemudi_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `oauth_user` (`id_user`))
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp73\htdocs\order_mobil\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp73\htdocs\order_mobil\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp73\htdocs\order_mobil\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp73\htdocs\order_mobil\app\Controllers\RegisterController.php(99): CodeIgniter\Model->insert(Array)
+#8 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\RegisterController->auth_register_driver()
+#9 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#10 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-07-19 02:47:30 --> Cannot add or update a child row: a foreign key constraint fails (`bcas_mobil`.`pengemudi`, CONSTRAINT `pengemudi_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `oauth_user` (`id_user`))
+CRITICAL - 2022-07-19 02:47:30 --> Cannot add or update a child row: a foreign key constraint fails (`bcas_mobil`.`pengemudi`, CONSTRAINT `pengemudi_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `oauth_user` (`id_user`))
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp73\htdocs\order_mobil\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp73\htdocs\order_mobil\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp73\htdocs\order_mobil\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp73\htdocs\order_mobil\app\Controllers\RegisterController.php(99): CodeIgniter\Model->insert(Array)
+#8 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\RegisterController->auth_register_driver()
+#9 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#10 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-07-19 03:05:06 --> A non-numeric value encountered
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\RegisterController.php(95): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\xampp73\\htdo...', 95, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\RegisterController->auth_register_driver()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-19 03:05:38 --> Array to string conversion
+#0 C:\xampp73\htdocs\order_mobil\app\Controllers\RegisterController.php(107): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp73\\htdo...', 107, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\RegisterController->auth_register_driver()
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-07-19 03:06:22 --> There is no data to insert.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(718): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, true)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\RegisterController.php(107): CodeIgniter\Model->insert(Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\RegisterController->auth_register_driver()
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-07-19 03:08:45 --> There is no data to insert.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(718): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, true)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\RegisterController.php(107): CodeIgniter\Model->insert(Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\RegisterController->auth_register_driver()
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-07-19 03:10:07 --> There is no data to insert.
+#0 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(718): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp73\htdocs\order_mobil\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, true)
+#2 C:\xampp73\htdocs\order_mobil\app\Controllers\RegisterController.php(106): CodeIgniter\Model->insert(Array)
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\RegisterController->auth_register_driver()
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-07-19 03:22:33 --> Unknown column 'mobil.id' in 'on clause'
+CRITICAL - 2022-07-19 03:22:33 --> Unknown column 'mobil.id' in 'on clause'
+#0 C:\xampp73\htdocs\order_mobil\system\Database\MySQLi\Connection.php(292): mysqli->query('select *  FROM ...', 0)
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('select *  FROM ...')
+#2 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('select *  FROM ...')
+#3 C:\xampp73\htdocs\order_mobil\system\Model.php(721): CodeIgniter\Database\BaseConnection->query('select *  FROM ...')
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\OrderController.php(127): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\OrderController->show_order('13')
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OrderController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-07-19 03:25:44 --> Undefined index: plat_nomor
+#0 C:\xampp73\htdocs\order_mobil\app\Views\driver.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp73\\htdo...', 34, Array)
+#1 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#2 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('driver', Array, true)
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(73): view('driver', Array)
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->driver()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-07-19 04:06:37 --> key must be a string when using hmac
+#0 C:\xampp73\htdocs\order_mobil\vendor\firebase\php-jwt\src\JWT.php(203): Firebase\JWT\JWT::sign('eyJ0eXAiOiJKV1Q...', false, 'HS256')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(250): Firebase\JWT\JWT::encode(Array, false, 'HS256')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-07-19 04:24:25 --> key must be a string when using hmac
+#0 C:\xampp73\htdocs\order_mobil\vendor\firebase\php-jwt\src\JWT.php(203): Firebase\JWT\JWT::sign('eyJ0eXAiOiJKV1Q...', false, 'HS256')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(250): Firebase\JWT\JWT::encode(Array, false, 'HS256')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-07-19 05:07:12 --> callback_is_password_strong is not a valid rule.
+#0 C:\xampp73\htdocs\order_mobil\system\Validation\Validation.php(285): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('callback_is_pas...')
+#1 C:\xampp73\htdocs\order_mobil\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('password', 'password', '12345678', Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(121): CodeIgniter\Controller->validate(Array)
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->authregister()
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-07-19 05:12:21 --> callback_password_check is not a valid rule.
+#0 C:\xampp73\htdocs\order_mobil\system\Validation\Validation.php(285): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('callback_passwo...')
+#1 C:\xampp73\htdocs\order_mobil\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('password', 'password', '12345678', Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(121): CodeIgniter\Controller->validate(Array)
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->authregister()
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-07-19 05:28:24 --> regex:/^.*(?=.{3,})(?=.* is not a valid rule.
+#0 C:\xampp73\htdocs\order_mobil\system\Validation\Validation.php(285): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('regex:/^.*(?=.{...')
+#1 C:\xampp73\htdocs\order_mobil\system\Validation\Validation.php(151): CodeIgniter\Validation\Validation->processRules('password', 'password', '12345678', Array, Array)
+#2 C:\xampp73\htdocs\order_mobil\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(121): CodeIgniter\Controller->validate(Array)
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->authregister()
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-07-19 05:30:35 --> key must be a string when using hmac
+#0 C:\xampp73\htdocs\order_mobil\vendor\firebase\php-jwt\src\JWT.php(203): Firebase\JWT\JWT::sign('eyJ0eXAiOiJKV1Q...', false, 'HS256')
+#1 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(261): Firebase\JWT\JWT::encode(Array, false, 'HS256')
+#2 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->login()
+#3 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}

@@ -2,53 +2,36 @@
 
 namespace Config;
 
-// Create a new instance of our RouteCollection class.
 $routes = Services::routes();
-
-// Load the system's routing file first, so that the app and ENVIRONMENT
-// can override as needed.
 if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
     require SYSTEMPATH . 'Config/Routes.php';
 }
-
-/*
- * --------------------------------------------------------------------
- * Router Setup
- * --------------------------------------------------------------------
- */
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 $routes->setAutoRoute(true);
-
-/*
- * --------------------------------------------------------------------
- * Route Definitions
- * --------------------------------------------------------------------
- */
-
-// We get a performance increase by specifying the default
-// route since we don't have to scan directories.
 $routes->get('/login', 'UserController::index');
+$routes->get('/login_sa', 'UserController::login_sa');
 $routes->get('/', 'UserController::index');
 $routes->post('/login_api', 'UserController::login');
-$routes->add('/logout', 'UserController::logout');
-
-
+$routes->get('/logout', 'UserController::logout');
 $routes->post('/auth', 'UserController::auth');
+$routes->post('/auth_sa', 'UserController::auth');
 $routes->post('/reg', 'UserController::authregister');
-$routes->post('/reg', 'UserController::authregister');
+$routes->post('/auth_register_driver', 'RegisterController::auth_register_driver');
 $routes->get('/register', 'RegisterController::index');
-
-
 $routes->group('api', function ($routes) {
     $routes->get('showAllOrderUser/(:segment)', 'OrderController::show_order_user/$1');
-    $routes->post('login_api', 'userController::login');
+    $routes->post('login_api', 'UserController::login');
+    $routes->post('approveReimburse', 'OrderController::updateStatusReimburse');
+    $routes->post('uploadKeterangan', 'OrderController::uploadKeterangan');
+    $routes->get('detailReimburse/(:segment)', 'OrderController::detail_reimburse/$1');
     $routes->post('insertOrder', 'OrderController::post_order');
     $routes->post('insertStatus', 'DriverController::insert_status');
     $routes->get('order/(:segment)', 'OrderController::order/$1');
+    $routes->get('order_logistik/(:segment)', 'OrderController::order_logistik/$1');
     $routes->get('showAllOrderUser/(:segment)', 'OrderController::show_order_user/$1');
     $routes->get('showAllOrderDriver/(:segment)', 'OrderController::show_order_driver/$1');
     $routes->post('insertPengemudi/(:segment)', 'OrderController::insert_pengemudi/$1');
@@ -60,50 +43,84 @@ $routes->group('api', function ($routes) {
     $routes->add('updatePlatNomor/(:segment)', 'DriverController::update_plat/$1');
     $routes->add('updateToken/(:segment)', 'UserController::update_token/$1');
     $routes->get('getUser', 'userController::get_user');
-    $routes->post('uploadImage', 'ReimburseController::uploadImage');
+    $routes->post('uploadImage', 'OrderController::uploadImage');
+    $routes->post('uploadKeterangan', 'OrderController::uploadKeterangan');
+    $routes->post('uploadDeskripsi', 'OrderController::uploadImage');
     $routes->post('send-notification', 'NotificationController::send');
-    $routes->get('getOrder/(:segmen)', 'OrderController::order/$1');
+    $routes->get('getOrder/(:segment)', 'OrderController::order/$1');
     $routes->post('insertOrder', 'OrderController::post_order');
-    $routes->post('changeNumber/(:segment)', 'userController::changeNumber/$1');
+    $routes->post('changeNumber/(:segment)', 'UserController::changeNumber/$1');
     $routes->post('insertMobil', 'CarController::post_order');
-    $routes->post('changePassword/(:any)', 'userController::changePassword/$1');
+    $routes->post('changePassword/(:any)', 'UserController::changePassword/$1');
     $routes->post('insertStatus', 'DriverController::insert_status');
     $routes->add('updateToken/(:segment)', 'UserController::update_token/$1');
     $routes->add('updatePlatNomor/(:segment)', 'DriverController::update_plat/$1');
     $routes->get('detailOrder/(:segment)', 'OrderController::detail_order/$1');
-    $routes->get('showUser/(:segment)', 'userController::showUser/$1');
+    $routes->get('showUser/(:segment)', 'UserController::showUser/$1');
     $routes->get('viewPassword', 'userController::view_password');
     $routes->post('insertPengemudi/(:segment)', 'OrderController::insert_pengemudi/$1');
 });
-
 $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
-
+    $routes->get('hapus_atasan/(:segment)', 'UserController::hapus_atasan/$1');
+    $routes->get('hapus_driver/(:segment)', 'Home::hapus_driver/$1');
+    $routes->get('hapus_car/(:segment)/(:segment)', 'Home::hapus_car/$1/$2');
+    $routes->post('edit_user/(:segment)', 'Home::edit_user/$1');
     $routes->get('/register', 'RegisterController::index');
     $routes->get('/register_driver', 'RegisterController::register_driver');
-    $routes->get('/auth_register_driver', 'RegisterController::auth_register_driver');
-
     $routes->get('/homes', 'Home::homes');
     $routes->get('/admin', 'Home::admin');
+    $routes->get('/list_user', 'UserController::list_user');
+    $routes->get('/list_atasan', 'UserController::list_atasan');
+    $routes->get('/list_satker', 'UserController::list_satker');
+    $routes->get('/list_driver', 'UserController::list_driver');
+    $routes->post('/add_driver', 'UserController::add_driver');
+    $routes->post('/change_order/(:segment)', 'OrderController::change_order/$1');
     $routes->get('/otorisator', 'Home::otorisator');
     $routes->get('/dashboard', 'Home::dashboard');
     $routes->get('/request', 'Home::request');
     $routes->get('/user', 'Home::user');
-    $routes->get('/order', 'Home::order');
-    $routes->get('/history', 'Home::history');
+    $routes->get('/list_car', 'Home::list_car');
+    $routes->get('/order_pesanan', 'Home::order');
+    $routes->get('/approve_order_dept/(:segment)', 'OrderController::approve_order_dept/$1');
+    $routes->get('/change_mobil', 'Home::change_mobil');
+    $routes->get('/reject_order/(:segment)', 'OrderController::reject_order/$1');
+    $routes->get('/reject_logistik/(:segment)', 'OrderController::reject_logistik/$1');
+    $routes->get('/order_departemen', 'Home::order_departemen');
+    $routes->post('/approval_spv', 'OrderController::approval_spv');
+    $routes->post('/approval_spv_order', 'OrderController::approval_spv_order');
+    $routes->get('/order_logistik', 'Home::order_logistik');
+    $routes->get('/activity_log', 'Home::activity_log');
+    $routes->post('/show_activity', 'OrderController::show_activity');
+    $routes->get('/history', 'Home::history_supervisor');
+    $routes->get('/riwayat', 'Home::riwayat');
+    $routes->get('/approve', 'Home::approve');
+    $routes->get('/reject', 'Home::reject');
+    $routes->get('/history_supervisor', 'Home::history_supervisor');
     $routes->get('/process', 'Home::process');
     $routes->get('/driver', 'Home::driver');
+    $routes->post('/add_car_order', 'Home::add_car_order');
+    $routes->post('/add_car', 'Home::add_car');
     $routes->get('/history_approve', 'Home::history_approve');
     $routes->get('/history_reject', 'Home::history_reject');
-    $routes->get('/pick_driver/(:segment)', 'OrderController::show_order/$1');
-    $routes->add('/insert_order/(:segment)', 'OrderController::insert_order/$1');
+    $routes->post('/change_user/(:segment)', 'UserController::change_user/$1');
+    $routes->get('/history_supervisor_approve', 'Home::history_supervisor_approve');
+    $routes->get('/history_supervisor_reject', 'Home::history_supervisor_reject');
+    $routes->get('/pick_driver/(:segment)/(:segment)', 'OrderController::show_order/$1/$2');
+    $routes->add('/insert_order/(:segment)/(:segment)/(:segment)', 'OrderController::insert_order/$1/$2/$3');
     $routes->get('/order/(:segment)', 'OrderController::order/$1');
+    $routes->post('/get_sub_spv', 'OrderController::get_sub_spv');
+    $routes->post('/get_sub_mobil', 'OrderController::get_sub_mobil');
+    $routes->post('/get_plat_mobil', 'OrderController::get_plat_mobil');
+    $routes->post('/get_plat_mobil_1', 'OrderController::get_plat_mobil_1');
+    $routes->post('/update_car', 'OrderController::update_car');
     $routes->get('/order_driver/(:segment)', 'OrderController::order_driver/$1');
     $routes->get('/showOrder/(:segment)', 'OrderController::showOrder/$1');
     $routes->get('/getMobil', 'DriverController::getMobil');
     $routes->get('/login_api', 'UserController::login');
     $routes->get('/getUser', 'UserController::get_user');
     $routes->post('send-notification', 'NotificationController::send');
-    $routes->get('/getOrder/(:segmen)', 'OrderController::order/$1');
+    $routes->get('/end_session/(:segment)/(:segment)', 'OrderController::end_session/$1/$2');
+    $routes->get('/getOrder/(:segment)', 'OrderController::order/$1');
     $routes->post('/insertOrder', 'OrderController::post_order');
     $routes->post('/requestOrder', 'OrderController::request_order');
     $routes->post('/insertMobil', 'CarController::post_order');
@@ -111,10 +128,16 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->add('/updateToken/(:segment)', 'UserController::update_token/$1');
     $routes->add('/updatePlatNomor/(:segment)', 'DriverController::update_plat/$1');
     $routes->get('approve/(:num)', 'OrderController::approve_order/$1');
+    $routes->get('/detail_project/(:segment)', 'Home::detail_project/$1');
+    $routes->get('/detail_project_dissapprove/(:segment)', 'Home::detail_project_dissaprove/$1');
+    $routes->get('/change_car/(:segment)', 'Home::change_car/$1');
     $routes->get('reject/(:num)', 'OrderController::reject_order/$1');
-    $routes->get('status_unavailable/(:num)', 'DriverController::status_unavailable/$1');
-    $routes->get('status_available/(:num)', 'DriverController::status_available/$1');
-
+    $routes->get('/reporting', 'Home::reporting');
+    $routes->get('/status_unavailable/(:segment)', 'OrderController::status_unavailable/$1');
+    $routes->get('/status_available/(:segment)', 'OrderController::status_available/$1');
+    $routes->get('/status_unavailable_car/(:segment)', 'OrderController::status_unavailable_car/$1');
+    $routes->get('/status_available_car/(:segment)', 'OrderController::status_available_car/$1');
+    $routes->get('/perjalanan', 'Home::perjalanan');
     $routes->post('/addReimburse/(:segment)/(:segment)', 'ReimburseController::insert_image_reimburse/$1/$2');
     $routes->group('reimburse', function ($routes) {
         $routes->get('/', 'ReimburseController::index', ['filter' => 'isAdmin']);
@@ -130,35 +153,6 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
         $routes->post('postReimburse/(:any)', 'ReimburseController::post_reimburse/$1', ['filter' => 'isDriver', 'authFilter']);
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
- * --------------------------------------------------------------------
- * Additional Routing
- * --------------------------------------------------------------------
- *
- * There will often be times that you need additional routing and you
- * need it to be able to override any defaults in this file. Environment
- * based routes is one such time. require() additional route files here
- * to make that happen.
- *
- * You will have access to the $routes object within that file without
- * needing to reload it.
- */
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

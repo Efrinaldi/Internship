@@ -36,7 +36,7 @@
                     </div>
                 </div>
             <?php endif; ?>
-            
+
             <div class="card-body table-responsive">
                 <table class="table table-striped table-md" id="table1">
                     <thead>
@@ -54,32 +54,31 @@
                     <tbody>
                         <?php $no = 1; ?>
                         <?php foreach ($list as $key) : ?>
-                        <tr>
-                            <td><?= $no++ ?></td>
-                            <td><?= $key->nama ?></td>
-                            <td><?= $key->tujuan ?></td>
-                            <td><?= $key->tanggal ?></td>
-                            <td><?= $key->waktu ?></td>
-                            <td><?= $key->nama_pengemudi ?></td>
-                            <td><?= $key->keterangan ?></td>
-                            <td>
-                                <a href="<?= site_url('reimburse/add_reimburse/' . $key->id_pemesanan); ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td><?= $no++ ?></td>
+                                <td><?= $key->nama ?></td>
+                                <td><?= $key->tujuan ?></td>
+                                <td><?= $key->tanggal ?></td>
+                                <td><?= $key->waktu ?></td>
+                                <td><?= $key->nama_pengemudi ?></td>
+                                <td><?= $key->keterangan ?></td>
+                                <td>
+                                    <a href="<?= site_url('reimburse/add_reimburse/' . $key->id_pemesanan); ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                </td>
+                            </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    
+
     <script>
         window.setTimeout(() => {
-            $(".alert").fadeTo(500,0).slideUp(500,function(){
+            $(".alert").fadeTo(500, 0).slideUp(500, function() {
                 $(this).remove();
             });
         }, 2000);
-
     </script>
 
 </section>

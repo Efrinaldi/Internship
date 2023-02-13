@@ -1,0 +1,100 @@
+ERROR - 2022-07-15 02:31:39 --> Error connecting to the database: Unknown database 'bcas_mobil'
+CRITICAL - 2022-07-15 02:31:39 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'bcas_mobil'
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(141): CodeIgniter\BaseModel->first()
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-07-15 02:31:39 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp73\htdocs\order_mobil\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp73\\htdo...', 96, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\UserController), true)
+#2 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(229): include('C:\\xampp73\\htdo...')
+#3 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2022-07-15 02:58:02 --> Error connecting to the database: Unknown database 'bcas_mobil'
+CRITICAL - 2022-07-15 02:58:02 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'bcas_mobil'
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(141): CodeIgniter\BaseModel->first()
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-07-15 02:58:02 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp73\htdocs\order_mobil\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp73\\htdo...', 96, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\UserController), true)
+#2 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(229): include('C:\\xampp73\\htdo...')
+#3 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2022-07-15 04:30:17 --> Error connecting to the database: Unknown database 'bcas_mobil'
+CRITICAL - 2022-07-15 04:30:17 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'bcas_mobil'
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(141): CodeIgniter\BaseModel->first()
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-07-15 04:30:18 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp73\htdocs\order_mobil\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp73\\htdo...', 96, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\UserController), true)
+#2 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(229): include('C:\\xampp73\\htdo...')
+#3 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2022-07-15 04:37:11 --> Error connecting to the database: Unknown database 'bcas_mobil'
+CRITICAL - 2022-07-15 04:37:11 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'bcas_mobil'
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp73\htdocs\order_mobil\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp73\htdocs\order_mobil\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp73\htdocs\order_mobil\app\Controllers\UserController.php(141): CodeIgniter\BaseModel->first()
+#5 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\UserController->auth()
+#6 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#7 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp73\htdocs\order_mobil\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-07-15 04:37:11 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp73\htdocs\order_mobil\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp73\\htdo...', 96, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\UserController), true)
+#2 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(229): include('C:\\xampp73\\htdo...')
+#3 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}

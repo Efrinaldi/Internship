@@ -1,14 +1,5 @@
 <?php
 
-/**
- * This file is part of CodeIgniter 4 framework.
- *
- * (c) CodeIgniter Foundation <admin@codeigniter.com>
- *
- * For the full copyright and license information, please view
- * the LICENSE file that was distributed with this source code.
- */
-
 namespace CodeIgniter\Config;
 
 use CodeIgniter\Autoloader\Autoloader;
@@ -70,26 +61,22 @@ use Config\Toolbar as ConfigToolbar;
 use Config\Validation as ConfigValidation;
 use Config\View as ConfigView;
 
+
 /**
  * Services Configuration file.
- *
  * Services are simply other classes/libraries that the system uses
  * to do its job. This is used by CodeIgniter to allow the core of the
  * framework to be swapped out easily without affecting the usage within
  * the rest of your application.
- *
  * This is used in place of a Dependency Injection container primarily
  * due to its simplicity, which allows a better long-term maintenance
  * of the applications built on top of CodeIgniter. A bonus side-effect
  * is that IDEs are able to determine what class you are calling
  * whereas with DI Containers there usually isn't a way for them to do this.
- *
  * Warning: To allow overrides by service providers do not use static calls,
  * instead call out to \Config\Services (imported as AppServices).
- *
  * @see http://blog.ircmaxell.com/2015/11/simple-easy-risk-and-change.html
  * @see http://www.infoq.com/presentations/Simple-Made-Easy
- *
  * @method static CacheInterface cache(Cache $config = null, $getShared = true)
  * @method static CLIRequest clirequest(App $config = null, $getShared = true)
  * @method static CodeIgniter codeigniter(App $config = null, $getShared = true)
@@ -182,7 +169,7 @@ class BaseService
             return static::$mocks[$key];
         }
 
-        if (! isset(static::$instances[$key])) {
+        if (!isset(static::$instances[$key])) {
             // Make sure $getShared is false
             $params[] = false;
 
@@ -312,7 +299,7 @@ class BaseService
      */
     protected static function discoverServices(string $name, array $arguments)
     {
-        if (! static::$discovered) {
+        if (!static::$discovered) {
             $config = config('Modules');
 
             if ($config->shouldDiscover('services')) {
@@ -328,7 +315,7 @@ class BaseService
                 foreach ($files as $file) {
                     $classname = $locator->getClassname($file);
 
-                    if (! in_array($classname, ['CodeIgniter\\Config\\Services'], true)) {
+                    if (!in_array($classname, ['CodeIgniter\\Config\\Services'], true)) {
                         static::$services[] = new $classname();
                     }
                 }
@@ -337,7 +324,7 @@ class BaseService
             static::$discovered = true;
         }
 
-        if (! static::$services) {
+        if (!static::$services) {
             // we found stuff, but no services - this would be really bad
             return null;
         }
@@ -354,7 +341,7 @@ class BaseService
 
     protected static function buildServicesCache(): void
     {
-        if (! static::$discovered) {
+        if (!static::$discovered) {
             $config = config('Modules');
 
             if ($config->shouldDiscover('services')) {

@@ -42,7 +42,7 @@ class ReimburseModel extends Model
         if ($keyword != '') {
             $builder->like('pengemudi.nama_pengemudi', $keyword);
         }
-        $builder->where('reimburse.updated_at BETWEEN "' . $date_awal . '" and "' . $date_akhir . '"');
+        $builder->where('reimburse.updated_at BETWEEN "' . $date_awal . '" and "' . $date_akhir . ' 23:59:59"');
         $query = $builder->get();
         return $query;
     }

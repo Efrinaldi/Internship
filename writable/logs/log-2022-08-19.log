@@ -1,0 +1,31 @@
+ERROR - 2022-08-19 17:36:26 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2022-08-19 17:36:26 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\xampp73\htdocs\order_mobil\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp73\htdocs\order_mobil\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp73\htdocs\order_mobil\app\Helpers\custom_helper.php(5): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp73\htdocs\order_mobil\app\Views\layout\default.php(45): adminLogin()
+#4 C:\xampp73\htdocs\order_mobil\system\View\View.php(214): include('C:\\xampp73\\htdo...')
+#5 C:\xampp73\htdocs\order_mobil\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp73\htdocs\order_mobil\system\View\View.php(230): CodeIgniter\View\View->render('/layout/default', Array, true)
+#7 C:\xampp73\htdocs\order_mobil\system\Common.php(1097): CodeIgniter\View\View->render('homes', Array, true)
+#8 C:\xampp73\htdocs\order_mobil\app\Controllers\Home.php(36): view('homes')
+#9 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(824): App\Controllers\Home->homes()
+#10 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#11 C:\xampp73\htdocs\order_mobil\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp73\htdocs\order_mobil\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2022-08-19 17:36:26 --> Uncaught ErrorException: print_r(): Property access is not allowed yet in C:\xampp73\htdocs\order_mobil\app\Views\errors\html\error_exception.php:96
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'print_r(): Prop...', 'C:\\xampp73\\htdo...', 96, Array)
+#1 C:\xampp73\htdocs\order_mobil\app\Views\errors\html\error_exception.php(96): print_r(Object(App\Controllers\Home), true)
+#2 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(229): include('C:\\xampp73\\htdo...')
+#3 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#4 C:\xampp73\htdocs\order_mobil\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Database\Exceptions\DatabaseException), 500)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}

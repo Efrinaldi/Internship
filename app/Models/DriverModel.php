@@ -8,13 +8,13 @@ class DriverModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'pengemudi';
-    protected $primaryKey       = 'id_pengemudi';
+    protected $primaryKey       = 'userid';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_pengemudi', 'nama_pengemudi', 'status_pengemudi', 'id_mobil', 'id_user'];
+    protected $allowedFields    = ['nama_pengemudi', 'status_pengemudi', 'id_mobil', 'userid'];
 
     // Dates
     protected $useTimestamps = false;
