@@ -27,10 +27,8 @@
                                     <tbody>
                                         <?php
                                         $no = 1;
-
                                         foreach ($mobil as $c) :
                                         ?>
-
                                             <tr>
                                                 <td><?= $no++; ?></td>
                                                 <td><?= $c['nama_pengemudi'] ?></td>

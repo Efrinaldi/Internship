@@ -1,7 +1,5 @@
 <?= $this->extend('layouts/general') ?>
 <?= $this->section('content') ?>
-
-
 <body>
     <div class="main-panel">
         <div class="content-wrapper">
@@ -57,9 +55,7 @@
                                                 <td></td>
                                             <?php endif ?>
                                             <td> <button type="submit" class="btn btn-primary mt-1 mr-2" data-toggle="modal" data-target="#userModal<?php echo $o["userid"] ?>"><i class="fa fa-solid fa-pencil"></i></button></td>
-
                                             </tr>
-
                                             <div class="modal" tabindex="-1" role="dialog" id="hapusAtasan<?php echo $o["userid"] ?>">
                                                 <div class=" modal-dialog" role="document">
                                                     <div class="modal-content">

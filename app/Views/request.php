@@ -376,7 +376,7 @@ $userid = session("userid");
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
-                                <button class="btn btn-primary" type="button" name="submit" onclick="approvalSpv(),success()" class="btn btn-info mb-3">Submit SPV</button>
+                                <a class="btn btn-primary" type="button" name="submit" onclick="approvalSpv(),success()" class="btn btn-info mb-3">Submit SPV</a>
                             </div>
                         </div>
                     </div>
@@ -434,7 +434,8 @@ $userid = session("userid");
                 'Data Berhasil di Approve',
                 'success'
             )
-            window.top.location.href = "order_mobil/dashboard";
+            window.location.href = "dashboard";
+
         }
 
         function myFunction() {

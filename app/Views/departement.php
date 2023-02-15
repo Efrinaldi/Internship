@@ -5,7 +5,6 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Operational Vehicle Management System - BCA Syariah</h1>
     </div>
-
     <body>
         <div class="container">
             <h2>Daftar User Departemen</h2>
@@ -26,8 +25,7 @@
                         <?php
                         $no = 1;
                         foreach ($oauth_user as $o) :
-                            if ($o['role'] === 'Supervisor Logistik') {
-                        ?>
+                        if ($o['role'] === 'Supervisor Logistik') { ?>
                                 <tr>
                                     <td><?= $no++; ?></td>
                                     <td><?= $o['nip'] ?></td>

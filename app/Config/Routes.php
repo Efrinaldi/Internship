@@ -129,6 +129,8 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->add('/updatePlatNomor/(:segment)', 'DriverController::update_plat/$1');
     $routes->get('approve/(:num)', 'OrderController::approve_order/$1');
     $routes->get('/detail_project/(:segment)', 'Home::detail_project/$1');
+    $routes->get('/detail_approve_dept/(:segment)', 'Home::detail_project/$1');
+    $routes->get('/detail_reject_dept/(:segment)', 'Home::detail_reject_dept/$1');
     $routes->get('/detail_project_dissapprove/(:segment)', 'Home::detail_project_dissaprove/$1');
     $routes->get('/change_car/(:segment)', 'Home::change_car/$1');
     $routes->get('reject/(:num)', 'OrderController::reject_order/$1');

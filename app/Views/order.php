@@ -17,6 +17,10 @@
                                             Nomor
                                         </th>
                                         <th>
+                                            Action
+                                        </th>
+
+                                        <th>
                                             Nama
                                         </th>
                                         <th>
@@ -38,9 +42,7 @@
                                         <th>
                                             Keterangan
                                         </th>
-                                        <th>
-                                            Action
-                                        </th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -49,6 +51,15 @@
                                     foreach ($order as $o) : ?>
                                         <tr>
                                             <td class="py-1"><?= $no++; ?></td>
+
+                                            <?php if ($o['keterangan'] !== "approve_logistik") : ?>
+                                                <td class="py-1"><a href="<?= base_url("/detail_project_dissapprove/" . $o["id_order"]) ?>" id="range-submit" type="submit" value="Submit" class="btn btn-primary col-lg-12" class="btn btn-primary">Lihat Keterangan</a></td>
+                                            <?php endif; ?>
+                                            <?php if ($o['keterangan'] === "approve_logistik") : ?>
+                                                <td class="py-1"><a href="<?= base_url("/detail_project/" . $o["id_pemesanan"]) ?>" id="range-submit" type="submit" value="Submit" class="btn btn-primary col-lg-12" class="btn btn-primary">Lihat Keterangan</a></td>
+                                            <?php endif; ?>
+
+
                                             <td class="py-1"><?= $o['nama'] ?></td>
                                             <td class="py-1"><?= $o['divisi'] ?></td>
                                             <td class="py-1"><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
@@ -56,12 +67,7 @@
                                             <td class="py-1"><?= $o['plat_nomor'] ?></td>
                                             <td class="py-1"><?= $o['tujuan'] ?></td>
                                             <td class="py-1"><?= $o['keterangan'] ?></td>
-                                            <?php if ($o['keterangan'] !== "approve_logistik") : ?>
-                                                <td class="py-1"><a href="<?= base_url("/detail_project_dissapprove/" . $o["id_order"]) ?>" id="range-submit" type="submit" value="Submit" class="btn btn-primary col-lg-12" class="btn btn-primary">Lihat Keterangan</a></td>
-                                            <?php endif; ?>
-                                            <?php if ($o['keterangan'] === "approve_logistik") : ?>
-                                                <td class="py-1"><a href="<?= base_url("/detail_project/" . $o["id_pemesanan"]) ?>" id="range-submit" type="submit" value="Submit" class="btn btn-primary col-lg-12" class="btn btn-primary">Lihat Keterangan</a></td>
-                                            <?php endif; ?>
+
 
 
                                         </tr>

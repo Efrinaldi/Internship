@@ -19,8 +19,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 <style>
                     @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
@@ -190,15 +188,13 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="small mb-1" for="inputUsername">Tujuan Pakai</label>
-                                    <input type="text" class="form-control" name="tujuan_pakai" id="tujuan_pakai" value="<?= $data["tujuan_pakai"] ?>" readonly required />
+                                    <te type="text" style="height:80px" class="form-control" name="tujuan_pakai" id="tujuan_pakai" value="<?= $data["tujuan_pakai"] ?>" readonly required />
                                 </div>
-
                                 <!-- Form Row-->
                                 <div class="row gx-3 mb-3">
-
                                     <div class="col-md-6">
                                         <label class="small mb-1" for="inputLastName">Unit Kerja</label>
-                                        <input type="text" class="form-control" name="nama" id="nama" value="<?= $data["id_divisi"] ?>" readonly required />
+                                        <input type="text" class="form-control" name="nama" id="nama" value="<?= $divisi ?>" readonly required />
                                     </div>
                                     <div class="col-md-6">
                                         <label class="small mb-1" for="inputFirstName">Jumlah Orang</label>
@@ -218,22 +214,21 @@
                                         <input type="text" class="form-control" name="waktu_end" id="waktu_end" value="<?= $data["waktu_end"] ?>" readonly required />
                                     </div>
                                 </div>
-
-
                                 <!-- Form Group (email address)-->
                                 <div class="mb-3">
-                                    <label class="small mb-1" for="inputEmailAddress">Tanggal Memakai</label>
+                                    <label class="small mb-1">Tanggal Memakai</label>
                                     <input type="text" class="form-control" name="tanggal" id="tanggal" value="<?= $data["tanggal"] ?>" readonly required />
                                 </div>
+
                                 <div class="mb-3">
-                                    <label class="small mb-1" for="inputEmailAddress">Tujuan Lokasi</label>
-                                    <input type="text" style="height:50px" class="form-control" name="tanggal" id="tanggal" value="<?= $data["tujuan"] ?>" readonly required />
-                                </div>
-                                <div class="mb-3">
-                                    <label class="small mb-1" for="inputEmailAddress">Status</label>
-                                    <input type="text" class="form-control" name="tanggal" id="tanggal" value="<?= $data["keterangan"] ?>" readonly required />
+                                    <label class="small mb-1">Tujuan Lokasi</label>
+                                    <input type="text" style="height:80px" class="form-control" name="tanggal" id="tanggal" value="<?= $data["tujuan"] ?>" readonly required />
                                 </div>
 
+                                <div class="mb-3">
+                                    <label class="small mb-1">Status</label>
+                                    <input type="text" class="form-control" name="tanggal" id="tanggal" value="<?= $data["keterangan"] ?>" readonly required />
+                                </div>
                                 <!-- Form Row-->
                                 <?php if ($data["keterangan"] === "reject_logistik") : ?>
                                     <div class="track">

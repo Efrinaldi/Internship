@@ -162,11 +162,7 @@
                         )
                     }
                 });
-
-
-
             }
-
             function getValue(v) {
                 var div = $('#dept').val();
                 var id = document.getElementById("dept").value;

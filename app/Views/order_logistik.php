@@ -26,12 +26,11 @@
                                             <th>Proses</th>
                                         </tr>
                                     </thead>
-
                                     <tbody>
                                         <?php
                                         $no = 1;
                                         foreach ($order as $o) : ?>
-                                            <tr>
+                                                <tr>
                                                 <td><?= $no++; ?></td>
                                                 <td><?= $o['nama'] ?></td>
                                                 <td><?= $o['divisi'] ?></td>

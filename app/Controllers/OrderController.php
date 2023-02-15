@@ -95,6 +95,27 @@ class OrderController extends BaseController
         $car->update((int)$plat_1, ["userid" => $userid, "status_mobil" => "Tidak tersedia"]);
         echo json_encode($mobil);
     }
+
+    function update_driver()
+    {
+        $order    = new OrdersModel();
+        $car      = new CarModel();
+        $driver   = new DriverModel();
+        $userid = $this->request->getVar('userid');
+        $plat_1 = $this->request->getVar('plat_1');
+        $plat_2 = $this->request->getVar('plat_2');
+        $id_order = $this->request->getVar('id_order');
+        $mobil = [
+            "id_pemesanan" => $id_order,
+            "id_mobil" => $plat_2,
+            "id_pengemudi" => $userid,
+        ];
+        $driver->update($userid, ["status_pengemudi" => "Tidak tersedia"]);
+        $order->update((int)$id_order, $mobil);
+        $car->update((int)$plat_2, ["userid" => $userid, "status_mobil" => "Tidak tersedia"]);
+        $car->update((int)$plat_1, ["userid" => $userid, "status_mobil" => "Tidak tersedia"]);
+        echo json_encode($mobil);
+    }
     function get_plat_mobil()
     {
         $id = $this->request->getVar('id');
@@ -106,7 +127,7 @@ class OrderController extends BaseController
     {
         $id = $this->request->getVar('plat_1');
         $mobil = new CarModel();
-        $data = $mobil->query("SELECT * FROM mobil except $id ")->getResultArray();
+        $data = $mobil->query("SELECT * FROM mobil  where status_mobil ='Tersedia' ")->getResultArray();
         echo json_encode($data);
     }
 
@@ -707,9 +728,10 @@ class OrderController extends BaseController
         $car = $mobil->query("SELECT * FROM mobil WHERE id_mobil= $id_mobil ")->getResultArray();
         $data = [
             "data" => [
-                "body" => "Selamat Pesanan Anda Sudah Disetujui",
+                "body" => "Selamat Pesanan Anda Sudah Disetujui ",
                 "pengemudi" => $pengemudi[0]["nama_pengemudi"],
-                "plat" => $car[0]["plat_nomor"]
+                "plat" => $car[0]["plat_nomor"],
+                "url" => "detail_project/" . $id_order
             ]
         ];
         \notif("githa_refina@bcasyariah.co.id", "Aplikasi Order Mobil", "email", $data);
@@ -763,7 +785,8 @@ class OrderController extends BaseController
         $keterangan = $order[0]["tujuan_pakai"];
         $data  = [
             "data" => [
-                "body" => "Pesanan atas nama $user merequest pesanan pada jam $waktu sampai dengan jam $waktu_end untuk datang ke lokasi $tujuan, dengan keterangan pakai $keterangan"
+                "body" => "Pesanan atas nama $user merequest pesanan pada jam $waktu sampai dengan jam $waktu_end untuk datang ke lokasi $tujuan, dengan keterangan pakai $keterangan",
+                "url" => "detail_project/" . $id
             ]
         ];
         \notif($order[0]["approval_domain"] . "@bcasyariah.co.id", "Pemesanan Kendaraan PT Bank BCA Syariah", "email", $data);
@@ -797,7 +820,9 @@ class OrderController extends BaseController
         ];
         $data  = [
             "data" => [
-                "body" => "Pesanan atas nama $user merequest pesanan pada jam $waktu sampai dengan jam $waktu_end untuk datang ke lokasi $tujuan, dengan keterangan pakai $keterangan"
+                "body" => "Pesanan atas nama $user merequest pesanan pada jam $waktu sampai dengan jam $waktu_end untuk datang ke lokasi $tujuan, dengan keterangan pakai $keterangan",
+                "url" => "detail_project/" . $id
+
             ]
         ];
 

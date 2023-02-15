@@ -26,8 +26,8 @@
                                             <th>User ID</th>
                                             <th>Status Pengemudi</th>
                                             <th>Status Mobil</th>
-                                            <th>Action Mobil</th>
-                                            <th>Action Pengemudi</th>
+                                            <th>Ketersediaan Mobil</th>
+                                            <th>Ketersediaan Pengemudi</th>
                                             <th>Action</th>
 
 
@@ -92,9 +92,8 @@
                                                             <select id="category" class="form-control" style="height:50px !important;" name="category" onclick="getPlatMobil()">
 
                                                             </select>
-                                                            <label for="exampleSelectGender">Menjadi Plat Mobil</label>
+                                                            <label for="exampleSelectGender">Menjadi Plat Mobil(yang tersedia)</label>
                                                             <select id="ubah" class="form-control" style="height:50px !important;" name="ubah" value="" onclick="getPlat()">
-                                                                <option value="" selected="selected">Kosongkan(Berhalangan hadir)</option>
 
                                                             </select>
                                                         </div>
@@ -168,7 +167,6 @@
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
-
                                                         <div class="modal-body">
                                                             <label for="exampleSelectGender">Apakah anda yakin ingin menghapus data?</label>
                                                         </div>
@@ -280,14 +278,6 @@
 </body>
 </div>
 <script>
-    function remove() {
-        Swal.fire(
-            'Selamat!',
-            'Data Berhasil di hapus',
-            'success'
-        )
-    }
-
     function submitApproval() {
         var userid = document.getElementById("dept").value;
         var plat_1 = document.getElementById("category").value;
@@ -304,14 +294,21 @@
             async: true,
             dataType: "JSON",
             success: function(data) {
-                var html = '';
-                var i;
-                html += '<option value=' + data[0].id_mobil + ' selected>' + data[0].plat_nomor + '</option>';
 
-                $('#category').html(html);
+
+
             }
         });
     }
+
+    function remove() {
+        Swal.fire(
+            'Selamat!',
+            'Data Berhasil di hapus',
+            'success'
+        )
+    }
+
 
     function getPlatMobil() {
         var div = $('#dept').val();

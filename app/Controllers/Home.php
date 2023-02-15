@@ -33,16 +33,59 @@ class Home extends BaseController
     }
     public function detail_project($id_order)
     {
-        $driver = new DriverModel();
-        $order = new OrdersModel();
-        $data_pemesanan = $order->query("SELECT * FROM  orders left join pemesanan_mobil on orders.id = pemesanan_mobil.id_pemesanan left join mobil on mobil.id_mobil = pemesanan_mobil.id_mobil  left join pengemudi on pengemudi.userid = pemesanan_mobil.id_pengemudi where pemesanan_mobil.id= $id_order ")->getResultArray();
-        $data_divisi = $data_pemesanan[0]["id_divisi"];
-        // $divisi = $order->query("SELECT * FROM departemen where id_divisi = $data_divisi")->getResultArray();
-        $data = [
-            "data" => $data_pemesanan[0],
-            "id_divisi" => $data_pemesanan[0]["id_divisi"]
-        ];
-        return view('detail', $data);
+        try {
+            $driver = new DriverModel();
+            $order = new OrdersModel();
+            $data_pemesanan = $order->query("SELECT * FROM  orders left join pemesanan_mobil on orders.id = pemesanan_mobil.id_pemesanan left join mobil on mobil.id_mobil = pemesanan_mobil.id_mobil  left join pengemudi on pengemudi.userid = pemesanan_mobil.id_pengemudi where pemesanan_mobil.id= $id_order ")->getResultArray();
+            $data_divisi = $data_pemesanan[0]["id_divisi"];
+            // $divisi = $order->query("SELECT * FROM departemen where id_divisi = $data_divisi")->getResultArray();
+            $data = [
+                "data" => $data_pemesanan[0],
+                "id_divisi" => $data_pemesanan[0]["id_divisi"]
+            ];
+            return view('detail', $data);
+        } catch (Exception $e) {
+            $driver = new DriverModel();
+            $order = new OrdersModel();
+            $data_pemesanan = $order->query("SELECT * FROM  orders left join pemesanan_mobil on orders.id = pemesanan_mobil.id_pemesanan left join mobil on mobil.id_mobil = pemesanan_mobil.id_mobil  left join pengemudi on pengemudi.userid = pemesanan_mobil.id_pengemudi where pemesanan_mobil.id= $id_order ")->getResultArray();
+            $data_divisi = $data_pemesanan[0]["id_divisi"];
+            // $divisi = $order->query("SELECT * FROM departemen where id_divisi = $data_divisi")->getResultArray();
+            $data = [
+                "data" => $data_pemesanan[0],
+                "id_divisi" => $data_pemesanan[0]["id_divisi"]
+            ];
+
+            return view('detail', $data);
+        }
+    }
+
+    public function detail_approve_dept($id_order)
+    {
+
+        try {
+            $driver = new DriverModel();
+            $order = new OrdersModel();
+            $data_pemesanan = $order->query("SELECT * FROM  orders left join pemesanan_mobil on orders.id = pemesanan_mobil.id_pemesanan left join mobil on mobil.id_mobil = pemesanan_mobil.id_mobil  left join pengemudi on pengemudi.userid = pemesanan_mobil.id_pengemudi where pemesanan_mobil.id= $id_order ")->getResultArray();
+            $data_divisi = $data_pemesanan[0]["id_divisi"];
+            // $divisi = $order->query("SELECT * FROM departemen where id_divisi = $data_divisi")->getResultArray();
+            $data = [
+                "data" => $data_pemesanan[0],
+                "id_divisi" => $data_pemesanan[0]["id_divisi"]
+            ];
+            return view('detail_approve_dept', $data);
+        } catch (Exception $e) {
+            $driver = new DriverModel();
+            $order = new OrdersModel();
+            $data_pemesanan = $order->query("SELECT * FROM  orders left join pemesanan_mobil on orders.id = pemesanan_mobil.id_pemesanan 
+            left join mobil on mobil.id_mobil = pemesanan_mobil.id_mobil  left join pengemudi on pengemudi.userid = pemesanan_mobil.id_pengemudi
+             where pemesanan_mobil.id= $id_order ")->getResultArray();
+            $data_divisi = $data_pemesanan[0]["id_divisi"];
+            $data = [
+                "data" => $data_pemesanan[0],
+                "id_divisi" => $data_pemesanan[0]["id_divisi"]
+            ];
+            return view('detail_approve_dept', $data);
+        }
     }
     public function detail_project_dissaprove($id_order)
     {
@@ -56,6 +99,26 @@ class Home extends BaseController
             "id_divisi" => $data_pemesanan[0]["id_divisi"]
         ];
         return view('detail_dissaprove', $data);
+    }
+    public function detail_reject_dept($id_order)
+    {
+        $driver = new DriverModel();
+        $order = new OrdersModel();
+        $departement = new DivisiModel();
+        $data_pemesanan = $order->query("SELECT * FROM  orders where id = $id_order ")->getResultArray();
+        $dept = $order->query("SELECT * FROM  orders where id = $id_order ")->getResultArray();
+        $data_divisi = $data_pemesanan[0]["id_divisi"];
+        $d_dept = $departement->query("SELECT * FROM departemen where id_divisi = $data_divisi ")->getResultArray();
+        $divisi = ($d_dept[0]["divisi"]);
+        $data = [
+            "data" => $data_pemesanan[0],
+            "id_divisi" => $data_pemesanan[0]["id_divisi"],
+            "divisi" => $divisi
+        ];
+        return view('detail_reject_dept', $data);
+    }
+    public function edit_user(){
+        
     }
     public function change_car($id_order)
     {
@@ -200,7 +263,7 @@ class Home extends BaseController
         $userid = session("userid");
         $id_divisi = session("id_divisi");
         $query = $order->query(
-            "SELECT orders.id, orders.nama,orders.tujuan,orders.asal,orders.tujuan_pakai,orders.tanggal, orders.waktu
+            "SELECT orders.id as id,pemesanan_mobil.id as id_pemesanan, orders.nama,orders.tujuan,orders.asal,orders.tujuan_pakai,orders.tanggal, orders.waktu
             ,orders.keterangan,mobil.plat_nomor,departemen.divisi  FROM `orders` LEFT JOIN user_divisi on user_divisi.userid= orders.userid left JOIN pemesanan_mobil on 
             pemesanan_mobil.id_pemesanan = orders.id LEFT JOIN mobil on pemesanan_mobil.id_mobil = mobil.id_mobil LEFT join departemen 
             on user_divisi.id_divisi = departemen.id_divisi 

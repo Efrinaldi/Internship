@@ -34,7 +34,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <script src="<?php echo base_url('assets/js/plugins/dataTables/jquery.dataTables.min.js') ?>"></script>
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
-
 </head>
 
 <body>

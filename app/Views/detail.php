@@ -5,8 +5,7 @@
 <div class="main-panel">
     <div class="content-wrapper">
 
-        <div class="container-xl px-4 mt-4">
-            <hr class="mt-0 mb-4">
+        <div class="container-xl ">
             <div class="row">
                 <div class="col-xl-4">
                     <!-- Profile picture card-->
@@ -211,7 +210,7 @@
 
                                     <div class="col-md-6">
                                         <label class="small mb-1" for="inputLastName">Unit Kerja</label>
-                                        <input type="text" class="form-control" name="nama" id="nama" value="<?= $data["id_divisi"] ?>" readonly required />
+                                        <input type="text" class="form-control" name="nama" id="nama" value="<?= $data["divisi"] ?>" readonly required />
                                     </div>
                                     <div class="col-md-6">
                                         <label class="small mb-1" for="inputFirstName">Jumlah Orang</label>
@@ -238,7 +237,10 @@
                                     <label class="small mb-1" for="inputEmailAddress">Tanggal Memakai</label>
                                     <input type="text" class="form-control" name="tanggal" id="tanggal" value="<?= $data["tanggal"] ?>" readonly required />
                                 </div>
-
+                                <div class="mb-3">
+                                    <label class="small mb-1" for="inputEmailAddress">Tujuan Lokasi</label>
+                                    <input type="text" class="form-control" name="tanggal" id="tanggal" value="<?= $data["tujuan"] ?>" readonly required />
+                                </div>
                                 <div class="mb-3">
                                     <label class="small mb-1" for="inputEmailAddress">Status</label>
                                     <input type="text" class="form-control" name="tanggal" id="tanggal" value="<?= $data["keterangan"] ?>" readonly required />

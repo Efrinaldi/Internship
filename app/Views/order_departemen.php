@@ -10,10 +10,11 @@
                         <div class="card-body">
                             <h4 class="card-title">Approval Pesanan</h4>
                             <div class="table-responsive">
-                                <table class="table table-striped" id="dataTables-example">
+                                <table class="table table-striped " id="dataTables-example" border="0">
                                     <thead>
                                         <tr>
                                             <th>Nomor</th>
+                                            <th>Detail</th>
                                             <th>Nama</th>
                                             <th>Unit Kerja</th>
                                             <th>Waktu</th>
@@ -31,6 +32,12 @@
                                         foreach ($order as $o) : ?>
                                             <tr style="height:100px; max-height: 100px;max-width: 100%;">
                                                 <td><?= $no++; ?></td>
+                                                <?php if ($o['keterangan'] !== "approve_logistik") : ?>
+                                                    <td class="py-1"><a href="<?= base_url("/detail_reject_dept/" . $o["id"]) ?>" style="height:50px" id="range-submit" type="submit" value="Submit" class="btn btn-primary col-lg-12  d-flex flex-row align-items-center" class="btn btn-primary">Detail Pesanan</a></td>
+                                                <?php endif; ?>
+                                                <?php if ($o['keterangan'] === "approve_logistik") : ?>
+                                                    <td class="py-1"><a href="<?= base_url("/detail_approve_dept/" . $o["id_pemesanan"]) ?>" style="height:50px" id="range-submit" type="submit" value="Submit" class="btn btn-primary col-lg-12  d-flex flex-row align-items-center" class="btn btn-primary">Detail Pesanan</a></td>
+                                                <?php endif; ?>
                                                 <td><?= $o['nama'] ?></td>
                                                 <td><?= $o['divisi'] ?></td>
                                                 <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
@@ -39,8 +46,8 @@
                                                 <td><?= $o['plat_nomor'] ?></td>
                                                 <td><?= $o['tujuan'] ?></td>
                                                 <td>
-                                                    <a class="btn btn-primary" data-toggle="modal" data-target="#confirmation<?= $o['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Terima</a>
-                                                    <a class="btn btn-secondary" data-toggle="modal" data-target="#delete<?= $o['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Tolak</a>
+                                                    <a class="btn btn-primary  d-flex flex-row align-items-center col-md-12" data-toggle="modal" data-target="#confirmation<?= $o['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Terima</a>
+                                                    <a class="btn btn-secondary d-flex flex-row align-items-center col-md-12" data-toggle="modal" data-target="#delete<?= $o['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Tolak</a>
                                                 </td>
                                             </tr>
                                             <div class="modal fade in" tabindex="-1" role="dialog" id="confirmation<?= $o['id'] ?>">
@@ -101,10 +108,6 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable();
-    });
-
     function success() {
         Swal.fire(
             'Selamat!',
