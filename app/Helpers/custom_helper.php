@@ -3,6 +3,8 @@
 use App\Models\AtasanModel;
 use App\Models\DivisiModel;
 use App\Models\InformasiUserModel;
+use App\Models\OrderModel;
+use App\Models\OrdersModel;
 use App\Models\SecureModel;
 use App\Models\UserModel;
 use PHPMailer\PHPMailer\PHPMailer;
@@ -156,4 +158,11 @@ function regexCurrency($inp)
     $pattern = "/([^\d\,])/";
     $result = preg_replace($pattern, "", $inp);
     return $result;
+}
+
+function helper_driver($id_pemesanan,$id_driver){
+$pemesanan = new OrdersModel();
+
+
+
 }

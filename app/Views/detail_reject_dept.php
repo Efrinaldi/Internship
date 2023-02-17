@@ -179,8 +179,14 @@
                     <!-- Account details card-->
                     <div class="card mb-4">
                         <div class="card-header">Informasi Pesanan</div>
+                        <td class="col-md-6">
+                            <a class="btn btn-primary  d-flex flex-row align-items-center col-md-3" data-toggle="modal" data-target="#confirmation<?= $data['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Terima</a>
+                            <a class="btn btn-secondary d-flex flex-row align-items-center col-md-3" data-toggle="modal" data-target="#delete<?= $data['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Tolak</a>
+                        
+                        </td>
                         <div class="card-body">
                             <form>
+
                                 <!-- Form Group (username)-->
                                 <div class="mb-3">
                                     <label class="small mb-1" for="inputUsername">Nama</label>
@@ -228,6 +234,7 @@
                                 <div class="mb-3">
                                     <label class="small mb-1">Status</label>
                                     <input type="text" class="form-control" name="tanggal" id="tanggal" value="<?= $data["keterangan"] ?>" readonly required />
+
                                 </div>
                                 <!-- Form Row-->
                                 <?php if ($data["keterangan"] === "reject_logistik") : ?>
@@ -278,7 +285,6 @@
                                         <div class="step active"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text">Driver menjemput anda</span> </div>
                                     </div>
                                 <?php endif; ?>
-
 
 
                             </form>

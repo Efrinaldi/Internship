@@ -26,7 +26,6 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
                                         <?php
                                         $no = 1;
                                         foreach ($order as $o) : ?>

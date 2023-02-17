@@ -97,7 +97,12 @@
                      </ul>
                  </div>
              </li>
-
+             <li class="nav-item">
+                 <a class="nav-link" href="<?= base_url("/perjalanan") ?>">
+                     <i class="icon-grid menu-icon"></i>
+                     <span class="menu-title">Perjalanan</span>
+                 </a>
+             </li>
              <li class="nav-item">
                  <a class="nav-link" href="<?= base_url("/reporting") ?>">
                      <i class="icon-grid menu-icon"></i>

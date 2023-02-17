@@ -5,7 +5,8 @@
 <div class="main-panel">
     <div class="content-wrapper">
 
-        <div class="container-xl ">
+        <div class="container-xl px-4 mt-4">
+            <hr class="mt-0 mb-4">
             <div class="row">
                 <div class="col-xl-4">
                     <!-- Profile picture card-->
@@ -13,15 +14,11 @@
                         <div class="card-header">Pengemudi</div>
                         <div class="card-body text-center">
                             <!-- Profile picture image-->
-                            <img class="img-account-profile rounded-circle mb-2" style="height:200px;width:200px;" src="<?= base_url('/public/assets_c/img/user.png') ?>" alt="">
+                            <img style="height:200px;width:200px;" class="img-account-profile rounded-circle mb-2" src="<?= base_url('/public/assets_c/img/user.png') ?>" alt="">
                             <!-- Profile picture help block-->
-                            <h5 for="nama_pengemudi"><?php echo $data["nama_pengemudi"] ?></h5>
-                            <h5 for="nama_pengemudi"><?php echo $data["plat_nomor"] ?></h5>
                         </div>
                     </div>
                 </div>
-
-
                 <style>
                     @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
@@ -191,26 +188,13 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="small mb-1" for="inputUsername">Tujuan Pakai</label>
-                                    <input type="text" class="form-control" name="tujuan_pakai" id="tujuan_pakai" value="<?= $data["tujuan_pakai"] ?>" readonly required />
-                                </div>
-                                <div class="row gx-3 mb-3">
-                                    <!-- Form Group (phone number)-->
-                                    <div class="col-md-6">
-                                        <label class="small mb-1" for="inputPhone">Plat Mobil</label>
-                                        <input type="text" id="plat_nomor" value="<?= $data["plat_nomor"] ?>" name="plat_nomor" width="276" class="form-control file-upload-info" readonly required />
-                                    </div>
-                                    <!-- Form Group (birthday)-->
-                                    <div class="col-md-6">
-                                        <label class="small mb-1" for="inputBirthday">Nama Pengemudi</label>
-                                        <input type="text" id="nama_pengemudi" value="<?= $data["nama_pengemudi"] ?>" name="nama_pengemudi" width="276" class="form-control file-upload-info" readonly required />
-                                    </div>
+                                    <te type="text" style="height:80px" class="form-control" name="tujuan_pakai" id="tujuan_pakai" value="<?= $data["tujuan_pakai"] ?>" readonly required />
                                 </div>
                                 <!-- Form Row-->
                                 <div class="row gx-3 mb-3">
-
                                     <div class="col-md-6">
                                         <label class="small mb-1" for="inputLastName">Unit Kerja</label>
-                                        <input type="text" class="form-control" name="nama" id="nama" value="<?= $data["id_divisi"] ?>" readonly required />
+                                        <input type="text" class="form-control" name="nama" id="nama" value="<?= $divisi ?>" readonly required />
                                     </div>
                                     <div class="col-md-6">
                                         <label class="small mb-1" for="inputFirstName">Jumlah Orang</label>
@@ -230,16 +214,19 @@
                                         <input type="text" class="form-control" name="waktu_end" id="waktu_end" value="<?= $data["waktu_end"] ?>" readonly required />
                                     </div>
                                 </div>
-
-
                                 <!-- Form Group (email address)-->
                                 <div class="mb-3">
-                                    <label class="small mb-1" for="inputEmailAddress">Tanggal Memakai</label>
+                                    <label class="small mb-1">Tanggal Memakai</label>
                                     <input type="text" class="form-control" name="tanggal" id="tanggal" value="<?= $data["tanggal"] ?>" readonly required />
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="small mb-1" for="inputEmailAddress">Status</label>
+                                    <label class="small mb-1">Tujuan Lokasi</label>
+                                    <input type="text" style="height:80px" class="form-control" name="tanggal" id="tanggal" value="<?= $data["tujuan"] ?>" readonly required />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="small mb-1">Status</label>
                                     <input type="text" class="form-control" name="tanggal" id="tanggal" value="<?= $data["keterangan"] ?>" readonly required />
                                 </div>
                                 <!-- Form Row-->
@@ -247,7 +234,15 @@
                                     <div class="track">
                                         <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Telah Diterima</span> </div>
                                         <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di approve oleh Supervisor</span> </div>
-                                        <div class="step "> <span class="icon"> <i class="fa-solid fa-xmark"></i> </span> <span class="text"> Di tolak oleh logistik </span> </div>
+                                        <div class="step "> <span class="icon"> <i class="fa fa-ban"></i> </span> <span class="text"> Di tolak oleh logistik </span> </div>
+                                        <div class="step "> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text">Driver menjemput anda</span> </div>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($data["keterangan"] === "reject_departemen") : ?>
+                                    <div class="track">
+                                        <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Telah Diterima</span> </div>
+                                        <div class="step active"> <span class="icon"> <i class="fa fa-ban"></i> </span> <span class="text"> Di tolak oleh Departemen</span> </div>
+                                        <div class="step "> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di tolak oleh logistik </span> </div>
                                         <div class="step "> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text">Driver menjemput anda</span> </div>
                                     </div>
                                 <?php endif; ?>
@@ -262,7 +257,7 @@
                                 <?php if ($data["keterangan"] === "approval_departemen") : ?>
                                     <div class="track">
                                         <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Telah Diterima</span> </div>
-                                        <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di approve oleh Supervisor</span> </div>
+                                        <div class="step"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di approve oleh Supervisor</span> </div>
                                         <div class="step"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di approve oleh logistik </span> </div>
                                         <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text">Driver menjemput anda</span> </div>
                                     </div>
@@ -271,7 +266,7 @@
                                     <div class="track">
                                         <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Telah Diterima</span> </div>
                                         <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di approve oleh Supervisor</span> </div>
-                                        <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di approve oleh logistik </span> </div>
+                                        <div class="step"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di approve oleh logistik </span> </div>
                                         <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text">Driver menjemput anda</span> </div>
                                     </div>
                                 <?php endif; ?>
@@ -283,70 +278,19 @@
                                         <div class="step active"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text">Driver menjemput anda</span> </div>
                                     </div>
                                 <?php endif; ?>
-                                <div>
-                                    <a class="btn btn-primary  d-flex flex-row align-items-center col-md-12" data-toggle="modal" data-target="#confirmation<?= $data['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Terima</a>
-                                    <a class="btn btn-secondary d-flex flex-row align-items-center col-md-12" data-toggle="modal" data-target="#delete<?= $data['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Tolak</a>
 
-                                </div>
                                 <td class="col-md-6">
                                     <a class="btn btn-primary  d-flex flex-row align-items-center col-md-12" data-toggle="modal" data-target="#confirmation<?= $o['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Terima</a>
                                     <a class="btn btn-secondary d-flex flex-row align-items-center col-md-12" data-toggle="modal" data-target="#delete<?= $o['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Tolak</a>
                                 </td>
-                                </tr>
-                                <div class="modal fade in" tabindex="-1" role="dialog" id="confirmation<?= $o['id'] ?>">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 id="b" class="modal-title">Selesaikan Perjalanan</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-
-                                            <div class="modal-body">
-                                                <label for="exampleSelectGender">Apakah anda yakin menerima pemesanan ini?</label>
-                                            </div>
-
-                                            <div class="modal-footer">
-                                                <a href="approve_order_dept/<?= $o['id'] ?>" class="btn btn-primary" type="submit" onclick="success()" name="submit">OK </a>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade in" tabindex="-1" role="dialog" id="delete<?= $o['id'] ?>">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 id="b" class="modal-title">Selesaikan Perjalanan</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-
-                        <div class="modal-body">
-                            <label for="exampleSelectGender">Apakah anda yakin menolak pemesanan ini? </label>
-                        </div>
-
-                        <div class="modal-footer">
-                            <a href="reject_order/<?= $o['id'] ?>" class="btn btn-primary" onclick="reject()" type="submit" name="submit">OK </a>
 
                             </form>
                         </div>
-
                     </div>
                 </div>
             </div>
-
-
-            </form>
         </div>
-    </div>
-</div>
-</div>
-</div>
-<script>
+        <script>
 
 
 
@@ -356,6 +300,6 @@
 
 
 
-</script>
+        </script>
 
-<?= $this->endSection() ?>
+        <?= $this->endSection() ?>

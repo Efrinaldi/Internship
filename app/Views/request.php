@@ -257,10 +257,37 @@ $userid = session("userid");
                                                 <div class="col-md-12">
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Waktu Mulai</label>
-                                                        <div class="col-sm-9">
-                                                            <input class="form-control" placeholder="dd/mm/yyyy" type="time" class="form-control" id="inputWaktuStart" name="inputWaktuStart" />
+                                                        <div class="col-md-9 input-group date" id="datetimepickerStart" data-target-input="nearest">
+                                                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepickerStart" id="inputWaktuStart" placeholder="Waktu Mulai" />
+                                                            <div class="input-group-append" data-target="#datetimepickerStart" data-toggle="datetimepicker">
+                                                                <div class="col-sm-3  input-group-text" style="height:75%;width:150px"><i class="fa fa-calendar"></i></div>
+                                                            </div>
                                                         </div>
+
                                                     </div>
+
+
+                                                    <?php if ($validation->getError('inputWaktuStart')) : ?>
+
+                                                        <div class='alert alert-danger mt-2'>
+                                                            <?= $error = $validation->getError('inputWaktuStart'); ?>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                </div>
+                                                <div class="col-md-12">
+
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Waktu Berakhir</label>
+                                                        <div class="col-md-9 input-group date" id="datetimepickerEnd" data-target-input="nearest">
+                                                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepickerEnd" id="inputWaktuEnd" placeholder="Waktu Berakhir" />
+                                                            <div class="input-group-append" data-target="#datetimepickerEnd" data-toggle="datetimepicker">
+                                                                <div class="col-sm-3  input-group-text" style="height:75%;width:150px"><i class="fa fa-calendar"></i></div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+
                                                     <?php if ($validation->getError('inputWaktuStart')) : ?>
 
                                                         <div class='alert alert-danger mt-2'>
@@ -269,34 +296,7 @@ $userid = session("userid");
                                                     <?php endif; ?>
 
                                                 </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Waktu Berakhir</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="time" class="form-control" id="inputWaktuEnd" name="inputWaktuEnd" pattern="([1]?[0-9]|2[0-3]):[0-5][0-9]">
-                                                        </div>
 
-
-                                                    </div>
-                                                    <?php if ($validation->getError('inputWaktuEnd')) : ?>
-                                                        <div class='alert alert-danger mt-2'>
-                                                            <?= $error = $validation->getError('inputWaktuEnd'); ?>
-                                                        </div>
-                                                    <?php endif; ?>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Tanggal Memakai</label>
-                                                        <div class="col-sm-9">
-                                                            <input type="text" id="tanggal_memakai" name="tanggal_memakai" width="276" class="form-control file-upload-info" placeholder="Tanggal Memakai" />
-                                                        </div>
-                                                        <?php if ($validation->getError('tanggal_memakai')) : ?>
-                                                            <div class='alert alert-danger mt-2'>
-                                                                <?php echo ($validation->getError('tanggal_memakai')) ?>
-                                                            </div>
-                                                        <?php endif; ?>
-                                                    </div>
-                                                </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Jumlah Orang</label>
@@ -437,6 +437,19 @@ $userid = session("userid");
             window.location.href = "dashboard";
 
         }
+        $(function() {
+            $('#datetimepickerStart').datetimepicker({
+
+
+            });
+            $('#datetimepickerEnd').datetimepicker({
+
+                format: 'DD/MM/YYYY, HH:mm',
+
+
+            });
+
+        });
 
         function myFunction() {
             var x = document.getElementById("waktuMulai").value;
@@ -455,7 +468,6 @@ $userid = session("userid");
             var waktu = document.getElementById("inputWaktuStart").value;
             var id_divisi = document.getElementById("id_divisi").value;
             var waktu_end = document.getElementById("inputWaktuEnd").value;
-            var tanggal = document.getElementById("tanggal_memakai").value;
             var tujuan_pakai = document.getElementById("purpose").value;
             var jumlah_orang = document.getElementById("jumlah_orang").value
             var html = '';
@@ -471,7 +483,6 @@ $userid = session("userid");
                     waktu: waktu,
                     waktu_end: waktu_end,
                     unit_kerja: unit_kerja,
-                    tanggal: tanggal,
                     tujuan_pakai: tujuan_pakai,
                     jumlah_orang: jumlah_orang
                 },
@@ -510,7 +521,6 @@ $userid = session("userid");
             var waktu = document.getElementById("inputWaktuStart").value;
             var waktu_end = document.getElementById("inputWaktuEnd").value;
             var id_divisi = document.getElementById("id_divisi").value;
-            var tanggal = document.getElementById("tanggal_memakai").value;
             var tujuan_pakai = document.getElementById("purpose").value;
             var jumlah_orang = document.getElementById("jumlah_orang").value;
             console.log(id_divisi)
@@ -527,7 +537,6 @@ $userid = session("userid");
                     waktu_end: waktu_end,
                     id_divisi: id_divisi,
                     unit_kerja: unit_kerja,
-                    tanggal: tanggal,
                     tujuan_pakai: tujuan_pakai,
                     jumlah_orang: jumlah_orang
                 },

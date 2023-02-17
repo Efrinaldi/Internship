@@ -25,21 +25,26 @@
                                     </tr>
                                 </thead>
 
-                                <tbody>
+                                <tbody style="heigth:50px">
                                     <?php
                                     $no = 1;
                                     foreach ($order as $o) : ?>
-                                        <tr>
-                                            <td class="py-1"><?= $no++; ?></td>
-                                            <td class="py-1"><?= $o['nama'] ?></td>
-                                            <td class="py-1"><?= $o['divisi'] ?></td>
-                                            <td class="py-1"><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
-                                            <td class="py-1"><?= $o['tujuan_pakai'] ?></td>
-                                            <td class="py-1"><?= $o['keterangan'] ?></td>
-                                            <td class="py-1"><?= $o['plat_nomor'] ?></td>
-                                            <td style="max-width:200px;  inline-size: 150px; overflow: hidden;" class=" py-1 "><?= $o['tujuan'] ?></td>
-                                            <td class=" py-1"><button id="range-submit" type="submit" value="Submit" class="btn btn-primary col-lg-12" data-toggle="modal" data-target="#endSession<?php echo $o["id_order"] ?>" type="button" class="btn btn-primary">Perjalanan Selesai</button></td>
+                                        <?php
+                                        $id = $o["id_order"]
+                                        ?>
+                                        <tr> <a href="<?= base_url("/detail_project/$id") ?>">
+
+                                                <td class="py-1"><?= $no++; ?></td>
+                                                <td class="py-1"><a href="<?= base_url("/detail_project/$id") ?>"><?= $o['nama'] ?></td>
+                                                <td class="py-1"><?= $o['divisi'] ?></td>
+                                                <td class="py-1"><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
+                                                <td class="py-1"><?= $o['tujuan_pakai'] ?></td>
+                                                <td class="py-1"><?= $o['keterangan'] ?></td>
+                                                <td class="py-1"><?= $o['plat_nomor'] ?></td>
+                                                <td style="max-width:200px;  inline-size: 150px; overflow: hidden;" class=" py-1 "><?= $o['tujuan'] ?></td>
+                                                <td class=" py-1"><button id="range-submit" type="submit" value="Submit" class="btn btn-primary col-lg-12" data-toggle="modal" data-target="#endSession<?php echo $o["id_order"] ?>" type="button" class="btn btn-primary">Perjalanan Selesai</button></td>
                                         </tr>
+                                        </a>
                                         <div class="modal fade in" tabindex="-1" role="dialog" id="sendApproval<?php echo $o["id_order"] ?>">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">

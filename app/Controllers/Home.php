@@ -117,8 +117,8 @@ class Home extends BaseController
         ];
         return view('detail_reject_dept', $data);
     }
-    public function edit_user(){
-        
+    public function edit_user()
+    {
     }
     public function change_car($id_order)
     {
@@ -233,7 +233,6 @@ class Home extends BaseController
     public function perjalanan()
     {
         $order = new OrderModel();
-        $atasan = new AtasanModel();
         $session = session()->get();
         $userid = session("userid");
         $id_divisi = session("id_divisi");

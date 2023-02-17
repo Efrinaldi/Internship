@@ -96,6 +96,10 @@ class OrderController extends BaseController
         echo json_encode($mobil);
     }
 
+    public function perjalanan()
+    {
+        return view('perjalanan');
+    }
     function update_driver()
     {
         $order    = new OrdersModel();
@@ -198,8 +202,8 @@ class OrderController extends BaseController
                 'asal' => "BCA SYARIAH",
                 'id_divisi' =>  $this->request->getVar('id_divisi'),
                 'tujuan' => $this->request->getVar('tujuan'),
-                'waktu' => $this->request->getVar('waktu'),
-                'waktu_end' => $this->request->getVar('waktu_end'),
+                'waktu' => $waktu,
+                'waktu_end' => $waktu_end,
                 'tanggal' => $this->request->getVar('tanggal'),
                 'status' => 0,
                 'keterangan' => "approval_departemen",
@@ -215,8 +219,8 @@ class OrderController extends BaseController
                 'asal' => "",
                 'id_divisi' =>  $this->request->getVar('id_divisi'),
                 'tujuan' => $this->request->getVar('tujuan'),
-                'waktu' => $this->request->getVar('waktu'),
-                'waktu_end' => $this->request->getVar('waktu_end'),
+                'waktu' => $waktu,
+                'waktu_end' => $waktu_end,
                 'tanggal' => $this->request->getVar('tanggal'),
                 'status' => 0,
                 'keterangan' => "approval_departemen",
@@ -235,7 +239,10 @@ class OrderController extends BaseController
             "data" => [
                 "body" => "Pemesanan Kendaraan atas nama : $nama pada jam $waktu sampai  $waktu_end dengan tujuan lokasi nya adalah $tujuan membutuhkan anda sebagai approvalnya, Mohon Untuk di approve",
                 "link" => "/order_departemen",
-                "order" => $data_order[0]["approval_domain"]
+                "order" => $data_order[0]["approval_domain"],
+                "waktu" => $waktu,
+                "waktu_end" => $waktu_end,
+                "url" => "detail_project/" . $id_order
             ]
 
         ];
@@ -415,6 +422,7 @@ class OrderController extends BaseController
         $tujuan_pakai = $this->request->getPost("tujuan_pakai");
         $jumlah_orang = $this->request->getPost("jumlah_orang");
 
+
         $waktuErr = "";
         $data = [
             "activity" => "Menambahkan pesanan atas nama $userid",
@@ -454,12 +462,7 @@ class OrderController extends BaseController
                     'required' => '{field} Harus diisi'
                 ]
             ],
-            'tanggal' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi'
-                ]
-            ],
+
             'tujuan_pakai' => [
                 'rules' => 'required',
                 'errors' => [
@@ -467,9 +470,10 @@ class OrderController extends BaseController
                 ]
             ],
             'jumlah_orang' => [
-                'rules' => 'required',
+                'rules' => 'required|greater_than_equal_to[1]|less_than_equal_to[7]',
                 'errors' => [
-                    'required' => '{field} Harus diisi'
+                    'required' => '{field} Harus diisi',
+                    'greater_than_equal_to[1]' => "Penumpang harus lebih dari 0 dan maksimal 7 orang"
                 ]
             ]
         ]))) {
@@ -478,7 +482,9 @@ class OrderController extends BaseController
                 "d_div" => $d_div[0]["divisi"],
                 "waktuErr" => "",
                 'order' => $rows,
-                'data_divisi' => $list_approval
+                'data_divisi' => $list_approval,
+                "waktu"        =>  date("H:i", strtotime(substr($waktu, 12, 19)))
+
             ];
             echo json_encode($data_error);
         } else {
@@ -488,7 +494,8 @@ class OrderController extends BaseController
                 "d_div" => $d_div[0]["divisi"],
                 "waktuErr" => "",
                 'order' => $rows,
-                'data_divisi' => $list_approval
+                'data_divisi' => $list_approval,
+                "waktu"        =>  date("H:i", strtotime(substr($waktu, 12, 19)))
             ];
 
             echo json_encode($data_error);
