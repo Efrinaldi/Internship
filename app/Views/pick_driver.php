@@ -27,8 +27,7 @@
                                     <tbody>
                                         <?php
                                         $no = 1;
-                                        foreach ($mobil as $c) :
-                                        ?>
+                                        foreach ($mobil as $c) : ?>
                                             <tr>
                                                 <td><?= $no++; ?></td>
                                                 <td><?= $c['nama_pengemudi'] ?></td>
@@ -103,7 +102,6 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
                                                 <button class="btn btn-primary" type="submit" name="submit">Submit</button>
-
                             </form>
 
                         </div>

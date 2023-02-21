@@ -17,10 +17,11 @@
                                         <?php echo (session()->getFlashdata('error_controller')) ?>
                                     </div>
                                 <?php endif; ?>
-                                <table class="table table-striped" id="dataTables-example">
+                                <table style="height: 100%;
+            width: 100%;" class="table table-striped" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Nomor</th>
+                                            <th style="max-width: 10px;">Nomor</th>
                                             <th>Plat Mobil</th>
                                             <th>Nama</th>
                                             <th>User ID</th>
@@ -257,6 +258,10 @@
 
                                     <div class="form-group">
                                         <label for="exampleSelectGender">Jenis Mobil</label>
+                                        <input type="text" name="jenis_mobil" class="form-control" id="" placeholder="Jenis Mobil">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleSelectGender">Kapasitas Mobil</label>
                                         <input type="text" name="jenis_mobil" class="form-control" id="" placeholder="Jenis Mobil">
                                     </div>
 

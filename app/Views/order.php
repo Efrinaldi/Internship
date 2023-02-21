@@ -63,9 +63,9 @@
                                             <td class="py-1"><?= $o['nama'] ?></td>
                                             <td class="py-1"><?= $o['divisi'] ?></td>
                                             <td class="py-1"><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
-                                            <td class="py-1"><?= $o['tujuan_pakai'] ?></td>
+                                            <td class="py-1" style="max-width:200px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis"><?= $o['tujuan_pakai'] ?></td>
                                             <td class="py-1"><?= $o['plat_nomor'] ?></td>
-                                            <td class="py-1"><?= $o['tujuan'] ?></td>
+                                            <td class="py-1" style="max-width:200px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis"><?= $o['tujuan'] ?></td>
                                             <td class="py-1"><?= $o['keterangan'] ?></td>
 
 

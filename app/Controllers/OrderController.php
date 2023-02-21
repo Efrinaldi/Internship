@@ -197,23 +197,90 @@ class OrderController extends BaseController
         FROM t_users right join t_usraplikasi  on t_usraplikasi.userid = t_users.userid where t_usraplikasi.kodeaplikasi= '00033' 
         and t_users.userdomain ='$spv' or t_users.userid ='$spv'  ")->getResultArray();
         if ($data_user[0]["userdomain"] == \null) {
-            $data_pemesanan = [
-                'nama' => $this->request->getVar('nama'),
-                'asal' => "BCA SYARIAH",
-                'id_divisi' =>  $this->request->getVar('id_divisi'),
-                'tujuan' => $this->request->getVar('tujuan'),
-                'waktu' => $waktu,
-                'waktu_end' => $waktu_end,
-                'tanggal' => $this->request->getVar('tanggal'),
-                'status' => 0,
-                'keterangan' => "approval_departemen",
-                'tujuan_pakai' => $this->request->getVar('tujuan_pakai'),
-                'userid' => session("userid"),
-                'jumlah_orang' => $this->request->getVar("jumlah_orang"),
-                "approval_userid"  =>  $this->request->getVar('id_spv'),
-                "approval_domain"  =>  $this->request->getVar('id_spv')
-            ];
-        } else {
+              if (($this->validate([
+            'nama' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'unit_kerja' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi',
+                ]
+            ],
+            'tujuan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'waktu' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'waktu_end' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+
+            'tujuan_pakai' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
+            'jumlah_orang' => [
+                'rules' => 'required|greater_than_equal_to[1]|less_than_equal_to[7]',
+                'errors' => [
+                    'required' => '{field} Harus diisi',
+                    'greater_than_equal_to[1]' => "Penumpang harus lebih dari 0 dan maksimal 7 orang"
+                ]
+            ]
+        ]))){
+                $data_pemesanan = [
+                    'nama' => $this->request->getVar('nama'),
+                    'asal' => "BCA SYARIAH",
+                    'id_divisi' =>  $this->request->getVar('id_divisi'),
+                    'tujuan' => $this->request->getVar('tujuan'),
+                    'waktu' => $waktu,
+                    'waktu_end' => $waktu_end,
+                    'tanggal' => $this->request->getVar('tanggal'),
+                    'status' => 0,
+                    'keterangan' => "approval_departemen",
+                    'tujuan_pakai' => $this->request->getVar('tujuan_pakai'),
+                    'userid' => session("userid"),
+                    'jumlah_orang' => $this->request->getVar("jumlah_orang"),
+                    "approval_userid"  =>  $this->request->getVar('id_spv'),
+                    "approval_domain"  =>  $this->request->getVar('id_spv')
+                ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+    } else {
             $data_pemesanan = [
                 'nama' => $this->request->getVar('nama'),
                 'asal' => "",

@@ -5,6 +5,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="vendors/feather/feather.css">
+    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
+    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+    <link rel="shortcut icon" href="images/favicon.png" />
     <link href="<?= base_url("/public/assets_c/vendor/bootstrap/css/bootstrap.min.css") ?>" rel="stylesheet">
     <link href="<?= base_url("/public/assets_c/vendor/bootstrap-icons/bootstrap-icons.css") ?>" rel="stylesheet">
     <link href="<?= base_url("/public/assets_c/vendor/boxicons/css/boxicons.min.css") ?>" rel="stylesheet">
@@ -20,8 +28,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="<?= base_url('/public/assets_p/datetimepicker-master/jquery.datetimepicker.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('/public/assets_p/images/favicon.png') ?>" href="jquery.datetimepicker.css" />
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -29,12 +35,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js" integrity="sha256-2JRzNxMJiS0aHOJjG+liqsEOuBb6++9cY4dSOyiijX4=" crossorigin="anonymous"></script>
-
-
-
-
-
-
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -127,6 +127,7 @@
                             </a>
                         </div>
                     </li>
+
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
                             <img src="<?= base_url('/public/assets_p/images/bcas.png') ?>" alt="profile" />
@@ -142,6 +143,10 @@
                             </a>
                         </div>
                     </li>
+
+
+
+
                     <li class="nav-item nav-settings d-none d-lg-flex">
                         <a class="nav-link" href="#">
                             <i class="icon-ellipsis"></i>

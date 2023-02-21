@@ -12,6 +12,8 @@ class DriverFilter implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
 
+
+
         $order = new OrderModel();
         $data =  $order->query("SELECT * FROM orders where waktu ")->getResultArray();
         if (date("M") == 9 && date("d") == 22) {
@@ -27,7 +29,6 @@ class DriverFilter implements FilterInterface
                 }
             }
             $order->update($data[$i]["id_project"], $status);
-            //
         }
 
 

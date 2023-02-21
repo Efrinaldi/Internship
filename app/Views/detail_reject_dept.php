@@ -178,12 +178,16 @@
                 <div class="col-xl-8">
                     <!-- Account details card-->
                     <div class="card mb-4">
-                        <div class="card-header">Informasi Pesanan</div>
-                        <td class="col-md-6">
-                            <a class="btn btn-primary  d-flex flex-row align-items-center col-md-3" data-toggle="modal" data-target="#confirmation<?= $data['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Terima</a>
-                            <a class="btn btn-secondary d-flex flex-row align-items-center col-md-3" data-toggle="modal" data-target="#delete<?= $data['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Tolak</a>
-                        
-                        </td>
+                        <div class="card-header col-md-12 d-inline-flex">
+
+                            <div class="col-md-6"> Informasi Pesanan</div>
+
+                            <div class="d-flex justify-content-end col-md-6">
+                                <a class="btn btn-primary col-md-6" data-toggle="modal" data-target="#confirmation<?= $data['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Terima</a>
+                                <a class="btn btn-secondary col-md-6" data-toggle="modal" data-target="#delete<?= $data['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Tolak</a>
+                            </div>
+                        </div>
+
                         <div class="card-body">
                             <form>
 
@@ -231,11 +235,7 @@
                                     <input type="text" style="height:80px" class="form-control" name="tanggal" id="tanggal" value="<?= $data["tujuan"] ?>" readonly required />
                                 </div>
 
-                                <div class="mb-3">
-                                    <label class="small mb-1">Status</label>
-                                    <input type="text" class="form-control" name="tanggal" id="tanggal" value="<?= $data["keterangan"] ?>" readonly required />
 
-                                </div>
                                 <!-- Form Row-->
                                 <?php if ($data["keterangan"] === "reject_logistik") : ?>
                                     <div class="track">
@@ -288,21 +288,71 @@
 
 
                             </form>
+                            <div class="modal fade in" tabindex="-1" role="dialog" id="confirmation<?= $data['id'] ?>">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 id="b" class="modal-title">Selesaikan Perjalanan</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <label for="exampleSelectGender">Apakah anda yakin menerima pemesanan ini?</label>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <a href="<?= base_url() ?>/approve_order_dept/<?= $data['id'] ?>" class="btn btn-primary" type="submit" onclick="success()" name="submit">OK </a>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade in" tabindex="-1" role="dialog" id="delete<?= $data['id'] ?>">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 id="b" class="modal-title">Selesaikan Perjalanan</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <label for="exampleSelectGender">Apakah anda yakin menolak pemesanan ini? </label>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <a href="<?= base_url() ?>/reject_order/<?= $data['id'] ?>" class="btn btn-primary" onclick="reject()" type="submit" name="submit">OK </a>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <script>
+            function success() {
+                Swal.fire(
+                    'Good job!',
+                    'Data Pemesanan Berhasil Di Approve!',
+                    'success'
+                )
+            }
 
-
-
-
-
-
-
-
-
+            function reject() {
+                Swal.fire(
+                    'Good job!',
+                    'Data Pemesanan Berhasil Di Reject!',
+                    'success'
+                )
+            }
         </script>
 
         <?= $this->endSection() ?>

@@ -10,11 +10,10 @@
                         <div class="card-body">
                             <h4 class="card-title">Approval Pesanan</h4>
                             <div class="table-responsive">
-                                <table class="table table-striped " id="dataTables-example" border="0">
+                                <table style="width:100%" class="table table-striped " id="dataTables-example" border="0">
                                     <thead>
                                         <tr>
                                             <th>Nomor</th>
-                                            <th>Detail</th>
                                             <th>Nama</th>
                                             <th>Unit Kerja</th>
                                             <th>Waktu</th>
@@ -29,25 +28,21 @@
                                         <?php
                                         $no = 1;
                                         foreach ($order as $o) : ?>
-                                            <tr style="height:100px; max-height: 100px;max-width: 100%;">
+                                            <tr>
                                                 <td><?= $no++; ?></td>
+                                                <td><?= $o['nama'] ?></td>
+                                                <td><?= $o['divisi'] ?></td>
+                                                <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
+                                                <td style="max-width:200px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis"><?= $o['tujuan_pakai'] ?></td>
+                                                <td><?= $o['keterangan'] ?></td>
+                                                <td><?= $o['plat_nomor'] ?></td>
+                                                <td style="max-width:200px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis"><?= $o['tujuan'] ?></td>
                                                 <?php if ($o['keterangan'] !== "approve_logistik") : ?>
                                                     <td class="py-1"><a href="<?= base_url("/detail_reject_dept/" . $o["id"]) ?>" style="height:50px" id="range-submit" type="submit" value="Submit" class="btn btn-primary col-lg-12  d-flex flex-row align-items-center" class="btn btn-primary">Detail Pesanan</a></td>
                                                 <?php endif; ?>
                                                 <?php if ($o['keterangan'] === "approve_logistik") : ?>
                                                     <td class="py-1"><a href="<?= base_url("/detail_approve_dept/" . $o["id_pemesanan"]) ?>" style="height:50px" id="range-submit" type="submit" value="Submit" class="btn btn-primary col-lg-12  d-flex flex-row align-items-center" class="btn btn-primary">Detail Pesanan</a></td>
                                                 <?php endif; ?>
-                                                <td><?= $o['nama'] ?></td>
-                                                <td><?= $o['divisi'] ?></td>
-                                                <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
-                                                <td><?= $o['tujuan_pakai'] ?></td>
-                                                <td><?= $o['keterangan'] ?></td>
-                                                <td><?= $o['plat_nomor'] ?></td>
-                                                <td><?= $o['tujuan'] ?></td>
-                                                <td>
-                                                    <a class="btn btn-primary  d-flex flex-row align-items-center col-md-12" data-toggle="modal" data-target="#confirmation<?= $o['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Terima</a>
-                                                    <a class="btn btn-secondary d-flex flex-row align-items-center col-md-12" data-toggle="modal" data-target="#delete<?= $o['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Tolak</a>
-                                                </td>
                                             </tr>
                                             <div class="modal fade in" tabindex="-1" role="dialog" id="confirmation<?= $o['id'] ?>">
                                                 <div class="modal-dialog" role="document">
@@ -102,6 +97,7 @@
                         </div>
                     </div>
                 </div>
+                
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">

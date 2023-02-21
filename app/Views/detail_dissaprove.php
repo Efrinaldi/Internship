@@ -198,7 +198,7 @@
 
                                     <div class="col-md-6">
                                         <label class="small mb-1" for="inputLastName">Unit Kerja</label>
-                                        <input type="text" class="form-control" name="nama" id="nama" value="<?= $data["id_divisi"] ?>" readonly required />
+                                        <input type="text" class="form-control" name="nama" id="nama" value="<?= $divisi ?>" readonly required />
                                     </div>
                                     <div class="col-md-6">
                                         <label class="small mb-1" for="inputFirstName">Jumlah Orang</label>

@@ -93,10 +93,11 @@ class Home extends BaseController
         $order = new OrdersModel();
         $data_pemesanan = $order->query("SELECT * FROM  orders where id = $id_order ")->getResultArray();
         $data_divisi = $data_pemesanan[0]["id_divisi"];
-        // $divisi = $order->query("SELECT * FROM departemen where id_divisi = $data_divisi")->getResultArray();
+        $divisi = $order->query("SELECT * FROM departemen where id_divisi = $data_divisi")->getResultArray();
         $data = [
             "data" => $data_pemesanan[0],
-            "id_divisi" => $data_pemesanan[0]["id_divisi"]
+            "divisi" => $divisi[0]["divisi"]
+
         ];
         return view('detail_dissaprove', $data);
     }
@@ -223,6 +224,7 @@ class Home extends BaseController
         FROM pemesanan_mobil RIGHT JOIN orders ON orders.id = pemesanan_mobil.id_pemesanan left JOIN mobil on mobil.id_mobil=pemesanan_mobil.id_mobil left join departemen on orders.id_divisi = 
         departemen.id_divisi left join pengemudi on pengemudi.userid = pemesanan_mobil.id_pengemudi where orders.userid ='$userid' "
         );
+
         $rows = $query->getResultArray();
         $data = [
             'order' => $rows,
@@ -334,7 +336,6 @@ class Home extends BaseController
         $driver = new DriverModel();
         $userdiv = new UserDivisiModel();
         $this->request = (\Config\Services::request());
-
         $userid = $this->request->getVar("userid");
         $data_driver = $driver->query("SELECT * FROM pengemudi where userid='$userid' ")->getResultArray();
         $data_user = $userdiv->query("SELECT * FROM user_divisi where userid='$userid' ")->getResultArray();
@@ -381,16 +382,15 @@ class Home extends BaseController
         $userid = $this->request->getVar("userid");
         $data_driver = $driver->query("SELECT * FROM pengemudi where userid='$userid' ")->getResultArray();
         $data_user = $userdiv->query("SELECT * FROM user_divisi where userid='$userid' ")->getResultArray();
-
         try {
             $data_mobil = [
                 "plat_nomor" => $this->request->getPost("plat_nomor"),
                 "keterangan_mobil" => $this->request->getVar("keterangan_mobil"),
                 "status_mobil" => $this->request->getVar("status_mobil"),
                 "userid" => $this->request->getPost("userid"),
+                "kapasitas_mobil" => $this->request->getPost("kapasitas_mobil")
             ];
             $car->insert($data_mobil);
-
             $data_pengguna = [
                 "userid" => $this->request->getPost("userid"),
                 "username" => $this->request->getPost("username"),

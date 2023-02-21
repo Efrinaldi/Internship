@@ -30,15 +30,15 @@
                                         <?php
                                         $no = 1;
                                         foreach ($order as $o) : ?>
-                                                <tr>
+                                            <tr>
                                                 <td><?= $no++; ?></td>
                                                 <td><?= $o['nama'] ?></td>
                                                 <td><?= $o['divisi'] ?></td>
                                                 <td><?= $o['tanggal'], " ",  $o['waktu'] ?></td>
-                                                <td><?= $o['tujuan_pakai'] ?></td>
+                                                <td style="max-width:200px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis"><?= $o['tujuan_pakai'] ?></td>
                                                 <td><?= $o['keterangan'] ?></td>
                                                 <td><?= $o['plat_nomor'] ?></td>
-                                                <td><?= $o['tujuan'] ?></td>
+                                                <td style="max-width:200px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis"><?= $o['tujuan'] ?></td>
                                                 <td>
                                                     <a href="pick_driver/<?= $o['id'] ?>/<?= $o['userid'] ?>" class="btn btn-primary">Terima</a>
                                                     <a href="reject_order/<?= $o['id'] ?>" class="btn btn-secondary" onclick="reject()">Tolak</a>
@@ -53,10 +53,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
 </body>
 
 </div>

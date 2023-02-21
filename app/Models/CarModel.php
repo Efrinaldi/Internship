@@ -14,7 +14,7 @@ class CarModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['plat_nomor', 'status_mobil', 'keterangan_mobil', 'userid'];
+    protected $allowedFields    = ['plat_nomor', 'status_mobil', 'keterangan_mobil', 'userid', 'kapasitas_mobil'];
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
