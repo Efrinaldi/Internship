@@ -60,7 +60,7 @@ $routes->group('api', function ($routes) {
     $routes->get('viewPassword', 'userController::view_password');
     $routes->post('insertPengemudi/(:segment)', 'OrderController::insert_pengemudi/$1');
 });
-$routes->group('', ['filter' => 'loginFilter'], function ($routes) {
+$routes->group('', ['filter' => 'loginFilter', 'driverFilter'], function ($routes) {
     $routes->get('hapus_atasan/(:segment)', 'UserController::hapus_atasan/$1');
     $routes->get('hapus_driver/(:segment)', 'Home::hapus_driver/$1');
     $routes->get('hapus_car/(:segment)/(:segment)', 'Home::hapus_car/$1/$2');
@@ -83,7 +83,7 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('/order_pesanan', 'Home::order');
     $routes->get('/approve_order_dept/(:segment)', 'OrderController::approve_order_dept/$1');
     $routes->get('/change_mobil', 'Home::change_mobil');
-    $routes->get('/reject_order/(:segment)', 'OrderController::reject_order/$1');
+    $routes->post('/reject_order/(:segment)', 'OrderController::reject_order/$1');
     $routes->get('/reject_logistik/(:segment)', 'OrderController::reject_logistik/$1');
     $routes->get('/order_departemen', 'Home::order_departemen');
     $routes->post('/approval_spv', 'OrderController::approval_spv');
@@ -129,6 +129,8 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->add('/updatePlatNomor/(:segment)', 'DriverController::update_plat/$1');
     $routes->get('approve/(:num)', 'OrderController::approve_order/$1');
     $routes->get('/detail_project/(:segment)', 'Home::detail_project/$1');
+    $routes->get('/detail_driver', 'Home::detail_driver');
+    $routes->get('/detail_perjalanan/(:segment)', 'Home::detail_perjalanan/$1');
     $routes->get('/detail_approve_dept/(:segment)', 'Home::detail_project/$1');
     $routes->get('/detail_reject_dept/(:segment)', 'Home::detail_reject_dept/$1');
     $routes->get('/detail_project_dissapprove/(:segment)', 'Home::detail_project_dissaprove/$1');
@@ -136,6 +138,8 @@ $routes->group('', ['filter' => 'loginFilter'], function ($routes) {
     $routes->get('reject/(:num)', 'OrderController::reject_order/$1');
     $routes->get('/reporting', 'Home::reporting');
     $routes->get('/status_unavailable/(:segment)', 'OrderController::status_unavailable/$1');
+    $routes->post('/perjalanan_selesai/(:segment)', 'OrderController::perjalanan_selesai/$1');
+    $routes->post('/perjalanan_terlambat/(:segment)', 'OrderController::perjalanan_terlambat/$1');
     $routes->get('/status_available/(:segment)', 'OrderController::status_available/$1');
     $routes->get('/status_unavailable_car/(:segment)', 'OrderController::status_unavailable_car/$1');
     $routes->get('/status_available_car/(:segment)', 'OrderController::status_available_car/$1');

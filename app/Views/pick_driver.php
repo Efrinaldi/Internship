@@ -11,7 +11,7 @@
                         <div class="card-body">
                             <h4 class="card-title">Daftar Pengemudi</h4>
                             <?php if (count($mobil) == 0) : ?>
-                                <a href="<?= base_url("driver") ?>" class="btn btn-primary">Tambah Driver</a>
+                                <a href="<?= base_url("driver") ?>" class="btn btn-primary mb-3">Ubah Status Driver</a>
                             <?php endif; ?>
                             <div class="table-responsive">
                                 <table class="table table-striped" id="dataTable">
@@ -24,18 +24,26 @@
                                             <th>Proses</th>
                                         </tr>
                                     </thead>
+
                                     <tbody>
+                                        <?php if (count($mobil) == 0) : ?>
+                                            <div class="alert alert-success alert-dismissible fade show mt-auto mt-2" role="alert">
+                                                <?php echo ("Pengemudi Tidak Tersedia, Harap menunggu pengemudi yang tersedia") ?>
+                                            </div>
+                                        <?php endif ?>
                                         <?php
                                         $no = 1;
+
                                         foreach ($mobil as $c) : ?>
-                                            <tr>
-                                                <td><?= $no++; ?></td>
-                                                <td><?= $c['nama_pengemudi'] ?></td>
-                                                <td><?= $c['plat_nomor'] ?></td>
-                                                <td><?= $c['status_pengemudi'] ?></td>
-                                                <td>
-                                                    <a href="<?= base_url("insert_order/" . $id_pemesanan . "/" . $c['id_mobil']  . "/" . $c["userid"]) ?>" class="btn btn-primary" onclick="submit()" type="hidden">Pilih Driver</a>
-                                                </td>
+
+
+                                            <td><?= $no++; ?></td>
+                                            <td><?= $c['nama_pengemudi'] ?></td>
+                                            <td><?= $c['plat_nomor'] ?></td>
+                                            <td><?= $c['status_pengemudi'] ?></td>
+                                            <td>
+                                                <a href="<?= base_url("insert_order/" . $id_pemesanan . "/" . $c['id_mobil']  . "/" . $c["userid"]) ?>" class="btn btn-primary" onclick="submit()" type="hidden">Pilih Driver</a>
+                                            </td>
                                             </tr>
                                             <div class="modal" tabindex="-1" role="dialog" id="hapus_driver<?php echo $c["userid"] ?>">
                                                 <div class=" modal-dialog" role="document">

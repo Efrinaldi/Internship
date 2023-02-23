@@ -9,7 +9,8 @@
                     <div class="card">
 
                         <div class="card-body">
-                            <h4 class="card-title">Tambah Pengemudi</h4>
+                            <a href="<?= base_url("order_logistik") ?>"><i class="fa fas fa-arrow-left"></i>Kembali ke pilih Driver</a>
+                            <h4 class="card-title mt-5">Tambah Pengemudi</h4>
                             <p class="card-description">
                             <div class="table-responsive">
                                 <?php if (!empty(session()->getFlashdata('error_controller'))) : ?>
@@ -40,14 +41,12 @@
                                         foreach ($mobil as $c) : ?>
                                             <tr>
                                                 <td><?= $no++ ?></td>
-
                                                 <td><?= $c['plat_nomor'] ?></td>
                                                 <td><?= $c['nama_pengemudi'] ?></td>
                                                 <td><?= $c['userid'] ?></td>
                                                 <td><?= $c['status_pengemudi'] ?></td>
                                                 <td><?= $c['status_mobil'] ?></td>
                                                 <td>
-
                                                     <?php if ($c["userid"] !== "") :  ?>
                                                         <a href="status_unavailable/<?= $c['userid'] ?>" class="btn btn-warning">Tidak Tersedia</a>
                                                         <a href="status_available/<?= $c['userid'] ?>" class="btn btn-primary">Tersedia</a>
@@ -71,8 +70,9 @@
                                                         <button type="submit" class="btn btn-primary mt-1" data-toggle="modal" data-target="#hapus_driver<?php echo $c["id_pengemudi"] ?>"><i class="fa fa-solid fa-trash"></i></button>
                                                     <?php endif; ?>
 
+                                                    <button type="submit" class="btn btn-primary mt-1" data-toggle="modal" data-target="#changeMobil"><i class="fa-thin fa-pencil"></i></button>
+                                                    <a href="<?= base_url("detail_driver") ?>" type="button" class="btn btn-primary mt-1"><i class="fa fas fa-info"></i></a>
 
-                                                    <button type="submit" class="btn btn-primary mt-1" data-toggle="modal" data-target="#changeMobil"><i class="fa fa-solid fa-pencil"></i></button>
                                                 </td>
                                             </tr>
                                             <div class="modal fade in" tabindex="-1" role="dialog" id="changeMobil">
@@ -209,7 +209,7 @@
                                 </table>
                             </div>
                             <div class="col-md-2 col-lg-2 col-sm-2">
-                                <button type="submit" class="btn btn-primary mx-1 mt-1" data-toggle="modal" data-target="#addCar">Tambah Pengemudi=</button>
+                                <button type="submit" class="btn btn-primary mx-1 mt-1" data-toggle="modal" data-target="#addCar">Tambah Pengemudi.</button>
                             </div>
                             </tbody>
                             </table>

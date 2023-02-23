@@ -183,14 +183,18 @@
                             <div class="col-md-6"> Informasi Pesanan</div>
 
                             <div class="d-flex justify-content-end col-md-6">
-                                <a class="btn btn-primary col-md-6" data-toggle="modal" data-target="#confirmation<?= $data['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Terima</a>
-                                <a class="btn btn-secondary col-md-6" data-toggle="modal" data-target="#delete<?= $data['id'] ?>" style="height:40px;max-height:40px; justify-content:center;align-items: center;">Tolak</a>
+                                <a class="btn btn-primary col-md-6 mr-2" data-toggle="modal" data-target="#confirmation<?= $data['id'] ?>" style="color:white;height:40px;max-height:40px; justify-content:center;align-items: center;">Terima</a>
+                                <a class="btn btn-secondary col-md-6 " data-toggle="modal" data-target="#delete<?= $data['id'] ?>" style="color:white;height:40px;max-height:40px; justify-content:center;align-items: center;">Tolak</a>
                             </div>
                         </div>
 
                         <div class="card-body">
                             <form>
-
+                                <?php if (!empty(session()->getFlashdata('alasan'))) : ?>
+                                    <div class="alert alert-success alert-dismissible fade show mt-auto" role="alert">
+                                        <?php echo session()->getFlashdata('alasan'); ?>
+                                    </div>
+                                <?php endif; ?>
                                 <!-- Form Group (username)-->
                                 <div class="mb-3">
                                     <label class="small mb-1" for="inputUsername">Nama</label>
@@ -235,6 +239,10 @@
                                     <input type="text" style="height:80px" class="form-control" name="tanggal" id="tanggal" value="<?= $data["tujuan"] ?>" readonly required />
                                 </div>
 
+                                <div class="mb-3">
+                                    <label class="small mb-1">Alasan Penolakan</label>
+                                    <input type="text" style="height:80px" class="form-control" name="tanggal" id="tanggal" value="<?= $data["alasan"] ?>" readonly required />
+                                </div>
 
                                 <!-- Form Row-->
                                 <?php if ($data["keterangan"] === "reject_logistik") : ?>
@@ -310,6 +318,32 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="modal fade in" tabindex="-1" role="dialog" id="deleteNote<?= $data['id'] ?>">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 id="b" class="modal-title">Apakah anda yakin ingin menolak pesanan ini?</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <div class="mb-3">
+                                                <label for="exampleFormControlTextarea1" class="form-label">Alasan Penolakan</label>
+                                                <textarea class="form-control" id="alasan" name="alasan" rows="3"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <a onclick="reject(<?php echo $data['id'] ?>)" class="btn btn-primary" type="submit" name="submit">OK </a>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="modal fade in" tabindex="-1" role="dialog" id="delete<?= $data['id'] ?>">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -325,34 +359,69 @@
                                         </div>
 
                                         <div class="modal-footer">
-                                            <a href="<?= base_url() ?>/reject_order/<?= $data['id'] ?>" class="btn btn-primary" onclick="reject()" type="submit" name="submit">OK </a>
+                                            <a data-toggle="modal" data-dismiss="modal" data-target="#deleteNote<?= $data['id'] ?>" class="btn btn-primary" type="submit" name="submit">OK </a>
                                             </form>
                                         </div>
 
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script>
-            function success() {
-                Swal.fire(
-                    'Good job!',
-                    'Data Pemesanan Berhasil Di Approve!',
-                    'success'
-                )
-            }
+    </div>
+</div>
+<script>
+    function reject(v) {
+        var alasan = document.getElementById("alasan").value;
+        $.ajax({
+            url: "<?php echo site_url('reject_order/'); ?>" + v,
+            method: "POST",
+            data: {
+                alasan: alasan
+            },
+            async: true,
+            dataType: "JSON",
+            success: function(req) {
+                console.log(req);
+                if (req.keterangan === "berhasil") {
+                    Swal.fire(
+                        'Good job!',
+                        'Data Pemesanan Berhasil Di Reject!',
+                        'success'
+                    )
+                    window.location.reload();
 
-            function reject() {
-                Swal.fire(
-                    'Good job!',
-                    'Data Pemesanan Berhasil Di Reject!',
-                    'success'
-                )
-            }
-        </script>
+                } else {
+                    Swal.fire(
+                        'Gagal',
+                        'Data Pemesanan Gagal Di Reject!',
+                        'error'
+                    )
+                    window.location.reload();
 
-        <?= $this->endSection() ?>
+                }
+            }
+        });
+
+
+    }
+
+
+
+    function success() {
+        Swal.fire(
+            'Good job!',
+            'Data Pemesanan Berhasil Di Approve!',
+            'success'
+        )
+
+    }
+
+    // function reject() {
+</script>
+
+<?= $this->endSection() ?>

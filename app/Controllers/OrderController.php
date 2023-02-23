@@ -197,52 +197,58 @@ class OrderController extends BaseController
         FROM t_users right join t_usraplikasi  on t_usraplikasi.userid = t_users.userid where t_usraplikasi.kodeaplikasi= '00033' 
         and t_users.userdomain ='$spv' or t_users.userid ='$spv'  ")->getResultArray();
         if ($data_user[0]["userdomain"] == \null) {
-              if (($this->validate([
-            'nama' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi'
-                ]
-            ],
-            'unit_kerja' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi',
-                ]
-            ],
-            'tujuan' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi'
-                ]
-            ],
-            'waktu' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi'
-                ]
-            ],
-            'waktu_end' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi'
-                ]
-            ],
+            if (($this->validate([
+                'nama' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Harus diisi'
+                    ]
+                ],
+                'unit_kerja' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Harus diisi',
+                    ]
+                ],
+                'tujuan' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Harus diisi'
+                    ]
+                ],
+                'tanggal_memakai' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Harus diisi'
+                    ]
+                ],
+                'waktu' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Harus diisi'
+                    ]
+                ],
+                'waktu_end' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Harus diisi'
+                    ]
+                ],
 
-            'tujuan_pakai' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Harus diisi'
+                'tujuan_pakai' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Harus diisi'
+                    ]
+                ],
+                'jumlah_orang' => [
+                    'rules' => 'required|greater_than_equal_to[1]|less_than_equal_to[7]',
+                    'errors' => [
+                        'required' => '{field} Harus diisi',
+                        'greater_than_equal_to[1]' => "Penumpang harus lebih dari 0 dan maksimal 7 orang"
+                    ]
                 ]
-            ],
-            'jumlah_orang' => [
-                'rules' => 'required|greater_than_equal_to[1]|less_than_equal_to[7]',
-                'errors' => [
-                    'required' => '{field} Harus diisi',
-                    'greater_than_equal_to[1]' => "Penumpang harus lebih dari 0 dan maksimal 7 orang"
-                ]
-            ]
-        ]))){
+            ]))) {
                 $data_pemesanan = [
                     'nama' => $this->request->getVar('nama'),
                     'asal' => "BCA SYARIAH",
@@ -250,7 +256,7 @@ class OrderController extends BaseController
                     'tujuan' => $this->request->getVar('tujuan'),
                     'waktu' => $waktu,
                     'waktu_end' => $waktu_end,
-                    'tanggal' => $this->request->getVar('tanggal'),
+                    'tanggal' => $this->request->getVar('tanggal_memakai'),
                     'status' => 0,
                     'keterangan' => "approval_departemen",
                     'tujuan_pakai' => $this->request->getVar('tujuan_pakai'),
@@ -259,28 +265,8 @@ class OrderController extends BaseController
                     "approval_userid"  =>  $this->request->getVar('id_spv'),
                     "approval_domain"  =>  $this->request->getVar('id_spv')
                 ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
-    } else {
+            }
+        } else {
             $data_pemesanan = [
                 'nama' => $this->request->getVar('nama'),
                 'asal' => "",
@@ -288,7 +274,7 @@ class OrderController extends BaseController
                 'tujuan' => $this->request->getVar('tujuan'),
                 'waktu' => $waktu,
                 'waktu_end' => $waktu_end,
-                'tanggal' => $this->request->getVar('tanggal'),
+                'tanggal' => $this->request->getVar('tanggal_memakai'),
                 'status' => 0,
                 'keterangan' => "approval_departemen",
                 'tujuan_pakai' => $this->request->getVar('tujuan_pakai'),
@@ -488,8 +474,6 @@ class OrderController extends BaseController
         $tanggal = $this->request->getPost("tanggal_memakai");
         $tujuan_pakai = $this->request->getPost("tujuan_pakai");
         $jumlah_orang = $this->request->getPost("jumlah_orang");
-
-
         $waktuErr = "";
         $data = [
             "activity" => "Menambahkan pesanan atas nama $userid",
@@ -523,6 +507,12 @@ class OrderController extends BaseController
                     'required' => '{field} Harus diisi'
                 ]
             ],
+            'tanggal_memakai' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Harus diisi'
+                ]
+            ],
             'waktu_end' => [
                 'rules' => 'required',
                 'errors' => [
@@ -537,10 +527,11 @@ class OrderController extends BaseController
                 ]
             ],
             'jumlah_orang' => [
-                'rules' => 'required|greater_than_equal_to[1]|less_than_equal_to[7]',
+                'rules' => 'required|numeric|greater_than[0]|less_than[7]|',
                 'errors' => [
                     'required' => '{field} Harus diisi',
-                    'greater_than_equal_to[1]' => "Penumpang harus lebih dari 0 dan maksimal 7 orang"
+                    'greater_than[0]' => "Penumpang harus lebih dari 0 dan maksimal 7 orang",
+                    'less_than[7]' => "Penumpang harus lebih dari 0 dan maksimal 7 orang"
                 ]
             ]
         ]))) {
@@ -550,7 +541,7 @@ class OrderController extends BaseController
                 "waktuErr" => "",
                 'order' => $rows,
                 'data_divisi' => $list_approval,
-                "waktu"        =>  date("H:i", strtotime(substr($waktu, 12, 19)))
+                "waktu"       =>  date("H:i", strtotime(substr($waktu, 12, 19)))
 
             ];
             echo json_encode($data_error);
@@ -568,6 +559,7 @@ class OrderController extends BaseController
             echo json_encode($data_error);
         }
     }
+
 
     public function insert_reimburse($id)
     {
@@ -838,7 +830,6 @@ class OrderController extends BaseController
         ];
         \notif($order[0]["approval_domain"] . "@bcasyariah.co.id", "Pemesanan Kendaraan PT Bank BCA Syariah", "email", $data);
         \notif("githa_refina@bcasyariah.co.id", "Pemesanan Kendaraan PT Bank BCA Syariah", "email", $data);
-        \notif("randa_prasetya@bcasyariah.co.id", "Pemesanan Kendaraan PT Bank BCA Syariah", "email", $data);
 
         // $activity->insert($data);
         return redirect()->back()->with('success', 'Data Berhasil Disetujui');
@@ -865,8 +856,6 @@ class OrderController extends BaseController
         ];
         \notif($order[0]["approval_domain"] . "@bcasyariah.co.id", "Pemesanan Kendaraan PT Bank BCA Syariah", "email", $data);
         \notif("githa_refina@bcasyariah.co.id", "Pemesanan Kendaraan PT Bank BCA Syariah", "email", $data);
-        \notif("randa_prasetya@bcasyariah.co.id", "Pemesanan Kendaraan PT Bank BCA Syariah", "email", $data);
-
         // $activity->insert($data);
         return redirect()->back()->with('success', 'Data Berhasil Disetujui');
     }
@@ -876,39 +865,159 @@ class OrderController extends BaseController
 
     public function reject_order($id)
     {
-        $builder = new OrderModel();
-        $builder->where('id', $id);
-        $builder->set('status', 1);
-        $builder->set('keterangan', "reject_departemen");
-        $builder->update();
-        $activity = new ActivityLogModel();
-        $order = $builder->query("SELECT * FROM ORDERS WHERE ID = $id")->getResultArray();
-        $user = $order[0]["userid"];
-        $waktu = $order[0]["waktu"];
-        $waktu_end = $order[0]["waktu_end"];
-        $tujuan = $order[0]["waktu_end"];
-        $keterangan = $order[0]["tujuan_pakai"];
-        $activity = new ActivityLogModel();
-        $data_insert = [
-            "activity" => "data order telah ditolak oleh otorisator departemen"
-        ];
-        $data  = [
-            "data" => [
-                "body" => "Pesanan atas nama $user merequest pesanan pada jam $waktu sampai dengan jam $waktu_end untuk datang ke lokasi $tujuan, dengan keterangan pakai $keterangan",
-                "url" => "detail_project/" . $id
 
+        if ($this->validate(
+            [
+                'alasan' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Harus diisi'
+                    ]
+                ]
             ]
-        ];
+        )) {
+            $builder = new OrderModel();
+            $builder->where('id', $id);
+            $builder->set('status', 1);
+            $builder->set('keterangan', "reject_departemen");
+            $alasan = $this->request->getPost("alasan");
 
-
-        $activity->insert($data_insert);
-        \notif($order[0]["approval_domain"] . "@bcasyariah.co.id", "Pemesanan Kendaraan PT Bank BCA Syariah", "email", $data);
-        \notif("githa_refina@bcasyariah.co.id", "Pemesanan Kendaraan PT Bank BCA Syariah", "email", $data);
-        \notif("randa_prasetya@bcasyariah.co.id", "Pemesanan Kendaraan PT Bank BCA Syariah", "email", $data);
-
-        // $activity->insert($data);
-        return redirect()->back()->with('success', 'Data ditolak oleh departemen');
+            $builder->set('alasan', $alasan);
+            $builder->update();
+            $activity = new ActivityLogModel();
+            $order = $builder->query("SELECT * FROM ORDERS WHERE ID = $id")->getResultArray();
+            $user = $order[0]["userid"];
+            $waktu = $order[0]["waktu"];
+            $waktu_end = $order[0]["waktu_end"];
+            $tujuan = $order[0]["waktu_end"];
+            $keterangan = $order[0]["tujuan_pakai"];
+            $data  = [
+                "data" => [
+                    "body" => "Pesanan atas nama $user merequest pesanan pada jam $waktu sampai dengan jam $waktu_end untuk datang ke lokasi $tujuan, dengan keterangan pakai $keterangan",
+                    "url" => "detail_project/" . $id
+                ]
+            ];
+            \notif($order[0]["approval_domain"] . "@bcasyariah.co.id", "Pemesanan Kendaraan PT Bank BCA Syariah", "email", $data);
+            \notif("githa_refina@bcasyariah.co.id", "Pemesanan Kendaraan PT Bank BCA Syariah", "email", $data);
+            // $activity->insert($data);
+            $status = [
+                "keterangan" => "berhasil"
+            ];
+            echo \json_encode($status);
+        } else {
+            $status = [
+                "keterangan" => "gagal"
+            ];
+            echo \json_encode($status);
+        }
     }
+
+    public function perjalanan_terlambat($id)
+    {
+
+        if ($this->validate(
+            [
+                'inputWaktuEnd' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Harus diisi'
+                    ]
+                ]
+            ]
+        )) {
+            $builder = new OrderModel();
+            $builder->where('id', $id);
+            $inputWaktuEnd = $this->request->getVar("inputWaktuEnd");
+            $builder->set('waktu_end', $inputWaktuEnd);
+            $builder->update();
+            $activity = new ActivityLogModel();
+            $order = $builder->query("SELECT * FROM ORDERS WHERE ID = $id")->getResultArray();
+            $user = $order[0]["userid"];
+            $waktu = $order[0]["waktu"];
+            $waktu_end = $order[0]["waktu_end"];
+            $tujuan = $order[0]["tujuan"];
+            $keterangan = $order[0]["tujuan_pakai"];
+            $data  = [
+                "data" => [
+                    "body" => "Pesanan atas nama $user merequest pesanan pada jam $waktu sampai dengan jam $waktu_end untuk datang ke lokasi $tujuan, dengan keterangan pakai $keterangan",
+                    "url" => "detail_project/" . $id
+                ]
+            ];
+            \notif($order[0]["approval_domain"] . "@bcasyariah.co.id", "Pemesanan Kendaraan PT Bank BCA Syariah", "email", $data);
+            \notif("githa_refina@bcasyariah.co.id", "Pemesanan Kendaraan PT Bank BCA Syariah", "email", $data);
+            // $activity->insert($data);
+            $status = [
+                "keterangan" => $inputWaktuEnd
+            ];
+            echo \json_encode($status);
+        } else {
+            $status = [
+                "keterangan" => "end"
+            ];
+            echo \json_encode($status);
+        }
+    }
+
+
+
+
+    public function perjalanan_selesai($id)
+    {
+
+        if ($this->validate(
+            [
+                'alasan' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Harus diisi'
+                    ]
+                ]
+            ]
+        )) {
+            $builder = new OrderModel();
+            $builder->where('id', $id);
+            $builder->set('status', 1);
+            $builder->set('keterangan', "reject_departemen");
+            $alasan = $this->request->getPost("alasan");
+
+            $builder->set('alasan', $alasan);
+            $builder->update();
+            $activity = new ActivityLogModel();
+            $order = $builder->query("SELECT * FROM ORDERS WHERE ID = $id")->getResultArray();
+            $user = $order[0]["userid"];
+            $waktu = $order[0]["waktu"];
+            $waktu_end = $order[0]["waktu_end"];
+            $tujuan = $order[0]["waktu_end"];
+            $keterangan = $order[0]["tujuan_pakai"];
+            $data  = [
+                "data" => [
+                    "body" => "Pesanan atas nama $user merequest pesanan pada jam $waktu sampai dengan jam $waktu_end untuk datang ke lokasi $tujuan, dengan keterangan pakai $keterangan",
+                    "url" => "detail_project/" . $id
+                ]
+            ];
+            \notif($order[0]["approval_domain"] . "@bcasyariah.co.id", "Pemesanan Kendaraan PT Bank BCA Syariah", "email", $data);
+            \notif("githa_refina@bcasyariah.co.id", "Pemesanan Kendaraan PT Bank BCA Syariah", "email", $data);
+            // $activity->insert($data);
+            $status = [
+                "keterangan" => "berhasil"
+            ];
+            echo \json_encode($status);
+        } else {
+            $status = [
+                "keterangan" => "gagal"
+            ];
+            echo \json_encode($status);
+        }
+    }
+
+
+
+
+
+
+
+
+
 
     public function reject_logistik($id)
     {

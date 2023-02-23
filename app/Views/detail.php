@@ -16,7 +16,9 @@
                             <img class="img-account-profile rounded-circle mb-2" style="height:200px;width:200px;" src="<?= base_url('/public/assets_c/img/user.png') ?>" alt="">
                             <!-- Profile picture help block-->
                             <h5 for="nama_pengemudi"><?php echo $data["nama_pengemudi"] ?></h5>
-                            <h5 for="nama_pengemudi"><?php echo $data["plat_nomor"] ?></h5>
+                            <h5 for="plat_nomor"><?php echo $data["plat_nomor"] ?></h5>
+                            <h5 for="keterangan_mobil"><?php echo $data["keterangan_mobil"] ?></h5>
+
                         </div>
                     </div>
                 </div>
@@ -199,6 +201,10 @@
                                         <label class="small mb-1" for="inputPhone">Plat Mobil</label>
                                         <input type="text" id="plat_nomor" value="<?= $data["plat_nomor"] ?>" name="plat_nomor" width="276" class="form-control file-upload-info" readonly required />
                                     </div>
+                                    <div class="col-md-6">
+                                        <label class="small mb-1" for="inputPhone">Keterangan Mobil</label>
+                                        <input type="text" id="plat_nomor" value="<?= $data["keterangan_mobil"] ?>" name="plat_nomor" width="276" class="form-control file-upload-info" readonly required />
+                                    </div>
                                     <!-- Form Group (birthday)-->
                                     <div class="col-md-6">
                                         <label class="small mb-1" for="inputBirthday">Nama Pengemudi</label>
@@ -222,21 +228,18 @@
                                     <!-- Form Group (organization name)-->
                                     <div class="col-md-6">
                                         <label class="small mb-1" for="inputOrgName">Waktu Mulai</label>
-                                        <input type="text" class="form-control" name="waktu" id="waktu" value="<?= $data["waktu"] ?>" readonly required />
+                                        <input type="text" class="form-control" name="waktu" id="waktu" value="<?= $data["tanggal"] . "  " . $data["waktu"] ?>" readonly required />
                                     </div>
                                     <!-- Form Group (location)-->
                                     <div class="col-md-6">
                                         <label class="small mb-1" for="inputLocation">Waktu Berakhir</label>
-                                        <input type="text" class="form-control" name="waktu_end" id="waktu_end" value="<?= $data["waktu_end"] ?>" readonly required />
+                                        <input type="text" class="form-control" name="waktu_end" id="waktu_end" value="<?= $data["tanggal"] . "  " . $data["waktu_end"] ?>" readonly required />
                                     </div>
                                 </div>
 
 
                                 <!-- Form Group (email address)-->
-                                <div class="mb-3">
-                                    <label class="small mb-1" for="inputEmailAddress">Tanggal Memakai</label>
-                                    <input type="text" class="form-control" name="tanggal" id="tanggal" value="<?= $data["tanggal"] ?>" readonly required />
-                                </div>
+
                                 <div class="mb-3">
                                     <label class="small mb-1" for="inputEmailAddress">Tujuan Lokasi</label>
                                     <input type="text" class="form-control" name="tanggal" id="tanggal" value="<?= $data["tujuan"] ?>" readonly required />
@@ -250,7 +253,15 @@
                                     <div class="track">
                                         <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Telah Diterima</span> </div>
                                         <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di approve oleh Supervisor</span> </div>
-                                        <div class="step "> <span class="icon"> <i class="fa-solid fa-xmark"></i> </span> <span class="text"> Di tolak oleh logistik </span> </div>
+                                        <div class="step "> <span class="icon"> <i class="fa fa-ban"></i> </span> <span class="text"> Di tolak oleh logistik </span> </div>
+                                        <div class="step "> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text">Driver menjemput anda</span> </div>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($data["keterangan"] === "reject_departemen") : ?>
+                                    <div class="track">
+                                        <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Telah Diterima</span> </div>
+                                        <div class="step active"> <span class="icon"> <i class="fa fa-ban"></i> </span> <span class="text"> Di tolak oleh Departemen</span> </div>
+                                        <div class="step "> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di tolak oleh logistik </span> </div>
                                         <div class="step "> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text">Driver menjemput anda</span> </div>
                                     </div>
                                 <?php endif; ?>
@@ -265,7 +276,7 @@
                                 <?php if ($data["keterangan"] === "approval_departemen") : ?>
                                     <div class="track">
                                         <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Telah Diterima</span> </div>
-                                        <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di approve oleh Supervisor</span> </div>
+                                        <div class="step"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di approve oleh Supervisor</span> </div>
                                         <div class="step"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di approve oleh logistik </span> </div>
                                         <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text">Driver menjemput anda</span> </div>
                                     </div>
@@ -274,7 +285,7 @@
                                     <div class="track">
                                         <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Telah Diterima</span> </div>
                                         <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di approve oleh Supervisor</span> </div>
-                                        <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di approve oleh logistik </span> </div>
+                                        <div class="step"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di approve oleh logistik </span> </div>
                                         <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text">Driver menjemput anda</span> </div>
                                     </div>
                                 <?php endif; ?>
@@ -287,16 +298,25 @@
                                     </div>
                                 <?php endif; ?>
 
+                                <?php if ($data["keterangan"] === "end") : ?>
+                                    <div class="track">
+                                        <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Telah Diterima</span> </div>
+                                        <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di approve oleh Supervisor</span> </div>
+                                        <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Di approve oleh logistik </span> </div>
+                                        <div class="step active"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text">Driver menjemput anda</span> </div>
+                                        <div class="step active"> <span class="icon"> <i class="fa fa-ban"></i> </span> <span class="text">Perjalanan Selesai</span> </div>
 
-
-
+                                    </div>
+                                <?php endif; ?>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script>
+    </div>
+</div>
+<script>
 
 
 
@@ -306,6 +326,7 @@
 
 
 
-        </script>
 
-        <?= $this->endSection() ?>
+</script>
+
+<?= $this->endSection() ?>

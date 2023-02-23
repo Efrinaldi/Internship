@@ -256,49 +256,6 @@ $userid = session("userid");
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Waktu Mulai</label>
-                                                        <div class="col-md-9 input-group date" id="datetimepickerStart" data-target-input="nearest">
-                                                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepickerStart" id="inputWaktuStart" placeholder="Waktu Mulai" />
-                                                            <div class="input-group-append" data-target="#datetimepickerStart" data-toggle="datetimepicker">
-                                                                <div class="col-sm-3  input-group-text" style="height:75%;width:150px"><i class="fa fa-calendar"></i></div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-
-                                                    <?php if ($validation->getError('inputWaktuStart')) : ?>
-
-                                                        <div class='alert alert-danger mt-2'>
-                                                            <?= $error = $validation->getError('inputWaktuStart'); ?>
-                                                        </div>
-                                                    <?php endif; ?>
-                                                </div>
-                                                <div class="col-md-12">
-
-                                                    <div class="form-group row">
-                                                        <label class="col-sm-3 col-form-label">Waktu Berakhir</label>
-                                                        <div class="col-md-9 input-group date" id="datetimepickerEnd" data-target-input="nearest">
-                                                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepickerEnd" id="inputWaktuEnd" placeholder="Waktu Berakhir" />
-                                                            <div class="input-group-append" data-target="#datetimepickerEnd" data-toggle="datetimepicker">
-                                                                <div class="col-sm-3  input-group-text" style="height:75%;width:150px"><i class="fa fa-calendar"></i></div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-
-                                                    <?php if ($validation->getError('inputWaktuStart')) : ?>
-
-                                                        <div class='alert alert-danger mt-2'>
-                                                            <?= $error = $validation->getError('inputWaktuStart'); ?>
-                                                        </div>
-                                                    <?php endif; ?>
-
-                                                </div>
-
-                                                <div class="col-md-12">
-                                                    <div class="form-group row">
                                                         <label class="col-sm-3 col-form-label">Jumlah Orang</label>
                                                         <div class="col-sm-9">
                                                             <input type="text" class="form-control" min="1" max="4" id="jumlah_orang" name="jumlah_orang" placeholder="Jumlah Orang">
@@ -325,6 +282,72 @@ $userid = session("userid");
                                                     <?php endif; ?>
 
                                                 </div>
+
+
+                                                <div class="col-md-12">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Tanggal Memakai</label>
+                                                        <div class="col-sm-9">
+                                                            <div class="input-group date" id='tanggal'>
+                                                                <input type="text" name="tanggal_memakai" class="form-control" id="tanggal_memakai" placeholder="Tanggal Memakai" />
+                                                                <span class="input-group-append">
+                                                                    <span class="input-group-text bg-light d-block">
+                                                                        <i class="fa fa-calendar"></i>
+                                                                    </span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <?php if ($validation->getError('tanggal_memakai')) : ?>
+                                                            <div class='alert alert-danger mt-2'>
+                                                                <?= $error = $validation->getError('tanggal_memakai'); ?>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                </div>
+
+
+
+
+                                                <div class="col-md-12">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Waktu Berakhir</label>
+                                                        <div class="col-md-9 input-group date" id="timepickerEnd" data-target-input="nearest">
+                                                            <input type="time" class="form-control datetimepicker-input" name="inputWaktuStart" id="inputWaktuStart" placeholder="Waktu Berakhir" />
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <?php if ($validation->getError('inputWaktuStart')) : ?>
+
+                                                        <div class='alert alert-danger mt-2'>
+                                                            <?= $error = $validation->getError('inputWaktuStart'); ?>
+                                                        </div>
+                                                    <?php endif; ?>
+
+                                                    </script>
+                                                </div>
+                                                <div class="col-md-12">
+
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-3 col-form-label">Waktu Berakhir</label>
+                                                        <div class="col-md-9 input-group date" id="timepickerEnd" data-target-input="nearest">
+                                                            <input type="time" class="form-control datetimepicker-input" name="inputWaktuEnd" id="inputWaktuEnd" placeholder="Waktu Berakhir" />
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <?php if ($validation->getError('inputWaktuEnd')) : ?>
+
+                                                        <div class='alert alert-danger mt-2'>
+                                                            <?= $error = $validation->getError('inputWaktuEnd'); ?>
+                                                        </div>
+                                                    <?php endif; ?>
+
+                                                </div>
+
+
                                                 <div id="map-canvas" hidden>
                                                 </div>
                                                 <div class="col-md-12">
@@ -352,7 +375,8 @@ $userid = session("userid");
                     </div>
                 </div>
 
-                <div class="modal fade in" tabindex="-1" role="dialog" id="sendApproval">
+
+                <div class="modal fade in" tabindex="-1" role="dialog" id="sendApprovalID">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content" id="content-approval">
                             <div class="modal-header">
@@ -361,6 +385,36 @@ $userid = session("userid");
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
+
+
+                            <div class="modal-body">
+                                <label for="exampleSelectGender">Departemen</label>
+                                <select id="deptID" class="form-control" style="height:50px !important;" name="dept" value="" onclick="getValueID(<?php echo $id_divisi ?>)">
+                                    <option selected id="div" value="<?= $id_divisi ?>"><?= $divisi ?></option>
+                                </select>
+                                <label for="exampleSelectGender">Supervisor</label>
+                                <select id="categoryID" class="form-control" style="height:50px !important;" name="category" value="">
+                                </select>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
+                                <a class="btn btn-primary" type="button" name="submit" onclick="approvalSpvID(),success()" class="btn btn-info mb-3">Submit SPV</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade in" tabindex="-1" role="dialog" id="sendApproval">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content" id="content-approval">
+                            <div class="modal-header">
+                                <h5 id="b" class="modal-title">Kirim Approval ke Departemen Satu Unit Kerja</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
                             <div class="modal-body">
                                 <label for="exampleSelectGender">Departemen</label>
                                 <select id="dept" class="form-control" style="height:50px !important;" name="dept" value="" onchange="getValue(this.value)">
@@ -423,10 +477,14 @@ $userid = session("userid");
     </div>
 
     <script type="text/javascript">
-        $('#tanggal_memakai').datepicker({
+        $('#tanggal').datepicker({
             format: 'dd/mm/yyyy',
             uiLibrary: 'bootstrap4'
         });
+
+
+
+
 
         function success() {
             Swal.fire(
@@ -437,8 +495,9 @@ $userid = session("userid");
             window.location.href = "dashboard";
 
         }
+
         $(function() {
-            $('#datetimepickerStart').datetimepicker({
+            $('#datetimepicker3').datetimepicker({
 
 
             });
@@ -449,6 +508,18 @@ $userid = session("userid");
 
             });
 
+
+
+        });
+        $(document).ready(function() {
+            // $('#timepickerStart').datetimepicker({
+            //     format: 'HH:mm'
+            // });
+            // $('#timepickerEnd').timepicker({
+            //     timeFormat: 'HH:mm',
+            //     interval: 60,
+            //     defaultTime: '10',
+            // });
         });
 
         function myFunction() {
@@ -464,6 +535,7 @@ $userid = session("userid");
             var spv = document.getElementById("category").value;
             var nama = document.getElementById("nama").value;
             var unit_kerja = document.getElementById("unit_kerja").value;
+            var tanggal_memakai = document.getElementById("tanggal_memakai").value;
             var tujuan = document.getElementById("inputTujuan").value;
             var waktu = document.getElementById("inputWaktuStart").value;
             var id_divisi = document.getElementById("id_divisi").value;
@@ -471,6 +543,7 @@ $userid = session("userid");
             var tujuan_pakai = document.getElementById("purpose").value;
             var jumlah_orang = document.getElementById("jumlah_orang").value
             var html = '';
+            console.log(tanggal_memakai);
             $.ajax({
                 url: "<?php echo site_url('requestOrder'); ?>",
                 method: "POST",
@@ -480,6 +553,7 @@ $userid = session("userid");
                     id_divisi: id_divisi,
                     nama: nama,
                     tujuan: tujuan,
+                    tanggal_memakai: tanggal_memakai,
                     waktu: waktu,
                     waktu_end: waktu_end,
                     unit_kerja: unit_kerja,
@@ -495,26 +569,42 @@ $userid = session("userid");
 
                             Swal.fire(
                                 'Data Gagal Masuk!',
-                                val[key].replace("_", " "),
+                                val[key],
                                 'error'
                             )
 
                         }
                     } else {
-                        $('#sendApproval').modal('show');
+                        Swal.fire({
+                            title: 'Apakah atasan anda hadir?',
+                            icon: 'question',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Hadir',
+                            cancelButtonText: 'Tidak hadir',
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                $('#sendApprovalID').modal('show');
+
+                            } else {
+                                $('#sendApproval').modal('show');
+
+                            }
+                        })
                     }
 
                 }
             });
 
-
         }
 
-        function approvalSpv() {
+        function approvalSpvID() {
             event.preventDefault();
             var div = $('#dept').val();
-            var id = document.getElementById("dept").value;
-            var spv = document.getElementById("category").value;
+            var id = document.getElementById("deptID").value;
+            var spv = document.getElementById("categoryID").value;
+            var tanggal_memakai = document.getElementById("tanggal_memakai").value;
             var nama = document.getElementById("nama").value;
             var unit_kerja = document.getElementById("unit_kerja").value;
             var tujuan = document.getElementById("inputTujuan").value;
@@ -536,6 +626,52 @@ $userid = session("userid");
                     waktu: waktu,
                     waktu_end: waktu_end,
                     id_divisi: id_divisi,
+                    tanggal_memakai: tanggal_memakai,
+                    unit_kerja: unit_kerja,
+                    tujuan_pakai: tujuan_pakai,
+                    jumlah_orang: jumlah_orang
+                },
+                async: true,
+                dataType: "JSON",
+                success: function(req) {
+                    console.log(req);
+                    Swal.fire(
+                        'Selamat!',
+                        'Data Berhasil di request',
+                        'success'
+                    )
+                }
+            });
+        }
+
+        function approvalSpv() {
+            event.preventDefault();
+            var div = $('#dept').val();
+            var id = document.getElementById("dept").value;
+            var spv = document.getElementById("category").value;
+            var tanggal_memakai = document.getElementById("tanggal_memakai").value;
+            var nama = document.getElementById("nama").value;
+            var unit_kerja = document.getElementById("unit_kerja").value;
+            var tujuan = document.getElementById("inputTujuan").value;
+            var waktu = document.getElementById("inputWaktuStart").value;
+            var waktu_end = document.getElementById("inputWaktuEnd").value;
+            var id_divisi = document.getElementById("id_divisi").value;
+            var tujuan_pakai = document.getElementById("purpose").value;
+            var jumlah_orang = document.getElementById("jumlah_orang").value;
+            console.log(id_divisi)
+
+            $.ajax({
+                url: "<?php echo site_url('approval_spv_order'); ?>",
+                method: "POST",
+                data: {
+                    id_spv: spv,
+                    id_dept: id,
+                    nama: nama,
+                    tujuan: tujuan,
+                    waktu: waktu,
+                    waktu_end: waktu_end,
+                    id_divisi: id_divisi,
+                    tanggal_memakai: tanggal_memakai,
                     unit_kerja: unit_kerja,
                     tujuan_pakai: tujuan_pakai,
                     jumlah_orang: jumlah_orang
@@ -571,6 +707,28 @@ $userid = session("userid");
                         html += '<option value=' + data[i].userid + '>' + data[i].username + '</option>';
                     }
                     $('#category').html(html);
+                }
+            });
+        }
+
+        function getValueID(v) {
+            var div = $('#deptID').val();
+            var id = document.getElementById("deptID").value;
+            $.ajax({
+                url: "<?php echo site_url('get_sub_spv'); ?>",
+                method: "POST",
+                data: {
+                    id: id,
+                },
+                async: true,
+                dataType: "JSON",
+                success: function(data) {
+                    var html = '';
+                    var i;
+                    for (i = 0; i < data.length; i++) {
+                        html += '<option value=' + data[i].userid + '>' + data[i].username + '</option>';
+                    }
+                    $('#categoryID').html(html);
                 }
             });
         }

@@ -36,7 +36,7 @@ class Home extends BaseController
         try {
             $driver = new DriverModel();
             $order = new OrdersModel();
-            $data_pemesanan = $order->query("SELECT * FROM  orders left join pemesanan_mobil on orders.id = pemesanan_mobil.id_pemesanan left join mobil on mobil.id_mobil = pemesanan_mobil.id_mobil  left join pengemudi on pengemudi.userid = pemesanan_mobil.id_pengemudi where pemesanan_mobil.id= $id_order ")->getResultArray();
+            $data_pemesanan = $order->query("SELECT * FROM `pemesanan_mobil` LEFT JOIN orders on orders.id = pemesanan_mobil.id_pemesanan LEFT JOIN pengemudi on pengemudi.userid = pemesanan_mobil.id_pengemudi left JOIN mobil ON mobil.id_mobil = pemesanan_mobil.id_mobil left JOIN departemen on departemen.id_divisi = orders.id_divisi where pemesanan_mobil.id= $id_order ")->getResultArray();
             $data_divisi = $data_pemesanan[0]["id_divisi"];
             // $divisi = $order->query("SELECT * FROM departemen where id_divisi = $data_divisi")->getResultArray();
             $data = [
@@ -47,7 +47,7 @@ class Home extends BaseController
         } catch (Exception $e) {
             $driver = new DriverModel();
             $order = new OrdersModel();
-            $data_pemesanan = $order->query("SELECT * FROM  orders left join pemesanan_mobil on orders.id = pemesanan_mobil.id_pemesanan left join mobil on mobil.id_mobil = pemesanan_mobil.id_mobil  left join pengemudi on pengemudi.userid = pemesanan_mobil.id_pengemudi where pemesanan_mobil.id= $id_order ")->getResultArray();
+            $data_pemesanan = $order->query("SELECT pemesanan_mobil.id_pemesanan, mobil.id_mobil, orders.keterangan,mobil.keterangan_mobil,orders.tujuan,orders.tanggal,departemen.id_divisi,departemen.divisi,orders.waktu,orders.waktu_end,orders.jumlah_orang,orders.alasan,mobil.userid,pengemudi.nama_pengemudi,mobil.plat_nomor,orders.tujuan_pakai,orders.tujuan,orders.nama,orders.tanggal,orders.approval_userid,orders.approval_domain,orders.status     FROM `pemesanan_mobil` LEFT JOIN orders on orders.id = pemesanan_mobil.id_pemesanan LEFT JOIN pengemudi on pengemudi.userid = pemesanan_mobil.id_pengemudi left JOIN mobil ON mobil.id_mobil = pemesanan_mobil.id_mobil left JOIN departemen on departemen.id_divisi = orders.id_divisi where pemesanan_mobil.id_pemesanan=$id_order ")->getResultArray();
             $data_divisi = $data_pemesanan[0]["id_divisi"];
             // $divisi = $order->query("SELECT * FROM departemen where id_divisi = $data_divisi")->getResultArray();
             $data = [
@@ -58,7 +58,37 @@ class Home extends BaseController
             return view('detail', $data);
         }
     }
+    public function detail_perjalanan($id_order)
+    {
+        try {
+            $driver = new DriverModel();
+            $order = new OrdersModel();
+            $data_pemesanan = $order->query("SELECT * FROM `pemesanan_mobil` LEFT JOIN orders on orders.id = pemesanan_mobil.id_pemesanan LEFT JOIN pengemudi on pengemudi.userid = pemesanan_mobil.id_pengemudi left JOIN mobil ON mobil.id_mobil = pemesanan_mobil.id_mobil left JOIN departemen on departemen.id_divisi = orders.id_divisi where pemesanan_mobil.id= $id_order ")->getResultArray();
+            $data_divisi = $data_pemesanan[0]["id_divisi"];
+            // $divisi = $order->query("SELECT * FROM departemen where id_divisi = $data_divisi")->getResultArray();
+            $data = [
+                "data" => $data_pemesanan[0],
+                "id_divisi" => $data_pemesanan[0]["id_divisi"]
+            ];
+            return view('detail', $data);
+        } catch (Exception $e) {
+            $driver = new DriverModel();
+            $order = new OrdersModel();
+            $data_pemesanan = $order->query("SELECT pemesanan_mobil.id_pemesanan, mobil.id_mobil, orders.keterangan,mobil.keterangan_mobil,orders.tujuan,orders.tanggal,departemen.id_divisi,departemen.divisi,orders.waktu,orders.waktu_end,orders.jumlah_orang,orders.alasan,mobil.userid,pengemudi.nama_pengemudi,mobil.plat_nomor,orders.tujuan_pakai,orders.tujuan,orders.nama,orders.tanggal,orders.approval_userid,orders.approval_domain,orders.status     FROM `pemesanan_mobil` LEFT JOIN orders on orders.id = pemesanan_mobil.id_pemesanan LEFT JOIN pengemudi on pengemudi.userid = pemesanan_mobil.id_pengemudi left JOIN mobil ON mobil.id_mobil = pemesanan_mobil.id_mobil left JOIN departemen on departemen.id_divisi = orders.id_divisi where pemesanan_mobil.id_pemesanan=$id_order ")->getResultArray();
+            $data_divisi = $data_pemesanan[0]["id_divisi"];
+            // $divisi = $order->query("SELECT * FROM departemen where id_divisi = $data_divisi")->getResultArray();
+            $data = [
+                "data" => $data_pemesanan[0],
+                "id_divisi" => $data_pemesanan[0]["id_divisi"]
+            ];
 
+            return view('detail_perjalanan', $data);
+        }
+    }
+    public function detail_driver()
+    {
+        return view('detail_driver');
+    }
     public function detail_approve_dept($id_order)
     {
 

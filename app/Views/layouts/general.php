@@ -13,25 +13,23 @@
     <link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
     <link rel="stylesheet" href="css/vertical-layout-light/style.css">
     <link rel="shortcut icon" href="images/favicon.png" />
-    <link href="<?= base_url("/public/assets_c/vendor/bootstrap/css/bootstrap.min.css") ?>" rel="stylesheet">
-    <link href="<?= base_url("/public/assets_c/vendor/bootstrap-icons/bootstrap-icons.css") ?>" rel="stylesheet">
-    <link href="<?= base_url("/public/assets_c/vendor/boxicons/css/boxicons.min.css") ?>" rel="stylesheet">
-    <link href="<?= base_url("/public/assets_c/vendor/quill/quill.snow.css") ?>" rel="stylesheet">
-    <link href="<?= base_url("/public/assets_c/vendor/quill/quill.bubble.css") ?>" rel="stylesheet">
-    <link href="<?= base_url("/public/assets_c/vendor/remixicon/remixicon.css") ?>" rel="stylesheet">
-    <link href="<?= base_url("/public/assets_c/vendor/simple-datatables/style.css") ?>" rel="stylesheet">
+
     <link rel="stylesheet" href="<?= base_url('/public/assets_p/vendors/feather/feather.css') ?>">
     <link rel="stylesheet" href="<?= base_url('/public/assets_p/vendors/ti-icons/css/themify-icons.css') ?>">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <link rel="stylesheet" href="<?= base_url('/public/assets_p/datetimepicker-master/jquery.datetimepicker.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('/public/assets_p/images/favicon.png') ?>" href="jquery.datetimepicker.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="<?= base_url('/public/assets_p/vendors/css/vendor.bundle.base.css') ?>">
     <link rel="stylesheet" href="<?= base_url('/public/assets_p/css/vertical-layout-light/style.css') ?>">
     <link rel="stylesheet" href="<?= base_url('/public/assets_p/images/favicon.png') ?>">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="<?= base_url('/public/assets_p/datetimepicker-master/jquery.datetimepicker.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('/public/assets_p/images/favicon.png') ?>" href="jquery.datetimepicker.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js" integrity="sha256-2JRzNxMJiS0aHOJjG+liqsEOuBb6++9cY4dSOyiijX4=" crossorigin="anonymous"></script>
@@ -161,7 +159,7 @@
 
 
         <!-- partial -->
-        <div class="container-fluid page-body-wrapper">
+        <div class="container-fluid px-0 page-body-wrapper">
             <!-- partial:partials/_settings-panel.html -->
             <div class="theme-setting-wrapper">
                 <div id="settings-trigger"><i class="ti-settings"></i></div>
@@ -185,6 +183,7 @@
                     </div>
                 </div>
             </div>
+
             <div id="right-sidebar" class="settings-panel">
                 <i class="settings-close ti-close"></i>
                 <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
