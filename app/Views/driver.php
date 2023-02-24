@@ -31,8 +31,6 @@
                                             <th>Ketersediaan Mobil</th>
                                             <th>Ketersediaan Pengemudi</th>
                                             <th>Action</th>
-
-
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -71,7 +69,7 @@
                                                     <?php endif; ?>
 
                                                     <button type="submit" class="btn btn-primary mt-1" data-toggle="modal" data-target="#changeMobil"><i class="fa-thin fa-pencil"></i></button>
-                                                    <a href="<?= base_url("detail_driver") ?>" type="button" class="btn btn-primary mt-1"><i class="fa fas fa-info"></i></a>
+                                                    <a href="<?= base_url("/detail_driver/" . $c["id_mobil"]) ?>" type="button" class="btn btn-primary mt-1"><i class="fa fas fa-info"></i></a>
 
                                                 </td>
                                             </tr>
@@ -262,7 +260,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleSelectGender">Kapasitas Mobil</label>
-                                        <input type="text" name="jenis_mobil" class="form-control" id="" placeholder="Jenis Mobil">
+                                        <input type="text" name="kapasitas_mobil" class="form-control" id="" placeholder="Jenis Mobil">
                                     </div>
 
                                 </div>

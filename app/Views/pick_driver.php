@@ -42,7 +42,11 @@
                                             <td><?= $c['plat_nomor'] ?></td>
                                             <td><?= $c['status_pengemudi'] ?></td>
                                             <td>
-                                                <a href="<?= base_url("insert_order/" . $id_pemesanan . "/" . $c['id_mobil']  . "/" . $c["userid"]) ?>" class="btn btn-primary" onclick="submit()" type="hidden">Pilih Driver</a>
+                                                <a href="<?= base_url("insert_order/" . $id_pemesanan . "/" . $c['id_mobil']  . "/" . $c["userid"]) ?>" class="btn btn-primary col-md-3" onclick="submit()" type="hidden">Pilih Driver</a>
+                                                <a href="<?= base_url("detail_driver/" . $c['id_mobil']) ?>" class="btn btn-primary col-md-3" type="hidden">Info Driver</a>
+
+
+
                                             </td>
                                             </tr>
                                             <div class="modal" tabindex="-1" role="dialog" id="hapus_driver<?php echo $c["userid"] ?>">

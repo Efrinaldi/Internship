@@ -273,10 +273,11 @@ class UserController extends ResourceController
         $secure = new SecureModel();
         $data_secure = $secure->query("SELECT * FROM t_users where userid='$userid' ")->getResultArray();
         $divisi = $divisiModel->query("SELECT * FROM departemen WHERE id_divisi='$id_divisi'")->getResultArray();
+        $jabatan = $this->request->getPost("jabatan");
         $data = [
             "userid" => $userid,
             "id_divisi" => $this->request->getPost("departemen"),
-            "email" => $this->request->getPost("email")
+            "jabatan"   => $this->request->getPost("jabatan")
         ];
         $data_atasan = [
             "userid" => $userid,
@@ -284,15 +285,18 @@ class UserController extends ResourceController
             "atasan" => $data_secure[0]["username"],
             "id_divisi" => $this->request->getPost("departemen"),
         ];
+
         if (count($user) == 0) {
             $divisiuser->insert($data);
         } elseif (count($user) > 0) {
             $divisiuser->update($userid, $data);
         }
-        if (count($atasan_exist) == 0 and isset($_POST['check_atasan'])) {
-            $atasan->insert($data_atasan);
-        } else if (count($atasan_exist) > 0) {
-            $atasan->update($userid, $data_atasan);
+
+        if ($jabatan === "staf") {
+        }
+        if ($jabatan === "kasat") {
+        }
+        if ($jabatan === "kadep") {
         }
         return redirect()->to("list_user");
     }
@@ -323,17 +327,22 @@ class UserController extends ResourceController
         $atasan = new AtasanModel();
         $data_user = $user->query("SELECT t_users.userdomain, t_usraplikasi.userid,t_users.username ,t_usraplikasi.kodeaplikasi  FROM t_users right join t_usraplikasi 
         on t_usraplikasi.userid = t_users.userid where t_usraplikasi.kodeaplikasi= '00033' ")->getResultArray();
-        $data_divisi = $divisi->query("SELECT * FROM departemen")->getResultArray();
-        $divisi_user = $divisi->query("SELECT * FROM user_divisi inner join departemen where user_divisi.id_divisi = departemen.id_divisi")->getResultArray();
+        $data_divisi = $divisi->query("SELECT * FROM Departemen ORDER BY divisi ASC")->getResultArray();
+        $data_satker = $divisi->query("SELECT * FROM satuan_kerja ORDER BY nama_satuan_kerja ASC")->getResultArray();
 
+        $divisi_user = $divisi->query("SELECT * FROM user_divisi inner join departemen where user_divisi.id_divisi = departemen.id_divisi")->getResultArray();
         $data = [
             "data_user"   => $data_user,
             "data_divisi" => $data_divisi,
             "divisiuser"  => $divisi_user,
-            "atasan"      => $atasan
+            "atasan"      => $atasan,
+            "satker"      => $data_satker
         ];
         return view('list_user', $data);
     }
+
+
+
     public function list_driver()
     {
 
@@ -354,26 +363,31 @@ class UserController extends ResourceController
         return view('list_driver', $data);
     }
 
-
-
     public function list_atasan()
     {
         $divisiuser = new UserDivisiModel();
         $user = new SecureModel();
         $divisi = new DivisiModel();
         $atasan = new AtasanModel();
-        $data_user = $atasan->query("SELECT * FROM atasan ")->getResultArray();
-        $data_divisi = $divisi->query("SELECT * FROM departemen")->getResultArray();
-        $divisi_user = $divisi->query("SELECT * FROM user_divisi")->getResultArray();
-
+        $data_user = $user->query("SELECT t_users.userdomain, t_usraplikasi.userid,t_users.username ,t_usraplikasi.kodeaplikasi  FROM t_users right join t_usraplikasi 
+        on t_usraplikasi.userid = t_users.userid where t_usraplikasi.kodeaplikasi= '00033' ")->getResultArray();
+        $data_divisi = $divisi->query("SELECT * FROM Departemen ORDER BY divisi ASC")->getResultArray();
+        $data_satker = $divisi->query("SELECT * FROM satuan_kerja ORDER BY nama_satuan_kerja ASC")->getResultArray();
+        $data_atasan = $divisi->query("SELECT user_divisi.userid , user_divisi.username,user_divisi.user_domain,departemen.divisi FROM atasan left JOIN user_divisi on user_divisi.userid = atasan.userid LEFT JOIN DEPARTEMEN on user_divisi.id_divisi = departemen.id_divisi; ")->getResultArray();
+        $divisi_user = $divisi->query("SELECT * FROM user_divisi inner join departemen where user_divisi.id_divisi = departemen.id_divisi")->getResultArray();
         $data = [
-            "data_atasan" => $data_user,
+            "data_user"   => $data_user,
             "data_divisi" => $data_divisi,
-            "divisiuser"      => $divisi_user,
-            "atasan"     => $atasan
+            "data_atasan"   => $data_atasan,
+
+            "divisiuser"  => $divisi_user,
+            "atasan"      => $data_atasan,
+            "satker"      => $data_satker
         ];
+
         return view('list_atasan', $data);
     }
+
 
     public function list_satker()
     {
@@ -381,17 +395,25 @@ class UserController extends ResourceController
         $user = new SecureModel();
         $divisi = new DivisiModel();
         $atasan = new AtasanModel();
-        $data_user = $user->query("SELECT t_users.userdomain, t_usraplikasi.userid,[username] ,t_usraplikasi.kodeaplikasi  FROM t_users right join t_usraplikasi  on t_usraplikasi.userid = t_users.userid where t_usraplikasi.kodeaplikasi= '00033' ")->getResultArray();
-        $data_divisi = $divisi->query("SELECT * FROM departemen")->getResultArray();
-        $divisi_user = $divisi->query("SELECT * FROM user_divisi")->getResultArray();
+        $data_user = $user->query("SELECT t_users.userdomain, t_usraplikasi.userid,t_users.username ,t_usraplikasi.kodeaplikasi  FROM t_users right join t_usraplikasi 
+        on t_usraplikasi.userid = t_users.userid where t_usraplikasi.kodeaplikasi= '00033' ")->getResultArray();
+        $data_divisi = $divisi->query("SELECT * FROM Departemen ORDER BY divisi ASC")->getResultArray();
+        $data_satker = $divisi->query("SELECT * FROM satuan_kerja ORDER BY nama_satuan_kerja ASC")->getResultArray();
+        $data_atasan = $divisi->query("SELECT user_divisi.userid , user_divisi.username,user_divisi.user_domain,departemen.divisi FROM kepala_satker left JOIN user_divisi on user_divisi.userid = kepala_satker.userid LEFT JOIN DEPARTEMEN on user_divisi.id_divisi = departemen.id_divisi; ")->getResultArray();
+        $divisi_user = $divisi->query("SELECT * FROM user_divisi inner join departemen where user_divisi.id_divisi = departemen.id_divisi")->getResultArray();
         $data = [
-            "data_user"    => $data_user,
+            "data_user"   => $data_user,
             "data_divisi" => $data_divisi,
+            "data_atasan"   => $data_atasan,
+
             "divisiuser"  => $divisi_user,
-            "atasan"  => $atasan
+            "atasan"      => $data_atasan,
+            "satker"      => $data_satker
         ];
+
         return view('list_atasan', $data);
     }
+
     public function add_driver()
     {
         $validate = \Config\Services::validation();

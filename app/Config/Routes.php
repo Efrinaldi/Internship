@@ -60,7 +60,7 @@ $routes->group('api', function ($routes) {
     $routes->get('viewPassword', 'userController::view_password');
     $routes->post('insertPengemudi/(:segment)', 'OrderController::insert_pengemudi/$1');
 });
-$routes->group('', ['filter' => 'loginFilter', 'driverFilter'], function ($routes) {
+$routes->group('', ['filter' => ['loginFilter', 'driverFilter']], function ($routes) {
     $routes->get('hapus_atasan/(:segment)', 'UserController::hapus_atasan/$1');
     $routes->get('hapus_driver/(:segment)', 'Home::hapus_driver/$1');
     $routes->get('hapus_car/(:segment)/(:segment)', 'Home::hapus_car/$1/$2');
@@ -110,6 +110,8 @@ $routes->group('', ['filter' => 'loginFilter', 'driverFilter'], function ($route
     $routes->get('/order/(:segment)', 'OrderController::order/$1');
     $routes->post('/get_sub_spv', 'OrderController::get_sub_spv');
     $routes->post('/get_sub_mobil', 'OrderController::get_sub_mobil');
+    $routes->post('/get_dept', 'OrderController::get_dept');
+
     $routes->post('/get_plat_mobil', 'OrderController::get_plat_mobil');
     $routes->post('/get_plat_mobil_1', 'OrderController::get_plat_mobil_1');
     $routes->post('/update_car', 'OrderController::update_car');
@@ -129,7 +131,7 @@ $routes->group('', ['filter' => 'loginFilter', 'driverFilter'], function ($route
     $routes->add('/updatePlatNomor/(:segment)', 'DriverController::update_plat/$1');
     $routes->get('approve/(:num)', 'OrderController::approve_order/$1');
     $routes->get('/detail_project/(:segment)', 'Home::detail_project/$1');
-    $routes->get('/detail_driver', 'Home::detail_driver');
+    $routes->get('/detail_driver/(:segment)', 'Home::detail_driver/$1');
     $routes->get('/detail_perjalanan/(:segment)', 'Home::detail_perjalanan/$1');
     $routes->get('/detail_approve_dept/(:segment)', 'Home::detail_project/$1');
     $routes->get('/detail_reject_dept/(:segment)', 'Home::detail_reject_dept/$1');

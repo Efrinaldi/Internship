@@ -26,7 +26,7 @@
                         <div class="card card-tale">
                             <div class="card-body">
                                 <p class="fs-10 mb-2"> Reporting Harian </p>
-                                <i class="fa-sharp fa-regular fa-file-export"></i>
+                                <img style="height:100px;width:100px" src="<?= base_url("public/assets_d/draw.png") ?>">
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                         <div class="card card-dark-blue">
                             <div class="card-body">
                                 <p class="fs-10 mb-2"> Reporting Mingguan </p>
-                                <i class="fa-sharp fa-regular fa-file-export"></i>
+                                <img style="height:100px;width:100px" src="<?= base_url("public/assets_d/draw.png") ?>">
                             </div>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                         <div class="card card-light-blue">
                             <div class="card-body">
                                 <p class="fs-10 mb-4"> Reporting Bulanan </p>
-                                <i class="fa-sharp fa-regular fa-file-export"></i>
+                                <img style="height:100px;width:100px" src="<?= base_url("public/assets_d/draw.png") ?>">
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                         <div class="card card-light-danger">
                             <div class="card-body">
                                 <p class="fs-10 mb-2"> Reporting Tahunan </p>
-                                <i class="fa-solid fa-file-arrow-down"></i>
+                                <img style="height:100px;width:100px" src="<?= base_url("public/assets_d/draw.png") ?>">
                             </div>
                         </div>
                     </div>

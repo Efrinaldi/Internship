@@ -14,7 +14,7 @@ class DriverModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_pengemudi', 'status_pengemudi', 'id_mobil', 'userid'];
+    protected $allowedFields    = ['nama_pengemudi', 'status_pengemudi', 'id_mobil', 'userid', "phone_number"];
 
     // Dates
     protected $useTimestamps = false;

@@ -52,8 +52,8 @@ class OrderController extends BaseController
             "nama_pengemudi" => $this->request->getPost("username"),
             "status_pengemudi"   => "Tersedia",
         ];
-        $driver->insert($data_user);
-        $user->insert($data_driver);
+        $driver->insert($data_driver);
+        $user->insert($data_user);
         return \redirect()->to("/dashboard");
     }
     function get_sub_spv()
@@ -71,6 +71,14 @@ class OrderController extends BaseController
         $id = $this->request->getVar('id');
         $mobil = new CarModel();
         $data = $mobil->query("SELECT * FROM mobil where userid = '$id' ")->getResultArray();
+        echo json_encode($data);
+    }
+
+    function get_dept()
+    {
+        $id = $this->request->getVar('id');
+        $div = new DivisiModel();
+        $data = $div->query("SELECT * FROM departemen where id_satker = $id order by divisi ASC ")->getResultArray();
         echo json_encode($data);
     }
 

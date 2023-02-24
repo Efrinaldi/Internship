@@ -8,17 +8,17 @@
                 <div class="col-lg-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Daftar Pesanan</h4>
+                            <h4 class="card-title">Daftar Kepala Departemen</h4>
                             <p class="card-description">
                             <div class="table-responsive">
                                 <table class="table table-striped" id="dataTables-example">
                                     <thead>
                                         <tr>
                                             <th>Nomor</th>
-                                            <th>Nama</th>
-                                            <th>Plat Mobil</th>
-                                            <th>Status</th>
-                                            <th>Proses</th>
+                                            <th>User ID</th>
+                                            <th>Username</th>
+                                            <th>User Domain</th>
+                                            <th>Kepala Departemen</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -33,19 +33,18 @@
                                         foreach ($data_atasan as $o) :
                                             $id = $o["userid"];
                                             $divisi = new UserDivisiModel();
-                                            $data_atasan = $atasan->query("SELECT * FROM atasan where userid = '.$id' ")->getResultArray();
                                             $data = $divisi->select('*')->where('userid', $o["userid"])->get()->getResultArray(); ?>
                                             <td><?= $no++; ?></td>
                                             <td><?= $o['userid'] ?></td>
                                             <td><?= $o['username'] ?></td>
                                             <?php if (count($data) > 0) : ?>
-                                                <td><?= $o['userdomain'] ?></td>
+                                                <td><?= $o['user_domain'] ?></td>
                                             <?php endif ?>
                                             <?php if (count($data) == 0) : ?>
                                                 <td> </td>
                                             <?php endif ?>
                                             <?php if (count($data) > 0) : ?>
-                                                <td> <?= $data[0]['divisi'] ?></td>
+                                                <td> <?= $o['divisi'] ?></td>
                                             <?php endif ?>
                                             <?php if (count($data) == 0) : ?>
                                                 <td> </td>

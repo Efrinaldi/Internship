@@ -85,9 +85,20 @@ class Home extends BaseController
             return view('detail_perjalanan', $data);
         }
     }
-    public function detail_driver()
+    public function detail_driver($id_mobil)
     {
-        return view('detail_driver');
+
+        $car = new CarModel();
+        $driver = new DriverModel();
+
+        $data_mobil = $car->query("SELECT * FROM mobil where id_mobil= $id_mobil")->getResultArray();
+        $id_driver = $data_mobil[0]["userid"];
+        $data_driver = $driver->query("SELECT * FROM pengemudi where userid = '$id_driver'")->getResultArray();
+        $data = [
+            "mobil" => $data_mobil[0],
+            "pengemudi" => $data_driver[0]
+        ];
+        return view('detail_driver', $data);
     }
     public function detail_approve_dept($id_order)
     {
@@ -441,7 +452,7 @@ class Home extends BaseController
                 "message" => "Coba lagi",
                 "error"   => 1
             ];
-            session()->setFlashData("error_controller", "Duplikasi User ID, gunakan user ID yang lain");
+            session()->setFlashData("error_controller", $e->getMessage());
             return redirect()->back()->withInput()->with('errors', "Duplikasi ID");
         }
     }

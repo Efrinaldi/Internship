@@ -4,7 +4,7 @@
 
 
 
-         <?php if (adminAtasan() === "user" or adminLogin() === "user") : ?>
+         <?php if (adminAtasan() === "user" and adminLogin() !== "SEKURITI TEKNOLOGI INFORMASI"  and adminLogin() !== "SEKURITI TEKNOLOGI INFORMASI") : ?>
              <li class="nav-item">
                  <a class="nav-link" href="<?= base_url("/dashboard") ?>">
                      <i class="icon-grid menu-icon"></i>
@@ -34,12 +34,7 @@
                      </ul>
                  </div>
              </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="<?= base_url("/order_departemen") ?>">
-                     <i class="icon-grid menu-icon"></i>
-                     <span class="menu-title">Approval</span>
-                 </a>
-             </li>
+
          <?php endif; ?>
          <?php if (adminAtasan() !== "DRIVER" and adminAtasan() !== "SECURITY" and adminAtasan() !== "user" and adminLogin() !== "DISPATCHER" and adminAtasan() !== "DISPATCHER") : ?>
              <li class="nav-item">
@@ -130,8 +125,10 @@
                  </a>
                  <div class="collapse" id="icons">
                      <ul class="nav flex-column sub-menu">
-                         <li class="nav-item"> <a class="nav-link" href="<?= base_url("/list_user") ?>">List User</a></li>
-                         <li class="nav-item"> <a class="nav-link" href="<?= base_url("/list_atasan") ?>">List Atasan</a></li>
+                         <li class="nav-item"> <a class="nav-link" href="<?= base_url("/list_user") ?>">Daftar Seluruh User</a></li>
+                         <li class="nav-item"> <a class="nav-link" href="<?= base_url("/list_atasan") ?>">Daftar Kepala <br> Departemen</a></li>
+                         <li class="nav-item"> <a class="nav-link" href="<?= base_url("/list_satker") ?>">Daftar Kepala <br> Satuan Kerja</a></li>
+
                      </ul>
                  </div>
              </li>
@@ -183,8 +180,5 @@
                  </a>
              </li>
          <?php endif; ?>
-
-
-
 
      </ul>

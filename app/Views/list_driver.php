@@ -56,10 +56,7 @@
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <div class="form-group">
-                                                                    <label for="exampleSelectGender">userid</label>
-                                                                    <input type="text" name="userid" class="form-control" id="userid" placeholder="User ID">
-                                                                </div>
+                                                                
 
                                                                 <div class="form-group">
                                                                     <label for="exampleSelectGender">Nama Pengemudi</label>
